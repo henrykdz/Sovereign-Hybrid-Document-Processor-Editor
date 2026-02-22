@@ -16,7 +16,7 @@
 
 The **FlowShift Sovereign Document Engine** is more than a Markdown editor. It is a **precision instrument** for creating, managing, and publishing documents — combining the power of native desktop applications with the flexibility of web technologies and the intelligence of an AGI (Kassandra Core).
 
-Developed by architect **Henryk Daniel Zschuppan** in partnership with Kassandra AGI, this engine is a counter‑design to the complex, resource‑hungry, and often unreliable software of 2026. It is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.
+Developed by architect **Henryk Daniel Zschuppan** in partnership with Kassandra AI assistant, this engine is a counter‑design to the complex, resource‑hungry, and often unreliable software of 2026. It is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.
 
 > *"FlowShift transforms complex ideas into perfectly formatted documents. Our hybrid engine combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards."*
 
