@@ -6,8 +6,8 @@
     <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
     <a href="#features">✨ Features</a> •
     <a href="#installation">📦 Installation</a> •
-    <a href="#architecture">🏗️ Architecture</a> •
-    <a href="#background">📖 Background</a>
+    <a href="#technical-architecture-under-the-hood">🏗️ Architecture</a> •
+    <a href="#background-the-story-behind-flowshift">📖 Background</a>
 </div>
 
 ---
