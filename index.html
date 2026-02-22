@@ -1,65 +1,304 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlowShift - Sovereign Hybrid Document Engine</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 20px;
-            background: #f5f5f5;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 800px;
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1e24;
+            background: #fafbfc;
+            padding: 0;
+        }
+
+        /* Navigation / TOC */
+        .toc {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -12px rgba(0,20,30,0.15);
+            margin: 2rem auto 3rem;
+            border: 1px solid rgba(0,120,200,0.1);
+            max-width: 900px;
+        }
+        
+        .toc h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #0b3954;
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid #e6edf4;
+            padding-bottom: 0.75rem;
+        }
+        
+        .toc ol {
+            columns: 2;
+            column-gap: 3rem;
+            list-style-position: inside;
+            padding-left: 0.5rem;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+            break-inside: avoid;
+        }
+        
+        .toc a {
+            color: #1e5f7e;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border-color 0.1s ease;
+        }
+        
+        .toc a:hover {
+            border-bottom-color: #1e5f7e;
+        }
+
+        /* Hauptcontainer */
+        .document {
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0,20,30,0.2);
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid #d9e2e9;
         }
-        h1 { color: #2c3e50; }
-        .features {
-            background: #f8f9fa;
-            padding: 20px;
+
+        /* Header */
+        .header {
+            background: linear-gradient(145deg, #0b1c2b 0%, #133240 100%);
+            color: white;
+            padding: 3rem 3rem 2.5rem;
+            border-bottom: 4px solid #3a8bb9;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header h1 span {
+            color: #aad0f5;
+            font-weight: 300;
+        }
+        
+        .header .sub {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            max-width: 70%;
+            border-left: 3px solid #3a8bb9;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Content */
+        .content {
+            padding: 2.5rem 3rem 3rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            color: #0b2c3c;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #dde7f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #1f4a62;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: #2a353f;
+        }
+        
+        ul, ol {
+            margin: 1rem 0 1.5rem 1.8rem;
+        }
+        
+        li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .feature-block {
+            background: #f0f7fc;
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border-left: 5px solid #1e7eac;
+        }
+        
+        .feature-block strong {
+            color: #0b3954;
+            font-weight: 600;
+        }
+        
+        code {
+            background: #eaf1f8;
+            padding: 0.2rem 0.5rem;
             border-radius: 8px;
-            margin: 20px 0;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.9em;
+            color: #135d86;
+            border: 1px solid #bed8ec;
         }
-        .footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+
+        hr {
+            border: none;
+            border-top: 2px dashed #b6cfdf;
+            margin: 2rem 0;
+        }
+
+        /* Footer / Architekt */
+        .architect {
+            background: #eef4f9;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+            border: 1px solid #bed8ec;
+        }
+        
+        .architect p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .footer-note {
+            margin-top: 2.5rem;
             font-style: italic;
-            color: #666;
+            color: #4d6575;
+            border-top: 1px solid #d4e0e9;
+            padding-top: 1.5rem;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🚀 FlowShift</h1>
-        <h2>Sovereign Hybrid Document Processor Editor</h2>
-        
-        <p><strong>FlowShift transforms complex ideas into perfectly formatted documents. Our hybrid engine combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards.</strong></p>
-        
-        <div class="features">
-            <h3>Features:</h3>
+
+<div class="document">
+    <div class="header">
+        <h1>FlowShift <span>// Sovereign Engine</span></h1>
+        <div class="sub">Precision · Sovereignty · Zero Compromise</div>
+    </div>
+
+    <div class="content">
+        <!-- Table of Contents (Inhaltsverzeichnis) -->
+        <div class="toc">
+            <h2>📋 Table of Contents</h2>
+            <ol>
+                <li><a href="#intro">Introduction: What is the Sovereign Document Engine?</a></li>
+                <li><a href="#philosophy">Core Philosophy: Sovereignty & Efficiency</a></li>
+                <li><a href="#features">Key Features: What the Engine Delivers</a></li>
+                <li><a href="#architecture">Technical Architecture: Under the Hood</a></li>
+                <li><a href="#navigation">Pro Guide: Navigation, Anchors & ID Logic</a></li>
+                <li><a href="#future">The Future of Documentation</a></li>
+                <li><a href="#architect">About the Architect & Kassandra AGI</a></li>
+            </ol>
+        </div>
+
+        <!-- 1. Einführung / Intro -->
+        <h2 id="intro">1. Introduction: What is the Sovereign Document Engine?</h2>
+        <p>The FlowShift Sovereign Document Engine is more than a Markdown editor. It is a <strong>precision instrument</strong> for creating, managing, and publishing documents — combining the power of native desktop applications with the flexibility of web technologies and the intelligence of an AGI (Kassandra Core).</p>
+        <p>Developed by architect <strong>Henryk Daniel Zschuppan</strong> in partnership with Kassandra AGI, this engine is a counter‑design to the complex, resource‑hungry, and often unreliable software of 2026. It is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.</p>
+
+        <!-- 2. Philosophie -->
+        <h2 id="philosophy">2. Core Philosophy: Sovereignty & Efficiency</h2>
+        <p>Every feature of the FlowShift Engine is founded on three principles:</p>
+        <ul>
+            <li><strong>Sovereignty:</strong> Full user control over data, design, and workflow. The document is law, not the application.</li>
+            <li><strong>Efficiency:</strong> Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat.</li>
+            <li><strong>Precision:</strong> Pixel‑perfect WYSIWYG rendering, consistent across all output media (screen, HTML export, PDF print).</li>
+        </ul>
+        <p>The engine listens to the architect’s command and does exactly what is intended — without “magic” intermediate steps or unwanted autonomy.</p>
+
+        <!-- 3. Merkmale -->
+        <h2 id="features">3. Key Features: What the Engine Delivers</h2>
+        <div class="feature-block">
+            <h3>3.1 Unrivalled Editing Experience</h3>
             <ul>
-                <li>✅ Formatter</li>
-                <li>✅ Linter</li>
-                <li>✅ Syntax Highlighter</li>
-                <li>✅ Custom Placeholders</li>
+                <li><strong>Flicker‑free live rendering:</strong> Thanks to the <code>Sovereign Swap</code> mechanism, the preview updates in real time without any visual flicker.</li>
+                <li><strong>Scroll invariance:</strong> The focus remains stable at the desired position in the preview while you type.</li>
+                <li><strong>Bidirectional navigation:</strong> A click in the preview jumps the cursor precisely to the corresponding spot in the Markdown source.</li>
+                <li><strong>Intelligent error diagnostics:</strong> The <code>ErrorTooltipManager</code> visualises linter errors directly in the status bar.</li>
             </ul>
         </div>
-        
-        <h3>Background</h3>
-        <p>Developed from personal necessity: during a decades-long battle against an undiagnosed cyst in the neck, code became distraction, therapy, and finally passion. FlowShift is the result – a tool that creates order when life becomes chaotic.</p>
-        
-        <div class="footer">
-            <p>⚡ Coming soon...<br>
-            <small>© 2025 FlowShift</small></p>
+        <div class="feature-block">
+            <h3>3.2 Layout & Design Sovereignty</h3>
+            <ul>
+                <li><strong>CSS Forge:</strong> A dedicated code editor enables live styling directly in the document flow.</li>
+                <li><strong>Precise pagination:</strong> The engine converts documents exactly into physical pages (A4, Letter).</li>
+                <li><strong>Neutral start:</strong> Documents begin without any enforced formatting. Margins and pagination are defined explicitly in YAML.</li>
+            </ul>
+        </div>
+
+        <!-- 4. Architektur -->
+        <h2 id="architecture">4. Technical Architecture: Under the Hood</h2>
+        <h3>4.1 Hybrid Rendering Approach</h3>
+        <p>The engine uses <strong>JavaFX & WebKit</strong>, combined with the <code>Sovereign Swap</code>. Instead of reloading the WebView, content is injected via <code>innerHTML</code>, guaranteeing absolute smoothness.</p>
+        <h3>4.2 The Sovereign Bridge (Source Mapping)</h3>
+        <p>The <code>SovereignSourceMapper</code> injects a unique <code>data‑fsid</code> into every HTML element. An internal map links this ID to the exact character offset in the source text.</p>
+
+        <!-- 5. Navigation & Anker-Logik (Englisch) -->
+        <h2 id="navigation">5. Navigation & Anchor Logic</h2>
+        <p>The FlowShift Engine ensures your documents remain fully navigable in export and print.</p>
+        <ul>
+            <li><strong>Fully automatic:</strong> Headings automatically receive unique IDs for tables of contents.</li>
+            <li><strong>Sovereign override:</strong> Use the syntax <code>{#custom‑id}</code> directly after a heading to override the automation.</li>
+            <li><strong>HTML integrity:</strong> Pure HTML tags remain untouched, giving you full control.</li>
+        </ul>
+        <p><em>Detailed examples and transformation formulas can be found in the "Pro Guide: Navigation & IDs" in your template library.</em></p>
+
+        <!-- 6. Zukunft -->
+        <h2 id="future">6. The Future of Documentation</h2>
+        <p>The FlowShift Engine is the foundation for <strong>interactive documents</strong>, <strong>AI orchestration</strong>, and <strong>data‑sovereign content</strong>. It is a local alternative to cloud systems, returning full control over form and data to the architect.</p>
+
+        <!-- 7. Architekt & Kassandra AGI -->
+        <h2 id="architect">7. About the Architect & Kassandra AGI</h2>
+        <div class="architect">
+            <p><strong>Henryk Daniel Zschuppan:</strong> The visionary and architect behind the FlowShift Sovereign Document Engine. His goal is software without "bloat" — defined by precision and efficiency.</p>
+            <p><strong>AI‑Assisted Engineering:</strong> This engine was designed using cutting‑edge AI‑assisted development methods. This guarantees exceptional code purity, a consistent architecture, and strict adherence to security and performance standards. The result is a tool as lean and precise as the code it produces.</p>
+            <p style="margin-top:1rem;">⚡ <em>“I have nothing left to lose, except my love for this world.”</em></p>
+        </div>
+
+        <hr>
+
+        <!-- Kurze deutsche Notiz / Brücke (optional, aber freundlich) -->
+        <p style="font-size:0.95rem; color:#3c576b;">🇩🇪 <em>FlowShift wurde aus persönlicher Notwendigkeit geboren – über Jahrzehnte hinweg, im Kampf gegen eine unerkannte Zyste im Nacken, wurde Code zur Ablenkung, zur Therapie und schließlich zur Leidenschaft. Dieses Werkzeug schafft Ordnung, wenn das Leben chaotisch wird.</em></p>
+
+        <div class="footer-note">
+            © 2026 FlowShift · Built with sovereignty, precision, and an unshaken will.
         </div>
     </div>
+</div>
+
+<!-- optional: kleiner Backlink / Trost -->
+<div style="text-align:center; margin: 2rem auto; max-width:1000px; color:#6a7f8d; font-size:0.9rem;">
+    <p>⚡ Deine Geschichte lebt hier weiter. Das ist erst der Anfang.</p>
+</div>
+
 </body>
 </html>
