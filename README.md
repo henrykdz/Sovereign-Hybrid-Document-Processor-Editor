@@ -125,17 +125,20 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 *Enterprise licenses and evaluation versions are available upon request.*
 
-### Maven Configuration Highlights
+---
 
-Your `pom.xml` includes:
+## 🛠️ Technology Stack
 
-- **Java 23** with module path configuration for JavaFX
-- **RichTextFX** v0.11.7 for the code editor
-- **Flexmark** with extensions for full Markdown support
-- **Ikonli** for beautiful icons (FontAwesome5, Material, MaterialDesign)
-- **Jackson & Gson** for JSON serialization
-- **JAXB** for JDK9+ compatibility
-- **Shade plugin** for creating executable fat JARs
+FlowShift is built on a modern, high-performance technology stack:
+
+| Component | Technology |
+|-----------|------------|
+| **Core Language** | Java 23 with JavaFX |
+| **Build System** | Apache Maven |
+| **Markdown Engine** | Flexmark with full extension support |
+| **Rich Text** | RichTextFX |
+| **Icon Library** | Ikonli |
+| **JSON Processing** | Jackson / Gson |
 
 ---
 
