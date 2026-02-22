@@ -155,7 +155,7 @@ I dreamed of starting a family."*
 
 > *"I have nothing left to lose, except my love for this world."*
 
-### About the Architect & Kassandra AGI
+### About the Architect & Kassandra
 
 **Henryk Daniel Zschuppan:** The visionary and architect behind the FlowShift Sovereign Document Engine. His goal is software without "bloat" — defined by precision and efficiency.
 
