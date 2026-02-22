@@ -127,21 +127,6 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 ---
 
-## 🛠️ Technology Stack
-
-FlowShift is built on a modern, high-performance technology stack:
-
-| Component | Technology |
-|-----------|------------|
-| **Core Language** | Java 23 with JavaFX |
-| **Build System** | Apache Maven |
-| **Markdown Engine** | Flexmark with full extension support |
-| **Rich Text** | RichTextFX |
-| **Icon Library** | Ikonli |
-| **JSON Processing** | Jackson / Gson |
-
----
-
 ## 🖼️ Preview
 
 ![Screen](screen.png)
