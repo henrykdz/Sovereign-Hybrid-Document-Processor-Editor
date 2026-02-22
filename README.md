@@ -152,7 +152,7 @@ Your `pom.xml` includes:
 
 ## 🖼️ Preview
 
-![FlowShift Editor Screenshot](images/FlowShift_SCRN_1.png)
+![Screenshot](https://github.com/henrykdz/Sovereign-Hybrid-Document-Processor-Editor/blob/main/images/FlowShift_SCRN_1.png?raw=true)
 
 ---
 
