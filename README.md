@@ -139,7 +139,7 @@ This software was born from **personal necessity**. For over 26 years, the archi
 
 **FlowShift** is the result – a tool that creates **order when life becomes chaotic**. It is a conscious counter-design to the bloated software industry: **lean, precise, and sovereign**.
 
-> *"I have nothing left to lose, except my love for this world."*
+> *I've nothing left to prove – only something left to build.*
 
 ### About the Architect
 
