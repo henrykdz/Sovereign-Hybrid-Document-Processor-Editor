@@ -102,7 +102,7 @@ The FlowShift Engine ensures your documents remain fully navigable in export and
 
 ---
 
-## 🔧 Installation
+<h2 id="installation">🔧 Installation</h2>
 
 ### Prerequisites
 
