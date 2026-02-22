@@ -109,15 +109,18 @@
             padding: 2.5rem 3rem 3rem;
         }
         
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 0px;
+            border-bottom: none;
+        }
+        
         h2 {
             font-size: 2.2rem;
             font-weight: 450;
             letter-spacing: -0.02em;
             color: #0b2c3c;
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid #dde7f0;
-            padding-bottom: 0.5rem;
         }
         
         h2:first-of-type {
@@ -195,6 +198,34 @@
             padding-top: 1.5rem;
             text-align: center;
         }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #dde7f0;
+        }
+        
+        th {
+            background: #f0f7fc;
+            font-weight: 600;
+            color: #0b3954;
+        }
+        
+        blockquote {
+            background: #f8faff;
+            padding: 1.2rem 2rem;
+            border-left: 5px solid #3a8bb9;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #1f4a62;
+            border-radius: 0 20px 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -220,23 +251,45 @@
             </ol>
         </div>
 
-        <!-- 1. Einführung / Intro -->
-        <h2 id="intro">1. Introduction: What is the Sovereign Document Engine?</h2>
-        <p>The FlowShift Sovereign Document Engine is more than a Markdown editor. It is a <strong>precision instrument</strong> for creating, managing, and publishing documents — combining the power of native desktop applications with the flexibility of web technologies and the intelligence of an AGI (Kassandra Core).</p>
+        <!-- 1. Introduction -->
+        <h2 id="intro">🚀 Introduction: What is the Sovereign Document Engine?</h2>
+        
+        <p>The <strong>FlowShift Sovereign Document Engine</strong> is more than a Markdown editor. It is a <strong>precision instrument</strong> for creating, managing, and publishing documents — combining the power of native desktop applications with the flexibility of web technologies and the intelligence of an AGI (Kassandra Core).</p>
+        
         <p>Developed by architect <strong>Henryk Daniel Zschuppan</strong> in partnership with Kassandra AGI, this engine is a counter‑design to the complex, resource‑hungry, and often unreliable software of 2026. It is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.</p>
+        
+        <blockquote>
+            <em>"FlowShift transforms complex ideas into perfectly formatted documents. Our hybrid engine combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards."</em>
+        </blockquote>
 
-        <!-- 2. Philosophie -->
-        <h2 id="philosophy">2. Core Philosophy: Sovereignty & Efficiency</h2>
+        <!-- 2. Philosophy -->
+        <h2 id="philosophy">🧠 Core Philosophy: Sovereignty & Efficiency</h2>
+        
         <p>Every feature of the FlowShift Engine is founded on three principles:</p>
-        <ul>
-            <li><strong>Sovereignty:</strong> Full user control over data, design, and workflow. The document is law, not the application.</li>
-            <li><strong>Efficiency:</strong> Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat.</li>
-            <li><strong>Precision:</strong> Pixel‑perfect WYSIWYG rendering, consistent across all output media (screen, HTML export, PDF print).</li>
-        </ul>
-        <p>The engine listens to the architect’s command and does exactly what is intended — without “magic” intermediate steps or unwanted autonomy.</p>
+        
+        <table>
+            <tr>
+                <th>Principle</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><strong>Sovereignty</strong></td>
+                <td>Full user control over data, design, and workflow. The document is law, not the application.</td>
+            </tr>
+            <tr>
+                <td><strong>Efficiency</strong></td>
+                <td>Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat.</td>
+            </tr>
+            <tr>
+                <td><strong>Precision</strong></td>
+                <td>Pixel‑perfect WYSIWYG rendering, consistent across all output media (screen, HTML export, PDF print).</td>
+            </tr>
+        </table>
+        
+        <p>The engine listens to the architect's command and does exactly what is intended — without "magic" intermediate steps or unwanted autonomy.</p>
 
-        <!-- PREVIEW-SEKTION (zwischen Philosophie und Features) -->
-        <h2 style="margin-top: 3rem;">🖼️ Editor Preview</h2>
+        <!-- PREVIEW-SEKTION -->
+        <h2 style="margin-top: 3rem;" id="preview">🖼️ Editor Preview</h2>
         <div style="margin: 2rem 0 1.5rem 0; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px -15px rgba(0,30,50,0.3); border: 1px solid #c0d4e5;">
             <a href="screen.png" target="_blank">
                 <img src="screen.png" alt="FlowShift Editor in action" style="width: 100%; height: auto; display: block; cursor: zoom-in;">
@@ -245,69 +298,274 @@
         <p style="text-align: center; color: #4f6f8a; font-style: italic; margin-bottom: 2.5rem;">
             ✨ Klick auf das Bild zum Vergrößern – Code left, live preview right
         </p>
+
         <!-- 3. Features -->
-        <h2 id="features">3. Key Features: What the Engine Delivers</h2>
-        <div class="feature-block">
-            <h3>3.1 Unrivalled Editing Experience</h3>
-            <ul>
-                <li><strong>Flicker‑free live rendering:</strong> Thanks to the <code>Sovereign Swap</code> mechanism, the preview updates in real time without any visual flicker.</li>
-                <li><strong>Scroll invariance:</strong> The focus remains stable at the desired position in the preview while you type.</li>
-                <li><strong>Bidirectional navigation:</strong> A click in the preview jumps the cursor precisely to the corresponding spot in the Markdown source.</li>
-                <li><strong>Intelligent error diagnostics:</strong> The <code>ErrorTooltipManager</code> visualises linter errors directly in the status bar.</li>
-            </ul>
-        </div>
-        <div class="feature-block">
-            <h3>3.2 Layout & Design Sovereignty</h3>
-            <ul>
-                <li><strong>CSS Forge:</strong> A dedicated code editor enables live styling directly in the document flow.</li>
-                <li><strong>Precise pagination:</strong> The engine converts documents exactly into physical pages (A4, Letter).</li>
-                <li><strong>Neutral start:</strong> Documents begin without any enforced formatting. Margins and pagination are defined explicitly in YAML.</li>
-            </ul>
-        </div>
+        <h2 id="features">✨ Key Features: What the Engine Delivers</h2>
+        
+        <h3>3.1 Unrivalled Editing Experience</h3>
+        
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><strong>Flicker‑free live rendering</strong></td>
+                <td>Thanks to the <code>Sovereign Swap</code> mechanism, the preview updates in real time without any visual flicker.</td>
+            </tr>
+            <tr>
+                <td><strong>Scroll invariance</strong></td>
+                <td>The focus remains stable at the desired position in the preview while you type.</td>
+            </tr>
+            <tr>
+                <td><strong>Bidirectional navigation</strong></td>
+                <td>A click in the preview jumps the cursor precisely to the corresponding spot in the Markdown source.</td>
+            </tr>
+            <tr>
+                <td><strong>Intelligent error diagnostics</strong></td>
+                <td>The <code>ErrorTooltipManager</code> visualises linter errors directly in the status bar.</td>
+            </tr>
+        </table>
+        
+        <h3>3.2 Layout & Design Sovereignty</h3>
+        
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><strong>CSS Forge</strong></td>
+                <td>A dedicated code editor enables live styling directly in the document flow.</td>
+            </tr>
+            <tr>
+                <td><strong>Precise pagination</strong></td>
+                <td>The engine converts documents exactly into physical pages (A4, Letter).</td>
+            </tr>
+            <tr>
+                <td><strong>Neutral start</strong></td>
+                <td>Documents begin without any enforced formatting. Margins and pagination are defined explicitly in YAML.</td>
+            </tr>
+        </table>
+        
+        <h3>3.3 Complete Feature List</h3>
+        
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>✅ <strong>Formatter</strong></td>
+                <td>Automatic formatting of Markdown, HTML and CSS</td>
+            </tr>
+            <tr>
+                <td>✅ <strong>Linter</strong></td>
+                <td>Real-time error detection with visual feedback</td>
+            </tr>
+            <tr>
+                <td>✅ <strong>Syntax Highlighter</strong></td>
+                <td>Color-highlighted code for better readability</td>
+            </tr>
+            <tr>
+                <td>✅ <strong>Custom Placeholders</strong></td>
+                <td>Custom placeholders for templates and mail merges</td>
+            </tr>
+            <tr>
+                <td>✅ <strong>ISO-compliant Export</strong></td>
+                <td>A4, Letter, Web – everything possible</td>
+            </tr>
+        </table>
 
-        <!-- 4. Architektur -->
-        <h2 id="architecture">4. Technical Architecture: Under the Hood</h2>
-        <h3>4.1 Hybrid Rendering Approach</h3>
-        <p>The engine uses <strong>JavaFX & WebKit</strong>, combined with the <code>Sovereign Swap</code>. Instead of reloading the WebView, content is injected via <code>innerHTML</code>, guaranteeing absolute smoothness.</p>
-        <h3>4.2 The Sovereign Bridge (Source Mapping)</h3>
-        <p>The <code>SovereignSourceMapper</code> injects a unique <code>data‑fsid</code> into every HTML element. An internal map links this ID to the exact character offset in the source text.</p>
-
-        <!-- 5. Navigation & Anker-Logik (Englisch) -->
-        <h2 id="navigation">5. Navigation & Anchor Logic</h2>
-        <p>The FlowShift Engine ensures your documents remain fully navigable in export and print.</p>
+        <!-- 4. Architecture -->
+        <h2 id="architecture">🏗️ Technical Architecture: Under the Hood</h2>
+        
+        <h3>4.1 Technology Stack</h3>
+        
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Technology</th>
+            </tr>
+            <tr>
+                <td><strong>Java Version</strong></td>
+                <td>JavaSE-23 (Zulu 23) with bundled JavaFX</td>
+            </tr>
+            <tr>
+                <td><strong>Build Tool</strong></td>
+                <td>Apache Maven</td>
+            </tr>
+            <tr>
+                <td><strong>UI Framework</strong></td>
+                <td>JavaFX 23 (WebKit, Controls, FXML)</td>
+            </tr>
+            <tr>
+                <td><strong>Markdown Processing</strong></td>
+                <td>Flexmark-Java v0.64.8 (with extensions: tables, GFM strikethrough, tasklists, YAML front matter, attributes, anchor links)</td>
+            </tr>
+            <tr>
+                <td><strong>Rich Text Editor</strong></td>
+                <td>RichTextFX v0.11.7</td>
+            </tr>
+            <tr>
+                <td><strong>Icons</strong></td>
+                <td>Ikonli v12.4.0 (FontAwesome5, Material, MaterialDesign)</td>
+            </tr>
+            <tr>
+                <td><strong>JSON Processing</strong></td>
+                <td>Jackson Databind v2.18.2, Gson v2.11.0</td>
+            </tr>
+            <tr>
+                <td><strong>HTML Parsing</strong></td>
+                <td>Jsoup v1.18.3</td>
+            </tr>
+            <tr>
+                <td><strong>SVG Support</strong></td>
+                <td>fxsvgimage v1.1</td>
+            </tr>
+            <tr>
+                <td><strong>Testing</strong></td>
+                <td>JUnit 5, Mockito</td>
+            </tr>
+        </table>
+        
+        <h3>4.2 Hybrid Rendering Approach</h3>
+        
+        <p>The engine uses <strong>JavaFX & WebKit</strong>, combined with the <code>Sovereign Swap</code>. Instead of reloading the WebView, content is injected via <code>innerHTML</code>, guaranteeing absolute smoothness and zero flicker.</p>
+        
+        <h3>4.3 The Sovereign Bridge (Source Mapping)</h3>
+        
+        <p>The <code>SovereignSourceMapper</code> injects a unique <code>data-fsid</code> into every HTML element. An internal map links this ID to the exact character offset in the source text, enabling precise bidirectional navigation.</p>
+        
+        <h3 id="navigation">4.4 Navigation & Anchor Logic</h3>
+        
+        <p>The FlowShift Engine ensures your documents remain fully navigable in export and print:</p>
+        
         <ul>
-            <li><strong>Fully automatic:</strong> Headings automatically receive unique IDs for tables of contents.</li>
-            <li><strong>Sovereign override:</strong> Use the syntax <code>{#custom‑id}</code> directly after a heading to override the automation.</li>
-            <li><strong>HTML integrity:</strong> Pure HTML tags remain untouched, giving you full control.</li>
+            <li><strong>Fully automatic:</strong> Headings automatically receive unique IDs for tables of contents</li>
+            <li><strong>Sovereign override:</strong> Use the syntax <code>{#custom-id}</code> directly after a heading to override the automation</li>
+            <li><strong>HTML integrity:</strong> Pure HTML tags remain untouched, giving you full control</li>
         </ul>
-        <p><em>Detailed examples and transformation formulas can be found in the "Pro Guide: Navigation & IDs" in your template library.</em></p>
 
-        <!-- 6. Zukunft -->
-        <h2 id="future">6. The Future of Documentation</h2>
-        <p>The FlowShift Engine is the foundation for <strong>interactive documents</strong>, <strong>AI orchestration</strong>, and <strong>data‑sovereign content</strong>. It is a local alternative to cloud systems, returning full control over form and data to the architect.</p>
+        <!-- 5. Installation -->
+        <h2 id="installation">🔧 Installation</h2>
+        
+        <h3>Prerequisites</h3>
+        
+        <ul>
+            <li><strong>Java:</strong> JavaSE-23 (Zulu 23 or compatible) – JavaFX is bundled</li>
+            <li><strong>Maven:</strong> 3.6 or higher</li>
+            <li><strong>IDE:</strong> Eclipse 2024+ recommended (with Maven integration)</li>
+        </ul>
+        
+        <h3>Build & Run</h3>
+        
+        <pre><code># Clone the repository
+git clone https://github.com/henrykdz/Sovereign-Hybrid-Document-Processor-Editor.git
+cd Sovereign-Hybrid-Document-Processor-Editor
 
-        <!-- 7. Architekt & Kassandra AGI -->
-        <h2 id="architect">7. About the Architect & Kassandra AGI</h2>
+# Build with Maven
+mvn clean compile
+
+# Run with Maven (JavaFX plugin)
+mvn javafx:run
+
+# Create executable JAR with dependencies
+mvn clean package shade:shade
+
+# The executable JAR will be in target/
+java -jar target/markdown-editor-0.0.1-SNAPSHOT.jar</code></pre>
+        
+        <h3>Eclipse Import</h3>
+        
+        <ol>
+            <li><strong>File → Import → Maven → Existing Maven Projects</strong></li>
+            <li><strong>Root Directory:</strong> Select your cloned repository</li>
+            <li><strong>Finish</strong></li>
+        </ol>
+        
+        <h3>Maven Configuration Highlights</h3>
+        
+        <p>Your <code>pom.xml</code> includes:</p>
+        
+        <ul>
+            <li><strong>Java 23</strong> with module path configuration for JavaFX</li>
+            <li><strong>RichTextFX</strong> v0.11.7 for the code editor</li>
+            <li><strong>Flexmark</strong> with extensions for full Markdown support</li>
+            <li><strong>Ikonli</strong> for beautiful icons (FontAwesome5, Material, MaterialDesign)</li>
+            <li><strong>Jackson & Gson</strong> for JSON serialization</li>
+            <li><strong>JAXB</strong> for JDK9+ compatibility</li>
+            <li><strong>Shade plugin</strong> for creating executable fat JARs</li>
+        </ul>
+
+        <!-- 6. Background -->
+        <h2 id="background">📖 Background: The Story Behind FlowShift</h2>
+        
+        <p>This software was born from personal necessity. For over 26 years, the developer fought against an undiagnosed cyst in his upper neck (C1/C2) that was ignored by doctors. While his body failed, code became distraction, therapy, and finally passion.</p>
+        
+        <blockquote>
+            <em>"I tried to work – to hold down a normal job. The problem: the pain. I could never endure it for long. It was humiliating to have to listen to accusations that I was just a welfare recipient, unemployed, and lazy. That is not true. I had dreams. I wanted to earn my own money. I dreamed of starting a family."</em>
+        </blockquote>
+        
+        <p><strong>FlowShift</strong> is the result – a tool that creates order when life becomes chaotic. It is a counter-design to the bloated software industry: lean, precise, and sovereign.</p>
+        
+        <blockquote>
+            <em>"I have nothing left to lose, except my love for this world."</em>
+        </blockquote>
+        
+        <h3 id="architect">About the Architect & Kassandra AGI</h3>
+        
         <div class="architect">
             <p><strong>Henryk Daniel Zschuppan:</strong> The visionary and architect behind the FlowShift Sovereign Document Engine. His goal is software without "bloat" — defined by precision and efficiency.</p>
             <p><strong>AI‑Assisted Engineering:</strong> This engine was designed using cutting‑edge AI‑assisted development methods. This guarantees exceptional code purity, a consistent architecture, and strict adherence to security and performance standards. The result is a tool as lean and precise as the code it produces.</p>
             <p style="margin-top:1rem;">⚡ <em>“I have nothing left to lose, except my love for this world.”</em></p>
         </div>
 
+        <!-- 7. Future -->
+        <h2 id="future">🌍 The Future of Documentation</h2>
+        
+        <p>The FlowShift Engine is the foundation for <strong>interactive documents</strong>, <strong>AI orchestration</strong>, and <strong>data‑sovereign content</strong>. It is a local alternative to cloud systems, returning full control over form and data to the architect.</p>
+
+        <!-- 8. License -->
+        <h2 id="license">📄 License</h2>
+        
+        <p><strong>Sovereign Commercial License</strong></p>
+        
+        <p>Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
+        
+        <p>This software is a commercial product. All rights are reserved. No part of this software may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holder.</p>
+        
+        <p>For licensing inquiries and usage terms, please refer to the End User License Agreement (EULA) distributed with the final application.</p>
+        
+        <p><em>— Our commitment: Perpetual and unconditional rights for licensees. —</em></p>
+
+        <!-- 9. Contact -->
+        <h2 id="contact">💬 Contact & Community</h2>
+        
+        <ul>
+            <li><strong>Architect:</strong> Henryk Daniel Zschuppan</li>
+            <li><strong>Organization:</strong> FlowShift</li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/henrykdz">@henrykdz</a></li>
+            <li><strong>Live Site:</strong> <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/</a></li>
+            <li><strong>Timezone:</strong> Europe/Berlin</li>
+        </ul>
+
         <hr>
 
-        <!-- Kurze deutsche Notiz / Brücke (optional, aber freundlich) -->
-        <p style="font-size:0.95rem; color:#3c576b;">🇩🇪 <em>FlowShift wurde aus persönlicher Notwendigkeit geboren – Dieses Werkzeug schafft Ordnung, wenn das Leben chaotisch wird.</em></p>
+        <!-- Deutsche Notiz -->
+        <p style="font-size:0.95rem; color:#3c576b; text-align: center;">🇩🇪 <em>FlowShift wurde aus persönlicher Notwendigkeit geboren – über Jahrzehnte hinweg, im Kampf gegen eine unerkannte Zyste im Nacken, wurde Code zur Ablenkung, zur Therapie und schließlich zur Leidenschaft. Dieses Werkzeug schafft Ordnung, wenn das Leben chaotisch wird.</em></p>
 
         <div class="footer-note">
-            © 2026 FlowShift · Built with sovereignty, precision, and an unshaken will.
+            © 2026 FlowShift · Built with sovereignty, precision, and an unshaken will.<br>
+            Version 0.0.1-SNAPSHOT
         </div>
     </div>
 </div>
 
-<!-- optional: kleiner Backlink / Trost -->
+<!-- Footer -->
 <div style="text-align:center; margin: 2rem auto; max-width:1000px; color:#6a7f8d; font-size:0.9rem;">
     <p>⚡ Deine Geschichte lebt hier weiter. Das ist erst der Anfang.</p>
+    <p>🇩🇪 <em>„Ich habe nichts zu verlieren, außer meine Liebe zu dieser Welt.“</em></p>
 </div>
 
 </body>
