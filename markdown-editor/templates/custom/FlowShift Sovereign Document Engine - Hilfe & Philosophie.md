@@ -98,7 +98,3 @@ Die FlowShift Engine ist das Fundament für **interaktive Dokumente**, **KI-Orch
 **AI-Assisted Engineering:** Diese Engine wurde unter Einsatz modernster KI-gestützter Entwicklungsmethoden entworfen. 
 Dies garantiert eine außergewöhnliche Code-Reinheit, eine konsistente Architektur und die strikte Einhaltung von Sicherheits- und Performance-Standards. 
 Das Ergebnis ist ein Werkzeug, das so schlank und präzise ist wie der Code, den es produziert.
-
-<style>
-
-</style>
