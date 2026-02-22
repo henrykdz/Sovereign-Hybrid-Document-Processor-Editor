@@ -152,7 +152,7 @@ Your `pom.xml` includes:
 
 ## 🖼️ Preview
 
-![Screenshot](https://github.com/henrykdz/Sovereign-Hybrid-Document-Processor-Editor/blob/main/images/FlowShift_SCRN_1.png?raw=true)
+![Screenshot](https://github.com/henrykdz/Sovereign-Hybrid-Document-Processor-Editor/raw/main/images/FlowShift_SCRN_1.png?raw=true)
 
 ---
 
