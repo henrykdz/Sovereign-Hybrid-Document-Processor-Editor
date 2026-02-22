@@ -135,7 +135,7 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 <h2 id="background">📖 The Story Behind FlowShift</h2>
 
-This software was born from **personal necessity**. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2) that was repeatedly dismissed by doctors. While his body failed, code became distraction, therapy, and finally **passion**.
+This software was born from personal necessity. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2) that was repeatedly dismissed by doctors. When his body couldn't, his mind did, code became distraction, therapy, and finally passion.
 
 **FlowShift** is the result – a tool that creates **order when life becomes chaotic**. It is a conscious counter-design to the bloated software industry: **lean, precise, and sovereign**.
 
