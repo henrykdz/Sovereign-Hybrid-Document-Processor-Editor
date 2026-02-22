@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * Project: FlowShift - The Sovereign Content Engine
+ * Component: MarkdownLinter
+ * 
+ * Copyright (c) 2026 FlowShift. All rights reserved.
+ * Author: Henryk Daniel Zschuppan
+ *
+ * This source code is proprietary and confidential. Unauthorized copying 
+ * of this file, via any medium, is strictly prohibited.
+ *
+ * DESIGN PHILOSOPHY: High-performance, context-aware structural validation
+ * utilizing a single-pass Oracle-Backtick-Protocol for real-time processing.
+ * =============================================================================
+ */
+
 package com.flowshift.editor;
 
 import java.io.File;
@@ -4609,4 +4625,5 @@ public class MarkdownEditorController implements Initializable, LibraryActions {
 		Window dialogOwner = (owner.length > 0 && owner[0] != null) ? owner[0] : getPrimaryStage();
 		utils.ui.WindowUtils.showExceptionDialog(AlertType.ERROR, dialogOwner, title, message, e != null ? e.getMessage() : "No further details.", e);
 	}
+
 }
