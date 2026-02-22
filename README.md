@@ -4,10 +4,10 @@
     <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
     <br><br>
     <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
-    <a href="#key-features-what-the-engine-delivers">✨ Features</a> •
+    <a href="#features">✨ Features</a> •
     <a href="#installation">📦 Installation</a> •
-    <a href="#technical-architecture-under-the-hood">🏗️ Architecture</a> •
-    <a href="#background-the-story-behind-flowshift">📖 Background</a>
+    <a href="#architecture">🏗️ Architecture</a> •
+    <a href="#background">📖 Background</a>
 </div>
 
 ---
@@ -36,7 +36,7 @@ The engine listens to the architect's command and does exactly what is intended 
 
 ---
 
-## ✨ Key Features: What the Engine Delivers
+<h2 id="features">✨ Key Features: What the Engine Delivers</h2>
 
 ### 3.1 Unrivalled Editing Experience
 
@@ -67,7 +67,7 @@ The engine listens to the architect's command and does exactly what is intended 
 
 ---
 
-## 🏗️ Technical Architecture: Under the Hood
+<h2 id="architecture">🏗️ Technical Architecture: Under the Hood</h2>
 
 ### 4.1 Technology Stack
 
@@ -156,7 +156,7 @@ Your `pom.xml` includes:
 
 ---
 
-## 📖 Background: The Story Behind FlowShift
+<h2 id="background">📖 Background: The Story Behind FlowShift</h2>
 
 This software was born from personal necessity. For over 26 years, the developer fought against an undiagnosed cyst in his upper neck (C1/C2) that was ignored by doctors. While his body failed, code became distraction, therapy, and finally passion.
 
