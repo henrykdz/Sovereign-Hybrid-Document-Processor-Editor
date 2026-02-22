@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- FLOWSHIFT MARKDOWN EDITOR - FINAL LAYOUT (ENGLISH, NO TOOLTIPS) ############################################################### - Top: ToolBar for File Operations - Left: Responsive Sidebar (Scrollable 
+	Tools + Fixed Bottom) - Center: StackPane (CodeArea Container + WebView) - Bottom: Status Bar -->
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane fx:id="rootPane" minHeight="400.0" minWidth="600.0" prefHeight="940.0" prefWidth="1400.0" styleClass="editor-root" xmlns="http://javafx.com/javafx/23.0.1"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.flowshift.editor.MarkdownEditorController">
+
+	<!-- CSS LINK -->
+	<stylesheets>
+		<String fx:value="/com/flowshift/editor/editor-style.css" />
+	</stylesheets>
+
+
+
+	<!-- TOP: ACTION BAR (File Operations & Search) -->
+	<top>
+		<VBox>
+			<!-- Menüleiste -->
+			<MenuBar>
+				<Menu text="File">
+					<!-- GRUPPE 1: DOKUMENTENFLUSS (Open/New) -->
+					<MenuItem accelerator="Ctrl+N" onAction="#handleNewDocumentAction" text="New" />
+					<MenuItem accelerator="Ctrl+O" onAction="#handleOpenDocumentAction" text="Open..." />
+					<SeparatorMenuItem />
+
+					<!-- GRUPPE 2: SPEICHERN -->
+					<MenuItem accelerator="Ctrl+S" onAction="#handleSaveAction" text="Save" />
+
+					<!-- WICHTIG: Save As muss bleiben, um die Intention zu trennen! -->
+					<!-- handleSaveAsAction MUSS HIER BLEIBEN, auch wenn handleSaveAction bei Bedarf dasselbe tut -->
+					<MenuItem onAction="#handleSaveAsAction" text="Save As..." />
+					<SeparatorMenuItem />
+
+					<!-- GRUPPE 3: PROJEKT-KONFIGURATION -->
+					<MenuItem onAction="#handleProjectSettings" text="Project Settings..." />
+					<SeparatorMenuItem />
+
+					<!-- GRUPPE 4: OUTPUT -->
+					<MenuItem onAction="#handleExportHtmlAction" text="Export HTML..." />
+					<MenuItem accelerator="Ctrl+P" onAction="#handlePrintAction" text="Print..." />
+					<SeparatorMenuItem />
+
+					<!-- GRUPPE 5: SYSTEM -->
+					<MenuItem onAction="#handleExitAction" text="Exit" />
+				</Menu>
+				<Menu text="Edit">
+					<MenuItem accelerator="Ctrl+Z" onAction="#handleUndoAction" text="Undo" />
+					<MenuItem accelerator="Ctrl+Y" onAction="#handleRedoAction" text="Redo" />
+					<SeparatorMenuItem />
+
+					<!-- Standard Edit-Operationen -->
+					<MenuItem accelerator="Ctrl+X" onAction="#handleCutAction" text="Cut" />
+					<MenuItem accelerator="Ctrl+C" onAction="#handleCopyAction" text="Copy" />
+					<MenuItem accelerator="Ctrl+V" onAction="#handlePasteAction" text="Paste" />
+					<SeparatorMenuItem />
+					<MenuItem accelerator="Ctrl+A" onAction="#handleSelectAllAction" text="Select All" />
+
+					<!-- NEU: Der Formatter als krönender Abschluss der Edit-Sektion -->
+					<SeparatorMenuItem />
+					<MenuItem accelerator="Ctrl+Shift+F" onAction="#handleFormatAction" text="Format Document" />
+				</Menu>
+				<!-- Optional: View Menu -->
+				<Menu text="View">
+					<MenuItem accelerator="Ctrl+E" onAction="#handleToggleView" text="Toggle Preview" />
+					<MenuItem onAction="#handleToggleWordWrap" text="Toggle Word Wrap" />
+					<MenuItem accelerator="Ctrl+D" onAction="#handleToggleDarkMode" text="Toggle Dark Mode" />
+				</Menu>
+			</MenuBar>
+			<HBox alignment="CENTER_LEFT" styleClass="action-bar">
+				<!-- Linke Gruppe: Action Bar -->
+				<HBox alignment="CENTER_LEFT" styleClass="action-bar" HBox.hgrow="ALWAYS">
+					<!-- File Operations -->
+					<Button fx:id="loadButton" onAction="#handleOpenDocumentAction" styleClass="action-button" text="Open" />
+					<Button fx:id="newDocumentButton" onAction="#handleNewDocumentAction" styleClass="action-button" text="New" />
+					<Separator orientation="VERTICAL" />
+
+					<!-- Save Operations -->
+					<StackPane fx:id="saveButtonContainer" HBox.hgrow="NEVER">
+						<Button fx:id="saveButton" onAction="#handleSaveAction" styleClass="action-button" text="Save" />
+						<Label fx:id="saveSuccessLabel" visible="false" managed="false" styleClass="action-button-overlay" text="Saved" />
+					</StackPane>
+					<Separator orientation="VERTICAL" />
+
+					<!-- Dokument-Konfiguration -->
+					<Button fx:id="projectSettingsButton" onAction="#handleProjectSettings" styleClass="action-button" text="Settings" />
+					<!-- Z.B. in der HBox der Top-Toolbar, neben dem "Settings"-Button -->
+					<Button fx:id="injectThemeButton" onAction="#handleInjectTheme" styleClass="action-button" text="Inject Theme" />
+					<Separator orientation="VERTICAL" />
+
+					<!-- Export & Print -->
+					<Button fx:id="exportHtmlButton" onAction="#handleExportHtmlAction" styleClass="action-button" text="Export HTML" />
+					<Button fx:id="printButton" onAction="#handlePrintAction" styleClass="action-button" text="Print" />
+				</HBox>
+
+				<!-- Der Spacer, der die beiden Gruppen auseinander drückt -->
+				<Region HBox.hgrow="ALWAYS" />
+
+				<!-- Rechte Gruppe: Suche -->
+				<HBox alignment="CENTER_RIGHT" HBox.hgrow="NEVER">
+					<Button fx:id="searchButton" onAction="#handleSearchButtonAction" styleClass="toolbar-button" />
+				</HBox>
+			</HBox>
+		</VBox>
+	</top>
+	<!-- LEFT: SIDEBAR TOOLS -->
+	<left>
+		<VBox fx:id="sideBar" prefWidth="86.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+
+			<!-- 1. SCROLLABLE AREA (Upper Tools) -->
+			<ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="sidebar-scroll-pane" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+				<content>
+					<VBox alignment="TOP_CENTER" spacing="8.0" styleClass="sidebar-content">
+						<padding>
+							<Insets bottom="15.0" left="4.0" right="4.0" top="5.0" />
+						</padding>
+
+						<!-- PRIMARY ACTION: TEMPLATE LIBRARY NEXUS (Load & Save) -->
+						<Button fx:id="templateButton" maxWidth="Infinity" onAction="#handleTemplateLibraryAction" styleClass="sidebar-icon-button" />
+
+						<Separator />
+
+						<!-- SECTION: HISTORY (Timeline Control) -->
+						<HBox alignment="CENTER" spacing="4">
+							<Button fx:id="undoButton" maxWidth="Infinity" onAction="#handleUndoAction" styleClass="sidebar-icon-button" HBox.hgrow="ALWAYS" />
+							<Button fx:id="redoButton" maxWidth="Infinity" onAction="#handleRedoAction" styleClass="sidebar-icon-button" HBox.hgrow="ALWAYS" />
+						</HBox>
+
+						<!-- SECOND SEPARATOR: Separates History from Formatting -->
+						<Separator />
+
+						<!-- SECTION: FORMATTING TOOLS (Content Control) -->
+						<GridPane alignment="CENTER" hgap="4" vgap="4">
+							<columnConstraints>
+								<ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+								<ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+							</columnConstraints>
+
+							<!-- Row 0: Basic Style (Bold/Italic) -->
+							<Button fx:id="boldButton" maxWidth="Infinity" onAction="#handleBoldAction" styleClass="sidebar-icon-button" text="B" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+							<Button fx:id="italicButton" maxWidth="Infinity" onAction="#handleItalicAction" styleClass="sidebar-icon-button" text="I" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+							<!-- Row 1: Advanced Style -->
+							<Button fx:id="strikethroughButton" maxWidth="Infinity" onAction="#handleStrikethroughAction" styleClass="sidebar-icon-button" text="S" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+							<Button fx:id="inlineCodeButton" maxWidth="Infinity" onAction="#handleInlineCodeAction" styleClass="sidebar-icon-button" text="&lt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+							<!-- Row 2: Lists -->
+							<Button fx:id="bulletListButton" maxWidth="Infinity" onAction="#handleBulletListAction" styleClass="sidebar-icon-button" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+							<Button fx:id="orderedListButton" maxWidth="Infinity" onAction="#handleOrderedListAction" styleClass="sidebar-icon-button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+							<!-- Row 3: Tasks & HR -->
+							<Button fx:id="taskListButton" maxWidth="Infinity" onAction="#handleTaskListAction" styleClass="sidebar-icon-button" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+							<Button fx:id="hrButton" maxWidth="Infinity" onAction="#handleHrAction" styleClass="sidebar-icon-button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+							<rowConstraints>
+								<RowConstraints />
+								<RowConstraints />
+								<RowConstraints />
+								<RowConstraints />
+							</rowConstraints>
+						</GridPane>
+
+						<Separator />
+
+						<!-- STRUCTURE & INSERT -->
+						<VBox alignment="CENTER" spacing="5">
+
+							<!-- Heading Menu -->
+							<MenuButton fx:id="headingMenuButton" ellipsisString="" maxWidth="Infinity" popupSide="RIGHT" text="H">
+								<items>
+									<MenuItem onAction="#handleHeadingAction" text="H1 - Main Title" userData="1" />
+									<MenuItem onAction="#handleHeadingAction" text="H2 - Section" userData="2" />
+									<MenuItem onAction="#handleHeadingAction" text="H3 - Subsection" userData="3" />
+									<MenuItem onAction="#handleHeadingAction" text="H4 - Detail" userData="4" />
+									<MenuItem onAction="#handleHeadingAction" text="H5 - Sub-Detail" userData="5" />
+									<MenuItem onAction="#handleHeadingAction" text="H6 - Appendix" userData="6" />
+									<SeparatorMenuItem />
+									<MenuItem onAction="#handleRemoveHeadingAction" text="Reset to Plain Text" />
+								</items>
+							</MenuButton>
+
+							<!-- Insert Grid (2x2) -->
+							<GridPane alignment="CENTER" hgap="4" vgap="4">
+								<columnConstraints>
+									<ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+									<ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+								</columnConstraints>
+
+								<!-- Row 0: Link & Image -->
+								<Button fx:id="linkButton" maxWidth="Infinity" onAction="#handleLinkAction" styleClass="sidebar-icon-button" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+								<Button fx:id="imageButton" maxWidth="Infinity" onAction="#handleImageAction" styleClass="sidebar-icon-button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+								<!-- Row 1: Quote & Code -->
+								<Button fx:id="quoteButton" maxWidth="Infinity" onAction="#handleBlockquoteAction" styleClass="sidebar-icon-button" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+								<Button fx:id="codeBlockButton" maxWidth="Infinity" onAction="#handleCodeBlockAction" styleClass="sidebar-icon-button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+								<rowConstraints>
+									<RowConstraints />
+									<RowConstraints />
+								</rowConstraints>
+							</GridPane>
+
+							<Separator />
+							<!-- In der Sidebar VBox -->
+							<MenuButton fx:id="placeholderMenuButton" ellipsisString="" maxWidth="Infinity" popupSide="RIGHT">
+								<!-- Items werden programmatisch gefüllt -->
+							</MenuButton>
+							<!-- NEU: TRENUNG ZUR STRUKTUR-EBENE -->
+							<Separator />
+							<VBox alignment="CENTER" spacing="8">
+								<Label style="-fx-font-size: 9px; -fx-text-fill: #808080; -fx-font-weight: bold;" text="LAYOUT" />
+
+								<!-- Der Seitenumbruch als erster Vertreter der HTML-Souveränität -->
+								<Button fx:id="pageBreakButton" maxWidth="Infinity" onAction="#handleInsertPageBreak" styleClass="sidebar-icon-button" />
+
+								<!-- Platz für zukünftige Wizards (Form-Wizard, Table-Wizard) -->
+							</VBox>
+
+							<Separator />
+						</VBox>
+					</VBox>
+				</content>
+			</ScrollPane>
+
+			<!-- 2. FIXED BOTTOM AREA (View & Settings) -->
+			<VBox alignment="BOTTOM_CENTER" spacing="8.0" styleClass="sidebar-bottom-area">
+				<padding>
+					<Insets bottom="15.0" left="6.0" right="6.0" top="0.0" />
+				</padding>
+
+				<Separator styleClass="sidebar-separator" />
+
+				<!-- Word Wrap Toggle -->
+				<ToggleButton fx:id="wordWrapToggle" maxWidth="Infinity" onAction="#handleToggleWordWrap" styleClass="sidebar-button" text="Wrap" />
+
+				<!-- View Toggle (WebView an/aus) -->
+				<ToggleButton fx:id="viewToggleButton" maxWidth="Infinity" onAction="#handleToggleView" styleClass="sidebar-button" text="View" />
+
+				<!-- NEU: Design Toggle (CSS Editor an/aus) -->
+				<ToggleButton fx:id="designModeButton" maxWidth="Infinity" onAction="#handleToggleDesignMode" styleClass="sidebar-button" text="Design" />
+
+				<!-- Dark Mode (Shortcut hier auf Ctrl+Shift+D ändern, da Ctrl+D für Design besser ist) -->
+				<Button fx:id="darkModeButton" maxWidth="Infinity" onAction="#handleToggleDarkMode" styleClass="sidebar-button" text="Dark" />
+			</VBox>
+
+
+		</VBox>
+	</left>
+
+	<!-- CENTER: SOVEREIGN WORKSPACE (Dual-Axis Split) -->
+	<center>
+		<SplitPane fx:id="mainSplitPane" dividerPositions="1.0" styleClass="editor-area" BorderPane.alignment="TOP_LEFT">
+			<items>
+				<!-- LEFT AXIS: The Code Laboratory -->
+				<SplitPane fx:id="leftSplitPane" dividerPositions="0.0" orientation="VERTICAL">
+					<items>
+						<!-- TOP: Markdown Content Unit (Brute Force Stability) -->
+						<HBox fx:id="editorUnit" alignment="CENTER_LEFT" maxHeight="Infinity" minWidth="0.0">
+							<children>
+								<!-- Der Platzhalter für den Editor. Er MUSS wachsen. -->
+								<StackPane fx:id="editorContainer" minWidth="300.0" prefWidth="300.0" HBox.hgrow="ALWAYS" />
+
+								<!-- Die Diagnose-Leiste. Fest verankert. -->
+								<Pane fx:id="diagnosticsStripe" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" style="-fx-background-color: #2b2b2b; -fx-border-color: #404040; -fx-border-width: 0 0 0 1;" />
+							</children>
+						</HBox>
+						
+						<!-- BOTTOM: Sovereign Design Nexus (CSS Sanctuary) -->
+						<VBox fx:id="designPane" managed="false" maxHeight="Infinity" visible="false">
+							<children>
+								<StackPane fx:id="styleEditorContainer" minWidth="300.0" prefWidth="300.0" VBox.vgrow="ALWAYS" />
+								<HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #2b2b2b; -fx-padding: 5 15; -fx-border-color: #404040; -fx-border-width: 0 0 1 0;">
+									<children>
+										<Label style="-fx-font-weight: bold; -fx-text-fill: #D79050;" text="Design Focus:" />
+										<Label fx:id="activeContextLabel" style="-fx-font-family: 'Consolas'; -fx-text-fill: #AAB8C7;" text="none" />
+										<Separator orientation="VERTICAL" />
+										<Button fx:id="suggestRuleButton" managed="false" onAction="#handleCreateNewRule" styleClass="button-primary" visible="false" />
+										<Region HBox.hgrow="ALWAYS" />
+										<Button onAction="#handleToggleDesignMode" styleClass="search-nav-button" text="X" />
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+					</items>
+				</SplitPane>
+
+				<!-- RIGHT AXIS: Independent Preview Container -->
+				<StackPane fx:id="previewContainer" managed="false" visible="false">
+					<children>
+						<WebView fx:id="webView" />
+						<Button fx:id="undockButton" onAction="#handleUndockPreview" styleClass="preview-undock-button" StackPane.alignment="BOTTOM_LEFT">
+							<StackPane.margin>
+								<Insets bottom="16" left="1" />
+							</StackPane.margin>
+						</Button>
+					</children>
+				</StackPane>
+			</items>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+		</SplitPane>
+	</center>
+
+	<!-- BOTTOM: STATUS BAR (Pure Information) -->
+	<bottom>
+		<HBox fx:id="bottomBar" alignment="CENTER_LEFT" prefHeight="28.0" spacing="10.0" styleClass="bottom-bar">
+			<children>
+				<Label fx:id="statusLabel" minWidth="60.0" styleClass="status-label-bold" text="Untitled" HBox.hgrow="SOMETIMES" />
+				<Separator orientation="VERTICAL" />
+				<Label fx:id="formatStatusLabel" styleClass="status-label" text="Format: A4 Portrait" />
+				<Separator orientation="VERTICAL" />
+				<Label fx:id="errorCountLabel" styleClass="status-label" text="Errors: 0" />
+				<Region HBox.hgrow="ALWAYS" />
+				<HBox alignment="CENTER" minWidth="250.0" spacing="15">
+					<Label fx:id="wordCountLabel" styleClass="status-label" text="Words: 0" />
+					<Separator orientation="VERTICAL" />
+					<Label fx:id="charCountLabel" styleClass="status-label" text="Chars: 0" />
+					<Separator orientation="VERTICAL" />
+					<Label fx:id="positionLabel" minWidth="90.0" styleClass="status-label" text="Ln 1, Col 1" />
+				</HBox>
+			</children>
+			<padding>
+				<Insets bottom="4.0" left="15.0" right="15.0" top="4.0" />
+			</padding>
+		</HBox>
+	</bottom>
+
+</BorderPane>

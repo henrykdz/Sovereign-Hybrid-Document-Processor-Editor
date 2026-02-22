@@ -1,0 +1,1082 @@
+/* =========================================================================
+   FlowShift Markdown Editor - Final Dark Theme
+   ========================================================================= */
+
+ .root {
+
+    -fx-light-text-color: #ffffff;
+
+    /*-fx-text-background-color: #dedede; */
+    -fx-text-inner-color: #dedede;
+    -fx-focused-text-base-color: #dedede;
+    -fx-focused-mark-color: #264F78;
+    -fx-dark-text-color: #000000;
+    -fx-mid-text-color: #ff8888;
+    
+    -fx-cursor: default;
+    /*-fx-font-family: "Segoe UI Emoji",
+                      "Apple Color Emoji",
+                      "Noto Color Emoji",
+                      "Segoe UI",
+                      "System"; */
+    -fx-font-size: 10.0pt;
+  /*  -fx-text-fill: #B9D7C6; /* Hier ändern auf #A9B7C6 */
+    -fx-base: #1a1c24;
+    -fx-background: #1a1c24;
+    -fx-control-inner-background: #252526;
+    
+ /* Ein sattes, tiefes Rost-Orange - Dunkel genug für weiße Schrift */
+    -fx-accent: #A1331D;         
+    -fx-selection-bar: #A1331D;  
+    
+    /* Cyan bleibt nur für den primären Aktions-Button */
+    -fx-default-button: #20BFDF; 
+}
+/* =========================================================================
+   GLOBAL ACCENT REFINEMENT - VULCAN ORANGE
+   ========================================================================= */
+.root {
+    /* Ein sattes, tiefes Rost-Orange - Optimiert für weißen Textkontrast */
+    -fx-accent: #A1331D;         
+    -fx-selection-bar: #A1331D;  
+    
+    /* Cyan bleibt als technisches Signal für den primären System-Button */
+    -fx-default-button: #209FAF; 
+}
+
+/* =========================================================================
+   UNIVERSAL MENU & CONTEXT STYLES
+   ========================================================================= */
+
+/* Einheitliches Design für ALLE Menü-Fenster (Top, Sidebar, Editor) */
+.context-menu {
+    -fx-background-color: #2b2b2b; /* Das professionelle Dunkelgrau */
+    -fx-border-color: #404040;
+    -fx-border-width: 1.0px;
+    -fx-background-radius: 4.0px;
+    -fx-border-radius: 4.0px;
+    /* Subtiler Schatten für Tiefenwirkung (Elevation) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.4), 10.0, 0.0, 0.0, 5.0);
+}
+
+/* Das Label (Text) innerhalb eines jeden Menü-Eintrags */
+.menu-item .label {
+    -fx-background-color: transparent !important; /* Heilung: Entfernt den blauen/grauen Kasten */
+    -fx-text-fill: #dedede;
+    -fx-padding: 0.0 5.0px;
+}
+
+/* =========================================================================
+   INTERACTION STATES (Hover & Focus)
+   ========================================================================= */
+
+/* Der aktive Menü-Header oben (z.B. "Edit"), wenn das Menü aufgeklappt ist */
+.menu-bar .menu:showing {
+    -fx-background-color: #A1331D;
+    -fx-text-fill: white;
+}
+
+/* Der fokussierte/gehoverte Eintrag innerhalb eines Menüs */
+.menu-item:focused, 
+.menu-item:hover {
+    -fx-background-color: #A1331D !important;
+}
+
+/* Weißer Text auf dem Orange für maximale Lesbarkeit */
+.menu-item:focused .label, 
+.menu-item:hover .label {
+    -fx-text-fill: white !important;
+    /* Kontrast-Verstärker durch Text-Schatten */
+    -fx-effect: dropshadow(one-pass-box, rgba(0.0,0.0,0.0,0.5), 2.0, 0.0, 0.0, 1.0);
+}
+/* =========================================================================
+   FLOWSHIFT BRANDING - THE SOVEREIGN PALETTE
+   ========================================================================= */
+.root, .dialog-pane {
+    -nexus-bg: #1a1c24; /* Der tiefe Hintergrund */
+    -nexus-surface: #2b2b2b; /* Panels & Container */
+    -nexus-surface-interactive: #3a3a3a; /* Buttons */
+    -nexus-border: #404040; /* Linien & Ränder */
+    -nexus-text-primary: #dedede; /* Haupttext */
+    -nexus-text-secondary: #AAB8C7; /* Hilfstext & Icons */
+    -nexus-accent-primary: #20BFDF; /* Cyan für Aktionen */
+    -nexus-accent-secondary: #D79050; /* Orange für Sektionen */
+    -nexus-accent-error: #FF5252; /* Rot für Warnungen */
+}
+
+
+/* =========================================================================
+   ACTION BAR STYLES (Top Toolbar) - Precise Symmetrie
+   ========================================================================= */
+.action-bar {
+    -fx-background-color: #1a1c24;
+    -fx-border-color: #404040;
+    -fx-border-width: 0.0 0.0 1.0px 0.0;
+    
+    /* PRÄZISIONS-KORREKTUR: 
+       Reihenfolge: oben (4), rechts (10), unten (4), links (2) */
+    -fx-padding: 4.0px 10.0px 4.0px 2.0px; 
+    
+    -fx-spacing: 2.0px;
+    -fx-min-height: 42.0px;
+    -fx-max-height: 42.0px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Gemeinsame Basis: Alle Controls exakt 34px hoch */
+.action-button, 
+.format-choice-box,
+.action-bar .button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4.0px; /* Bewahrt die Rundungen */
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    
+    /* HIER DIE FIXIERUNG AUF DIE HÖHE DER CHOICEBOX */
+    -fx-pref-height: 34.0px;
+    -fx-min-height: 34.0px;
+    -fx-max-height: 34.0px;
+    
+    -fx-padding: 0.0 12.0px; /* Vertikales Padding auf 0, da pref-height steuert */
+    -fx-text-fill: #A9B7C6;
+    -fx-font-size: 13.0px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-graphic-text-gap: 6.0px;
+}
+
+/* Spezifisch für ChoiceBox Label */
+.format-choice-box .label {
+    -fx-text-fill: #A9B7C6;
+    -fx-font-size: 13.0px;
+    -fx-padding: 0.0;
+}
+
+/* --- ZUSTÄNDE --- */
+
+.action-button:hover, 
+.format-choice-box:hover,
+.action-bar .button:hover {
+    -fx-background-color: #3e3e42;
+    -fx-text-fill: white;
+}
+
+.action-button:hover .label,
+.format-choice-box:hover .label {
+    -fx-text-fill: white;
+}
+
+.action-button:pressed, 
+.action-bar .button:pressed {
+    -fx-background-color: #264F78;
+}
+
+/* --- IKONLI FIX (Farben wieder herstellen) --- */
+
+.action-button .ikonli-font-icon, 
+.action-bar .button .ikonli-font-icon {
+    -fx-icon-color: #A9B7C6;
+    -fx-fill: #A9B7C6;
+}
+
+.action-button:hover .ikonli-font-icon, 
+.action-bar .button:hover .ikonli-font-icon {
+    -fx-icon-color: white;
+    -fx-fill: white;
+}
+
+/* --- CHOICEBOX PFEIL --- */
+.format-choice-box .arrow {
+    -fx-background-color: #A9B7C6;
+}
+
+.format-choice-box:hover .arrow {
+    -fx-background-color: white;
+}
+
+/* =========================================================================
+   SEARCH BAR STYLES
+   ========================================================================= */
+.search-highlight {
+    -fx-fill: black;
+    -rtfx-background-color: #ffc107;
+}
+
+.search-box {
+    -fx-background-color: #3e3e42;
+    -fx-padding: 4.0px 6.0px;
+    -fx-background-radius: 5.0px;
+}
+
+.search-field {
+    -fx-background-color: #252526;
+    -fx-border-color: #404040;
+    -fx-border-radius: 3.0px;
+    -fx-text-fill: #dedede;
+    -fx-prompt-text-fill: #777;
+    -fx-padding: 4.0px 6.0px;
+}
+
+.search-field:focused {
+    -fx-border-color: #264F78;
+    -fx-border-width: 1.5px;
+}
+
+.search-nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A9B7C6;
+    -fx-font-weight: bold;
+    -fx-padding: 4.0px 6.0px;
+    -fx-cursor: hand;
+}
+
+.search-nav-button:hover {
+    -fx-background-color: #252526;
+    -fx-background-radius: 3.0px;
+}
+
+.search-nav-button:pressed {
+    -fx-background-color: #264F78;
+    -fx-text-fill: white;
+}
+
+.search-match-label {
+    -fx-text-fill: #A9B7C6;
+    -fx-padding: 0.0 5.0px;
+    -fx-min-width: 50.0px;
+    -fx-max-width: 50.0px;
+    -fx-alignment: CENTER;
+}
+
+/* =========================================================================
+   TEXT FIXES FOR ALL CONTROLS
+   ========================================================================= */
+ .label, .button, .text-input, .toggle-button, .menu-button {
+    -fx-text-fill: #dedede;
+}
+/* =========================================================================
+   SIDEBAR STYLES
+   ========================================================================= */
+.sidebar {
+    -fx-background-color: #1a1c24; 
+    -fx-border-color: #404040;
+    -fx-border-width: 0.0 1.0px 0.0 0.0;
+}
+
+/* Ersetzt die aggressive .sidebar * Regel */
+.sidebar, 
+.sidebar .vbox, 
+.sidebar .hbox, 
+.sidebar .grid-pane, 
+.sidebar .scroll-pane, 
+.sidebar .scroll-pane > .viewport {
+    -fx-background-color: #1a1c24;
+}
+
+.sidebar .scroll-pane,
+.sidebar .scroll-pane > .viewport,
+.sidebar .vbox,
+.sidebar .hbox,
+.sidebar .grid-pane {
+    -fx-background-color: #1a1c24;
+}
+
+.sidebar .button,
+.sidebar .toggle-button,
+.sidebar .menu-button,
+.sidebar .combo-box {
+	-fx-alignment: CENTER-LEFT;
+	-fx-background-color: transparent;
+    -fx-background-radius: 4.0px;
+    -fx-border-color: transparent;
+    -fx-text-fill: #A9B7C6; /* Hier ändern auf #A9B7C6 */
+    -fx-cursor: hand;
+    -fx-font-size: 13.0px;
+}
+
+
+
+
+/* --- NEUE, SPEZIFISCHE REGEL HIER EINFÜGEN --- */
+/* Korrigiert die Textfarbe für den MenuButton und sein inneres Label,
+   um die globale Regel am Ende der Datei zu überschreiben. */
+.sidebar .menu-button, 
+.sidebar .menu-button .label {
+    -fx-text-fill: #A9B7C6;
+}
+/* ------------------------------------------- */
+
+.sidebar-icon-button {
+    -fx-alignment: CENTER !important;
+    -fx-padding: 5.0px;
+}
+
+
+.sidebar .button:hover,
+.sidebar .toggle-button:hover,
+.sidebar .menu-button:hover {
+    -fx-background-color: #3e3e42;
+    -fx-text-fill: white;
+}
+
+.sidebar .button:pressed,
+.sidebar .toggle-button:selected,
+.sidebar .menu-button:showing {
+    -fx-background-color: #264F78;
+    -fx-text-fill: white;
+}
+
+.sidebar .menu-button > .arrow-button > .arrow {
+    -fx-background-color: #b0b0b0;
+}
+
+.sidebar .menu-button:hover > .arrow-button > .arrow {
+    -fx-background-color: white;
+}
+
+.sidebar .menu-button:showing > .arrow-button > .arrow {
+    -fx-background-color: white;
+}
+
+/* =========================================================================
+   BOTTOM BAR STYLES
+   ========================================================================= */
+.bottom-bar {
+    -fx-background-color: #1a1c24;
+    -fx-border-color: #404040;
+    -fx-border-width: 1.0px 0.0 0.0 0.0;
+}
+
+.bottom-bar .label {
+    -fx-text-fill: #A9B7C6;
+    -fx-font-size: 12.0px;
+}
+
+
+.button-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A9B7C6;
+    -fx-border-color: #404040;
+    -fx-border-width: 1.0px;
+    -fx-border-radius: 3.0px;
+    -fx-cursor: hand;
+    -fx-padding: 5.0px 10.0px;
+    -fx-graphic-text-gap: 6.0px;
+}
+
+.ikonli-font-icon {
+    -fx-icon-color: -fx-text-fill;
+    -fx-fill: -fx-text-fill;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #3e3e42;
+    -fx-border-color: #AAB8C7;
+    -fx-text-fill: white;
+}
+
+/* =========================================================================
+   GLOBAL CONTROL ALIGNMENT (28px Standard)
+   ========================================================================= */
+
+.text-field, 
+.choice-box, 
+.button,
+.toggle-button,
+.menu-button {
+    -fx-min-height: 28.0px;
+    -fx-pref-height: 28.0px;
+    -fx-max-height: 28.0px;
+    -fx-font-size: 12.0px;
+    
+    -fx-border-insets:		0.0;
+    -fx-background-insets:	0.0;
+}
+
+/* ChoiceBox Spezial-Fix */
+.choice-box > .label {
+    -fx-padding: 0.0 5.0 0.0 5.0;
+}
+
+/* Buttons zentrieren, aber ohne das Padding zu überschreiben */
+.button, .toggle-button {
+    -fx-alignment: CENTER;
+}
+
+
+/* Editor Wachstum (Wissenschaftliche Notation entfernt) */
+.editor {
+    -fx-min-height: 200.0px;
+    -fx-pref-height: -1.0; 
+    -fx-max-height: 20000.0px; /* Ein sicherer großer Wert statt E308 */
+    
+}
+
+/* =========================================================================
+   EDITOR & RICHTEXTFX STYLES
+   ========================================================================= */
+.editor, .editor .content {
+    -fx-background-color: #1a1c24;
+	-fx-font-family: Consolas, monospace;
+    -fx-font-size: 14.0px;
+    -fx-fill: #BAC8D7;
+    
+
+}
+
+.editor .text {
+    -fx-font-family: Consolas, monospace;
+    /*-fx-font-size: 14.0px;  would change lineno line number size*/ 
+}
+
+
+.editor .caret {
+    -fx-stroke: white;
+}
+
+
+/* =========================================================================
+   SELECTION STYLES - Definitive Fix
+   ========================================================================= */
+
+.ui-selection {
+    -fx-fill: #ffffff; /* Weißer Text für maximale Lesbarkeit */
+}
+
+/* =========================================================================
+   SELECTION STYLES - Performance-Fix (v7.7.3)
+   ========================================================================= */
+
+.editor .selection {
+    /* Dein Vulcan-Dunkelrot (#91231D), aber mit 50% Transparenz */
+    /* Dadurch "leuchten" die Highlighter-Farben von unten durch. */
+    -fx-fill: rgba(145.0, 35.0, 29.0, 0.4);
+    
+    /* Ein feiner weißer Rahmen macht die Auswahl trotzdem knackscharf */
+    -fx-stroke: rgba(255.0, 255.0, 255.0, 1.0);
+    -fx-stroke-width: 0.1;
+}
+
+
+
+.lineno {
+    -fx-alignment: center-right;
+    -fx-min-width:50.0;
+    -fx-pref-width:50.0;
+    -fx-max-width:50.0;
+    -fx-padding: 0.0 15.0 0.0 8.0;
+    -fx-background-color: #1a1c24;
+    -fx-border-color: #2A2D35;
+    -fx-border-width: 0.0 1.0px 0.0 0.0;
+    -fx-font-family: "Monaco", "Consolas", monospace;
+    -fx-font-size: 12.0px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #737a88;   /* Line Number*/
+}
+
+/* Aktuelle Zeilennummer (Cursorposition) */
+.lineno:current {
+    -fx-padding: 0.0 15.0 1.0 8.0;
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #C2C2C2;   /* Line Number*/
+}
+
+/* Dark Mode Support */
+.dark-mode .lineno {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: #888;
+}
+
+.dark-mode .lineno:current {
+    -fx-background-color: #1e3a5f;
+    -fx-text-fill: #90caf9;
+    -fx-border-color: #2196f3;
+}
+
+/* =========================================================================
+   PREVIEW UI OVERLAYS (v7.7.3)
+   ========================================================================= */
+
+.preview-undock-button {
+    /* Ein tiefes Grau mit 70% Deckkraft sorgt für Kontrast auf Weiß */
+    -fx-background-color: rgba(26.0, 28.0, 36.0, 0.7); 
+    -fx-border-color: #404040;
+    -fx-border-width: 1.0px;
+    -fx-border-radius: 4.0px;
+    -fx-background-radius: 4.0px;
+    -fx-cursor: hand;
+    -fx-padding: 6.0px;
+    /* Subtile Transparenz im Ruhezustand */
+    -fx-opacity: 0.6;
+}
+
+
+.preview-undock-button:hover {
+    /* Beim Hovern leuchtet das Vulcan-Orange auf */
+    -fx-background-color: #A1331D; 
+    -fx-border-color: #A1331D;
+    -fx-opacity: 1.0;
+    /* Schatten reduziert auf 3px, da er sonst am Rand abgeschnitten wirkt */
+    -fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.4), 3.0, 0.0, 0.0, 0.0);
+}
+
+.preview-undock-button .ikonli-font-icon {
+    -fx-icon-color: white;
+    -fx-fill: white;
+}
+
+
+/* Gutter Signal für Fehler */
+.lineno:error {
+    -fx-text-fill: #FFCA28;
+    -fx-border-color: transparent transparent transparent #FFCA28;
+    -fx-border-width: 0.0 0.0 0.0 2.0px;
+}
+
+/* Statusleiste Warnung */
+.status-label-error {
+    -fx-text-fill: #FF5252 !important;
+    -fx-font-weight: bold;
+}
+
+.status-badge {
+    -fx-background-color: #1a1c24;
+    -fx-border-color: #404040;
+    -fx-border-radius: 12.0;
+    -fx-background-radius: 12.0;
+    -fx-font-family: 'Consolas';
+    -fx-font-size: 14.0px;
+}
+
+/* Dynamische Zustände für das Badge */
+.status-ok {
+    -fx-text-fill: #4CAF50;
+    -fx-border-color: #4CAF5066;
+}
+
+.status-error {
+    -fx-text-fill: #FF3D00;
+    -fx-border-color: #FF3D0066;
+    -fx-font-weight: bold;
+}
+
+
+/* =========================================================================
+   STATUS LABELS
+   ========================================================================= */
+.status-label:dirty {
+    -fx-text-fill: #DC322F;
+}
+
+/* =========================================================================
+   SEPARATOR STYLES - UNIVERSAL
+   ========================================================================= */
+
+/* Alle vertikalen Separatoren */
+.separator:vertical .line {
+    -fx-border-color: rgba(255.0, 255.0, 255.0, 0.2);
+    -fx-border-width: 0.0 0.0 0.0 1.0px;
+}
+
+/* Alle horizontalen Separatoren */
+.separator:horizontal .line {
+    -fx-border-color: #404040;
+    -fx-border-width: 0.0 0.0 1.0px 0.0;
+}
+
+/* Sidebar-spezifisch (etwas dunkler) */
+.sidebar .separator:horizontal .line {
+    -fx-border-color: #404040;
+    -fx-border-width: 0.0 0.0 1.0px 0.0;
+}
+
+/* Spezielle Sidebar-Separatoren mit Klasse */
+.sidebar-separator:horizontal .line {
+    -fx-border-color: #505050;
+    -fx-border-width: 0.0 0.0 1.5px 0.0;
+}
+
+.status-label-bold {
+    -fx-font-weight: bold;
+    -fx-font-size: 11.3pt !important;
+    
+    -fx-text-fill: #A9B7C6; /* Sicherstellen, dass die Farbe stimmt */
+}
+
+
+
+/* =========================================================================
+   TOOLTIP STYLING (IDE-Level Legibility)
+   ========================================================================= */
+.tooltip {
+    /* Schriftgröße deutlich anheben (Standard ist oft nur 9pt) */
+    -fx-font-size: 11.0pt;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+    
+    /* Farben an deinen Editor anpassen */
+    -fx-background-color: #3e3e42; 
+    -fx-text-fill: #dedede;
+    
+    /* Polsterung für bessere Lesbarkeit */
+    -fx-padding: 6.0px 12.0px;
+    
+    /* Ein dezenter Rahmen, damit er sich vom Hintergrund abhebt */
+    -fx-border-color: #555555;
+    -fx-border-width: 1.0px;
+    -fx-border-radius: 4.0px;
+    -fx-background-radius: 4.0px;
+    
+    /* Schatten für den "Floating"-Effekt */
+    -fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.5), 10.0, 0.0, 0.0, 5.0);
+}
+
+/* --- SILENT SAVE FEEDBACK (Label Overlay) --- */
+
+/* Für den Container, der den Button und das Label hält */
+.action-button-container {
+    /* Setzt die Basisbreite, um Layout-Jitter zu verhindern */
+    -fx-min-width: 80.0px; 
+    -fx-max-width: 80.0px;
+}
+
+/* Der Überlagerungs-Label */
+.action-button-overlay {
+    -fx-alignment: CENTER; /* Zentriert Text und Icon */
+    -fx-graphic-text-gap: 5.0px; /* Abstand zwischen Icon und Text */
+    -fx-font-size: 13.0px; /* Anpassung der Schriftgröße */
+    -fx-font-weight: bold;
+    -fx-text-fill: #2ECC71; /* Emerald Green */
+    -fx-background-color: transparent; /* Sicherstellen, dass es keinen eigenen Hintergrund hat */
+    -fx-padding: 0.0; /* Passt sich dem Button an */
+}
+
+/* Optional: Icon Styling für das Overlay */
+.action-button-overlay .ikonli-font-icon {
+    -fx-icon-color: #2ECC71 !important;
+    -fx-fill: #2ECC71 !important;
+}
+
+/* =========================================================================
+   NEXUS DIALOG - FINAL & STABLE THEME
+   ========================================================================= */
+.nexus-dialog.dialog-pane { -fx-background-color: #1a1c24; }
+/* --- HAUPT-HEADER TEXT --- */
+.nexus-dialog .header-text {
+    -fx-padding: 0.0 0.0 10.0px 0.0;
+    -fx-font-size: 14.0px;
+    -fx-text-fill: #AAB8C7; /* FIX: Dezent grauer Text für den Haupt-Hinweis */
+    -fx-font-weight: normal;
+}
+/* Styling für die Header-Wrapper Box */
+.nexus-dialog .header-panel {
+    -fx-background-color: #2b2b2b; /* Die gewünschte Farbe */
+    -fx-padding: 6.0px; /* Optional: Etwas Polsterung */
+}
+
+/* =========================================================================
+   NEXUS DIALOG - UNIFIED BUTTON & INTERACTION SYSTEM (v7.7.3)
+   ========================================================================= */
+
+/* A. Die gemeinsame Basis (Weiche Ecken für solitäre Buttons) */
+.nexus-dialog .button,
+.nexus-dialog .toggle-button {
+    -fx-background-color: #3a3a3a;
+    -fx-background-radius: 2.0px; /* Weiche Ecken für alle */
+    -fx-border-color: #505050;
+    -fx-border-width: 1.0px;
+    -fx-border-radius: 2.0px;
+    -fx-text-fill: #AAB8C7;
+}
+
+/* B. DER SPEZIALFALL: SEGMENTED BUTTONS (Scharfe Kanten) */
+.nexus-dialog .segmented-button-bar .toggle-button {
+    -fx-background-radius: 2.0; /* Keine Rundung in der Mitte */
+    -fx-border-radius: 2.0;
+}
+
+/* C. INTERAKTIONS-ZUSTÄNDE (Einheitlich für alle) */
+.nexus-dialog .button:hover,
+.nexus-dialog .toggle-button:hover {
+    -fx-background-color: #4a4a4a;
+    -fx-border-color: #20BFDF;
+    -fx-text-fill: white;
+}
+.nexus-dialog .button:hover .ikonli-font-icon,
+.nexus-dialog .toggle-button:hover .ikonli-font-icon {
+    -fx-icon-color: white;
+}
+
+.nexus-dialog .toggle-button:selected,
+.nexus-dialog .button:pressed {
+    -fx-background-color: #A1331D;
+    -fx-border-color: #A1331D;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(161.0, 51.0, 29.0, 0.4), 8.0, 0.0, 0.0, 0.0);
+}
+.nexus-dialog .toggle-button:selected .ikonli-font-icon {
+    -fx-icon-color: white;
+}
+
+/* D. SPEZIALFÄLLE (Overrides) */
+/* ... (btnDelete, save-as-button, button-bar:default bleiben wie gehabt) ... */
+.nexus-dialog #btnDelete { -fx-background-color: transparent; -fx-text-fill: #ff5555; -fx-border-color: #ff5555; }
+.nexus-dialog #btnDelete:hover { -fx-background-color: #442222; }
+
+.nexus-dialog .save-as-button { -fx-background-color: #D79050; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-color: transparent; }
+.nexus-dialog .save-as-button:hover { -fx-background-color: #E8A161; }
+
+.nexus-dialog .button-bar .button:default {-fx-background-color: #20BFDF; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-color: transparent; }
+
+/* In editor-style.css den markNeutral-Zustand schärfen */
+.nexus-dialog .text-field {
+    /* Standard-Rahmen für alle Felder im Dialog */
+    -fx-border-color: #505050 !important; 
+    -fx-border-width: 1.0px !important;
+    -fx-background-color: #0d0e12 !important;
+}
+
+/* Cyan-Zustand (Aktiv) */
+.nexus-dialog .text-field:focused {
+    -fx-border-color: #20BFDF !important;
+}
+
+.nexus-dialog .vbox { /* Gilt für die rechte Spalte (rightBox) */
+    -fx-background-color: #1a1c24; /* Der tiefe Hintergrund */
+}
+
+/* Der Editor selbst bekommt seinen Arbeits-Hintergrund */
+.nexus-dialog .editor, .nexus-dialog .editor .content {
+    -fx-background-color: #1c1c1e; /* Leicht helleres Grau für den Editor */
+}
+
+/* Der souveräne Rahmen für die Design Forge */
+.forge-editor-container {
+    -fx-border-color: #666666;
+    -fx-border-width: 1.5px;
+    -fx-background-color: #1e1e1e; /* Hintergrund für den "Boden" des Containers */
+    -fx-border-radius: 4.0px;
+    -fx-background-radius: 4.0px;
+}
+
+/* In editor-style.css */
+
+.nexus-dialog .footer-separator {
+    -fx-padding: 0.0;
+    -fx-border-color: #404040;
+    -fx-border-width: 1.0px 0.0 0.0 0.0;
+}
+
+/* Optional: Button Bar Padding für mehr Fokus auf die Trennung */
+.nexus-dialog .button-bar {
+    -fx-padding: 10.0px 20.0px;
+}
+/* ==================== */
+/* CURSOR STYLES        */
+/* ==================== */
+
+/* Alle klickbaren Elemente - Basis-Regel */
+.button,
+.toggle-button,
+.check-box .box,           /* Nur das Box-Element der Checkbox */
+.radio-button .radio,      /* Nur das Radio-Element */
+.hyperlink {
+    -fx-cursor: hand;
+}
+
+/* Disabled Zustände - Cursor zurück auf default */
+.button:disabled,
+.toggle-button:disabled,
+.check-box:disabled .box,
+.radio-button:disabled .radio,
+.hyperlink:disabled {
+    -fx-cursor: default;
+    -fx-opacity: 0.5;
+}
+
+/* Spezifische Custom Buttons */
+.button-primary,
+.button-secondary,
+.icon-only-button {
+    -fx-cursor: hand;
+}
+
+
+/* Deaktivierte Custom Buttons */
+.button-primary:disabled,
+.button-secondary:disabled,
+.icon-only-button:disabled {
+    -fx-cursor: default;
+    -fx-opacity: 0.5;
+    -fx-effect: none;
+}
+
+/* HINT:  using ":odd" overwrites standard states on odd cells*/
+.list-cell {
+	-fx-accent: transparent;
+	-fx-alignment: CENTER-LEFT;
+	-fx-background-insets: 0.0;
+	-fx-padding: 1.0 0.0 1.0 8.0;
+	-fx-border-width: 1.0;
+	-fx-border-insets: 1.0;
+	-fx-background-insets: 0.0;
+}
+
+.list-cell:disabled {
+	-fx-accent: transparent;
+	/* -fx-background-color: transparent; */
+	-fx-control-inner-background: #c1c1c1;
+	-fx-opacity: 0.4;
+	/*-fx-border-color: color-border-disabled;*/
+}
+
+
+.list-cell:filled:selected {
+	-fx-text-fill: white;
+	-fx-border-insets: 1.0;
+   -fx-background-color: #A1331D;
+	/*-fx-border-color: color-border-focused; */
+}
+
+.list-cell:empty {
+	-fx-border-color: transparent;
+	-fx-background-color: transparent;
+	-fx-border-width: 0.0;
+	-fx-border-insets: 0.0;
+}
+
+
+
+.style-sanctuary {
+    /* Ein gedecktes Grau für den Text */
+    -fx-fill: #555555 !important;
+    /* Ein sehr dunkler Hintergrund für den gesamten Block */
+    -rtfx-background-color: rgba(20.0, 20.0, 25.0, 0.7); 
+}
+
+.toggle-button:selected {
+    -fx-background-color: rgba(32.0, 191.0, 223.0, 0.15); /* Zartes Cyan-Leuchten */
+    -fx-border-color: #20BFDF;
+}
+
+/* --- SOUVERÄNES DIALOG-STYLING --- */
+
+/* Der Standard-Zustand für inaktive/unberührte Felder */
+.field-neutral {
+    -fx-border-color: #555555;
+    -fx-border-width: 1.0px;
+}
+
+/* Der Zustand für aktive/veränderte Felder */
+.field-active {
+    -fx-border-color: #20BFDF;
+    -fx-border-width: 1.5px;
+}
+
+/* Spezial-Styling für den Paginierungs-Schalter */
+.pagination-toggle {
+    /* Standard-Aussehen, wenn weder aktiv noch selektiert */
+    -fx-background-color: transparent;
+}
+/* Styling für den ausgewählten Paginierungs-Schalter */
+.pagination-toggle:selected {
+    -fx-background-color: rgba(32.0, 191.0, 223.0, 0.1); /* Zartes Cyan-Leuchten */
+    -fx-border-color: #20BFDF;
+}
+
+/* 
+ * SOUVERÄNER SELEKTOR: 
+ * Wählt das Icon AUSSCHLIESSLICH DANN aus, wenn der Button selektiert ist.
+ */
+.pagination-toggle:selected .ikonli-font-icon {
+    -fx-icon-color: #20BFDF;
+}
+
+/* --- ERROR TOOLTIP STYLES - MIT !important FÜR SICHERHEIT --- */
+/* Ganz spezifisch - von der Wurzel an */
+.shadow-wrapper.layout-pane.error-tooltip-container {
+    -fx-background-color: #2b2b2b !important;
+}
+
+.shadow-wrapper .layout-pane .error-tooltip-surgical-header {
+    -fx-text-fill: #D79050 !important;
+    -fx-font-weight: bold !important;
+}
+
+/* Oder mit direkten Kind-Selektoren */
+.shadow-wrapper > .layout-pane > .error-tooltip-container > .error-tooltip-surgical-header {
+    -fx-text-fill: #D79050 !important;
+}
+
+
+/* =========================================================================
+   ERROR TOOLTIP STYLES - NUR FÜR ErrorTooltipManager
+   ========================================================================= */
+
+.error-tooltip-container {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #5a5a5a;
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-font-size: 12px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 4, 0, 0, 2);
+}
+
+.error-tooltip-surgical-header {
+    -fx-font-weight: bold;
+    -fx-text-fill: #D79050;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 8px 0;
+    -fx-border-color: transparent transparent #404040 transparent;
+    -fx-border-width: 1px;
+}
+
+.error-tooltip-surgical-meta-title {
+    -fx-opacity: 0.6;
+    -fx-font-size: 12px;
+}
+
+.error-tooltip-line {
+    -fx-text-fill: #20BFDF;
+    -fx-font-size: 12px;
+}
+
+.error-tooltip-type {
+    -fx-text-fill: #AAB8C7;
+    -fx-font-size: 12px;
+}
+
+.error-tooltip-surgical-details {
+    -fx-text-fill: #dedede;
+    -fx-font-size: 12px;
+    -fx-line-spacing: 2px;
+}
+
+.error-tooltip-separator {
+    -fx-background-color: #404040;
+    -fx-pref-height: 1px;
+}
+
+.error-tooltip-summary-grid-header {
+    -fx-font-weight: bold;
+    -fx-opacity: 0.7;
+    -fx-font-size: 12px;
+}
+
+.error-tooltip-summary-more-errors {
+    -fx-font-style: italic;
+    -fx-opacity: 0.6;
+    -fx-padding: 8px 0 0 0;
+    -fx-font-size: 12px;
+}
+
+
+/* =========================================================================
+   SYNTAX HIGHLIGHTING - THE DEFINITIVE NAMESPACES
+   ========================================================================= */
+
+
+/* --- 1. NAMESPACE: MD (Markdown Core) --- */
+.md-text            { -fx-fill: #AAB8C7; }
+
+/* 1. Die MARKER (Markdown '##' und HTML '<h2...>')
+ *    Sie sind die technischen Indikatoren für die Struktur.
+ */
+.md-heading, .html-heading-tag { 
+    -fx-fill: #569cd6; /* Ein technisches, kühles Blau */
+    -fx-font-weight: bold; 
+}
+
+/* 2. Der TEXT (Der eigentliche Inhalt der Überschrift)
+ *    Egal ob aus Markdown oder HTML, der Inhalt wird identisch behandelt.
+ */
+.md-heading-text { 
+    -fx-fill: #dcdcaa; /* Ein leuchtendes, warmes Gelb für den Inhalt */
+    -fx-font-weight: bold;
+}
+
+.md-bold            { -fx-fill: #DCDCAA; -fx-font-weight: bold; }
+.md-italic          { -fx-fill: #D16969; -fx-font-style: italic; }
+.md-strikethrough   { -fx-fill: #CB4B16; -fx-strikethrough: true; }
+.md-blockquote      { -fx-fill: #999999; }
+.md-list            { -fx-fill: #859900; }
+.md-hr              { -fx-fill: #A0A0A0; -fx-font-weight: bold; }
+.md-link            { -fx-fill: #4EC9B0; -fx-font-weight: bold; }
+.md-link-url        { -fx-fill: #6AB0F3; -fx-underline: true; }
+.md-image           { -fx-fill: #2AA198; -fx-font-style: italic; }
+.md-inline-code     { -fx-fill: #ffae78; -rtfx-background-color: #27262a; }
+.md-code-block      { -fx-fill: #6A9955; }
+.md-emoji           { -fx-fill: #AAB8C7; }
+.md-placeholder     { -fx-fill: #D16D9E; -fx-font-weight: bold; -rtfx-background-color: #283340; }
+
+/* --- 2. NAMESPACE: TBL (Tables) --- */
+.tbl-block          { -fx-fill: #cccccc; -rtfx-background-color: rgba(255.0, 255.0, 255.0, 0.03); }
+.tbl-header         { -fx-fill: #007ACC; -fx-font-weight: bold; }
+.tbl-row, .tbl-cell { -fx-fill: #d4d4d4; }
+.tbl-pipe           { -fx-fill: #505050; -fx-font-weight: bold; }
+
+/* --- 3. NAMESPACE: HTML (Hypertext) --- */
+.html-tag-bracket       { -fx-fill: #808080; }
+.html-tag-name      { -fx-fill: #569CD6; }
+.html-tag-name-closing { -fx-fill: #569CD6; -fx-opacity: 0.8; }
+.html-tag-style     { -fx-fill: #E65C26; -fx-font-weight: bold; } /* <style> Tag */
+
+.html-attr-name     { -fx-fill: #9cdcfe; }
+.html-attr-val      { -fx-fill: #ce9178; }
+.html-attr-class    { -fx-fill: #4EC9B0; }
+.html-attr-id       { -fx-fill: #C586C0; }
+.html-attr-url      { -fx-fill: #569cd6; -fx-underline: true; }
+.html-attr-style    { -fx-fill: #ce9178; }
+
+.html-comment       { -fx-fill: #6A9955; -fx-font-style: italic; }
+.html-entity        { -fx-fill: #B5CEA8; -fx-font-weight: bold; }
+.html-page-break    { -fx-fill: #A1331D; -fx-font-weight: bold; -rtfx-background-color: rgba(161.0, 51.0, 29.0, 0.15); }
+
+/* --- 4. NAMESPACE: CSS (Styles) --- */
+.css-selector       { -fx-fill: #d7ba7d; }
+.css-property       { -fx-fill: #9cdcfe; }
+.css-val            { -fx-fill: #ce9178; }
+.css-at-rule        { -fx-fill: #C586C0; }
+.css-important      { -fx-fill: #569cd6; -fx-font-weight: bold; }
+.css-punct          { -fx-fill: #D4D4D4; }
+.css-comment        { -fx-fill: #6a9955; -fx-font-style: italic; }
+
+
+/* Der passende Puls für die Diagnose-Leiste */
+.stripe-puls-design {
+    -fx-fill: #20BFDF;
+}
+
+/* Status-Label für Design-Fehler */
+.status-label-design {
+    -fx-text-fill: #20BFDF !important;
+    -fx-font-weight: bold;
+}
+
+/* --- 5. NAMESPACE: YAML (Frontmatter) --- */
+.yaml-delim         { -fx-fill: #808080; -fx-font-weight: bold; }
+.yaml-key           { -fx-fill: #569CD6; -fx-font-weight: bold; }
+.yaml-val           { -fx-fill: #CE9178; }
+.yaml-const         { -fx-fill: #B5CEA8; -fx-font-weight: bold; }
+.yaml-comment       { -fx-fill: #6A9955; -fx-font-style: italic; } /* Grün, wie HTML-Kommentare */
+
+
+/* --- 6. NAMESPACE: LINT (Feedback) --- */
+
+/* Struktur-Warnung: Nur die feine Magenta-Linie (kein Doppel-Effekt) */
+.lint-structure-warning {
+    -rtfx-underline-color: #FF00FF99; /* Magenta mit Alpha-Transparenz */
+    -rtfx-underline-width: 1.0;        /* Knackscharfe 1px Linie */
+}
+
+/* Kritischer Fehler: Nur die feine rote Linie */
+.lint-error {
+    -rtfx-underline-color: #FF5252;   /* Sattes Rot */
+    -rtfx-underline-width: 1.0;
+}
+
+/* Design-Integrität: Feine Cyan-Linie (7% Dicke) */
+.lint-design-integrity {
+    -rtfx-background-color: linear-gradient(to bottom, transparent 94.0%, #20BFDF 94.0%);
+}
+
+

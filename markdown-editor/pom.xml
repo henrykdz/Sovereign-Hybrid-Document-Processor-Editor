@@ -1,0 +1,501 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- This tag is mandatory for Maven 2.0+ POMs -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Project coordinates-->
+	<groupId>com.flowshift</groupId>
+	<artifactId>markdown-editor</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<!-- ===================================================================== -->
+	<!--                            PROJECT INFORMATION                        -->
+	<!-- ===================================================================== -->
+	<name>FlowShift - Markdown Editor</name>
+	<description>
+		[EN] A modal JavaFX Markdown editor featuring source code and visual
+		preview panes, developed by FlowShift. Utilizes RichTextFX and
+		Flexmark-Java. Intended for integration into applications like Webmarks.
+		[DE] Ein modaler JavaFX Markdown-Editor mit Quelltext- und visueller
+		Vorschau-Ansicht, entwickelt von FlowShift. Nutzt RichTextFX und
+		Flexmark-Java. Vorgesehen zur Integration in Anwendungen wie Webmarks.
+	</description>
+
+		<!-- ===================================================================== -->
+		<!--                            LICENSES & COPYRIGHT                       -->
+		<!-- ===================================================================== -->
+	<licenses>
+    	<license>
+        <name>Sovereign Commercial License</name>
+        <distribution>repo</distribution>
+        <comments>
+            Copyright © {2023-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.
+            This software is provided under a perpetual, royalty-free license
+            that grants unrestricted usage rights for all versions, including future
+            updates and distributions. Refer to the End User License Agreement (EULA)
+            distributed with the final application for detailed usage terms.
+            Ensure appropriate license headers are included in all source code files.
+            
+            -- Our commitment: Perpetual and unconditional rights. --
+        </comments>
+    	</license>
+	</licenses>
+
+	<!-- ===================================================================== -->
+	<!--                                DEVELOPERS                             -->
+	<!-- ===================================================================== -->
+	<developers>
+		<developer>
+			<id>hdzschuppan</id>
+			<name>Henryk Daniel Zschuppan</name>
+			<organization>FlowShift</organization>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/Berlin</timezone>
+		</developer>
+	</developers>
+
+	<!-- ===================================================================== -->
+	<!--                              PROPERTIES                               -->
+	<!-- ===================================================================== -->
+	<properties>
+				<!-- Core Build Settings -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>23</maven.compiler.source>
+		<maven.compiler.target>23</maven.compiler.target>
+		<javafx.module.name>com.flowshift.markdowneditor</javafx.module.name>
+
+		<!-- Dependency Versions -->
+		<richtextfx.version>0.11.7</richtextfx.version> <!-- The newer versions mandate JavaFX module system migration, which conflicts with our current non-modular (classpath-based) architecture (ER_02) and stability goals. Sticking to 0.11.7 for system coherence. -->
+		<flexmark.version>0.64.8</flexmark.version>
+        <ikonli.version>12.4.0</ikonli.version>
+		<junit.version>5.11.0</junit.version>
+		<jackson.databind.version>2.18.2</jackson.databind.version>
+		<jaxb.version>4.0.5</jaxb.version>
+		<gson.version>2.11.0</gson.version>
+		<org.jsoup.version>1.18.3</org.jsoup.version>
+
+		<!-- Maven Plugin Versions -->
+        <maven.compiler.version>3.12.1</maven.compiler.version>
+		<maven.shade.version>3.5.2</maven.shade.version>
+		<maven.jar.version>3.3.0</maven.jar.version> 
+		<maven.surefire.version>3.5.0</maven.surefire.version>
+		<maven.resources.version>3.3.1</maven.resources.version>
+	</properties>
+
+
+<!-- ===================================================================== -->
+	<!--                                 BUILD                                 -->
+	<!-- ===================================================================== -->
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.css</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<compilerArgs>
+						<arg>--module-path</arg>
+						<arg>${java.home}/jmods</arg>
+						<arg>--add-modules</arg>
+						<arg>javafx.controls,javafx.fxml,javafx.web,javafx.base,javafx.graphics,javafx.swing</arg>
+					</compilerArgs>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Resources Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven.resources.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Jar Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven.jar.version}</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<!-- ACHTUNG: DIES IST DIE HAUPTKLASSE FÜR DEN FALL, DASS NUR 'mvn jar:jar' ausgeführt wird -->
+							<mainClass>com.flowshift.editor.Launcher</mainClass> <!-- KORRIGIERT -->
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+						<manifestEntries>
+							<Multi-Release>true</Multi-Release>
+							<Created-By>FlowShift Markdown Editor</Created-By>
+							<Build-Jdk>${java.version}</Build-Jdk>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Surefire Plugin für Tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+					<argLine>
+						--module-path ${java.home}/jmods
+						--add-modules javafx.controls,javafx.fxml,javafx.web,javafx.base,javafx.graphics,javafx.swing
+					</argLine>
+				</configuration>
+			</plugin>
+
+			<!-- Shade plugin configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>${maven.shade.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<!-- ACHTUNG: DIES IST DIE HAUPTKLASSE FÜR DIE AUSFÜHRBARE JAR -->
+									<mainClass>com.flowshift.editor.Launcher</mainClass> <!-- KORRIGIERT -->
+									<manifestEntries>
+										<Multi-Release>true</Multi-Release>
+										<Created-By>FlowShift Markdown Editor</Created-By>
+										<Build-Jdk>${java.version}</Build-Jdk>
+										<Implementation-Title>${project.name}</Implementation-Title>
+										<Implementation-Version>${project.version}</Implementation-Version>
+										<JavaFX-Add-Modules>javafx.controls,javafx.fxml,javafx.web,javafx.base,javafx.graphics,javafx.swing</JavaFX-Add-Modules>
+									</manifestEntries>
+								</transformer>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+							</transformers>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+            <!-- JavaFX Maven Plugin -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <!-- HIER IST DER HINWEIS FÜR DEN IDE RUN / JLINK -->
+                    <mainClass>com.flowshift.editor.Launcher</mainClass>
+                    <stripDebug>true</stripDebug>
+                    <compress>2</compress>
+                    <noHeaderFiles>true</noHeaderFiles>
+                    <noManPages>true</noManPages>
+                    <launcher>applauncher</launcher>
+                    <jlinkImageName>app</jlinkImageName>
+                    <jlinkZipName>app-zip</jlinkZipName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jlink</id>
+                        <goals>
+                            <goal>jlink</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
+
+
+	<!-- Project repositories -->
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+
+		<repository>
+			<id>controlsfx-releases</id>
+			<url>http://controlsfx.github.io/controlsfx/maven/</url>
+		</repository>
+	</repositories>
+
+	<!-- ===================================================================== -->
+	<!--                              DEPENDENCIES                             -->
+	<!-- ===================================================================== -->
+	<dependencies>
+		<!-- RichTextFX für den Code/Source Editor -->
+		<dependency>
+			<groupId>org.fxmisc.richtext</groupId>
+			<artifactId>richtextfx</artifactId>
+			<version>${richtextfx.version}</version>
+		</dependency>
+
+		<!-- Flexmark für Markdown -> HTML Konvertierung -->
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark</artifactId>
+			<version>${flexmark.version}</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>com.vladsch.flexmark</groupId>
+    		<artifactId>flexmark-ext-attributes</artifactId>
+    		<version>${flexmark.version}</version>
+		</dependency>
+
+		<dependency>
+    		<groupId>com.vladsch.flexmark</groupId>
+    		<artifactId>flexmark-ext-anchorlink</artifactId>
+    		<version>${flexmark.version}</version>
+		</dependency>
+
+		<!-- Flexmark Extensions (spart Platz gegenüber flexmark-all) -->
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark-ext-tables</artifactId>
+			<version>${flexmark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark-ext-gfm-strikethrough</artifactId>
+			<version>${flexmark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark-ext-gfm-tasklist</artifactId>
+			<version>${flexmark.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark-ext-yaml-front-matter</artifactId>
+			<version>${flexmark.version}</version>
+		</dependency>
+
+		<!-- ======================================================= -->
+		<!--      IKONLI FONT ICON LIBRARY (https://kordamp.org/ikonli/) -->
+		<!-- ======================================================= -->
+
+		<!-- Core JavaFX integration for Ikonli -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-javafx</artifactId>
+			<version>${ikonli.version}</version>
+		</dependency>
+
+		<!-- ICON PACKS -->
+		<!-- A comprehensive icon pack, good for general use. -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-fontawesome5-pack</artifactId>
+			<version>${ikonli.version}</version>
+		</dependency>
+
+		<!-- The original Google Material Design icon pack. -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-material-pack</artifactId>
+			<version>${ikonli.version}</version>
+		</dependency>
+
+		<!-- The extended Material Design icon pack by community contributors. -->
+		<!-- This is often the most comprehensive one. -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-materialdesign-pack</artifactId>
+			<version>${ikonli.version}</version>
+		</dependency>
+
+		<!-- The successor icon pack to the original Material Design pack. -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-materialdesign2-pack</artifactId>
+			<version>${ikonli.version}</version>
+		</dependency>
+
+
+		<!-- JUnit 5 für Tests -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Mockito für Tests (optional) -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.8.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>5.8.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- ======================================================= -->
+		<!--      JSON SERIALIZATION (Jackson Databind) -->
+		<!--      Nötig für das Speichern/Laden von settings.json -->
+		<!-- ======================================================= -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.databind.version}</version>
+		</dependency>
+
+		<!-- Optional: Wenn du Gson nutzen willst, wäre dieser Block nötig -->
+		<!-- 
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        -->
+
+		<!-- JAXB Runtime (Nötig für Jackson unter JDK 9+) -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>4.0.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<!-- Google Gson for JSON processing -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
+
+		<!-- Dependency for handling SVG images in JavaFX used in utils.ResMan-->
+		<dependency>
+			<groupId>com.github.hervegirod</groupId>
+			<artifactId>fxsvgimage</artifactId>
+			<version>1.1</version>
+		</dependency>
+	</dependencies>
+
+	<!-- ===================================================================== -->
+	<!--                              PROFILES                                 -->
+	<!-- ===================================================================== -->
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>dev</build.profile.id>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>production</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.6.3</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.3.0</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<!-- ===================================================================== -->
+	<!--                             DISTRIBUTION                              -->
+	<!-- ===================================================================== -->
+	<distributionManagement>
+		<!-- Hier können Sie Repository-Informationen eintragen, falls Sie ein
+             privates Maven-Repository verwenden -->
+		<!--
+        <repository>
+            <id>flowshift-releases</id>
+            <url>https://nexus.yourcompany.com/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>flowshift-snapshots</id>
+            <url>https://nexus.yourcompany.com/repository/maven-snapshots</url>
+        </snapshotRepository>
+        -->
+	</distributionManagement>
+</project>

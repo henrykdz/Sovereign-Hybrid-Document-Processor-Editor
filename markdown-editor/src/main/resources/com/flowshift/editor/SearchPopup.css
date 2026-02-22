@@ -1,0 +1,138 @@
+
+.search-popup-header {
+	-fx-font-size: 1.0em;
+	-fx-font-weight: bold;
+	-fx-text-fill: #E59866; /* Ein warmes, verwaschenes Pastell-Orange */
+	-fx-padding: 4.0px 0.0px 4.0px 0.0px;
+}
+/* 5. SEARCH POPUP SPEZIFISCHE STYLES (für SearchPopup Komponente) */
+.search-popup-content {
+	-fx-padding: 10px; 
+	-fx-background-color: transparent;
+}
+
+
+.search-popup-item {
+	-fx-padding: 5.0px 8.0px;
+	-fx-cursor: hand;
+	-fx-border-radius: 3.0px;
+	-fx-background-radius: 3.0px;
+	-fx-alignment: center-left;
+	-fx-background-color: transparent;
+}
+
+/* FÜR TEXT-OBJEKTE (nicht Label) */
+.search-popup-item .text {
+    -fx-fill: #E0E0E0; /* Funktioniert nur für Label */
+}
+
+/* DAS funktioniert für Text-Objekte: */
+.search-popup-text {
+    -fx-fill: #E0E0E0;
+    -fx-font-size: 14.0px;
+}
+
+
+.search-popup-text-match {
+	-fx-fill: #66E600;
+	/* Hinzugefügt, um die Schriftgröße an den umgebenden Text anzugleichen */
+	-fx-font-size: 14.0px;
+}
+
+
+.search-popup-item.selected .search-popup-text {
+    -fx-fill: #E0E0E0;
+}
+
+.search-popup-item:hover .search-popup-text {
+    -fx-fill: #E0E0E0;
+}
+
+
+.search-popup-item.selected {
+	-fx-background-color: -fx-accent;
+	-fx-background-color: derive(-fx-accent, -34.0%);
+	
+}
+
+.search-popup-item.selected .text {
+    -fx-fill: #E0E0E0; /* Statisch auf helles Grau setzen */
+}
+
+/* Standard-Zustand für das Icon */
+.search-popup-icon {
+    -fx-icon-size: 18.0px;
+    /* Geändert auf eine feste, helle Farbe für gute Sichtbarkeit */
+    -fx-icon-color: #E0E0E0;
+}
+
+/* Hover/Selected-Zustand für das Icon */
+.search-popup-item:hover .search-popup-icon,
+.search-popup-item.selected .search-popup-icon {
+    /* Stellt sicher, dass das Icon die gleiche Farbe wie der Text annimmt */
+    -fx-icon-color: #E0E0E0; /* Statisch auf helles Grau setzen */
+}
+
+.search-popup-item:hover {
+	/* 
+     * Leitet die Farbe von der Basis-Hintergrundfarbe des Popups ab (#292829)
+     * und hellt sie um 10% auf. Das Ergebnis ist ein sehr subtiler, 
+     * harmonischer Schwebe-Effekt.
+     */
+	-fx-background-color: derive(#292829, 17.0%);
+}
+
+.search-popup-item:hover .text {
+    -fx-fill: #E0E0E0; /* Statisch auf helles Grau setzen */
+}
+
+
+/* SEPARATOR STYLES (aus CustomTooltip.css übernommen) */
+.separator > .line {
+    -fx-border-color: #666666; /* oder white wie in deinem Code */
+    -fx-border-width: 0.5; /* Etwas dicker als 0.12 für bessere Sichtbarkeit */
+}
+
+/* Optional: Spezifisch für SearchPopup falls benötigt */
+.search-popup-content .separator > .line {
+    -fx-border-color: #666666;
+    -fx-border-width: 0.5;
+}
+
+/* SEPARATOR STYLES mit Abstand */
+.separator {
+    -fx-padding: 1.0px 0.0px; /* 1 Pixel Abstand oben und unten */
+}
+
+.separator > .line {
+    -fx-border-color: #666666;
+    -fx-border-width: 0.5;
+}
+
+/* Optional: Spezifisch für SearchPopup */
+.search-popup-content .separator {
+    -fx-padding: 2.0px 0.0px;
+}
+
+.search-popup-footer {
+	-fx-font-style: italic;
+	-fx-font-size: 14.0px;
+	
+	/* Geändert auf einen spezifischen, gut lesbaren Hellblau-Ton */
+	-fx-text-fill: #8CB6DE;
+	-fx-padding: 5.0px 8.0px;
+}
+
+.search-popup-info {
+    -fx-font-style: italic;
+    -fx-text-fill: #999999; /* Dezentes Grau für passive Informationen */
+    -fx-padding: 8.0px 8.0px 0.0px 8.0px; /* Konsistenter Abstand von oben */
+    -fx-alignment: center-left; /* Standardmäßig linksbündig */
+}
+
+.search-popup-no-results {
+    -fx-font-style: italic;
+    -fx-text-fill: #999999; /* Dezentes Grau für passive Informationen */
+    -fx-padding: 0.0px 8.0px 0.0px 8.0px; /* Konsistenter Abstand von oben */
+    -fx-alignment: center-left; /* Standardmäßig linksbündig */
+}

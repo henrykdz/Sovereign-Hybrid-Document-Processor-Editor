@@ -1,0 +1,139 @@
+Alles mit '#' vor den notizen gilt als erledigt.
+
+
+message an Kassandra: es wird nicht unterschieden zwischen default header so wie im code und dem geladenen project settings header, ich kann den header in projekt settings nicht zurück setzen oder umschalten! da ich nur ein feld und keine auswahl habe.
+Und wenn ich das betriebs.md template (resource) lade, da stehen YAML Daten drinne die sich von der projekt settings config unterscheiden, die YAML daten im template dokument werden aber dadurch überschrieben, wie rum muss es denn? brauchen wir überhaupt noch eine json wenn wir uns doch auf YAML geeinigt hatten?
+
+underlined markdown wird nicht etsprechend gerendert: bsp: "H1
+======
+
+H2
+------"
+- das erstellen eines screenshot funktionierte nicht auf die hilfe datei in templates/custom
+- A3 Format implementieren
+- muss das YAML vor Undo/Redo geschützt werden? zum beispiel für generelle einstellungen bzgl Pagination
+- wenn man aus dem Suchen Eingabefeld [Enter] drückt, soll es an die entsprechende match stelle im editor springen, sofern vorhanden?
+
+- Verbesserung: wenn der Forge Header editiert wurde, und dann ok gedrückt wird, evtl. nochmal darauf aufmerksam machen falls dieser nicht gespeichert wurde, weil die Editirute Version sonst einfach verloren ginge.
+
+- error status label soll alle fehler anzeigen und die zeile zum springen!
+- auf der ersten obersten virtual page wird der margin wohl auf 0 gezwungen, obwol dies erst für alle folge seiten sein sollte? wenn ich im dokument margin im ersten div angebe wird dieser nämlich nicht beachtet außer ich aktiviere pagination.
+
+- das YAML attribute "pagination: false" wird geschrieben selbst wenn es false ist und das format dies gar nicht unterstützt.
+
+- es dürfen nur ordentlich geschlossene css class styles (style forge) registriert werden (signatur), es reicht nicht nur den anfangs klassennammen zu schreiben? bzgl souveraign bridge!
+
+- lange div container, ragen über margin hinaus und werden nicht intelligent aufgebrochen, wenn sie nicht mehr auf eine seite passen. das ist vielleicht ok aber es sollte wenigstens eine warnung geben, wenn ein div zu groß ist, sollte ein roter rahmen drüber?!
+
++ beim prozess Pagination, wirkt der glitch so als würde kurzzeitg das dokument und alle css stile entfernt, als ob web format und alles auf centered gestellt, obwohl zuerst das blatt grendert werden soll und dann der inhalt. allein für die korrekte berechnung müssen ja alle elemente erstmal die stile haben und gerendert worden sein und erst danach paginieren?
++ pagination und nich pafination verwenden ganz unterschiedliche stile schrift stile, ohne pagination ist die schrift sauberer. dies muss alles asbolut einheitlich synchron sein, welchen stil der user auchimmer einsetzt!
+
+- wenn element über webview navigiert/ geklickt, muss selektion erst aufgehoben werden, damit er nicht falsch stehen bleibt. ! gilt für style designer, im code editor nur wenn etwas gefunden wurde
+- mapper selektiert nicht den ganzen text in einer markdown table cell.
+- ein navigations sprung via mapper soll immer direkt auf 1/4 scrollen, selbst wenn element im code beeits in sicht ist. oder zumindest so, dass die selection nicht ganz unten in der letzten sichtbaren zeile ist.
+, das wrapping im editor sieht nicht die webview in der spitpane, dadurch wird da swrapping nutzlos wenn man trotzdem scrollen muss. es bedeutet, das die tatsächliche sichtbare breite einzig richtig enegsellt sein muss für das wrappig.
+- genau wie beim umschalten des design modus, darf die webview wenn view toggle off gestellt wird nich mehr in der splitpane sein, da sons der splitpane separator weiterhin sichtbar ist und beim vergrößern der stage von alleine und ohne inhalt aufgeht.
+
+- einfacher code block in leerer datei löst bereits warning aus: `` und undo löscht gelbe lineno warning nicht. Da sist aber vielleicht korrekt so, weil man nicht sagen kann ob es ein opener code block anweisung ist oder ein inline code block der leer ist (semantisch identisch).
+
+- der toggle selection state darf beim umschalten des formats nich einfach auf false geschaltet werden, wennd a sneue format pagination unterstützt, oder wir merken uns den eingstellten zustand?
+
+!!!! schaltet man pagination aus und druckt werden die seitenränder eingehalten, schaltet man pagination an, werden sie nicht gesetzt im print, nur im editor!
+
+
+# nach launch und direktes laden eines templates wird der header nicht angezeigt, erst wenn man den dokument konfigurator aufrief (automatic on show), genau das selbe muss schon nach dem launch passieren,
+oder geht es darum, dass die textarea erst befüllt werden muss?, weil der header auch nach open dokument geladen wird, wahrscheinlich liegt es am header template folder in user.dir dass der nicht direkt geladen oder gefunden.
+Die Template klasse wurde angepasst um nicht auf home.dir sonder auf user.dir der app dese zu finden, da sollen alle templates liegen. 
+
+- sicherstellen, dass die seitenbegrenzungslinien nicht gedruckt noch als html exportiert werden. eine lösung wäre für die exported webansicht non printable darauf zu setzen
+
+- die suchbar knautscht immernoch die actionbar
+
+- status label zeigt ständig tempplate copy an selbs wenn ich eine daei aus dem vault lade
+- wenn man ein leeres document nur mit dem header setzt als A4 format, wird es dennoch mit zwei seiten gedruckt.
+
+- fest implementierte resource/templates werden ohne datei format suffix dargestellt, sollten aber markiert werden "Betrieb (built-in)"
+- mir viel auf, dass wenn im document settings dialog ein anderer Header ausgewählt wurde, es wurde im YAML aktualisiert und auch gespeichert, aber es kam zu verwirrug weil ich zwei gleichnamige templates hatte
++ bei speichern muss das status label den neuen namen umstellen? aber was passiert beim erneuten speichern, wird dann die datei der letzten speicherung verwendet oder die ursprüglich geöffnet wurde, obwohl dann ja wieder der file chooser öffnen würde.
+
+- eine lösung für ungleiche PDF prints wäre, die page als snapshot mit dem print css zu drucken?
+
+- der konflikt warum der druck in pdf anders aussieht, könnte daran liegen, dass ein im Markdown definierter <style> eien andere Darstellung beschreibt als der standard print style. wenn das stmmt müsste der ja auch an den printer geleitet werden?
+
+
+4. links führen zur anderer seite
+
+- TODO integrate this with forge header: Prüft, ob ein HTML-Fragment globale Seiten-Tags enthält, die die Integrität des exportierten Dokuments gefährden würden.
++ Linter: public static void validateFragmentIntegrity
+ 
+
+Erledigt: 
+---------
+# die flaoting preview soll nach der realen bildschirmhöhe angezeigt werden, plus sicherheitsabstand unten oben für freihalten von system taskleisten.
+# Speicherbutton ausgrauen wenn save, erst wenn status unsaved wieder aktivieren. keinen dialog anzeigen, höchstens kurz ein grünes häkchen symbol das nach eine kurzen zeit wieder ausfaded den text zurücksetzt.
+# in code blöcken im feld wirkt die erste zeile um ein leerzeichen eingerückt "```markdown test```"
+# Konfigurator Dialog toFront()
+# YAML wird imemrnoch manchmal nach änderung aus Konfigurator schwarz.
+# die standard placeholder namen optimieren und beim hovern im konfigurator das label cyan hervorheben
+# beim öffnen eines dokuments scrollt die code area immer ganz runter.
+# die abstände zu den hint tip felderrn sind ohne pagination modus aktiv größer !
+# Änderungen an YAML values werden nicht direkt in webview aktualisiert, man muss erst den konfigurator öffnen.
+# style editor selektions scrolling optimiert
+# mapper selektierte markdown inline code nicht mit richtiger position
++ wenn eine zeile dokument code lösche ein div tag entferne, springt der code editor (scrollt)
+# scrollen über navigator soll wieder zentriert scrollen. das ist durch refactoring wohl kaputt gegangen
+# Verbesserung: Das Suchfeld als Popup öffnen, damit die Action-Menu Leiste dadurch im Layout nicht mehr gestaucht werden kann. 
+# eine YAML Änderung des pagination bool wird nciht sofort geupdated, ändern! jede änderung muss sich sofort in der preview wiederspiegeln
+--------------------
+# Debug Note: IndexOutOfBoundsException during Sovereign Navigation
+Symptom:
+An IndexOutOfBoundsException (e.g., 2111 not in [0, 2105]) occurred within executeSovereignSelection after loading a document and interacting with the UI (e.g., closing a panel or clicking in the WebView).
+Root Cause (Asynchronous Race Condition):
+The exception was caused by a timing gap between two parallel operations:
+Sovereign Extraction (loadDocumentToUI): The Java controller surgically removed <style> blocks from the Markdown text, reducing its total length.
+WebView Rendering: The WebView's background thread still held a reference to the old, longer document state or an outdated SourceMapper UID offset.
+When a UI event (like a click) triggered the navigation, the WebView sent an obsolete offset (e.g., 2111) to the controller, which was now out of bounds for the new, shorter editor content (length 2105).
+Solution (Boundary-Sovereignty, v11.3):
+The executeSovereignSelection method was hardened by implementing a "Boundary Check" inside the Platform.runLater block. It retrieves the editor's current length at the moment of execution and clamps the incoming offset (start/end variables) to the valid range using Math.max(0, Math.min(currentDocLength, ...)). This ensures the navigation logic is always synchronized with the current, true state of the editor, making it immune to asynchronous data mismatches.
+------------------
+# Dokument "Normales Schreiben.md" klick auf titel selektiert diesen nicht korrekt.  nimmt man nur ein stern wrap (kursiv) funktionert es jedoch seltsamerweise! "**Betreff: Antrag auf Bürgergeld**"
+# Fehler?: wenn man direkt unter einem line break tag '<br>' normalen markdown text schreibt, wird dieser nicht angezeigt, erst wenn man eine weitrre leerzeile einfügte oder den text ohne '\n' direkt dahinter schrieb "<br>\nText"
+# HTML hält sich an die seitenmargins, aber reiner markdown code nicht? 
+# das format Web Wide lässt sich nicht mehr einstellen. 
+# die gesetzten margins müssen auch ohne pagination repsektiert werden, dann in der seitenrolle.
+# das format wurde erst gerendert, nachdem ich apply to preview vorher drückte und dann ok drückte. wenn nur ok gedrückt, scheint das format nicht geupdated zu werden, in der preview.
+# wenn man A5 Portrait format im settings auswählt wird es nicht gespeichert. Behoben:  				 // TODO Bug: isNodeActive Abfrage funktioniert gar nicht, obwohl die einträge manipuliert wurden, darum raus.
+# nach dem laden/ öffnen eines dokuments, wird pagination nicht ausgeführt obwohl es so im YAML steht
+# nach dem öffnen wird die webview zwei mal gerendert, was wie ein flackert oder glitch wirkt. ursache war ein pause delay: 		triggerPaginationIfEnabled(currentViewSettings);
+# Wrap inline snippets of code with a single backtick: <code>`</code>.  //<-- angeblich unclosed tag, opening tag is gelb markiert
+# YAML wird über Konfigurator immernoch mit Unterstrichen in den vars erstellt
++ Nein falsch, das YAML wird zerstört oder bleibt unvollständig durch die actionBar control
+Formatter menu item  CTRL+Shift+F
+
+# wenn ein closing div nicht korrekt ist, dann wird die warnmeldung leider an der falschen stelle angezeigt in der äußeren div schachtelung statt im direkten opener wo es fehlt!
+ebenfalls keine gelbe markeirung wenn ein apostroph in der vaue eine html key value pair fehlt, nicht so zuverlässig wie für styles: <span class=  checkbox-printed">□</span> Notrufnummern aktuell und sichtbar  
+
+
+Erweiterung Linter: 
+- fehlende semikolons (styles)
+- fehlende klammern
+- fehlendes Apostroph
+
+
+fehler:
+1. angebliches unclosed tag: <http://foo.bar.baz> 
+
+2.
+.input-group input:focus {   // <- glaubt hier fehle ein semikolon nach focus und vor dem {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+3. angebliches redundant comment closing. Die frage ist ob das hier für markdown eine andere bedeutung hat: 
+```sequence
+Title: Here is a title
+A->B: Normal line
+B-->C: Dashed line  // <--hier
+C->>D: Open arrow
+D-->>A: Dashed open arrow  // <--hier
+```
