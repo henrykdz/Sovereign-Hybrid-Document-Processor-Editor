@@ -16,7 +16,7 @@
 
 The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow. 
 
-It is a **precision instrument** for creating, managing, and publishing documents — combining the power of native desktop applications with the flexibility of web technologies and advanced, cutting-edge logic (**Kassandra Core**).
+It is a **precision instrument** for creating, managing, and publishing documents, combining the power of native desktop applications with the flexibility of web technologies and advanced, cutting-edge logic.
 
 Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑design to the complex, resource‑hungry, and often unreliable software of the current era. It is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.
 
