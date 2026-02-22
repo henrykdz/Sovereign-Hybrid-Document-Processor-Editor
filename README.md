@@ -193,11 +193,13 @@ The FlowShift Engine is the foundation for **interactive documents**, **AI orche
 
 **Sovereign Commercial License**
 
-Copyright © {2023-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.
+Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.
 
-This software is provided under a perpetual, royalty-free license that grants unrestricted usage rights for all versions, including future updates and distributions. Refer to the End User License Agreement (EULA) distributed with the final application for detailed usage terms.
+This software is a commercial product. All rights are reserved. No part of this software may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holder.
 
-*— Our commitment: Perpetual and unconditional rights. —*
+For licensing inquiries and usage terms, please refer to the End User License Agreement (EULA) distributed with the final application.
+
+*— Our commitment: Perpetual and unconditional rights for licensees. —*
 
 ---
 
