@@ -4,7 +4,7 @@
     <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
     <br><br>
     <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
-    <a href="#features">✨ Features</a> •
+    <a href="#key-features-what-the-engine-delivers">✨ Features</a> •
     <a href="#installation">📦 Installation</a> •
     <a href="#technical-architecture-under-the-hood">🏗️ Architecture</a> •
     <a href="#background-the-story-behind-flowshift">📖 Background</a>
