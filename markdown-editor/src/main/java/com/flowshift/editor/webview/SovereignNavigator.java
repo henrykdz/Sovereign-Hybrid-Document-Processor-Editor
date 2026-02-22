@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * Project: FlowShift - The Sovereign Content Engine
+ * Component: MarkdownLinter
+ * 
+ * Copyright (c) 2026 FlowShift. All rights reserved.
+ * Author: Henryk Daniel Zschuppan
+ *
+ * This source code is proprietary and confidential. Unauthorized copying 
+ * of this file, via any medium, is strictly prohibited.
+ *
+ * DESIGN PHILOSOPHY: High-performance, context-aware structural validation
+ * utilizing a single-pass Oracle-Backtick-Protocol for real-time processing.
+ * =============================================================================
+ */
+
 package com.flowshift.editor.webview;
 
 import java.util.Objects;
@@ -281,4 +297,5 @@ public class SovereignNavigator {
 		}
 		return pos;
 	}
+
 }
