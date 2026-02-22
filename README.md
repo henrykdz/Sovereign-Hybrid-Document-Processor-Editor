@@ -137,8 +137,6 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 This software was born from **personal necessity**. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2) that was repeatedly dismissed by doctors. While his body failed, code became distraction, therapy, and finally **passion**.
 
-> *"I tried to work – to hold down a normal job. The problem: the pain. I could never endure it for long. It was humiliating to have to listen to accusations that I was just lazy or unwilling. That is not true. I had dreams. I wanted to earn my own money. I dreamed of starting a family."*
-
 **FlowShift** is the result – a tool that creates **order when life becomes chaotic**. It is a conscious counter-design to the bloated software industry: **lean, precise, and sovereign**.
 
 > *"I have nothing left to lose, except my love for this world."*
@@ -148,8 +146,6 @@ This software was born from **personal necessity**. For over 26 years, the archi
 The vision behind FlowShift comes from a place of deep personal experience. The architect's goal is software without "bloat" — defined by **precision and efficiency**.
 
 **AI‑Assisted Engineering:** FlowShift was designed using cutting-edge AI-assisted development methods, guaranteeing exceptional code purity, consistent architecture, and strict adherence to security standards. The result is a tool as **lean and precise** as the code it produces.
-
----
 
 ## 🌍 The Future of Documentation
 
