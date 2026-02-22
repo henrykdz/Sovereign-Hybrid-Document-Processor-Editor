@@ -108,33 +108,21 @@ The FlowShift Engine ensures your documents remain fully navigable in export and
 
 - **Java:** JavaSE-23 (Zulu 23 or compatible) – JavaFX is bundled
 - **Maven:** 3.6 or higher
-- **IDE:** Eclipse 2024+ recommended (with Maven integration)
+- **IDE:** Eclipse 2025+ 
 
-### Build & Run
+## 🔧 Availability
 
-```bash
-# Clone the repository
-git clone https://github.com/henrykdz/Sovereign-Hybrid-Document-Processor-Editor.git
-cd Sovereign-Hybrid-Document-Processor-Editor
+**FlowShift is a commercial product.**  
+The source code is private and not publicly available.
 
-# Build with Maven
-mvn clean compile
+For licensing inquiries, demonstration requests, or partnership opportunities, please contact:
 
-# Run with Maven (JavaFX plugin)
-mvn javafx:run
+📧 **Email:** [coming soon]  
+🌐 **Website:** [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
 
-# Create executable JAR with dependencies
-mvn clean package shade:shade
+---
 
-# The executable JAR will be in target/
-java -jar target/markdown-editor-0.0.1-SNAPSHOT.jar
-```
-
-### Eclipse Import
-
-1. **File → Import → Maven → Existing Maven Projects**
-2. **Root Directory:** Select your cloned repository
-3. **Finish**
+*Enterprise licenses and evaluation versions are available upon request.*
 
 ### Maven Configuration Highlights
 
