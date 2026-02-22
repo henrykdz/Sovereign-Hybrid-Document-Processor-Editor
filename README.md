@@ -186,6 +186,7 @@ For licensing inquiries and usage terms, please refer to the End User License Ag
 ## 💬 Contact & Community
 
 - **Architect:** Henryk Daniel Zschuppan
+- **Email:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com)
 - **Organization:** FlowShift
 - **GitHub:** [@henrykdz](https://github.com/henrykdz)
 - **Live Site:** [https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
@@ -197,6 +198,4 @@ For licensing inquiries and usage terms, please refer to the End User License Ag
     <sub>⚡ Built with pain, will, and code. ⚡</sub>
     <br>
     <sub>© 2026 FlowShift · Version 0.0.1-SNAPSHOT</sub>
-    <br><br>
-    <sub>🇩🇪 <em>„Ich habe nichts zu verlieren, außer meine Liebe zu dieser Welt.“</em></sub>
 </div>
