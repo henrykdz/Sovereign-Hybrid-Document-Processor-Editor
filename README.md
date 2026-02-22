@@ -152,16 +152,7 @@ Your `pom.xml` includes:
 
 ## 🖼️ Preview
 
-*(Screenshots coming soon)*
-
-```
-┌─────────────────────────────────────┐
-│  # Heading                         │
-│  This is Markdown →  This is HTML  │
-│  - List item        →  • List item │
-└─────────────────────────────────────┘
-      Editor                Preview
-```
+![FlowShift Editor Screenshot](images/FlowShift_SCRN_1.png)
 
 ---
 
