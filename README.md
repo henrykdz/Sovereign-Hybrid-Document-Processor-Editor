@@ -160,7 +160,8 @@ Your `pom.xml` includes:
 
 This software was born from personal necessity. For over 26 years, the developer fought against an undiagnosed cyst in his upper neck (C1/C2) that was ignored by doctors. While his body failed, code became distraction, therapy, and finally passion.
 
-> *"I tried to work – to hold down a normal job. The problem: the pain. I could never endure it for long. It was humiliating to have to listen to accusations that I was just a welfare recipient, unemployed, and lazy. That is not true. I had dreams. I wanted to earn my own money. I dreamed of starting a family."*
+> *"I tried to work – to hold down a normal job. The problem: the pain. I could never endure it for long. It was humiliating to have to listen to accusations that I was just a welfare recipient, unemployed, and lazy. That is not true. I had dreams. I wanted to earn my own money.  
+I dreamed of starting a family."*
 
 **FlowShift** is the result – a tool that creates order when life becomes chaotic. It is a counter-design to the bloated software industry: lean, precise, and sovereign.
 
