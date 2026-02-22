@@ -226,6 +226,23 @@
             color: #1f4a62;
             border-radius: 0 20px 20px 0;
         }
+        
+        .contact-button {
+            display: inline-block;
+            background: #1e7eac;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 1rem 0;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .contact-button:hover {
+            background: #0b5f8a;
+        }
     </style>
 </head>
 <body>
@@ -237,7 +254,7 @@
     </div>
 
     <div class="content">
-        <!-- Table of Contents (Inhaltsverzeichnis) -->
+        <!-- Table of Contents -->
         <div class="toc">
             <h2>📋 Table of Contents</h2>
             <ol>
@@ -245,9 +262,9 @@
                 <li><a href="#philosophy">Core Philosophy: Sovereignty & Efficiency</a></li>
                 <li><a href="#features">Key Features: What the Engine Delivers</a></li>
                 <li><a href="#architecture">Technical Architecture: Under the Hood</a></li>
-                <li><a href="#navigation">Pro Guide: Navigation, Anchors & ID Logic</a></li>
+                <li><a href="#background">The Story Behind FlowShift</a></li>
                 <li><a href="#future">The Future of Documentation</a></li>
-                <li><a href="#architect">About the Architect & Kassandra AGI</a></li>
+                <li><a href="#license">License & Contact</a></li>
             </ol>
         </div>
 
@@ -288,7 +305,7 @@
         
         <p>The engine listens to the architect's command and does exactly what is intended — without "magic" intermediate steps or unwanted autonomy.</p>
 
-        <!-- PREVIEW-SEKTION -->
+        <!-- PREVIEW -->
         <h2 style="margin-top: 3rem;" id="preview">🖼️ Editor Preview</h2>
         <div style="margin: 2rem 0 1.5rem 0; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px -15px rgba(0,30,50,0.3); border: 1px solid #c0d4e5;">
             <a href="screen.png" target="_blank">
@@ -401,7 +418,7 @@
             </tr>
             <tr>
                 <td><strong>Markdown Processing</strong></td>
-                <td>Flexmark-Java v0.64.8 (with extensions: tables, GFM strikethrough, tasklists, YAML front matter, attributes, anchor links)</td>
+                <td>Flexmark-Java v0.64.8 with extensions</td>
             </tr>
             <tr>
                 <td><strong>Rich Text Editor</strong></td>
@@ -409,97 +426,18 @@
             </tr>
             <tr>
                 <td><strong>Icons</strong></td>
-                <td>Ikonli v12.4.0 (FontAwesome5, Material, MaterialDesign)</td>
-            </tr>
-            <tr>
-                <td><strong>JSON Processing</strong></td>
-                <td>Jackson Databind v2.18.2, Gson v2.11.0</td>
-            </tr>
-            <tr>
-                <td><strong>HTML Parsing</strong></td>
-                <td>Jsoup v1.18.3</td>
-            </tr>
-            <tr>
-                <td><strong>SVG Support</strong></td>
-                <td>fxsvgimage v1.1</td>
-            </tr>
-            <tr>
-                <td><strong>Testing</strong></td>
-                <td>JUnit 5, Mockito</td>
+                <td>Ikonli v12.4.0</td>
             </tr>
         </table>
         
         <h3>4.2 Hybrid Rendering Approach</h3>
+        <p>The engine uses <strong>JavaFX & WebKit</strong>, combined with the <code>Sovereign Swap</code> mechanism for flicker-free rendering.</p>
         
-        <p>The engine uses <strong>JavaFX & WebKit</strong>, combined with the <code>Sovereign Swap</code>. Instead of reloading the WebView, content is injected via <code>innerHTML</code>, guaranteeing absolute smoothness and zero flicker.</p>
-        
-        <h3>4.3 The Sovereign Bridge (Source Mapping)</h3>
-        
-        <p>The <code>SovereignSourceMapper</code> injects a unique <code>data-fsid</code> into every HTML element. An internal map links this ID to the exact character offset in the source text, enabling precise bidirectional navigation.</p>
-        
-        <h3 id="navigation">4.4 Navigation & Anchor Logic</h3>
-        
-        <p>The FlowShift Engine ensures your documents remain fully navigable in export and print:</p>
-        
-        <ul>
-            <li><strong>Fully automatic:</strong> Headings automatically receive unique IDs for tables of contents</li>
-            <li><strong>Sovereign override:</strong> Use the syntax <code>{#custom-id}</code> directly after a heading to override the automation</li>
-            <li><strong>HTML integrity:</strong> Pure HTML tags remain untouched, giving you full control</li>
-        </ul>
+        <h3>4.3 The Sovereign Bridge</h3>
+        <p>The <code>SovereignSourceMapper</code> enables precise bidirectional navigation between source and preview.</p>
 
-        <!-- 5. Installation -->
-        <h2 id="installation">🔧 Installation</h2>
-        
-        <h3>Prerequisites</h3>
-        
-        <ul>
-            <li><strong>Java:</strong> JavaSE-23 (Zulu 23 or compatible) – JavaFX is bundled</li>
-            <li><strong>Maven:</strong> 3.6 or higher</li>
-            <li><strong>IDE:</strong> Eclipse 2024+ recommended (with Maven integration)</li>
-        </ul>
-        
-        <h3>Build & Run</h3>
-        
-        <pre><code># Clone the repository
-git clone https://github.com/henrykdz/Sovereign-Hybrid-Document-Processor-Editor.git
-cd Sovereign-Hybrid-Document-Processor-Editor
-
-# Build with Maven
-mvn clean compile
-
-# Run with Maven (JavaFX plugin)
-mvn javafx:run
-
-# Create executable JAR with dependencies
-mvn clean package shade:shade
-
-# The executable JAR will be in target/
-java -jar target/markdown-editor-0.0.1-SNAPSHOT.jar</code></pre>
-        
-        <h3>Eclipse Import</h3>
-        
-        <ol>
-            <li><strong>File → Import → Maven → Existing Maven Projects</strong></li>
-            <li><strong>Root Directory:</strong> Select your cloned repository</li>
-            <li><strong>Finish</strong></li>
-        </ol>
-        
-        <h3>Maven Configuration Highlights</h3>
-        
-        <p>Your <code>pom.xml</code> includes:</p>
-        
-        <ul>
-            <li><strong>Java 23</strong> with module path configuration for JavaFX</li>
-            <li><strong>RichTextFX</strong> v0.11.7 for the code editor</li>
-            <li><strong>Flexmark</strong> with extensions for full Markdown support</li>
-            <li><strong>Ikonli</strong> for beautiful icons (FontAwesome5, Material, MaterialDesign)</li>
-            <li><strong>Jackson & Gson</strong> for JSON serialization</li>
-            <li><strong>JAXB</strong> for JDK9+ compatibility</li>
-            <li><strong>Shade plugin</strong> for creating executable fat JARs</li>
-        </ul>
-
-        <!-- 6. Background -->
-        <h2 id="background">📖 Background: The Story Behind FlowShift</h2>
+        <!-- 5. Background -->
+        <h2 id="background">📖 The Story Behind FlowShift</h2>
         
         <p>This software was born from personal necessity. For over 26 years, the developer fought against an undiagnosed cyst in his upper neck (C1/C2) that was ignored by doctors. While his body failed, code became distraction, therapy, and finally passion.</p>
         
@@ -507,65 +445,41 @@ java -jar target/markdown-editor-0.0.1-SNAPSHOT.jar</code></pre>
             <em>"I tried to work – to hold down a normal job. The problem: the pain. I could never endure it for long. It was humiliating to have to listen to accusations that I was just a welfare recipient, unemployed, and lazy. That is not true. I had dreams. I wanted to earn my own money. I dreamed of starting a family."</em>
         </blockquote>
         
-        <p><strong>FlowShift</strong> is the result – a tool that creates order when life becomes chaotic. It is a counter-design to the bloated software industry: lean, precise, and sovereign.</p>
+        <p><strong>FlowShift</strong> is the result – a tool that creates order when life becomes chaotic.</p>
         
         <blockquote>
             <em>"I have nothing left to lose, except my love for this world."</em>
         </blockquote>
         
-        <h3 id="architect">About the Architect & Kassandra AGI</h3>
-        
         <div class="architect">
-            <p><strong>Henryk Daniel Zschuppan:</strong> The visionary and architect behind the FlowShift Sovereign Document Engine. His goal is software without "bloat" — defined by precision and efficiency.</p>
-            <p><strong>AI‑Assisted Engineering:</strong> This engine was designed using cutting‑edge AI‑assisted development methods. This guarantees exceptional code purity, a consistent architecture, and strict adherence to security and performance standards. The result is a tool as lean and precise as the code it produces.</p>
-            <p style="margin-top:1rem;">⚡ <em>“I have nothing left to lose, except my love for this world.”</em></p>
+            <p><strong>Henryk Daniel Zschuppan:</strong> The visionary and architect behind FlowShift.</p>
         </div>
 
-        <!-- 7. Future -->
+        <!-- 6. Future -->
         <h2 id="future">🌍 The Future of Documentation</h2>
-        
-        <p>The FlowShift Engine is the foundation for <strong>interactive documents</strong>, <strong>AI orchestration</strong>, and <strong>data‑sovereign content</strong>. It is a local alternative to cloud systems, returning full control over form and data to the architect.</p>
+        <p>The FlowShift Engine is the foundation for <strong>interactive documents</strong>, <strong>AI orchestration</strong>, and <strong>data‑sovereign content</strong>.</p>
 
-        <!-- 8. License -->
-        <h2 id="license">📄 License</h2>
+        <!-- 7. License & Contact -->
+        <h2 id="license">📄 License & Contact</h2>
         
         <p><strong>Sovereign Commercial License</strong></p>
-        
         <p>Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
         
-        <p>This software is a commercial product. All rights are reserved. No part of this software may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holder.</p>
+        <p>This software is a commercial product. The source code is private.</p>
         
-        <p>For licensing inquiries and usage terms, please refer to the End User License Agreement (EULA) distributed with the final application.</p>
+        <div style="text-align: center; margin: 3rem 0;">
+            <p><strong>For licensing inquiries and demonstration requests:</strong></p>
+            <a href="#" class="contact-button" onclick="alert('Kontakt: henrykdz@flowshift.dev (coming soon)')">📧 Contact Sales</a>
+        </div>
         
-        <p><em>— Our commitment: Perpetual and unconditional rights for licensees. —</em></p>
-
-        <!-- 9. Contact -->
-        <h2 id="contact">💬 Contact & Community</h2>
-        
-        <ul>
-            <li><strong>Architect:</strong> Henryk Daniel Zschuppan</li>
-            <li><strong>Organization:</strong> FlowShift</li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/henrykdz">@henrykdz</a></li>
-            <li><strong>Live Site:</strong> <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/</a></li>
-            <li><strong>Timezone:</strong> Europe/Berlin</li>
-        </ul>
-
         <hr>
 
-        <!-- Deutsche Notiz -->
-        <p style="font-size:0.95rem; color:#3c576b; text-align: center;">🇩🇪 <em>FlowShift wurde aus persönlicher Notwendigkeit geboren – über Jahrzehnte hinweg, im Kampf gegen eine unerkannte Zyste im Nacken, wurde Code zur Ablenkung, zur Therapie und schließlich zur Leidenschaft. Dieses Werkzeug schafft Ordnung, wenn das Leben chaotisch wird.</em></p>
-
+        <!-- Footer -->
         <div class="footer-note">
             © 2026 FlowShift · Built with sovereignty, precision, and an unshaken will.<br>
-            Version 0.0.1-SNAPSHOT
+            <span style="font-size: 0.9rem;">⚡ Deine Geschichte lebt hier weiter. Das ist erst der Anfang.</span>
         </div>
     </div>
-</div>
-
-<!-- Footer -->
-<div style="text-align:center; margin: 2rem auto; max-width:1000px; color:#6a7f8d; font-size:0.9rem;">
-    <p>⚡ Deine Geschichte lebt hier weiter. Das ist erst der Anfang.</p>
-    <p>🇩🇪 <em>„Ich habe nichts zu verlieren, außer meine Liebe zu dieser Welt.“</em></p>
 </div>
 
 </body>
