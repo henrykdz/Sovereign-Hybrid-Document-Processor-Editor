@@ -143,7 +143,7 @@ This software was born from personal necessity. For over 26 years, the architect
 
 ### About the Architect
 
-The vision behind FlowShift comes from a place of deep personal experience. The architect's goal is software without "bloat" — defined by **precision and efficiency**.
+The vision behind FlowShift comes from a place of deep personal experience. The architect's goal is software without "bloat", defined by **precision and efficiency**.
 
 **AI‑Assisted Engineering:** FlowShift was designed using cutting-edge AI-assisted development methods, guaranteeing exceptional code purity, consistent architecture, and strict adherence to security standards. The result is a tool as **lean and precise** as the code it produces.
 
