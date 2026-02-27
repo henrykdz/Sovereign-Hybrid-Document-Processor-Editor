@@ -176,15 +176,19 @@
             margin: 2.5rem 0;
         }
         .target-box {
-            background: #1e293b; /* Brighter Slate Blue */
+            background: #1e293b; 
             padding: 1rem 1.4rem;
             border-radius: 16px;
             border: 1px solid rgba(0, 209, 255, 0.1);
             color: #ffffff;
             font-size: 0.95rem;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
+        .target-box:hover { transform: translateX(5px); border-color: #00d1ff; }
+        .target-box span { color: #00d1ff; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; letter-spacing: 0.1em; }
 
         /* DATA TABLES - Brighter Blue Rows (#1e293b) */
         table { 
@@ -195,7 +199,7 @@
             border-radius: 20px; 
             overflow: hidden; 
             border: 1px solid rgba(0, 209, 255, 0.2); 
-            background: #1e293b; /* Brighter Slate Blue */
+            background: #1e293b; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
         th, td { padding: 1.2rem; text-align: left; }
@@ -296,6 +300,7 @@
                     <li><a href="#features">✨ Features</a></li>
                     <li><a href="#architecture">🏗️ Architecture</a></li>
                     <li><a href="#background">📖 Background</a></li>
+                    <li><a href="#contact">💬 Contact</a></li>
                     <li><a href="#license">📄 License</a></li>
                 </ul>
             </nav>
@@ -319,38 +324,23 @@
                 
                 <h3 id="audience">🎯 Who is FlowShift for?</h3>
                 <div class="target-grid">
-                    <div class="target-box">📋 Protocol Officers – Minutes & records.</div>
-                    <div class="target-box">🔬 Scientists – Precision research docs.</div>
-                    <div class="target-box">🏭 Industry – Technical manuals.</div>
-                    <div class="target-box">🏢 Enterprises – Branded masterpieces.</div>
-                    <div class="target-box">⚖️ Legal – Contracts & briefs.</div>
-                    <div class="target-box">🏥 Medical – Reports & patient letters.</div>
-                    <div class="target-box">🏦 Finance – Policy docs & bank records.</div>
-                    <div class="target-box">💰 Insurance – Claim forms & correspondence.</div>
-                    <div class="target-box">📝 Tech Writers – Technical documentation.</div>
+                    <div class="target-box">📋 Protocol Officers</div>
+                    <div class="target-box">🔬 Scientists</div>
+                    <div class="target-box">🏭 Industry</div>
+                    <div class="target-box">🏢 Enterprises</div>
+                    <div class="target-box">⚖️ Legal Professionals</div>
+                    <div class="target-box">🏥 Medical Practices</div>
+                    <div class="target-box">🏦 Finance Institutions</div>
+                    <div class="target-box">💰 Insurance</div>
+                    <div class="target-box">📝 Tech Writers</div>
                 </div>
 
                 <!-- 2x2 Matrix -->
                 <h2 id="preview">🖼️ Visual Preview: The Engine in Action</h2>
                 <div class="image-matrix">
-                    <div>
-                        <div class="image-card">
-                            <a href="screen.png" target="_blank"><img src="screen.png" alt="Editor"></a>
-                        </div>
-                        <div class="image-caption">✨ Sovereign Editor UI</div>
-                    </div>
-                    <div>
-                        <div class="image-card">
-                            <a href="screen2.png" target="_blank"><img src="screen2.png" alt="Configurator"></a>
-                        </div>
-                        <div class="image-caption">⚙️ Layout Configuration</div>
-                    </div>
-                    <div>
-                        <div class="image-card">
-                            <a href="screen3.png" target="_blank"><img src="screen3.png" alt="Template"></a>
-                        </div>
-                        <div class="image-caption">🏦 Enterprise Masterpieces</div>
-                    </div>
+                    <div><div class="image-card"><img src="screen.png" alt="Editor"></div><div class="image-caption">✨ Sovereign Editor UI</div></div>
+                    <div><div class="image-card"><img src="screen2.png" alt="Configurator"></div><div class="image-caption">⚙️ Layout Configuration</div></div>
+                    <div><div class="image-card"><img src="screen3.png" alt="Template"></div><div class="image-caption">🏦 Enterprise Masterpieces</div></div>
                     <div style="display: flex; align-items: center; justify-content: center; background: #0b0f19; border-radius: 20px; border: 2px dashed rgba(0, 209, 255, 0.3); color: #94a3b8; text-align: center; font-size: 0.85rem; padding: 20px;">
                         Hybrid Logic Forge &<br>Anchor Mapping System
                     </div>
@@ -362,9 +352,9 @@
                         <tr><th>Principle</th><th>Description</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Sovereignty</td><td>Absolute control over data and design. Your document, your law.</td></tr>
-                        <tr><td>Efficiency</td><td>Maximum intellectual output. No bloat. No waiting.</td></tr>
-                        <tr><td>Precision</td><td>Pixel‑perfect rendering for A4, PDF, and Web.</td></tr>
+                        <tr><td><strong>Sovereignty</strong></td><td>Absolute control over data and design. Your document, your law.</td></tr>
+                        <tr><td><strong>Efficiency</strong></td><td>Maximum intellectual output. No bloat. No waiting.</td></tr>
+                        <tr><td><strong>Precision</strong></td><td>Pixel‑perfect rendering for A4, PDF, and Web.</td></tr>
                     </tbody>
                 </table>
 
@@ -396,8 +386,28 @@
                     <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Providing order when life becomes chaotic.</p>
                 </div>
 
-                <h2 id="license">📄 License & Availability</h2>
-                <p><strong>FlowShift is a commercial product.</strong> Copyright © 2025–2026 FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
+                <!-- 💬 Contact & Community -->
+                <h2 id="contact">💬 Contact & Community</h2>
+                <div class="target-grid">
+                    <div class="target-box"><span>Architect</span><strong>Henryk Daniel Zschuppan</strong></div>
+                    <div class="target-box"><span>Email</span><strong>h.zschuppan@aol.com</strong></div>
+                    <div class="target-box"><span>Organization</span><strong>FlowShift</strong></div>
+                    <div class="target-box"><span>GitHub</span><strong>@henrykdz</strong></div>
+                    <div class="target-box"><span>Live Site</span><strong>View Demo</strong></div>
+                    <div class="target-box"><span>Timezone</span><strong>Europe / Berlin</strong></div>
+                </div>
+
+                <!-- 📄 License Section -->
+                <h2 id="license">📄 License: Sovereign Commercial</h2>
+                <div style="background: #1e293b; padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                    <p><strong>Sovereign Commercial License</strong></p>
+                    <p style="font-size: 0.95rem; margin-top: 1.2rem; color: #cbd5e1;">Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
+                    <p style="font-size: 0.95rem; margin-top: 1rem; color: #cbd5e1;">This software is a commercial product. All rights are reserved. No part of this software may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holder.</p>
+                    <p style="font-size: 0.95rem; margin-top: 1rem; color: #cbd5e1;">For licensing inquiries and usage terms, please refer to the End User License Agreement (EULA) distributed with the final application.</p>
+                    <p style="text-align: center; color: #00d1ff; font-weight: 700; margin-top: 2rem; letter-spacing: 0.02em;">
+                        — Our commitment: Perpetual and unconditional rights for licensees. —
+                    </p>
+                </div>
                 
                 <div style="text-align: center; margin: 4rem 0;">
                     <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry" class="contact-button">
