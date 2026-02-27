@@ -16,28 +16,48 @@
             line-height: 1.6;
             color: #1a1e24;
             background: #fafbfc;
-            padding: 20px;
+            padding: 80px 0; /* Genug Platz oben/unten */
             min-height: 100vh;
+            /* Sicherheit: Verhindert Überlappung bei schmalem Fenster */
+            min-width: 1580px; 
+            overflow-x: auto;
+        }
+
+        /* Das Grid sorgt für die mathematische Zentrierung der Mitte */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1000px 1fr;
+            gap: 60px;
+            width: 100%;
+            /* Wichtig: Spalten müssen die volle Höhe des Dokuments einnehmen */
+            align-items: stretch; 
+        }
+
+        /* Linke Spalte: Container für das Menü */
+        .nav-column {
+            display: flex;
+            justify-content: flex-end;
             position: relative;
         }
 
-        /* Floating Navigation - Absolut positioniert */
+        /* STICKY NAVIGATION - Bleibt im Sichtfeld fixiert */
         .floating-nav {
-            position: fixed;
-            left: max(20px, calc((100% - 1000px) / 2 - 280px));
-            top: 50%;
+            position: sticky;
+            /* Hält das Menü in der vertikalen Mitte des Viewports fest */
+            top: 50vh; 
             transform: translateY(-50%);
-            width: 240px;
+            
+            width: 260px;
+            height: max-content; /* Behält seine eigene natürliche Höhe */
             background: #ffffff;
             padding: 1.8rem 1.2rem;
             border-radius: 28px;
             box-shadow: 0 20px 40px -12px rgba(0,20,30,0.15);
             border: 1px solid rgba(0,120,200,0.1);
-            max-height: calc(100vh - 40px);
-            overflow-y: auto;
             z-index: 1000;
         }
         
+        /* ORIGINAL DESIGN: Menü-Header & Links */
         .floating-nav h3 {
             font-size: 1rem;
             font-weight: 600;
@@ -49,13 +69,8 @@
             border-left: 3px solid #3a8bb9;
         }
         
-        .floating-nav ul {
-            list-style: none;
-        }
-        
-        .floating-nav li {
-            margin-bottom: 0.5rem;
-        }
+        .floating-nav ul { list-style: none; }
+        .floating-nav li { margin-bottom: 0.5rem; }
         
         .floating-nav a {
             display: block;
@@ -76,10 +91,8 @@
             border-left-color: #3a8bb9;
         }
 
-        /* Hauptcontainer - Perfekt mittig */
+        /* Hauptdokument - Mittlere Spalte */
         .document {
-            max-width: 1000px;
-            margin: 0 auto;
             background: white;
             box-shadow: 0 30px 60px rgba(0,20,30,0.2);
             border-radius: 32px;
@@ -87,563 +100,163 @@
             border: 1px solid #d9e2e9;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(145deg, #0b1c2b 0%, #133240 100%);
             color: white;
-            padding: 3rem 3rem 2.5rem;
+            padding: 3.5rem 3rem;
             border-bottom: 4px solid #3a8bb9;
         }
-        
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 500;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-        }
-        
-        .header h1 span {
-            color: #aad0f5;
-            font-weight: 300;
-        }
-        
-        .header .sub {
-            font-size: 1.3rem;
-            opacity: 0.8;
-            max-width: 70%;
-            border-left: 3px solid #3a8bb9;
-            padding-left: 1.5rem;
-            margin-top: 1rem;
-        }
+        .header h1 { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
+        .header h1 span { color: #aad0f5; font-weight: 300; }
+        .header .sub { font-size: 1.3rem; opacity: 0.8; border-left: 3px solid #3a8bb9; padding-left: 1.5rem; margin-top: 1rem; }
 
-        /* Content */
-        .content {
-            padding: 2.5rem 3rem 3rem;
-        }
+        .content { padding: 3rem; }
         
-        /* Table of Contents */
-        .toc {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px -12px rgba(0,20,30,0.15);
-            margin: 2rem auto 3rem;
-            border: 1px solid rgba(0,120,200,0.1);
-            max-width: 900px;
-        }
+        h2 { font-size: 2.2rem; color: #0b2c3c; margin: 2.5rem 0 1.2rem; scroll-margin-top: 50px; }
+        h3 { font-size: 1.4rem; color: #1f4a62; margin-top: 1.8rem; }
+        p { margin-bottom: 1.2rem; color: #2a353f; }
         
-        .toc h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            color: #0b3954;
-            letter-spacing: -0.02em;
-            border-bottom: 2px solid #e6edf4;
-            padding-bottom: 0.75rem;
-        }
+        ul, ol { margin: 1rem 0 1.5rem 1.8rem; }
+        li { margin-bottom: 0.3rem; }
         
-        .toc ol {
-            columns: 2;
-            column-gap: 3rem;
-            list-style-position: inside;
-            padding-left: 0.5rem;
-        }
-        
-        .toc li {
-            margin-bottom: 0.5rem;
-            break-inside: avoid;
-        }
-        
-        .toc a {
-            color: #1e5f7e;
-            text-decoration: none;
-            border-bottom: 1px dotted transparent;
-            transition: border-color 0.1s ease;
-        }
-        
-        .toc a:hover {
-            border-bottom-color: #1e5f7e;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 450;
-            letter-spacing: -0.02em;
-            color: #0b2c3c;
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-        }
-        
-        h2:first-of-type {
-            margin-top: 0;
-        }
-        
-        h2[id] {
-            scroll-margin-top: 80px;
-        }
-        
-        h3 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-top: 1.8rem;
-            margin-bottom: 0.8rem;
-            color: #1f4a62;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-            color: #2a353f;
-        }
-        
-        ul, ol {
-            margin: 1rem 0 1.5rem 1.8rem;
-        }
-        
-        li {
-            margin-bottom: 0.3rem;
-        }
-        
-        code {
-            background: #eaf1f8;
-            padding: 0.2rem 0.5rem;
-            border-radius: 8px;
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 0.9em;
-            color: #135d86;
-            border: 1px solid #bed8ec;
-        }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 1.8rem 0; border-radius: 20px; overflow: hidden; border: 1px solid #e0ecf5; }
+        th, td { padding: 1rem; border-bottom: 1px solid #e0ecf5; text-align: left; }
+        th { background: #f0f8ff; color: #0b3954; }
 
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 1.8rem 0;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px -8px rgba(0,40,60,0.15);
-            border: 1px solid #e0ecf5;
-        }
+        blockquote { background: #f8faff; padding: 1.5rem 2rem; border-left: 5px solid #3a8bb9; margin: 1.5rem 0; font-style: italic; border-radius: 0 20px 20px 0; }
         
-        th, td {
-            padding: 1rem 1.2rem;
-            text-align: left;
-            border-bottom: 1px solid #e0ecf5;
-        }
-        
-        th {
-            background: #f0f8ff;
-            font-weight: 600;
-            color: #0b3954;
-            font-size: 1.05rem;
-        }
-        
-        td {
-            background: white;
-            color: #1f3b4a;
-        }
-        
-        tr:last-child td {
-            border-bottom: none;
-        }
-        
-        tr:hover td {
-            background: #f8fcff;
-        }
+        .contact-button { display: inline-block; background: #1e7eac; color: white; padding: 0.8rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 500; }
+        .architect { background: #eef4f9; border-radius: 20px; padding: 2rem; margin-top: 3rem; border: 1px solid #bed8ec; }
 
-        blockquote {
-            background: #f8faff;
-            padding: 1.2rem 2rem;
-            border-left: 5px solid #3a8bb9;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #1f4a62;
-            border-radius: 0 20px 20px 0;
-        }
-        
-        .contact-button {
-            display: inline-block;
-            background: #1e7eac;
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 1rem 0;
-            transition: background 0.15s ease;
-        }
-        
-        .contact-button:hover {
-            background: #0b5f8a;
-        }
-        
-        .architect {
-            background: #eef4f9;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-top: 3rem;
-            border: 1px solid #bed8ec;
-        }
-        
-        .footer-note {
-            margin-top: 2.5rem;
-            color: #4d6575;
-            border-top: 1px solid #d4e0e9;
-            padding-top: 1.5rem;
-            text-align: center;
-        }
+        .image-card { margin: 2.5rem 0; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .image-card img { width: 100%; display: block; }
+        .image-caption { text-align: center; color: #4f6f8a; font-style: italic; margin-top: -1.5rem; margin-bottom: 2rem; }
 
-        .image-card {
-            margin: 2rem 0 1.5rem 0;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px -15px rgba(0,30,50,0.3);
-            border: 1px solid #c0d4e5;
-        }
-        
-        .image-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: zoom-in;
-        }
-        
-        .image-caption {
-            text-align: center;
-            color: #4f6f8a;
-            font-style: italic;
-            margin-bottom: 2rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1400px) {
-            .floating-nav {
-                left: 20px;
-            }
-        }
-        
-        @media (max-width: 1200px) {
-            .floating-nav {
-                display: none;
-            }
-        }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
 
-    <!-- Floating Navigation - Absolut positioniert -->
-    <nav class="floating-nav">
-        <h3>📋 CONTENTS</h3>
-        <ul>
-            <li><a href="#intro">🚀 Introduction</a></li>
-            <li><a href="#philosophy">🧠 Philosophy</a></li>
-            <li><a href="#preview">🖼️ Examples</a></li>
-            <li><a href="#features">✨ Features</a></li>
-            <li><a href="#architecture">🏗️ Architecture</a></li>
-            <li><a href="#background">📖 Background</a></li>
-            <li><a href="#future">🌍 Future</a></li>
-            <li><a href="#license">📄 License</a></li>
-        </ul>
-    </nav>
+    <div class="layout-grid">
+        <!-- Linke Spalte: Hält die Navigation fest im Blick -->
+        <aside class="nav-column">
+            <nav class="floating-nav">
+                <h3>📋 CONTENTS</h3>
+                <ul>
+                    <li><a href="#intro">🚀 Introduction</a></li>
+                    <li><a href="#philosophy">🧠 Philosophy</a></li>
+                    <li><a href="#preview">🖼️ Examples</a></li>
+                    <li><a href="#features">✨ Features</a></li>
+                    <li><a href="#architecture">🏗️ Architecture</a></li>
+                    <li><a href="#background">📖 Background</a></li>
+                    <li><a href="#future">🌍 Future</a></li>
+                    <li><a href="#license">📄 License</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <!-- Hauptdokument - Perfekt mittig -->
-    <div class="document">
-        <div class="header">
-            <h1>FlowShift <span>// Sovereign Document</span></h1>
-            <div class="sub">Precision · Sovereignty · Zero Compromise</div>
-        </div>
-
-        <div class="content">
-            <!-- Table of Contents -->
-            <div class="toc">
-                <h2>📋 Table of Contents</h2>
-                <ol>
-                    <li><a href="#intro">Introduction: What is the FlowShift Document Engine?</a></li>
-                    <li><a href="#philosophy">Core Philosophy: Sovereignty & Efficiency</a></li>
-                    <li><a href="#features">Key Features: What the Engine Delivers</a></li>
-                    <li><a href="#architecture">Technical Architecture: Under the Hood</a></li>
-                    <li><a href="#background">The Story Behind FlowShift</a></li>
-                    <li><a href="#future">The Future of Documentation</a></li>
-                    <li><a href="#license">License & Contact</a></li>
-                </ol>
+        <!-- Mittlere Spalte: Das Dokument -->
+        <main class="document">
+            <div class="header">
+                <h1>FlowShift <span>// Sovereign Document</span></h1>
+                <div class="sub">Precision · Sovereignty · Zero Compromise</div>
             </div>
 
-            <!-- 1. Introduction -->
-            <h2 id="intro" style="font-size: 1.8rem;">🚀 Introduction: The Sovereign Document Engine</h2>
+            <div class="content">
+                <h2 id="intro">🚀 Introduction: The Sovereign Document Engine</h2>
+                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance Hybrid Document Builder. It transcends the limits of traditional editors by unifying Markdown, HTML5/CSS3, and YAML.</p>
 
-            <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance Hybrid Document Builder. It transcends the limits of traditional editors by seamlessly unifying Markdown, HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
+                <h3 style="font-size: 1.3rem;">🎯 Who is FlowShift for?</h3>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.8rem;">📋 <strong>Protocol officers</strong> – Create perfectly formatted meeting minutes and official records.</li>
+                    <li style="margin-bottom: 0.8rem;">🔬 <strong>Scientists & researchers</strong> – Format academic papers with precise control over citations.</li>
+                    <li style="margin-bottom: 0.8rem;">🏭 <strong>Industry & manufacturing</strong> – Create machine maintenance logs and complete manuals.</li>
+                    <li style="margin-bottom: 0.8rem;">🏢 <strong>Enterprises</strong> – Branded PDFs and internal reports matching corporate identity.</li>
+                    <li style="margin-bottom: 0.8rem;">⚖️ <strong>Legal professionals</strong> – Draft contracts and briefs with reliable formatting.</li>
+                    <li style="margin-bottom: 0.8rem;">🏥 <strong>Medical professionals</strong> – Generate patient forms, referral letters, and reports.</li>
+                    <li style="margin-bottom: 0.8rem;">💰 <strong>Insurance</strong> – Standardized claim forms and referral documents.</li>
+                    <li style="margin-bottom: 0.8rem;">📝 <strong>Technical writers</strong> – Maintain large documentation projects with consistent styling.</li>
+                    <li style="margin-bottom: 0.8rem;">📊 <strong>Analysts</strong> – Combine data visualizations with narrative text.</li>
+                    <li style="margin-bottom: 0.8rem;">🏦 <strong>Financial institutions</strong> – Generate policy documents and customer correspondence.</li>
+                </ul>
 
-            <p>It is a <strong>precision instrument</strong> designed to bridge the gap between structured content and professional layout. By combining the speed of native desktop processing with the limitless styling flexibility of web technologies and advanced logic, FlowShift delivers pixel-perfect results for complex documentation.</p>
+                <blockquote>
+                    "FlowShift transforms complex ideas into perfectly formatted documents. Precision is the ultimate form of sovereignty."
+                </blockquote>
 
-            <h3 style="font-size: 1.3rem; margin-top: 2rem;">🎯 Who is FlowShift for?</h3>
+                <h2 id="philosophy">🧠 Core Philosophy: Sovereignty & Efficiency</h2>
+                <table>
+                    <tr><th>Principle</th><th>Description</th></tr>
+                    <tr><td><strong>Sovereignty</strong></td><td>Full user control over data, design, and workflow.</td></tr>
+                    <tr><td><strong>Efficiency</strong></td><td>Maximum performance with minimal resource consumption.</td></tr>
+                    <tr><td><strong>Precision</strong></td><td>Pixel‑perfect WYSIWYG rendering, consistent across all media.</td></tr>
+                </table>
 
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li style="margin-bottom: 1rem;">📋 <strong>Protocol officers & minutes takers</strong> – Create perfectly formatted meeting minutes, official records, and standardized protocols with consistent branding.</li>
-                <li style="margin-bottom: 1rem;">🔬 <strong>Scientists & researchers</strong> – Format academic papers, theses, and research documentation with precise control over citations, tables, and publication-ready PDF export.</li>
-                <li style="margin-bottom: 1rem;">🏭 <strong>Industry & manufacturing</strong> – Create machine maintenance logs, inspection reports, test protocols, technical documentation, and <strong>design complete machine manuals</strong> with standardized layouts, parts lists, and company branding. FlowShift is ideal for creating and maintaining equipment documentation directly in the workflow.</li>
-                <li style="margin-bottom: 1rem;">🏢 <strong>Enterprises & corporations</strong> – Create branded PDFs, technical documentation, and internal reports with pixel-perfect layouts that match corporate identity guidelines.</li>
-                <li style="margin-bottom: 1rem;">⚖️ <strong>Legal professionals</strong> – Draft contracts, briefs, and legal documents with precise formatting, automatic table of contents, and reliable PDF generation for court submissions.</li>
-                <li style="margin-bottom: 1rem;">🏥 <strong>Medical professionals & practices</strong> – Generate patient forms, referral letters, medical reports, and even prescription forms with clean, professional layouts.</li>
-                <li style="margin-bottom: 1rem;">💰 <strong>Insurance & healthcare administration</strong> – Create standardized claim forms, referral documents, and correspondence that meet regulatory requirements.</li>
-                <li style="margin-bottom: 1rem;">📝 <strong>Technical writers & documentarians</strong> – Maintain large documentation projects with consistent styling, reusable templates, and version-controlled source files.</li>
-                <li style="margin-bottom: 1rem;">📊 <strong>Analysts & data journalists</strong> – Combine data visualizations with narrative text in perfectly formatted reports for clients or publication.</li>
-                <li style="margin-bottom: 1rem;">🏦 <strong>Financial institutions & insurance</strong> – Generate policy documents, claim forms, referral letters, and customer correspondence with precise branding and data integration.</li>
-            </ul>
+                <h2 id="preview">🖼️ Editor & Document Examples</h2>
+                <div class="image-card"><img src="screen.png" alt="Editor"></div>
+                <p class="image-caption">✨ The main editor – Markdown left, live preview right</p>
 
-            <p>Developed by architect <strong>Henryk Daniel Zschuppan</strong>, this engine provides a sovereign alternative to bloated, resource-heavy software. It is built for professionals who require <strong>absolute control</strong> over the physical geometry, semantic structure, and final presentation of their data.</p>
-            
-            <blockquote>
-                <em>"FlowShift transforms complex ideas into perfectly formatted documents. Our hybrid engine combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards."</em>
-            </blockquote>
+                <div class="image-card"><img src="screen2.png" alt="Configurator"></div>
+                <p class="image-caption">⚙️ Document Configurator – absolute layout control</p>
+                
+                <h2 id="features">✨ Key Features</h2>
+                <h3>3.1 Unrivalled Editing Experience</h3>
+                <p>Thanks to the <code>Sovereign Swap</code> mechanism, the preview updates in real time without flicker. Bidirectional navigation allows you to jump from preview directly to the source code.</p>
 
-            <!-- 2. Philosophy -->
-            <h2 id="philosophy">🧠 Core Philosophy: Sovereignty & Efficiency</h2>
-            
-            <p>Every feature of the FlowShift Engine is founded on three principles:</p>
-            
-            <table>
-                <tr>
-                    <th>Principle</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td><strong>Sovereignty</strong></td>
-                    <td>Full user control over data, design, and workflow. The document is law, not the application.</td>
-                </tr>
-                <tr>
-                    <td><strong>Efficiency</strong></td>
-                    <td>Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat.</td>
-                </tr>
-                <tr>
-                    <td><strong>Precision</strong></td>
-                    <td>Pixel‑perfect WYSIWYG rendering, consistent across all output media (screen, HTML export, PDF print).</td>
-                </tr>
-            </table>
-            
-            <p>The engine listens to the architect's command and does exactly what is intended — without "magic" intermediate steps or unwanted autonomy.</p>
+                <h2 id="architecture">🏗️ Technical Architecture</h2>
+                <table>
+                    <tr><th>Component</th><th>Technology</th></tr>
+                    <tr><td><strong>Java Version</strong></td><td>JavaSE-23 (Zulu 23)</td></tr>
+                    <tr><td><strong>UI Framework</strong></td><td>JavaFX 23 (WebKit)</td></tr>
+                    <tr><td><strong>Icons</strong></td><td>Ikonli v12.4.0</td></tr>
+                </table>
 
-            <!-- PREVIEW SECTION -->
-            <h2 style="margin-top: 3rem;" id="preview">🖼️ Editor & Document Examples</h2>
+                <h2 id="background">📖 The Philosophy of Resilience</h2>
+                <p>FlowShift was born from the necessity to create absolute order in high-pressure environments. Developed by <strong>Henryk Daniel Zschuppan</strong>, it is a tool built to last and empower.</p>
 
-            <div class="image-card">
-                <a href="screen.png" target="_blank">
-                    <img src="screen.png" alt="FlowShift Editor in action">
-                </a>
+                <div class="architect">
+                    <p><strong>Henryk Daniel Zschuppan:</strong> The visionary and architect behind FlowShift.</p>
+                </div>
+
+                <h2 id="future">🌍 The Future of Documentation</h2>
+                <p>The FlowShift Engine is the foundation for interactive documents and AI-driven content orchestration.</p>
+
+                <h2 id="license">📄 License & Contact</h2>
+                <div style="text-align: center; margin: 3rem 0;">
+                    <a href="mailto:h.zschuppan@aol.com" class="contact-button">📧 Contact Sales & Business</a>
+                </div>
+                
+                <div style="text-align: center; color: #4d6575; border-top: 1px solid #d4e0e9; padding-top: 1.5rem;">
+                    © 2026 FlowShift · Built with sovereignty, precision, and an unshaken will.
+                </div>
             </div>
-            <p class="image-caption">✨ The main editor – Markdown left, live preview right</p>
+        </main>
 
-            <div class="image-card">
-                <a href="screen2.png" target="_blank">
-                    <img src="screen2.png" alt="FlowShift Document Configurator">
-                </a>
-            </div>
-            <p class="image-caption">⚙️ Document Configurator – control margins, format, and metadata</p>
-
-            <div class="image-card">
-                <a href="screen3.png" target="_blank">
-                    <img src="screen3.png" alt="FlowShift Loan Confirmation Template">
-                </a>
-            </div>
-            <p class="image-caption">🏦 Branded document template – perfect for banks, insurance, and enterprises</p>
-            
-            <!-- 3. Features -->
-            <h2 id="features">✨ Key Features: What the Engine Delivers</h2>
-            
-            <h3>3.1 Unrivalled Editing Experience</h3>
-            
-            <table>
-                <tr>
-                    <th>Feature</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td><strong>Flicker‑free live rendering</strong></td>
-                    <td>Thanks to the <code>Sovereign Swap</code> mechanism, the preview updates in real time without any visual flicker.</td>
-                </tr>
-                <tr>
-                    <td><strong>Scroll invariance</strong></td>
-                    <td>The focus remains stable at the desired position in the preview while you type.</td>
-                </tr>
-                <tr>
-                    <td><strong>Bidirectional navigation</strong></td>
-                    <td>A click in the preview jumps the cursor precisely to the corresponding spot in the Markdown source.</td>
-                </tr>
-                <tr>
-                    <td><strong>Intelligent error diagnostics</strong></td>
-                    <td>The <code>ErrorTooltipManager</code> visualises linter errors directly in the status bar.</td>
-                </tr>
-            </table>
-            
-            <h3>3.2 Layout & Design Sovereignty</h3>
-            
-            <table>
-                <tr>
-                    <th>Feature</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td><strong>CSS Forge</strong></td>
-                    <td>A dedicated code editor enables live styling directly in the document flow.</td>
-                </tr>
-                <tr>
-                    <td><strong>Precise pagination</strong></td>
-                    <td>The engine converts documents exactly into physical pages (A4, Letter).</td>
-                </tr>
-                <tr>
-                    <td><strong>Neutral start</strong></td>
-                    <td>Documents begin without any enforced formatting. Margins and pagination are defined explicitly in YAML.</td>
-                </tr>
-            </table>
-            
-            <h3>3.3 Complete Feature List</h3>
-            
-            <table>
-                <tr>
-                    <td>✅ <strong>Formatter</strong></td>
-                    <td>Automatic formatting of Markdown, HTML and CSS</td>
-                </tr>
-                <tr>
-                    <td>✅ <strong>Linter</strong></td>
-                    <td>Real-time error detection with visual feedback</td>
-                </tr>
-                <tr>
-                    <td>✅ <strong>Syntax Highlighter</strong></td>
-                    <td>Color-highlighted code for better readability</td>
-                </tr>
-                <tr>
-                    <td>✅ <strong>Custom Placeholders</strong></td>
-                    <td>Custom placeholders for templates and mail merges</td>
-                </tr>
-                <tr>
-                    <td>✅ <strong>ISO-compliant Export</strong></td>
-                    <td>A4, Letter, Web – everything possible</td>
-                </tr>
-            </table>
-
-            <!-- 4. Architecture -->
-            <h2 id="architecture">🏗️ Technical Architecture: Under the Hood</h2>
-            
-            <h3>4.1 Technology Stack</h3>
-            
-            <table>
-                <tr>
-                    <th>Component</th>
-                    <th>Technology</th>
-                </tr>
-                <tr>
-                    <td><strong>Java Version</strong></td>
-                    <td>JavaSE-23 (Zulu 23) with bundled JavaFX</td>
-                </tr>
-                <tr>
-                    <td><strong>Build Tool</strong></td>
-                    <td>Apache Maven</td>
-                </tr>
-                <tr>
-                    <td><strong>UI Framework</strong></td>
-                    <td>JavaFX 23 (WebKit, Controls, FXML)</td>
-                </tr>
-                <tr>
-                    <td><strong>Markdown Processing</strong></td>
-                    <td>Flexmark-Java v0.64.8 with extensions</td>
-                </tr>
-                <tr>
-                    <td><strong>Rich Text Editor</strong></td>
-                    <td>RichTextFX v0.11.7</td>
-                </tr>
-                <tr>
-                    <td><strong>Icons</strong></td>
-                    <td>Ikonli v12.4.0</td>
-                </tr>
-            </table>
-            
-            <h3>4.2 Hybrid Rendering Approach</h3>
-            <p>The engine uses <strong>JavaFX & WebKit</strong>, combined with the <code>Sovereign Swap</code> mechanism for flicker-free rendering.</p>
-            
-            <h3>4.3 The Sovereign Bridge</h3>
-            <p>The <code>SovereignSourceMapper</code> enables precise bidirectional navigation between source and preview.</p>
-
-            <!-- 5. Background -->
-            <h2 id="background">📖 The Philosophy of Resilience</h2>
-
-            <p>FlowShift was born from the necessity to create absolute order in high-pressure environments.<br>The architect, <strong>Henryk Daniel Zschuppan</strong>, spent over two decades refining digital workflows where physical endurance was limited, but intellectual output had to remain at a maximum.</p>
-            <p>This engine is not just another tool; it is the result of a relentless pursuit of efficiency. When every movement and every second counts, software must be more than functional, it must be a seamless extension of the architect's intent.</p>
-            <blockquote>
-                <em>"FlowShift was built to transform complexity into clarity. It is a tribute to human will and the belief that precision is the ultimate form of sovereignty."</em>
-            </blockquote>
-
-            <p>The result is a document engine designed for those who cannot afford to waste time on unreliable tools. It is built to last, built to perform, and built to empower.</p>
-            
-            <p><strong>FlowShift</strong> is the result – a tool that creates order when life becomes chaotic.</p>
-            
-            <div class="architect">
-                <p><strong>Henryk Daniel Zschuppan:</strong> The visionary and architect behind FlowShift.</p>
-            </div>
-
-            <!-- 6. Future -->
-            <h2 id="future">🌍 The Future of Documentation</h2>
-            <p>The FlowShift Engine is the foundation for <strong>interactive documents</strong>, <strong>AI orchestration</strong>, and <strong>data‑sovereign content</strong>.</p>
-
-            <!-- 7. License & Contact -->
-            <h2 id="license">📄 License & Contact</h2>
-            
-            <p><strong>Sovereign Commercial License</strong></p>
-            <p>Copyright © 2025–2026 FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
-            
-            <p>This software is a commercial product. The source code is private.</p>
-            
-            <div style="text-align: center; margin: 3rem 0;">
-                <p><strong>For licensing inquiries and demonstration requests:</strong></p>
-                <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Business%20Inquiry" class="contact-button">
-                    📧 Contact Sales & Business
-                </a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #4d6575;">
-                    Direct inquiries: <a href="mailto:h.zschuppan@aol.com">h.zschuppan@aol.com</a>
-                </p>
-            </div>
-            
-            <!-- Footer -->
-            <div class="footer-note">
-                © 2026 FlowShift · Built with sovereignty, precision, and an unshaken will.<br>
-            </div>
-        </div>
+        <!-- Rechte Spalte: Hält das Gleichgewicht für die Zentrierung -->
+        <div class="spacer-column"></div>
     </div>
 
-    <!-- Active link highlighting on scroll -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Markiert den aktuellen Bereich im Menü beim Scrollen
+        window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('h2[id]');
             const navLinks = document.querySelectorAll('.floating-nav a');
-            
-            function updateActiveLink() {
-                let current = '';
-                const scrollPos = window.scrollY + 120;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (scrollPos >= sectionTop) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-            
-            window.addEventListener('scroll', updateActiveLink);
-            updateActiveLink();
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
-
 </body>
 </html>
