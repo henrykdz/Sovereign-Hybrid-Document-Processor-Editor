@@ -1,0 +1,368 @@
+/******************************************************************************
+ * Base style for notification-bar (light theme)
+ *****************************************************************************/
+.notification-bar {
+	-fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+	-fx-background-insets: 0.0, 1.0, 2.0;
+	-fx-background-radius: 5.0;
+	-fx-border-radius: 5.0px;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.2), 10.0, 0.0, 0.0, 5.0);
+}
+
+/* Default text colors for light theme */
+.notification-bar .title {
+	-fx-font-size: 1.166667em; /* ~15px */
+	-fx-text-fill: #292929;
+	-fx-font-weight: bold;
+}
+
+.notification-bar .text {
+	-fx-font-size: 1.083333em; /* ~13px */
+	-fx-text-fill: #292929; /* for Labels */
+	-fx-alignment: top-left;
+	-fx-wrap-text: true;
+	
+	    /* --- NEU: Gap vergrößern --- */
+    /* 0 oben, 0 rechts, 0 unten, 4px links */
+    /* Da wir das Icon 2px nach rechts geschoben haben, müssen wir hier */
+    /* ca. 4px nehmen, um den Abstand optisch wieder herzustellen und zu vergrößern */
+    -fx-padding: 0.0 0.0 0.0 4.0px; 
+}
+
+/* Default color for Text nodes inside a TextFlow */
+.notification-bar .text Text {
+    -fx-fill: #292929;
+}
+
+.notification-bar .text .highlight {
+	-fx-font-weight: bold;
+    -fx-fill: #292929; /* Vererbung sicherstellen */
+}
+
+.notification-bar .text .bracket {
+	-fx-fill: #555555;
+}
+
+/* Separator Line */
+.notification-bar .separator-line {
+    -fx-min-height: 1.0px;
+    -fx-pref-height: 1.0px;
+    -fx-max-height: 1.0px;
+    -fx-background-color: #c1c1c1;
+}
+
+.notification-bar .icon-container {
+    -fx-min-width: 35.0px; /* Feste Breite erzwingen */
+    -fx-min-height: 35.0px; /* Feste Breite erzwingen */
+    -fx-alignment: center;
+}
+
+/* ==================================================================
+   TOAST ICON (Ikonli)
+   ================================================================== */
+
+.notification-bar .toast-icon {
+    /* Größe des Icons */
+    -fx-icon-size: 28.0px;
+    
+    /* Farbe im Light Mode (Dunkelgrau, passend zum Text) */
+    -fx-icon-color: #555555;
+    
+    /* Etwas Abstand zum Text rechts */
+    -fx-translate-x: 0.0px;  /* Reset, da der Icon Container jetzt positioniert */
+}
+
+/* --- DARK THEME --- */
+.notification-bar.dark .toast-icon {
+    /* Farbe im Dark Mode (Hellgrau/Weiß) */
+    -fx-icon-color: #ebebeb;
+}
+
+
+/* ==================================================================
+   STATUS ICONS (Erfolg/Fehler)
+   ================================================================== */
+
+/* Grün für Erfolg (gilt für Light UND Dark Mode) */
+.notification-bar .toast-icon-success,
+.notification-bar.dark .toast-icon-success {
+    -fx-icon-color: #2ecc71;
+}
+
+/* Rot für Abbruch/Fehler (gilt für Light UND Dark Mode) */
+.notification-bar .toast-icon-failure,
+.notification-bar.dark .toast-icon-failure {
+    -fx-icon-color: #e74c3c;
+}
+
+/******************************************************************************
+ * Toast Counter Styles
+ *****************************************************************************/
+
+/* --- LIGHT THEME --- */
+.notification-bar .toast-counter-box {
+    -fx-background-color: rgba(0.0, 0.0, 0.0, 0.08); 
+    -fx-background-radius: 50.0%;
+    
+    /* --- NEU: Kleinerer Durchmesser (20px statt 24px) --- */
+    -fx-min-width: 22.0px;
+    -fx-min-height: 22.0px;
+    -fx-max-width: 22.0px;  /* Wichtig: Zwingt es zur Kreisform */
+    -fx-max-height: 22.0px; /* Wichtig: Zwingt es zur Kreisform */
+    
+    -fx-alignment: center;
+    
+    /* Feiner Rahmen */
+    -fx-border-color: rgba(0.0, 0.0, 0.0, 0.2); 
+    -fx-border-width: 1.2px;
+    -fx-border-radius: 50.0%;
+}
+
+.notification-bar .toast-counter-text {
+    /* Schriftgröße evtl. minimal anpassen, falls 11px zu eng wirkt. 
+       10.5px oder 10px sind bei 20px Kreis oft harmonischer. */
+    -fx-font-size: 10.5px; 
+    
+    -fx-font-weight: bold;
+    -fx-font-smoothing-type: lcd; 
+    
+    /* Deine Farbeinstellung */
+    -fx-fill: rgba(0.0, 0.0, 0.0, 0.67); 
+}
+
+/* --- DARK THEME OVERRIDES --- */
+.notification-bar.dark .toast-counter-box {
+    -fx-background-color: rgba(255.0, 255.0, 255.0, 0.1); 
+    -fx-border-color: rgba(255.0, 255.0, 255.0, 0.2); 
+}
+
+.notification-bar.dark .toast-counter-text {
+    -fx-fill: rgba(255.0, 255.0, 255.0, 0.67); 
+}
+
+/* ==================================================================
+   PAUSE STATE (Feedback beim Hovern)
+   ================================================================== */
+
+/* --- LIGHT THEME PAUSED --- */
+/* Wenn der User die Maus drüber hält, wird der Rahmen etwas dunkler/deutlicher */
+.notification-bar .toast-counter-box:paused {
+    -fx-border-color: rgba(0.0, 0.0, 0.0, 0.4); /* War 0.20 -> jetzt deutlicher */
+    -fx-background-color: rgba(0.0, 0.0, 0.0, 0.12); /* Etwas dunklerer Hintergrund */
+}
+
+/* Das Pause-Zeichen selbst */
+.notification-bar .toast-counter-box:paused .toast-counter-text {
+    -fx-fill: rgba(0.0, 0.0, 0.0, 0.8); /* Dunkler als die normalen Zahlen */
+   
+    /* 2. GRÖSSEN-KORREKTUR: 
+       Damit das Symbol optisch so groß wirkt wie die 10.5px Zahlen,
+       müssen wir es technisch vergrößern. 12.5px oder 13px sind meist ideal. */
+    -fx-font-size: 12.5px; 
+    
+    /* 3. LAGE-KORREKTUR:
+       Größere Schrift rutscht oft leicht aus der Mitte. 
+       -1.5px zieht das Symbol ein Stück nach oben in die perfekte Mitte. */
+    -fx-translate-y: -1.5px; 
+    -fx-font-weight: bold;
+}
+
+/* --- DARK THEME PAUSED --- */
+.notification-bar.dark .toast-counter-box:paused {
+    -fx-border-color: rgba(255.0, 255.0, 255.0, 0.5); /* Deutlicherer weißer Rahmen */
+    -fx-background-color: rgba(255.0, 255.0, 255.0, 0.2);
+}
+
+.notification-bar.dark .toast-counter-box:paused .toast-counter-text {
+    -fx-fill: rgba(255.0, 255.0, 255.0, 0.9); /* Helles Weiß */
+}
+
+/* ==================================================================
+   TOAST PROGRESS BAR
+   ================================================================== */
+
+/* Basis-Styling, um den Standard-Look zu entfernen */
+.notification-bar .progress-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 0.0;
+    -fx-min-height: 6.0px;
+    -fx-pref-height: 6.0px;
+    -fx-max-height: 6.0px;
+}
+
+/* Der Hintergrund-Streifen (Track) */
+.notification-bar .progress-bar .track {
+    /* Sehr dezentes Grau */
+    -fx-background-color: rgba(0.0, 0.0, 0.0, 0.05); 
+    -fx-background-insets: 0.0;
+    
+    /* WICHTIG: Unten abrunden, damit es zum Toast-Rahmen passt */
+    -fx-background-radius: 1.0 1.0 4.0px 4.0px; 
+}
+
+/* Der Füll-Balken (Bar) */
+.notification-bar .progress-bar .bar {
+    /* Ein professionelles Blau (oder deine Hauptfarbe) */
+    -fx-background-color: #3498db; 
+    -fx-background-insets: 0.0;
+    
+    /* Links unten abrunden. Rechts unten erst, wenn voll? 
+       Einfacher ist es, nur links abzurunden oder einen inneren Radius zu nutzen. */
+    -fx-background-radius: 1.0 1.0 1.0 4.0px; 
+}
+
+/* --- ZUSTAND BEI 100% --- */
+.notification-bar .progress-bar:completed .bar {
+    /* Jetzt auch RECHTS UNTEN abrunden */
+    -fx-background-radius: 1.0 1.0 4.0px 4.0px;
+    
+    /* Optional: Farbe auf Grün wechseln bei Erfolg? */
+    /* -fx-background-color: #2ecc71; */ 
+}
+
+/* --- DARK THEME PROGRESS --- */
+.notification-bar.dark .progress-bar .track {
+    -fx-background-color: rgba(255.0, 255.0, 255.0, 0.1);
+}
+
+.notification-bar.dark .progress-bar .bar {
+    /* Ein etwas helleres Blau/Cyan für bessere Sichtbarkeit im Dark Mode */
+    -fx-background-color: #00bfff; 
+    /* Leichter Glow-Effekt (optional) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0.0, 191.0, 255.0, 0.4), 5.0, 0.0, 0.0, 0.0);
+}
+
+/******************************************************************************
+ * Dark theme specific styles
+ *****************************************************************************/
+.notification-bar.dark {
+	-fx-background-color: -fx-outer-border, -fx-inner-border, linear-gradient(#3A3A3A, #2B2B2B 37.0%, #1F1F1F);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0, 0.0, 0.0, 0.4), 10.0, 0.0, 0.0, 5.0);
+}
+
+/* Text colors for dark theme */
+.notification-bar.dark .title, .notification-bar.dark .text {
+	-fx-text-fill: #ebebeb; /* for Labels */
+}
+
+/* Text colors for Text nodes inside a TextFlow for dark theme */
+.notification-bar.dark .text Text {
+    -fx-fill: #ebebeb;
+}
+
+/* KORREKTUR: Explizite Farbe für Highlight im Dark Mode */
+.notification-bar.dark .text .highlight {
+    -fx-fill: #ebebeb;
+}
+
+.notification-bar.dark .text .bracket {
+    -fx-fill: #AAAAAA;
+}
+
+.notification-bar.dark .separator-line {
+    -fx-background-color: #555555;
+}
+
+/******************************************************************************
+ * Close button specific styles
+ *****************************************************************************/
+.notification-bar .close-button {
+	-fx-background-color: transparent;
+	-fx-background-insets: 0.0;
+	-fx-background-radius: 2.0;
+	-fx-padding: 0.0;
+	-fx-alignment: center;
+	-fx-cursor: hand;
+}
+
+/* Hover effect for the close button */
+.notification-bar .close-button:hover {
+	-fx-background-color: linear-gradient(#a3a3a3, #8b8b8b 34.0%, #777777 36.0%, #777777 63.0%, #8b8b8b 65.0%, #adadad);
+}
+
+/* Pressed effect for the close button */
+.notification-bar .close-button:pressed {
+	-fx-background-color: linear-gradient(#a3a3a3, #8b8b8b 34.0%, #777777 36.0%, #777777 63.0%, #8b8b8b 65.0%, #adadad);
+}
+
+/* Styling for the graphic INSIDE the close button */
+.notification-bar .close-button .graphic {
+	/* Default (light theme) color for the 'X' icon */
+	-fx-background-color: #949494; /* Grey */
+	/* The SVG path for the 'X' icon from ControlsFX original */
+	-fx-shape: "M395.992,296.758l1.794-1.794l7.292,7.292l-1.795,1.794 L395.992,296.758z M403.256,294.992l1.794,1.794l-7.292,7.292l-1.794-1.795 L403.256,294.992z";
+	-fx-scale-shape: false; /* Important to keep the shape consistent */
+	-fx-padding: 4.5; /* Graphic is 9x9 px, padding makes it 18x18 effectively */
+}
+
+/* Hover effect for the 'X' icon */
+.notification-bar .close-button:hover .graphic {
+	-fx-background-color: #fefeff; /* White/very light grey on hover for light theme */
+}
+
+/* Pressed effect for the 'X' icon */
+.notification-bar .close-button:pressed .graphic {
+	-fx-background-color: #cfcfcf; /* Lighter grey on pressed for light theme */
+}
+
+/* Dark theme specific color for the 'X' icon */
+.notification-bar.dark .close-button .graphic {
+	-fx-background-color: #ebebeb; /* Light grey for dark theme */
+}
+
+/* Dark theme specific hover effect for the 'X' icon */
+.notification-bar.dark .close-button:hover .graphic {
+	-fx-background-color: #fefeff; /* White/very light grey on hover for dark theme */
+}
+
+/* Dark theme specific pressed effect for the 'X' icon */
+.notification-bar.dark .close-button:pressed .graphic {
+	-fx-background-color: #cfcfcf; /* Lighter grey on pressed for dark theme */
+}
+
+/******************************************************************************
+ * FIX: Button Jitter in Toasts (Static Border Puffer)
+ *****************************************************************************/
+.notification-bar .button {
+    /* Definiert einen Puffer von 1px, der immer vorhanden ist (transparenter Rand) */
+    -fx-border-color: transparent; 
+    -fx-border-width: 1.0px; 
+    -fx-border-radius: 3.0px;
+    -fx-padding: 3.0 8.0 3.0 8.0; /* Beispiel Padding (Behalte dein Default Padding, falls es anders ist) */
+}
+
+.notification-bar .button:hover {
+    /* Beim Hover: Ändere NUR die Farbe des Borders, die Dicke bleibt 1px. */
+    -fx-border-color: #3498db; /* oder die gewünschte Hervorhebungsfarbe */
+}
+
+
+/******************************************************************************
+ * Generic Content Patterns (Summary Grids)
+ * Damit der Controller keinen Inline-Style nutzen muss.
+ *****************************************************************************/
+
+/* Ein Standard-Header für kleine Labels (z.B. "TOTAL", "STATUS") */
+.notification-bar .info-label {
+    -fx-font-size: 9.0px;
+    -fx-font-weight: bold;
+    -fx-opacity: 0.7;
+    -fx-fill: #292929; /* Fallback für Text-Node */
+    -fx-text-fill: #292929; /* Für Label-Node */
+}
+
+/* Normaler Wert, gefärbt (z.B. "Success", "Failed") */
+.notification-bar .info-value {
+    -fx-font-size: 11.0px;
+    -fx-font-weight: bold;
+    /* Farbe wird oft dynamisch gesetzt, aber wir definieren die Basisgröße hier */
+}
+
+/* Dark Mode Overrides für die Info-Elemente */
+.notification-bar.dark .info-label {
+    -fx-fill: #ebebeb;
+    -fx-text-fill: #ebebeb;
+}
+
+/* info-value Farbe wird meist manuell überschrieben (grün/rot), 
+   daher hier kein globaler Override nötig, außer wir wollen einen Default. */
