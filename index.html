@@ -39,7 +39,7 @@
             position: relative;
         }
 
-        /* STICKY NAV - Original Subtle Shadow & Border */
+        /* STICKY NAV - Original Subtle Wondershare Border */
         .floating-nav {
             position: sticky;
             top: 50vh; 
@@ -49,7 +49,7 @@
             background: #161d2b;
             padding: 2rem 1.2rem;
             border-radius: 28px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(0, 209, 255, 0.2); 
             z-index: 1000;
         }
@@ -85,18 +85,18 @@
             padding-left: 1.2rem;
         }
 
-        /* MASTER DOCUMENT BOX - Fixed White Corner Bleed */
+        /* MASTER DOCUMENT BOX - Original Shadow */
         .document {
             background: #161d2b;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
             border-radius: 32px;
             overflow: hidden; 
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* MASTER HEADER - Light & Visible Gradient */
+        /* MASTER HEADER - Bright Visible Gradient */
         .header {
-            background: linear-gradient(90deg, #2563eb 0%, #1e40af 50%, #7e22ce 100%);
+            background: linear-gradient(90deg, #2563eb 0%, #1e40af 45%, #7e22ce 100%);
             color: white;
             padding: 2.2rem 3.5rem; 
             border-bottom: 4px solid #00d1ff;
@@ -152,14 +152,14 @@
             font-size: 1.05rem;
         }
         
-        /* UNIFIED TITLES - White with Cyan Separator */
+        /* SECTION TITLES - Cyan with Separator */
         h2, h3 { 
             font-size: 1.4rem; 
             font-weight: 600; 
-            color: #ffffff; 
+            color: #00d1ff; 
             margin: 3rem 0 1.5rem; 
             scroll-margin-top: 60px; 
-            border-bottom: 1px solid rgba(0, 209, 255, 0.3); /* Fitting Cyan Separator */
+            border-bottom: 1px solid rgba(0, 209, 255, 0.3);
             padding-bottom: 0.6rem;
             letter-spacing: -0.01em;
         }
@@ -168,24 +168,49 @@
         p { margin-bottom: 1.5rem; color: #94a3b8; font-size: 1.05rem; }
         strong { color: #ffffff; font-weight: 600; }
         
-        /* TARGET LIST */
-        .target-list {
+        /* TARGET GRID - Brighter Blue Boxes (#1e293b) */
+        .target-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 15px;
             margin: 2.5rem 0;
-            list-style: none;
         }
-        .target-list li {
-            background: #0b0f19;
+        .target-box {
+            background: #1e293b; /* Brighter Slate Blue */
             padding: 1rem 1.4rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            color: #cbd5e1;
+            border: 1px solid rgba(0, 209, 255, 0.1);
+            color: #ffffff;
             font-size: 0.95rem;
+            display: flex;
+            align-items: center;
         }
 
-        /* 2x2 Matrix */
+        /* DATA TABLES - Brighter Blue Rows (#1e293b) */
+        table { 
+            width: 100%; 
+            border-collapse: separate; 
+            border-spacing: 0; 
+            margin: 2rem 0; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 1px solid rgba(0, 209, 255, 0.2); 
+            background: #1e293b; /* Brighter Slate Blue */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        th, td { padding: 1.2rem; text-align: left; }
+        th { 
+            background: linear-gradient(to bottom, #1e3a8a, #161d2b); 
+            color: #00d1ff; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 0.1em;
+            border-bottom: 2px solid #00d1ff;
+        }
+        td { color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.05); } 
+        tr:last-child td { border-bottom: none; }
+
         .image-matrix {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -203,10 +228,6 @@
         .image-card img { width: 100%; display: block; cursor: zoom-in; opacity: 0.9; }
         .image-card img:hover { opacity: 1; }
         .image-caption { text-align: center; color: #64748b; font-style: italic; margin-top: 10px; font-size: 0.85rem; }
-
-        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); background: #0b0f19; }
-        th, td { padding: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); text-align: left; }
-        th { background: #161d2b; color: #00d1ff; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
 
         blockquote { 
             background: rgba(0, 209, 255, 0.03);
@@ -232,10 +253,9 @@
         }
         .contact-button:hover { background: #33e0ff; transform: scale(1.02); }
 
-        /* COMPACT ARCHITECT BOX */
         .architect-box { 
             background: #0b0f19; 
-            border-radius: 20px; 
+            border-radius: 24px; 
             padding: 1.2rem 1.8rem; 
             margin-top: 2rem; 
             border: 1px solid rgba(255, 255, 255, 0.05); 
@@ -291,25 +311,24 @@
             <div class="content">
                 <!-- 1. Introduction -->
                 <h2 id="intro">🚀 Introduction: The Sovereign Forge</h2>
-                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid Document Builder</strong>. It transcends the limits of traditional editors by seamlessly unifying Markdown, HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
+                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid Document Builder</strong>. It transcends the limits of traditional editors by unifying Markdown, HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
                 
-                <!-- Inner Chic Forge Box -->
                 <div class="forge-callout">
                     <p>It is a precision instrument designed to bridge the gap between structured content and professional layout — delivering masterpieces with absolute data sovereignty.</p>
                 </div>
                 
                 <h3 id="audience">🎯 Who is FlowShift for?</h3>
-                <ul class="target-list">
-                    <li>📋 <strong>Protocol Officers</strong> – Minutes & records.</li>
-                    <li>🔬 <strong>Scientists</strong> – Precision research architecture.</li>
-                    <li>🏭 <strong>Industry</strong> – Technical machine manuals.</li>
-                    <li>🏢 <strong>Enterprises</strong> – Branded CI-masterpieces.</li>
-                    <li>⚖️ <strong>Legal</strong> – Sovereign contracts & court briefs.</li>
-                    <li>🏥 <strong>Medical</strong> – Reports & patient letters.</li>
-                    <li>🏦 <strong>Finance</strong> – Policy documents & bank records.</li>
-                    <li>💰 <strong>Insurance</strong> – Claim forms & correspondence.</li>
-                    <li>📝 <strong>Tech Writers</strong> – Technical documentation.</li>
-                </ul>
+                <div class="target-grid">
+                    <div class="target-box">📋 Protocol Officers – Minutes & records.</div>
+                    <div class="target-box">🔬 Scientists – Precision research docs.</div>
+                    <div class="target-box">🏭 Industry – Technical manuals.</div>
+                    <div class="target-box">🏢 Enterprises – Branded masterpieces.</div>
+                    <div class="target-box">⚖️ Legal – Contracts & briefs.</div>
+                    <div class="target-box">🏥 Medical – Reports & patient letters.</div>
+                    <div class="target-box">🏦 Finance – Policy docs & bank records.</div>
+                    <div class="target-box">💰 Insurance – Claim forms & correspondence.</div>
+                    <div class="target-box">📝 Tech Writers – Technical documentation.</div>
+                </div>
 
                 <!-- 2x2 Matrix -->
                 <h2 id="preview">🖼️ Visual Preview: The Engine in Action</h2>
@@ -343,9 +362,9 @@
                         <tr><th>Principle</th><th>Description</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>Sovereignty</strong></td><td>Absolute control over data and design. Your document, your law.</td></tr>
-                        <tr><td><strong>Efficiency</strong></td><td>Maximum intellectual output. No bloat. No waiting.</td></tr>
-                        <tr><td><strong>Precision</strong></td><td>Pixel‑perfect rendering for A4, PDF, and Web.</td></tr>
+                        <tr><td>Sovereignty</td><td>Absolute control over data and design. Your document, your law.</td></tr>
+                        <tr><td>Efficiency</td><td>Maximum intellectual output. No bloat. No waiting.</td></tr>
+                        <tr><td>Precision</td><td>Pixel‑perfect rendering for A4, PDF, and Web.</td></tr>
                     </tbody>
                 </table>
 
@@ -357,19 +376,17 @@
                         <tr><th>Feature</th><th>Description</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>Sovereign Swap</strong></td><td>Flicker-free real-time rendering via WebKit injection.</td></tr>
-                        <tr><td><strong>Source Bridge</strong></td><td>Character-accurate bidirectional navigation.</td></tr>
-                        <tr><td><strong>CSS Forge</strong></td><td>Integrated CSS engine for live document styling.</td></tr>
+                        <tr><td>Sovereign Swap</td><td>Flicker-free real-time rendering via WebKit injection.</td></tr>
+                        <tr><td>Source Bridge</td><td>Character-accurate bidirectional navigation.</td></tr>
+                        <tr><td>CSS Forge</td><td>Integrated CSS engine for live document styling.</td></tr>
                     </tbody>
                 </table>
 
                 <h2 id="architecture">🏗️ Architecture: Technical Foundation</h2>
                 <p>Engineered with <strong>Java 23 & JavaFX</strong>. FlowShift offers the raw power of a desktop application with the infinite aesthetic possibilities of the modern web.</p>
 
-                <!-- 5. Background -->
                 <h2 id="background">📖 Background: The Philosophy of Resilience</h2>
                 <p>FlowShift was born from necessity. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent over two decades refining digital workflows where physical endurance was limited, but intellectual output had to remain at a maximum.</p>
-                <p>This engine is the result of a relentless pursuit of efficiency. When every second counts, software must be a seamless extension of the architect's intent.</p>
 
                 <blockquote>
                     <em>"FlowShift was built to transform complexity into clarity. It is a tribute to human will and the belief that precision is the ultimate form of sovereignty."</em>
