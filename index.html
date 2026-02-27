@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowShift - Sovereign Hybrid Document Engine</title>
+    <title>FlowShift - Sovereign Document Forge</title>
     <style>
         * {
             margin: 0;
@@ -12,11 +12,12 @@
         }
         
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #e7e9ea;
-            /* Dark Background with a hint of poppy purple/blue */
-            background: radial-gradient(at top right, #1e0533 0%, #000000 100%);
+            color: #e2e8f0;
+            /* Wondershare Premium Background */
+            background-color: #0b0f19;
+            background-image: radial-gradient(at top right, #161d2b 0%, #0b0f19 100%);
             background-attachment: fixed;
             padding: 60px 0;
             min-height: 100vh;
@@ -38,40 +39,39 @@
             position: relative;
         }
 
-        /* POPPY STICKY NAV */
+        /* STICKY NAV - Original Subtle Shadow & Border */
         .floating-nav {
             position: sticky;
             top: 50vh; 
             transform: translateY(-50%);
             width: 260px;
             height: max-content;
-            background: rgba(22, 24, 28, 0.95);
-            padding: 1.8rem 1.2rem;
-            border-radius: 24px;
-            box-shadow: 0 0 30px rgba(255, 0, 127, 0.15); /* Pink Glow */
-            border: 1px solid rgba(255, 0, 127, 0.2);
+            background: #161d2b;
+            padding: 2rem 1.2rem;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 209, 255, 0.2); 
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
         
         .floating-nav h3 {
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.75rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #ff007f; /* POPPY PINK */
+            color: #00d1ff; 
             margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 4px solid #ff007f;
+            padding-left: 0.8rem;
+            border-left: 4px solid #00d1ff;
         }
         
         .floating-nav ul { list-style: none; }
-        .floating-nav li { margin-bottom: 0.4rem; }
+        .floating-nav li { margin-bottom: 0.5rem; }
         
         .floating-nav a {
             display: block;
             padding: 0.6rem 0.8rem;
-            color: #71767b;
+            color: #94a3b8;
             text-decoration: none;
             font-size: 0.95rem;
             border-radius: 12px;
@@ -80,171 +80,183 @@
         
         .floating-nav a:hover,
         .floating-nav a.active {
-            background: rgba(255, 0, 127, 0.1);
-            color: #ffffff;
+            background: rgba(0, 209, 255, 0.1);
+            color: #00d1ff;
             padding-left: 1.2rem;
-            font-weight: 600;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
         }
 
-        /* MAIN DOCUMENT */
+        /* MASTER DOCUMENT BOX - Fixed White Corner Bleed */
         .document {
-            background: #16181c;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            background: #161d2b;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             border-radius: 32px;
-            overflow: hidden;
-            border: 1px solid #2f3336;
+            overflow: hidden; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* HEADER BOX - Cyber-Sunset Gradient */
+        /* MASTER HEADER - Light & Visible Gradient */
         .header {
-            background: linear-gradient(135deg, #000000 0%, #1e0533 100%);
+            background: linear-gradient(90deg, #2563eb 0%, #1e40af 50%, #7e22ce 100%);
             color: white;
-            padding: 2.2rem 3.5rem;
-            border-bottom: 4px solid #ff007f; /* Neon Pink Border */
+            padding: 2.2rem 3.5rem; 
+            border-bottom: 4px solid #00d1ff;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         
         .header h1 { 
-            font-size: 2.8rem; 
-            font-weight: 500; 
-            line-height: 1; 
-            letter-spacing: -0.04em;
-            border-left: 6px solid #ff007f;
+            font-size: 2.7rem; 
+            font-weight: 700; 
+            line-height: 1.1; 
+            letter-spacing: -0.03em;
+            border-left: 6px solid #00d1ff;
             padding-left: 1.5rem;
+            color: #ffffff;
         }
-        .header h1 span { color: #ff007f; font-weight: 300; }
+        
+        .header h1 span { 
+            font-weight: 300; 
+            color: #a5f3fc; 
+            opacity: 0.95;
+        }
+        
         .header .sub { 
-            font-size: 0.95rem; 
-            color: #00ccff; /* Electric Blue */
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
+            font-size: 0.9rem; 
+            color: #ffffff;
+            opacity: 0.85;
+            letter-spacing: 0.12em;
             font-weight: 600;
-            margin-top: 0.6rem;
+            margin-top: 0.7rem;
             padding-left: 1.9rem;
-            opacity: 0.9;
+            text-transform: uppercase;
+            font-style: italic;
         }
 
-        /* CONTENT - Spacing Tightened */
-        .content { padding: 2rem 4rem 4rem; }
+        .content { padding: 3rem 4.5rem 4.5rem; }
+
+        /* INNER FORGE CALLOUT BOX */
+        .forge-callout {
+            background: rgba(0, 209, 255, 0.03);
+            border: 1px solid rgba(0, 209, 255, 0.15);
+            border-left: 4px solid #00d1ff;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 16px 16px 0;
+            margin: 2rem 0;
+            max-width: 80%;
+        }
+        .forge-callout p {
+            margin-bottom: 0;
+            color: #00d1ff;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
         
-        h2 { 
-            font-size: 2rem; 
-            font-weight: 450; 
+        /* UNIFIED TITLES - White with Cyan Separator */
+        h2, h3 { 
+            font-size: 1.4rem; 
+            font-weight: 600; 
             color: #ffffff; 
             margin: 3rem 0 1.5rem; 
-            scroll-margin-top: 50px; 
-            border-bottom: 1px solid #2f3336;
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
+            scroll-margin-top: 60px; 
+            border-bottom: 1px solid rgba(0, 209, 255, 0.3); /* Fitting Cyan Separator */
+            padding-bottom: 0.6rem;
+            letter-spacing: -0.01em;
         }
         h2:first-of-type { margin-top: 0; }
         
-        h3 { 
-            font-size: 1.4rem; 
-            font-weight: 600; 
-            color: #ff007f; 
-            margin-top: 2.5rem; 
-            margin-bottom: 1rem;
-        }
-        
-        p { margin-bottom: 1.5rem; color: #abb0b8; font-size: 1.05rem; line-height: 1.7; }
-        strong { color: #ffffff; }
+        p { margin-bottom: 1.5rem; color: #94a3b8; font-size: 1.05rem; }
+        strong { color: #ffffff; font-weight: 600; }
         
         /* TARGET LIST */
         .target-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             list-style: none;
         }
         .target-list li {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            border: 1px solid #2f3336;
-            color: #e7e9ea;
-            transition: border-color 0.3s;
+            background: #0b0f19;
+            padding: 1rem 1.4rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            font-size: 0.95rem;
         }
-        .target-list li:hover { border-color: #00ccff; }
 
-        /* IMAGE MATRIX */
+        /* 2x2 Matrix */
         .image-matrix {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
             margin: 3rem 0;
         }
         .image-card { 
-            border-radius: 20px; 
+            border-radius: 24px; 
             overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-            border: 1px solid #2f3336;
-            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
         }
-        .image-card:hover { border-color: #ff007f; transform: scale(1.02); }
-        .image-card img { width: 100%; display: block; opacity: 0.85; transition: 0.3s; }
+        .image-card:hover { border-color: #00d1ff; transform: translateY(-5px); }
+        .image-card img { width: 100%; display: block; cursor: zoom-in; opacity: 0.9; }
         .image-card img:hover { opacity: 1; }
-        .image-caption { text-align: center; color: #71767b; font-style: italic; margin-top: 10px; font-size: 0.85rem; }
+        .image-caption { text-align: center; color: #64748b; font-style: italic; margin-top: 10px; font-size: 0.85rem; }
 
-        /* TABLES */
-        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; border-radius: 16px; overflow: hidden; border: 1px solid #2f3336; background: #000000; }
-        th, td { padding: 1.1rem; border-bottom: 1px solid #2f3336; text-align: left; }
-        th { background: #1e0533; color: #ff007f; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); background: #0b0f19; }
+        th, td { padding: 1.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); text-align: left; }
+        th { background: #161d2b; color: #00d1ff; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
 
         blockquote { 
-            background: rgba(255, 0, 127, 0.05);
-            padding: 2.2rem; 
-            border-left: 4px solid #ff007f; 
-            margin: 3rem 0; 
+            background: rgba(0, 209, 255, 0.03);
+            padding: 2.5rem; 
+            border-left: 5px solid #00d1ff; 
+            margin: 3.5rem 0; 
             font-style: italic; 
-            font-size: 1.15rem;
-            color: #ffffff;
+            font-size: 1.2rem;
+            color: #cbd5e1;
             border-radius: 0 20px 20px 0; 
-            box-shadow: inset 0 0 20px rgba(255, 0, 127, 0.05);
         }
         
         .contact-button { 
             display: inline-block; 
-            background: linear-gradient(to right, #ff007f, #ff6600); /* PINK-ORANGE Gradient */
-            color: white; 
-            padding: 1.1rem 2.8rem; 
-            border-radius: 50px; 
+            background: #00d1ff; 
+            color: #0b0f19; 
+            padding: 1.2rem 3.5rem; 
+            border-radius: 12px; 
             text-decoration: none; 
             font-weight: 700; 
             transition: all 0.3s ease; 
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 209, 255, 0.2);
         }
-        .contact-button:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 0, 127, 0.6); }
+        .contact-button:hover { background: #33e0ff; transform: scale(1.02); }
 
+        /* COMPACT ARCHITECT BOX */
         .architect-box { 
-            background: #000000; 
-            border-radius: 24px; 
-            padding: 2.5rem; 
-            margin-top: 4rem; 
-            border: 1px solid rgba(0, 204, 255, 0.3); /* Blue accent */
+            background: #0b0f19; 
+            border-radius: 20px; 
+            padding: 1.2rem 1.8rem; 
+            margin-top: 2rem; 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
         }
+        .architect-box p { margin-bottom: 0; font-size: 0.95rem; }
 
         code {
-            background: #1e0533;
+            background: #0b0f19;
             padding: 0.2rem 0.5rem;
             border-radius: 6px;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9em;
-            color: #00ccff;
-            border: 1px solid rgba(0, 204, 255, 0.2);
+            color: #00d1ff;
         }
 
         html { scroll-behavior: smooth; }
 
         .footer-note {
             text-align: center;
-            margin-top: 5rem;
-            color: #71767b;
+            margin-top: 6rem;
+            color: #475569;
             font-size: 0.85rem;
         }
     </style>
@@ -269,31 +281,37 @@
             </nav>
         </aside>
 
-        <!-- Spalte 2: Dokument -->
+        <!-- Spalte 2: Hauptdokument -->
         <main class="document">
             <div class="header">
-                <h1>FlowShift <span>// Sovereign</span></h1>
-                <div class="sub">Precision · Sovereignty · Zero Compromise</div>
+                <h1>FlowShift <span>// Sovereign Document Forge</span></h1>
+                <div class="sub">MASTERPIECES IN PRECISION · SOVEREIGNTY · ZERO COMPROMISE</div>
             </div>
 
             <div class="content">
                 <!-- 1. Introduction -->
-                <h2 id="intro">🚀 Introduction: The Sovereign Document Engine</h2>
+                <h2 id="intro">🚀 Introduction: The Sovereign Forge</h2>
                 <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid Document Builder</strong>. It transcends the limits of traditional editors by seamlessly unifying Markdown, HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
+                
+                <!-- Inner Chic Forge Box -->
+                <div class="forge-callout">
+                    <p>It is a precision instrument designed to bridge the gap between structured content and professional layout — delivering masterpieces with absolute data sovereignty.</p>
+                </div>
                 
                 <h3 id="audience">🎯 Who is FlowShift for?</h3>
                 <ul class="target-list">
                     <li>📋 <strong>Protocol Officers</strong> – Minutes & records.</li>
-                    <li>🔬 <strong>Scientists</strong> – Precision research docs.</li>
-                    <li>🏭 <strong>Industry</strong> – Technical manuals.</li>
-                    <li>🏢 <strong>Enterprises</strong> – CI-compliant reports.</li>
-                    <li>⚖️ <strong>Legal</strong> – Contracts & court briefs.</li>
+                    <li>🔬 <strong>Scientists</strong> – Precision research architecture.</li>
+                    <li>🏭 <strong>Industry</strong> – Technical machine manuals.</li>
+                    <li>🏢 <strong>Enterprises</strong> – Branded CI-masterpieces.</li>
+                    <li>⚖️ <strong>Legal</strong> – Sovereign contracts & court briefs.</li>
                     <li>🏥 <strong>Medical</strong> – Reports & patient letters.</li>
-                    <li>🏦 <strong>Finance</strong> – Policy documents.</li>
+                    <li>🏦 <strong>Finance</strong> – Policy documents & bank records.</li>
+                    <li>💰 <strong>Insurance</strong> – Claim forms & correspondence.</li>
                     <li>📝 <strong>Tech Writers</strong> – Technical documentation.</li>
                 </ul>
 
-                <!-- Visual Preview -->
+                <!-- 2x2 Matrix -->
                 <h2 id="preview">🖼️ Visual Preview: The Engine in Action</h2>
                 <div class="image-matrix">
                     <div>
@@ -312,10 +330,10 @@
                         <div class="image-card">
                             <a href="screen3.png" target="_blank"><img src="screen3.png" alt="Template"></a>
                         </div>
-                        <div class="image-caption">🏦 Enterprise Templates</div>
+                        <div class="image-caption">🏦 Enterprise Masterpieces</div>
                     </div>
-                    <div style="display: flex; align-items: center; justify-content: center; background: #000000; border-radius: 20px; border: 2px dashed #ff007f; color: #ff007f; text-align: center; font-size: 0.85rem; padding: 20px;">
-                        Hybrid Logic Engine &<br>Anchor Mapping System
+                    <div style="display: flex; align-items: center; justify-content: center; background: #0b0f19; border-radius: 20px; border: 2px dashed rgba(0, 209, 255, 0.3); color: #94a3b8; text-align: center; font-size: 0.85rem; padding: 20px;">
+                        Hybrid Logic Forge &<br>Anchor Mapping System
                     </div>
                 </div>
 
@@ -325,13 +343,13 @@
                         <tr><th>Principle</th><th>Description</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>Sovereignty</strong></td><td>Absolute user control over data and design.</td></tr>
-                        <tr><td><strong>Efficiency</strong></td><td>Maximum intellectual output with zero software bloat.</td></tr>
+                        <tr><td><strong>Sovereignty</strong></td><td>Absolute control over data and design. Your document, your law.</td></tr>
+                        <tr><td><strong>Efficiency</strong></td><td>Maximum intellectual output. No bloat. No waiting.</td></tr>
                         <tr><td><strong>Precision</strong></td><td>Pixel‑perfect rendering for A4, PDF, and Web.</td></tr>
                     </tbody>
                 </table>
 
-                <blockquote>"FlowShift transforms complex ideas into perfectly formatted documents — built for professionals who demand absolute control."</blockquote>
+                <blockquote>"FlowShift transforms complex ideas into perfectly formatted documents — built for professionals who demand absolute mastery over their data."</blockquote>
 
                 <h2 id="features">✨ Key Features</h2>
                 <table>
@@ -341,34 +359,28 @@
                     <tbody>
                         <tr><td><strong>Sovereign Swap</strong></td><td>Flicker-free real-time rendering via WebKit injection.</td></tr>
                         <tr><td><strong>Source Bridge</strong></td><td>Character-accurate bidirectional navigation.</td></tr>
-                        <tr><td><strong>CSS Forge</strong></td><td>Integrated CSS engine for live styling.</td></tr>
+                        <tr><td><strong>CSS Forge</strong></td><td>Integrated CSS engine for live document styling.</td></tr>
                     </tbody>
                 </table>
 
-                <h2 id="architecture">🏗️ Technical Architecture</h2>
-                <p>Engineered with <strong>Java 23 & JavaFX</strong>. FlowShift offers the stability of a desktop powerhouse with the styling power of the modern web.</p>
+                <h2 id="architecture">🏗️ Architecture: Technical Foundation</h2>
+                <p>Engineered with <strong>Java 23 & JavaFX</strong>. FlowShift offers the raw power of a desktop application with the infinite aesthetic possibilities of the modern web.</p>
 
-                <!-- 5. Background - FULL TEXT RESTORED -->
-                <h2 id="background">📖 The Philosophy of Resilience</h2>
-
-                <p>FlowShift was born from the necessity to create absolute order in high-pressure environments. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent over two decades refining digital workflows where physical endurance was limited, but intellectual output had to remain at a maximum.</p>
-
-                <p>This engine is not just another tool; it is the result of a relentless pursuit of efficiency. When every movement and every second counts, software must be more than functional, it must be a seamless extension of the architect's intent.</p>
+                <!-- 5. Background -->
+                <h2 id="background">📖 Background: The Philosophy of Resilience</h2>
+                <p>FlowShift was born from necessity. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent over two decades refining digital workflows where physical endurance was limited, but intellectual output had to remain at a maximum.</p>
+                <p>This engine is the result of a relentless pursuit of efficiency. When every second counts, software must be a seamless extension of the architect's intent.</p>
 
                 <blockquote>
                     <em>"FlowShift was built to transform complexity into clarity. It is a tribute to human will and the belief that precision is the ultimate form of sovereignty."</em>
                 </blockquote>
 
-                <p>The result is a document engine designed for those who cannot afford to waste time on unreliable tools. It is built to last, built to perform, and built to empower.</p>
-
-                <p><strong>FlowShift</strong> is the result – a tool that creates order when life becomes chaotic.</p>
-
                 <div class="architect-box">
-                    <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Order when life becomes chaotic.</p>
+                    <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Providing order when life becomes chaotic.</p>
                 </div>
 
                 <h2 id="license">📄 License & Availability</h2>
-                <p><strong>FlowShift is a commercial product.</strong> Copyright © 2025–2026 FlowShift (Henryk Daniel Zschuppan).</p>
+                <p><strong>FlowShift is a commercial product.</strong> Copyright © 2025–2026 FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
                 
                 <div style="text-align: center; margin: 4rem 0;">
                     <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry" class="contact-button">
