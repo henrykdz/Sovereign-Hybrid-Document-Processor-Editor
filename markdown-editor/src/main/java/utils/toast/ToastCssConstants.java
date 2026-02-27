@@ -8,7 +8,7 @@ import javafx.css.PseudoClass;
 public final class ToastCssConstants {
     
     // ===== STYLESHEET PATHS =====
-    public static final String NOTIFICATION_CSS = "/resources/utils/toast/notification.css";
+    public static final String NOTIFICATION_CSS = "/utils/toast/notification.css";
     
     // ===== STYLE CLASSES (für styleClass-Attribut) =====
     public static final String DARK_STYLE = "dark";

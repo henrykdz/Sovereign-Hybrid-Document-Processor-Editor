@@ -273,7 +273,12 @@ public class ToastTestApp extends Application {
 		testStage.setTitle("Arrow Key Test Window");
 		testStage.show();
 
-		testList.requestFocus();
+		// Focus setzen (nach show())
+		Platform.runLater(() -> {
+			testStage.requestFocus(); // Fenster in den Vordergrund
+			testList.requestFocus(); // ListView fokussieren
+			log("Focus forced on test window");
+		});
 
 		// Add key listener
 		testList.addEventFilter(javafx.scene.input.KeyEvent.KEY_PRESSED, event -> {
@@ -282,11 +287,8 @@ public class ToastTestApp extends Application {
 			}
 		});
 
-		Toast.create().title("Arrow Key Test").text("Try using arrow keys in the other window")
-//	     .owner(testStage)    // <--- hier das Owner-Window setzen
-		        .hideAfter(Duration.seconds(20)).show(); // oder show(this), wenn du den Parameter durchreichst
-		// Show toast
-//		Toast.create().title("Arrow Key Test").text("Try using arrow keys in the other window").owner(testStage).hideAfter(Duration.seconds(20)).show(this);
+		Toast.create().title("Arrow Key Test").text("Try using arrow keys in the other window").hideAfter(Duration.seconds(20)).show(); // oder show(this), wenn du den Parameter
+		                                                                                                                                // durchreichst
 
 		log("Toast shown. Try arrow keys in the new window.");
 	}

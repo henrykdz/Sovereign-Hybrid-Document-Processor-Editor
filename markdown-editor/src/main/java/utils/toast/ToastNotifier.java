@@ -108,7 +108,7 @@ public class ToastNotifier {
 		// --- DIE FINALE, KORREKTE REPARATUR ---
 		NotificationOwnerMode ownerMode = NotificationOwnerMode.DESKTOP; // Sicherer Fallback
 		if (optionsHandler == null) {
-			Log.error("ToastNotifier has not been initialized! Toasts will be desktop-relative only.");
+			Log.warn("ToastNotifier - OptionsHandler has not been initialized! Toasts will be desktop-relative only.");
 		} else {
 			ownerMode = NotificationOwnerMode.fromString(optionsHandler.getValueOrDefault(OptionKey.UI_NOTIFICATION_DEFAULT_OWNER_MODE));
 		}
