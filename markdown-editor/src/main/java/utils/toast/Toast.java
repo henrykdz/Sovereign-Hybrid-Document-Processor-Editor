@@ -213,7 +213,7 @@ public class Toast {
 
 	public Toast text(String text) {
 		Label label = new Label(text);
-		label.getStyleClass().add("text");
+		label.getStyleClass().add(ToastCssConstants.TEXT_STYLE);
 		label.setWrapText(true);
 		label.setMaxWidth(this.maxWidth);
 		this.contentNodeProperty.set(label);
@@ -232,7 +232,7 @@ public class Toast {
 	public Toast text(String format, String... highlightedArgs) {
 		// --- HIER IST DER FIX ---
 		TextFlow textFlow = new TextFlow();
-		textFlow.getStyleClass().add("text");
+		textFlow.getStyleClass().add(ToastCssConstants.TEXT_STYLE);
 		// setMaxWidth auf TextFlow ist schwierig, der Wrap passiert in den Text-Nodes
 
 		String[] parts = format.split("%s", -1);
@@ -246,15 +246,15 @@ public class Toast {
 			// Hervorgehobenes Argument
 			if (i < highlightedArgs.length) {
 				Text openingBracket = new Text("[");
-				openingBracket.getStyleClass().add("bracket");
+				openingBracket.getStyleClass().add(ToastCssConstants.BRACKET_STYLE);
 				textFlow.getChildren().add(openingBracket);
 
 				Text highlightedText = new Text(highlightedArgs[i]);
-				highlightedText.getStyleClass().add("highlight");
+				highlightedText.getStyleClass().add(ToastCssConstants.HIGHLIGHT_STYLE);
 				textFlow.getChildren().add(highlightedText);
 
 				Text closingBracket = new Text("]");
-				closingBracket.getStyleClass().add("bracket");
+				closingBracket.getStyleClass().add(ToastCssConstants.BRACKET_STYLE);
 				textFlow.getChildren().add(closingBracket);
 			}
 		}
@@ -515,34 +515,34 @@ public class Toast {
 		}
 	}
 
-	public Toast showWarning() {
-		graphic(getIcon("dialog-warning.png"));
-		return show(); // Gibt 'this' durch show() zurück
-	}
-
-	public Toast showInformation() {
-		graphic(getIcon("dialog-information.png"));
-		return show();
-	}
-
-	public Toast showError() {
-		graphic(getIcon("dialog-error.png"));
-		return show();
-	}
-
-	public Toast showSuccess() {
-		graphic(getIcon("dialog-confirm.png"));
-		return show();
-	}
-
 	private ImageView getIcon(String iconName) {
-		String resourcePath = "/resources/assets/" + iconName;
+		String resourcePath = ToastCssConstants.ICON_BASE_PATH + iconName;
 		try {
 			return new ImageView(new Image(getClass().getResource(resourcePath).toExternalForm()));
 		} catch (Exception e) {
 			System.err.println("WARNUNG: Toast-Icon konnte nicht geladen werden: " + resourcePath);
 			return null;
 		}
+	}
+
+	public Toast showWarning() {
+		graphic(getIcon(ToastCssConstants.ICON_WARNING));
+		return show();
+	}
+
+	public Toast showInformation() {
+		graphic(getIcon(ToastCssConstants.ICON_INFORMATION));
+		return show();
+	}
+
+	public Toast showError() {
+		graphic(getIcon(ToastCssConstants.ICON_ERROR));
+		return show();
+	}
+
+	public Toast showSuccess() {
+		graphic(getIcon(ToastCssConstants.ICON_SUCCESS));
+		return show();
 	}
 
 	// =================================================================================
@@ -951,15 +951,16 @@ public class Toast {
 					setPrefWidth(toast.minWidth);
 				}
 
-				getStyleClass().add("notification-bar");
-				if (toast.styleClass.contains("dark")) {
-					getStyleClass().add("dark");
+				getStyleClass().add(ToastCssConstants.NOTIFICATION_BAR);
+				if (toast.styleClass.contains(ToastCssConstants.DARK_STYLE)) {
+					getStyleClass().add(ToastCssConstants.DARK_STYLE);
 				}
 				try {
-					if (getClass().getResource("/resources/assets/notification.css") != null)
-						getStylesheets().add(getClass().getResource("/resources/assets/notification.css").toExternalForm());
+					if (getClass().getResource(ToastCssConstants.NOTIFICATION_CSS) != null)
+						getStylesheets().add(getClass().getResource(ToastCssConstants.NOTIFICATION_CSS).toExternalForm());
 				} catch (Exception e) {
-					/* ignore */ }
+					/* ignore */
+				}
 
 				// --- 2. ZENTRALE COUNTER INITIALISIERUNG (NUR EINMAL!) ---
 				Node finalCounterNode = null;
@@ -983,7 +984,7 @@ public class Toast {
 
 				// --- DER FIX: REAKTIVES LABEL ---
 				Label titleLabel = new Label();
-				titleLabel.getStyleClass().add("title");
+				titleLabel.getStyleClass().add(ToastCssConstants.TITLE_STYLE);
 				titleLabel.setWrapText(true);
 				titleLabel.setMaxWidth(toast.maxWidth - 100);
 				GridPane.setMargin(titleLabel, new Insets(1, 0, 0, 14));
@@ -1006,13 +1007,13 @@ public class Toast {
 				if (!toast.hideCloseButton) {
 					Button closeBtn = new Button();
 					closeBtn.setFocusTraversable(false);
-					closeBtn.getStyleClass().add("close-button");
+					closeBtn.getStyleClass().add(ToastCssConstants.CLOSE_BUTTON_STYLE);
 					closeBtn.setMinWidth(24);
 					closeBtn.setPrefWidth(24);
 					closeBtn.setMinHeight(24);
 					closeBtn.setPrefHeight(24);
 					StackPane closeGraphic = new StackPane();
-					closeGraphic.getStyleClass().add("graphic");
+					closeGraphic.getStyleClass().add(ToastCssConstants.CLOSE_BUTTON_GRAPHIC);
 					closeBtn.setGraphic(closeGraphic);
 					closeBtn.setOnAction(e -> {
 						stopCountdown();
@@ -1033,7 +1034,7 @@ public class Toast {
 				// --- 3. Header (Separator Logik) ---
 				// Anstatt 'if' nutzen wir jetzt Bindings
 				Region separator = new Region();
-				separator.getStyleClass().add("separator-line");
+				separator.getStyleClass().add(ToastCssConstants.SEPARATOR_LINE);
 				GridPane.setMargin(separator, new Insets(2, 0, 0, 0));
 
 				// Wir fügen den Separator IMMER hinzu, steuern aber Sichtbarkeit und Platzverbrauch
@@ -1068,7 +1069,7 @@ public class Toast {
 //			iconContainer.setStyle("-fx-background-color:black;");
 
 				iconContainer.setAlignment(Pos.TOP_CENTER);
-				iconContainer.getStyleClass().add("icon-container"); // Klasse zuweisen
+				iconContainer.getStyleClass().add(ToastCssConstants.ICON_CONTAINER);
 				// Layout-Properties setzen (sind persistent, auch wenn er rein/raus fliegt)
 				GridPane.setValignment(iconContainer, VPos.TOP);
 
@@ -1195,10 +1196,11 @@ public class Toast {
 				if (toast.progressProperty().get() > -1.0) {
 					pb = new ProgressBar();
 					final ProgressBar finalPb = pb;
-					finalPb.getStyleClass().add("progress-bar");
+					finalPb.getStyleClass().add(ToastCssConstants.PROGRESS_BAR);
 					finalPb.progressProperty().bind(toast.progressProperty());
 					finalPb.setMaxWidth(Double.MAX_VALUE);
-					PseudoClass COMPLETED_PSEUDO_CLASS = PseudoClass.getPseudoClass("completed");
+					PseudoClass COMPLETED_PSEUDO_CLASS = PseudoClass.getPseudoClass(ToastCssConstants.PSEUDO_COMPLETED);
+
 					finalPb.progressProperty().addListener((obs, oldVal, newVal) -> {
 						finalPb.pseudoClassStateChanged(COMPLETED_PSEUDO_CLASS, newVal.doubleValue() >= 0.999);
 					});
@@ -1241,9 +1243,9 @@ public class Toast {
 					if (associatedToast.hideAfter != Duration.INDEFINITE) {
 						isPaused = true;
 						if (counterText != null)
-							counterText.setText("⏸");
+							counterText.setText(ToastSymbols.pause()); // Statt hartcodiertem "⏸"
 						if (counterContainer != null)
-							counterContainer.pseudoClassStateChanged(PseudoClass.getPseudoClass("paused"), true);
+							counterContainer.pseudoClassStateChanged(PseudoClass.getPseudoClass(ToastCssConstants.PSEUDO_PAUSED), true);
 					}
 				});
 				setOnMouseExited(e -> {
@@ -1252,7 +1254,7 @@ public class Toast {
 						if (counterText != null)
 							counterText.setText(String.valueOf(remainingSeconds));
 						if (counterContainer != null)
-							counterContainer.pseudoClassStateChanged(PseudoClass.getPseudoClass("paused"), false);
+							counterContainer.pseudoClassStateChanged(PseudoClass.getPseudoClass(ToastCssConstants.PSEUDO_PAUSED), false);
 					}
 				});
 
@@ -1276,10 +1278,10 @@ public class Toast {
 				this.remainingSeconds = (int) Math.ceil(associatedToast.hideAfter.toSeconds());
 
 				counterContainer = new StackPane();
-				counterContainer.getStyleClass().add("toast-counter-box");
+				counterContainer.getStyleClass().add(ToastCssConstants.COUNTER_BOX);
 
 				counterText = new Text(String.valueOf(remainingSeconds));
-				counterText.getStyleClass().add("toast-counter-text");
+				counterText.getStyleClass().add(ToastCssConstants.COUNTER_TEXT);
 
 				counterContainer.getChildren().add(counterText);
 				return counterContainer;
@@ -1416,7 +1418,6 @@ public class Toast {
 					popup.setY(startY + (targetY - startY) * frac);
 			}
 
-			// ✅ DIESE METHODE FEHLTE
 			public double getTargetY() {
 				return targetY;
 			}

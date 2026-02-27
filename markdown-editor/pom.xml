@@ -14,14 +14,25 @@
 	<!-- ===================================================================== -->
 	<!--                            PROJECT INFORMATION                        -->
 	<!-- ===================================================================== -->
-	<name>FlowShift - Markdown Editor</name>
+	<name>FlowShift - Sovereign Hybrid Document Builder</name>
 	<description>
-		[EN] A modal JavaFX Markdown editor featuring source code and visual
-		preview panes, developed by FlowShift. Utilizes RichTextFX and
-		Flexmark-Java. Intended for integration into applications like Webmarks.
-		[DE] Ein modaler JavaFX Markdown-Editor mit Quelltext- und visueller
-		Vorschau-Ansicht, entwickelt von FlowShift. Nutzt RichTextFX und
-		Flexmark-Java. Vorgesehen zur Integration in Anwendungen wie Webmarks.
+		[EN] 
+		FlowShift is a sovereign, hybrid document engineering platform that transforms complex ideas into perfectly formatted documents. More than just a Markdown editor, it combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards (A4, Letter, Web).
+
+		Built on Java 23 and JavaFX, FlowShift delivers a flicker-free editing experience through its proprietary Sovereign Swap technology, bidirectional navigation between source and preview, and intelligent error diagnostics. It features a CSS Forge for live styling, precise pagination, and a complete toolset including formatter, linter, syntax highlighter, and custom placeholders.
+
+		Developed from personal necessity over 26 years, FlowShift represents a counter-design to bloated software – lean, precise, and putting full control back in the hands of the user. It is a commercial product under the Sovereign Commercial License.
+
+		🔗 Live Demo &amp; Information: https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/
+
+		[DE]
+		FlowShift ist eine souveräne, hybride Dokumenten-Engine, die komplexe Ideen in perfekt formatierte Dokumente verwandelt. Mehr als nur ein Markdown-Editor verbindet sie die Flexibilität von Markdown, HTML/CSS und YAML mit der Präzision von ISO-Standards (A4, Letter, Web).
+
+		Basierend auf Java 23 und JavaFX bietet FlowShift ein flimmerfreies Editing-Erlebnis durch die proprietäre Sovereign Swap Technologie, bidirektionale Navigation zwischen Quelle und Vorschau sowie intelligente Fehlerdiagnose. Mit CSS Forge für Live-Styling, präziser Paginierung und einem vollständigen Werkzeugsatz (Formatter, Linter, Syntax Highlighter, benutzerdefinierte Platzhalter).
+
+		Aus persönlicher Notwendigkeit über 26 Jahre entwickelt, ist FlowShift ein Gegenentwurf zu aufgeblähter Software – schlank, präzise und mit voller Kontrolle für den Nutzer. Ein kommerzielles Produkt unter der Sovereign Commercial License.
+
+		🔗 Live-Demo &amp; Informationen: https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/
 	</description>
 
 		<!-- ===================================================================== -->
@@ -32,7 +43,7 @@
         <name>Sovereign Commercial License</name>
         <distribution>repo</distribution>
         <comments>
-            Copyright © {2023-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.
+            Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.
             This software is provided under a perpetual, royalty-free license
             that grants unrestricted usage rights for all versions, including future
             updates and distributions. Refer to the End User License Agreement (EULA)
