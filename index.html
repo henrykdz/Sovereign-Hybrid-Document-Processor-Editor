@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,29 +11,30 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+
+        /* BODY - Sanftere Mindestbreite */
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #e2e8f0;
-            /* Wondershare Premium Background */
             background-color: #0b0f19;
             background-image: radial-gradient(at top right, #161d2b 0%, #0b0f19 100%);
             background-attachment: fixed;
             padding: 60px 0;
             min-height: 100vh;
-            /* Sicherheit: Verhindert Überlappung bei sehr schmalen Fenstern */
-            min-width: 1450px; 
+            /* Reduziert für bessere Kompatibilität */
+            min-width: 1200px;
             overflow-x: auto;
         }
 
         .layout-grid {
             display: grid;
-            grid-template-columns: 1fr 1000px 1fr;
-            gap: 60px;
+            /* Linke Spalte bekommt mehr Platz für den Abstand */
+            grid-template-columns: minmax(300px, 1fr) 1000px minmax(50px, 1fr);
+            gap: 40px;
             width: 100%;
-            /* Wichtig: stretch sorgt dafür, dass die Seitenspalte so hoch ist wie das Dokument */
-            align-items: stretch; 
+            align-items: stretch;
         }
 
         .nav-column {
@@ -41,36 +43,47 @@
             position: relative;
         }
 
-        /* NAVIGATION - STICKY für korrektes horizontales Scrollverhalten */
+        /* NAVIGATION - STICKY mit Abstand */
         .floating-nav {
             position: sticky;
-            top: 50vh; 
+            top: 50vh;
             transform: translateY(-50%);
-            
+
             width: 260px;
             height: max-content;
             background: #161d2b;
             padding: 2rem 1.2rem;
             border-radius: 28px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(0, 209, 255, 0.2); 
+            border: 1px solid rgba(0, 209, 255, 0.2);
             z-index: 1000;
+
+            /* WICHTIG: Abstand zum linken Rand */
+            margin-left: 20px;
+            /* Hält Abstand zum Fensterrand */
+            margin-right: 10px;
+            /* Zusätzliche Sicherheit */
         }
-        
+
         .floating-nav h3 {
             font-size: 0.75rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #00d1ff; 
+            color: #00d1ff;
             margin-bottom: 1.5rem;
             padding-left: 0.8rem;
             border-left: 4px solid #00d1ff;
         }
-        
-        .floating-nav ul { list-style: none; }
-        .floating-nav li { margin-bottom: 0.5rem; }
-        
+
+        .floating-nav ul {
+            list-style: none;
+        }
+
+        .floating-nav li {
+            margin-bottom: 0.5rem;
+        }
+
         .floating-nav a {
             display: block;
             padding: 0.6rem 0.8rem;
@@ -80,7 +93,7 @@
             border-radius: 12px;
             transition: all 0.2s ease;
         }
-        
+
         .floating-nav a:hover,
         .floating-nav a.active {
             background: rgba(0, 209, 255, 0.1);
@@ -92,7 +105,7 @@
             background: #161d2b;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             border-radius: 32px;
-            overflow: hidden; 
+            overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -100,31 +113,31 @@
         .header {
             background: linear-gradient(90deg, #2563eb 0%, #1e40af 50%, #7e22ce 100%);
             color: white;
-            padding: 2.2rem 3.5rem; 
+            padding: 2.2rem 3.5rem;
             border-bottom: 4px solid #00d1ff;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        
-        .header h1 { 
-            font-size: 2.7rem; 
-            font-weight: 700; 
-            line-height: 1.1; 
+
+        .header h1 {
+            font-size: 2.7rem;
+            font-weight: 700;
+            line-height: 1.1;
             letter-spacing: -0.03em;
             border-left: 6px solid #00d1ff;
             padding-left: 1.5rem;
             color: #ffffff;
         }
-        
-        .header h1 span { 
-            font-weight: 300; 
-            color: #a5f3fc; 
+
+        .header h1 span {
+            font-weight: 300;
+            color: #a5f3fc;
             opacity: 0.95;
         }
-        
-        .header .sub { 
-            font-size: 0.9rem; 
+
+        .header .sub {
+            font-size: 0.9rem;
             color: #ffffff;
             opacity: 0.85;
             letter-spacing: 0.12em;
@@ -132,10 +145,12 @@
             margin-top: 0.7rem;
             padding-left: 1.9rem;
             text-transform: uppercase;
-            font-style: italic;
+            font-style: normal;
         }
 
-        .content { padding: 3rem 4.5rem 4.5rem; }
+        .content {
+            padding: 3rem 4.5rem 4.5rem;
+        }
 
         .forge-callout {
             background: rgba(0, 209, 255, 0.03);
@@ -146,36 +161,51 @@
             margin: 2rem 0;
             max-width: 80%;
         }
+
         .forge-callout p {
             margin-bottom: 0;
             color: #00d1ff;
             font-style: italic;
             font-size: 1.05rem;
         }
-        
-        h2, h3 { 
-            font-size: 1.4rem; 
-            font-weight: 600; 
-            color: #00d1ff; 
-            margin: 3rem 0 1.5rem; 
-            scroll-margin-top: 60px; 
+
+        h2,
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #00d1ff;
+            margin: 3rem 0 1.5rem;
+            scroll-margin-top: 60px;
             border-bottom: 1px solid rgba(0, 209, 255, 0.3);
             padding-bottom: 0.6rem;
             letter-spacing: -0.01em;
         }
-        h2:first-of-type { margin-top: 0; }
-        
-        p { margin-bottom: 1.5rem; color: #94a3b8; font-size: 1.05rem; }
-        strong { color: #ffffff; font-weight: 600; }
-        
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
         .target-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin: 2.5rem 0;
         }
-        .target-box, .contact-box {
-            background: #1e293b; 
+
+        .target-box,
+        .contact-box {
+            background: #1e293b;
             padding: 1.1rem 1.4rem;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -186,37 +216,59 @@
             justify-content: center;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .target-box:hover, .contact-box:hover { 
-            border-color: #00d1ff; 
+
+        .target-box:hover,
+        .contact-box:hover {
+            border-color: #00d1ff;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .contact-box span { color: #00d1ff; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.1em; }
-
-        table { 
-            width: 100%; 
-            border-collapse: separate; 
-            border-spacing: 0; 
-            margin: 2rem 0; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid rgba(0, 209, 255, 0.2); 
-            background: #1e293b; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        .contact-box span {
+            color: #00d1ff;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 0.1em;
         }
-        th, td { padding: 1.2rem; text-align: left; }
-        th { 
-            background: linear-gradient(to bottom, #1e3a8a, #161d2b); 
-            color: #00d1ff; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 209, 255, 0.2);
+            background: #1e293b;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        th,
+        td {
+            padding: 1.2rem;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(to bottom, #1e3a8a, #161d2b);
+            color: #00d1ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
             letter-spacing: 0.1em;
             border-bottom: 2px solid #00d1ff;
         }
-        td { color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.05); } 
-        tr:last-child td { border-bottom: none; }
+
+        td {
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
 
         .image-matrix {
             display: grid;
@@ -224,61 +276,89 @@
             gap: 25px;
             margin: 3rem 0;
         }
-        .image-card { 
-            border-radius: 24px; 
-            overflow: hidden; 
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
+
+        .image-card {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease;
             cursor: zoom-in;
         }
-        .image-card:hover { 
+
+        .image-card:hover {
             transform: scale(1.02);
             border-color: #00d1ff;
         }
-        .image-card img { width: 100%; display: block; }
 
-        blockquote { 
+        .image-card img {
+            width: 100%;
+            display: block;
+        }
+
+        blockquote {
             background: rgba(0, 209, 255, 0.03);
-            padding: 2.5rem; 
-            border-left: 5px solid #00d1ff; 
-            margin: 3.5rem 0; 
-            font-style: italic; 
+            padding: 2.5rem;
+            border-left: 5px solid #00d1ff;
+            margin: 3.5rem 0;
+            font-style: italic;
             font-size: 1.2rem;
             color: #cbd5e1;
-            border-radius: 0 20px 20px 0; 
+            border-radius: 0 20px 20px 0;
         }
-        
-        .contact-button { 
-            display: inline-block; 
-            background: #00d1ff; 
-            color: #0b0f19; 
-            padding: 1.2rem 3.5rem; 
-            border-radius: 12px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+
+        .contact-button {
+            display: inline-block;
+            background: #00d1ff;
+            color: #0b0f19;
+            padding: 1.2rem 3.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 0 20px rgba(0, 209, 255, 0.4);
         }
-        .contact-button:hover { 
-            background: #33e0ff; 
+
+        .contact-button:hover {
+            background: #33e0ff;
             transform: scale(1.03);
         }
 
-        .architect-box { 
-            background: #0b0f19; 
-            border-radius: 24px; 
-            padding: 1.2rem 1.8rem; 
-            margin-top: 2rem; 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
+        .architect-box {
+            background: #0b0f19;
+            border-radius: 24px;
+            padding: 1.2rem 1.8rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .architect-box p { margin-bottom: 0; font-size: 1.0em; }
 
-        code { background: #0b0f19; padding: 0.2rem 0.5rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.9em; color: #00d1ff; }
-        html { scroll-behavior: smooth; }
-        .footer-note { text-align: center; margin-top: 6rem; color: #475569; font-size: 0.85rem; }
+        .architect-box p {
+            margin-bottom: 0;
+            font-size: 1.0em;
+        }
+
+        code {
+            background: #0b0f19;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            color: #00d1ff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 6rem;
+            color: #475569;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="layout-grid">
@@ -309,11 +389,14 @@
 
             <div class="content">
                 <h2 id="intro">🚀 Introduction: The Sovereign Forge</h2>
-                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid Document Builder</strong>. It transcends the limits of traditional editors by unifying Markdown, HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
+                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid
+                        Document Builder</strong>. It transcends the limits of traditional editors by unifying Markdown,
+                    HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
                 <div class="forge-callout">
-                    <p>It is a precision instrument designed to bridge the gap between structured content and professional layout — delivering masterpieces with absolute data sovereignty.</p>
+                    <p>It is a precision instrument designed to bridge the gap between structured content and
+                        professional layout — delivering masterpieces with absolute data sovereignty.</p>
                 </div>
-                
+
                 <h3 id="audience">🎯 Who is FlowShift for?</h3>
                 <div class="target-grid">
                     <div class="target-box">📋 Protocol Officers</div>
@@ -328,54 +411,111 @@
 
                 <h2 id="preview">🖼️ Visual Preview</h2>
                 <div class="image-matrix">
-                    <div><div class="image-card"><img src="screen.png" alt="Editor"></div></div>
-                    <div><div class="image-card"><img src="screen2.png" alt="Configurator"></div></div>
-                    <div><div class="image-card"><img src="screen3.png" alt="Template"></div></div>
-                    <div style="display: flex; align-items: center; justify-content: center; background: #0b0f19; border-radius: 20px; border: 2px dashed rgba(0, 209, 255, 0.3); color: #94a3b8; text-align: center; font-size: 0.85rem; padding: 20px;">
+                    <div>
+                        <div class="image-card"><img src="screen.png" alt="Editor"></div>
+                    </div>
+                    <div>
+                        <div class="image-card"><img src="screen2.png" alt="Configurator"></div>
+                    </div>
+                    <div>
+                        <div class="image-card"><img src="screen3.png" alt="Template"></div>
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; background: #0b0f19; border-radius: 20px; border: 2px dashed rgba(0, 209, 255, 0.3); color: #94a3b8; text-align: center; font-size: 0.85rem; padding: 20px;">
                         Hybrid Logic Forge &<br>Anchor Mapping System
                     </div>
                 </div>
 
                 <h2 id="philosophy">🧠 Core Philosophy: Sovereignty & Efficiency</h2>
                 <table>
-                    <thead><tr><th>Principle</th><th>Description</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Principle</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td>Sovereignty</td><td>Absolute control over data and design. Your document, your law.</td></tr>
-                        <tr><td>Efficiency</td><td>Maximum intellectual output. No bloat. No waiting.</td></tr>
-                        <tr><td>Precision</td><td>Pixel‑perfect rendering for A4, PDF, and Web.</td></tr>
+                        <tr>
+                            <td>Sovereignty</td>
+                            <td>Absolute control over data and design. Your document, your law.</td>
+                        </tr>
+                        <tr>
+                            <td>Efficiency</td>
+                            <td>Maximum intellectual output. No bloat. No waiting.</td>
+                        </tr>
+                        <tr>
+                            <td>Precision</td>
+                            <td>Pixel‑perfect rendering for A4, PDF, and Web.</td>
+                        </tr>
                     </tbody>
                 </table>
 
-                <blockquote>"FlowShift transforms complex ideas into perfectly formatted documents,<br>built for professionals who demand absolute mastery over their data."</blockquote>
+                <blockquote>"FlowShift transforms complex ideas into perfectly formatted documents,<br>built for
+                    professionals who demand absolute mastery over their data."</blockquote>
 
                 <h2 id="features">✨ Key Features</h2>
                 <table>
-                    <thead><tr><th>Feature</th><th>Description</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td>Sovereign Swap</td><td>Flicker-free real-time rendering via WebKit injection.</td></tr>
-                        <tr><td>Source Bridge</td><td>Character-accurate bidirectional navigation.</td></tr>
-                        <tr><td>CSS Forge</td><td>Integrated CSS engine for live document styling.</td></tr>
+                        <tr>
+                            <td>Sovereign Swap</td>
+                            <td>Flicker-free real-time rendering via WebKit injection.</td>
+                        </tr>
+                        <tr>
+                            <td>Source Bridge</td>
+                            <td>Character-accurate bidirectional navigation.</td>
+                        </tr>
+                        <tr>
+                            <td>CSS Forge</td>
+                            <td>Integrated CSS engine for live document styling.</td>
+                        </tr>
                     </tbody>
                 </table>
 
                 <h2 id="architecture">🏗️ Architecture: Technical Foundation</h2>
-                <p>Engineered with <strong>Java 23 & JavaFX</strong>, FlowShift combines the stability of a native desktop powerhouse with the infinite styling possibilities of modern web technologies.</p>
-                
+                <p>Engineered with <strong>Java 23 & JavaFX</strong>, FlowShift combines the stability of a native
+                    desktop powerhouse with the infinite styling possibilities of modern web technologies.</p>
+
                 <h3>6.1 Technology Stack</h3>
                 <table>
-                    <thead><tr><th>Component</th><th>Technology</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Technology</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td>Runtime</td><td>JavaSE-23 (Zulu 23) with bundled JavaFX</td></tr>
-                        <tr><td>UI Framework</td><td>JavaFX 23 (WebKit Core, FXML)</td></tr>
-                        <tr><td>Markdown Core</td><td>Flexmark-Java v0.64.8 (Ext: YAML, Tables, Attributes)</td></tr>
-                        <tr><td>Rich Text</td><td>RichTextFX v0.11.7</td></tr>
+                        <tr>
+                            <td>Runtime</td>
+                            <td>JavaSE-23 (Zulu 23) with bundled JavaFX</td>
+                        </tr>
+                        <tr>
+                            <td>UI Framework</td>
+                            <td>JavaFX 23 (WebKit Core, FXML)</td>
+                        </tr>
+                        <tr>
+                            <td>Markdown Core</td>
+                            <td>Flexmark-Java v0.64.8 (Ext: YAML, Tables, Attributes)</td>
+                        </tr>
+                        <tr>
+                            <td>Rich Text</td>
+                            <td>RichTextFX v0.11.7</td>
+                        </tr>
                     </tbody>
                 </table>
 
                 <h2 id="background">📖 Background: The Philosophy of Resilience</h2>
-                <p>FlowShift was born from necessity. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent over two decades refining digital workflows where physical endurance was limited, but intellectual output had to remain at a maximum.</p>
+                <p>FlowShift was born from necessity. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent
+                    over two decades refining digital workflows where physical endurance was limited, but intellectual
+                    output had to remain at a maximum.</p>
                 <div class="architect-box">
-                    <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Providing order when life becomes chaotic.</p>
+                    <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Providing
+                        order when life becomes chaotic.</p>
                 </div>
 
                 <h2 id="contact">💬 Contact & Community</h2>
@@ -389,17 +529,22 @@
                 </div>
 
                 <h2 id="license">📄 License: Sovereign Commercial</h2>
-                <div style="background: #1e293b; padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                <div
+                    style="background: #1e293b; padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05);">
                     <p><strong>Sovereign Commercial License</strong></p>
-                    <p style="font-size: 0.95rem; margin-top: 1.2rem; color: #cbd5e1;">Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
-                    <p style="font-size: 0.95rem; margin-top: 1rem; color: #cbd5e1;">This software is a commercial product. All rights are reserved. No part of this software may be reproduced without permission.</p>
+                    <p style="font-size: 0.95rem; margin-top: 1.2rem; color: #cbd5e1;">Copyright © {2025-PRESENT}
+                        FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
+                    <p style="font-size: 0.95rem; margin-top: 1rem; color: #cbd5e1;">This software is a commercial
+                        product. All rights are reserved. No part of this software may be reproduced without permission.
+                    </p>
                     <p style="text-align: center; color: #00d1ff; font-weight: 700; margin-top: 2rem;">
                         — Our commitment: Perpetual and unconditional rights for licensees. —
                     </p>
                 </div>
-                
+
                 <div style="text-align: center; margin: 4rem 0;">
-                    <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry" class="contact-button">📧 Contact Sales & Business</a>
+                    <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry" class="contact-button">📧 Contact
+                        Sales & Business</a>
                 </div>
 
                 <div class="footer-note">
@@ -412,7 +557,7 @@
     </div>
 
     <script>
-        (function() {
+        (function () {
             // =============================================
             // 1. SCROLL NAVIGATION HIGHLIGHTING
             // =============================================
@@ -420,14 +565,14 @@
                 const sections = document.querySelectorAll('h2[id], h3[id]');
                 const navLinks = document.querySelectorAll('.floating-nav a');
                 let current = "";
-                
+
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     if (window.pageYOffset >= sectionTop - 200) {
                         current = section.getAttribute('id');
                     }
                 });
-                
+
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${current}`) {
@@ -441,7 +586,7 @@
 
             // Smooth scroll für Nav-Links
             document.querySelectorAll('.floating-nav a').forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
@@ -454,7 +599,7 @@
             // =============================================
             // 2. WONDERSHARE-STYLE BILDZOOM MIT NAVIGATION
             // =============================================
-            
+
             // CSS für Lightbox mit perfektem X und Next/Prev Buttons
             const style = document.createElement('style');
             style.textContent = `
@@ -665,13 +810,13 @@
                         alt: img.alt,
                         card: card
                     });
-                    
+
                     // Click-Event für jedes Bild
-                    card.addEventListener('click', function(e) {
+                    card.addEventListener('click', function (e) {
                         e.stopPropagation();
                         openLightbox(index);
                     });
-                    
+
                     card.style.cursor = 'zoom-in';
                 }
             });
@@ -685,58 +830,58 @@
                 // Lightbox Container
                 const lightbox = document.createElement('div');
                 lightbox.className = 'ws-lightbox';
-                
+
                 // Content Container
                 const content = document.createElement('div');
                 content.className = 'ws-lightbox-content';
-                
+
                 // Bild-Element
                 const img = document.createElement('img');
                 img.src = images[startIndex].src;
                 img.alt = images[startIndex].alt;
-                
+
                 // X Close Button
                 const closeBtn = document.createElement('div');
                 closeBtn.className = 'ws-close';
                 closeBtn.setAttribute('aria-label', 'Close');
-                
+
                 // Navigation und Counter (nur wenn mehrere Bilder)
                 let prevBtn, nextBtn, counter;
                 let currentIndex = startIndex;
-                
+
                 if (images.length > 1) {
                     // Prev Button
                     prevBtn = document.createElement('div');
                     prevBtn.className = 'ws-nav prev';
                     prevBtn.setAttribute('aria-label', 'Previous image');
-                    
+
                     // Next Button
                     nextBtn = document.createElement('div');
                     nextBtn.className = 'ws-nav next';
                     nextBtn.setAttribute('aria-label', 'Next image');
-                    
+
                     // Counter
                     counter = document.createElement('div');
                     counter.className = 'ws-counter';
                     counter.textContent = `${startIndex + 1} / ${images.length}`;
-                    
+
                     // Event Listener für Navigation
-                    prevBtn.addEventListener('click', function(e) {
+                    prevBtn.addEventListener('click', function (e) {
                         e.stopPropagation();
                         if (currentIndex > 0) {
                             currentIndex--;
                             updateImage();
                         }
                     });
-                    
-                    nextBtn.addEventListener('click', function(e) {
+
+                    nextBtn.addEventListener('click', function (e) {
                         e.stopPropagation();
                         if (currentIndex < images.length - 1) {
                             currentIndex++;
                             updateImage();
                         }
                     });
-                    
+
                     // Update Funktion
                     function updateImage() {
                         img.style.opacity = '0.5';
@@ -744,7 +889,7 @@
                             img.src = images[currentIndex].src;
                             img.alt = images[currentIndex].alt;
                             counter.textContent = `${currentIndex + 1} / ${images.length}`;
-                            
+
                             // Prev/Next Buttons deaktivieren/aktivieren
                             if (prevBtn) {
                                 if (currentIndex === 0) {
@@ -753,7 +898,7 @@
                                     prevBtn.classList.remove('disabled');
                                 }
                             }
-                            
+
                             if (nextBtn) {
                                 if (currentIndex === images.length - 1) {
                                     nextBtn.classList.add('disabled');
@@ -761,11 +906,11 @@
                                     nextBtn.classList.remove('disabled');
                                 }
                             }
-                            
+
                             img.style.opacity = '1';
                         }, 150);
                     }
-                    
+
                     // Initialen Status der Buttons setzen
                     if (currentIndex === 0) {
                         prevBtn.classList.add('disabled');
@@ -773,13 +918,13 @@
                     if (currentIndex === images.length - 1) {
                         nextBtn.classList.add('disabled');
                     }
-                    
+
                     content.appendChild(prevBtn);
                     content.appendChild(nextBtn);
                     content.appendChild(counter);
-                    
+
                     // Tastatur-Navigation
-                    const keyHandler = function(e) {
+                    const keyHandler = function (e) {
                         if (e.key === 'Escape') {
                             closeLightbox(lightbox);
                             document.removeEventListener('keydown', keyHandler);
@@ -791,32 +936,32 @@
                             updateImage();
                         }
                     };
-                    
+
                     document.addEventListener('keydown', keyHandler);
-                    
+
                     // Cleanup Funktion
-                    lightbox.addEventListener('remove', function() {
+                    lightbox.addEventListener('remove', function () {
                         document.removeEventListener('keydown', keyHandler);
                     });
                 }
-                
+
                 // Content zusammenbauen
                 content.appendChild(img);
                 content.appendChild(closeBtn);
                 lightbox.appendChild(content);
-                
+
                 // Close Funktion
-                closeBtn.addEventListener('click', function() {
+                closeBtn.addEventListener('click', function () {
                     closeLightbox(lightbox);
                 });
-                
+
                 // Klick auf Hintergrund schließt
-                lightbox.addEventListener('click', function(e) {
+                lightbox.addEventListener('click', function (e) {
                     if (e.target === lightbox) {
                         closeLightbox(lightbox);
                     }
                 });
-                
+
                 document.body.appendChild(lightbox);
                 document.body.style.overflow = 'hidden';
             }
@@ -831,7 +976,7 @@
             }
 
             // Escape-Taste global
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     const lightbox = document.querySelector('.ws-lightbox');
                     if (lightbox) {
@@ -843,4 +988,5 @@
         })();
     </script>
 </body>
+
 </html>
