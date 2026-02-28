@@ -229,8 +229,13 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease;
+            cursor: zoom-in;
         }
-        .image-card img { width: 100%; display: block; cursor: zoom-in; }
+        .image-card:hover {
+            transform: scale(1.02);
+            border-color: #00d1ff;
+        }
+        .image-card img { width: 100%; display: block; }
 
         blockquote { 
             background: rgba(0, 209, 255, 0.03);
@@ -413,22 +418,290 @@
     </div>
 
     <script>
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('h2[id], h3[id]');
-            const navLinks = document.querySelectorAll('.floating-nav a');
-            let current = "";
-            sections.forEach(section => {
-                if (pageYOffset >= section.offsetTop - 150) {
-                    current = section.getAttribute('id');
+        (function() {
+            // =============================================
+            // 1. SCROLL NAVIGATION HIGHLIGHTING
+            // =============================================
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('h2[id], h3[id]');
+                const navLinks = document.querySelectorAll('.floating-nav a');
+                let current = "";
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+            window.addEventListener('load', updateActiveNavLink);
+
+            // Smooth scroll für Nav-Links (optional)
+            document.querySelectorAll('.floating-nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // =============================================
+            // 2. WONDERSHARE-STYLE BILDZOOM
+            // =============================================
+            // CSS für Lightbox-Animationen
+            const style = document.createElement('style');
+            style.textContent = `
+                .wondershare-lightbox {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.98);
+                    z-index: 99999;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: zoom-out;
+                    backdrop-filter: blur(15px);
+                    -webkit-backdrop-filter: blur(15px);
+                    animation: wsFadeIn 0.25s ease-out;
+                }
+                
+                .wondershare-lightbox img {
+                    max-width: 85vw;
+                    max-height: 85vh;
+                    border: 4px solid #00d1ff;
+                    border-radius: 20px;
+                    box-shadow: 0 25px 60px rgba(0, 209, 255, 0.4);
+                    transform: scale(0.95);
+                    animation: wsZoomIn 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.1) forwards;
+                }
+                
+                .ws-lightbox-close {
+                    position: absolute;
+                    top: 25px;
+                    right: 35px;
+                    color: #00d1ff;
+                    font-size: 50px;
+                    font-weight: 300;
+                    cursor: pointer;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 45px;
+                    text-align: center;
+                    border-radius: 50%;
+                    background: rgba(0, 209, 255, 0.1);
+                    border: 1px solid rgba(0, 209, 255, 0.3);
+                    transition: all 0.2s ease;
+                }
+                
+                .ws-lightbox-close:hover {
+                    background: rgba(0, 209, 255, 0.3);
+                    transform: scale(1.1);
+                }
+                
+                .ws-lightbox-counter {
+                    position: absolute;
+                    bottom: 25px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: #94a3b8;
+                    background: rgba(0, 0, 0, 0.6);
+                    padding: 8px 20px;
+                    border-radius: 40px;
+                    font-size: 0.9rem;
+                    border: 1px solid rgba(0, 209, 255, 0.3);
+                    letter-spacing: 0.1em;
+                    backdrop-filter: blur(5px);
+                }
+                
+                @keyframes wsFadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                
+                @keyframes wsZoomIn {
+                    from { 
+                        transform: scale(0.8);
+                        opacity: 0;
+                    }
+                    to { 
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+                
+                .ws-lightbox-fade-out {
+                    animation: wsFadeOut 0.2s ease-in forwards !important;
+                }
+                
+                @keyframes wsFadeOut {
+                    from { opacity: 1; }
+                    to { opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Alle Bild-Cards finden
+            const imageCards = document.querySelectorAll('.image-card');
+            const images = [];
+
+            // Alle Bilder sammeln
+            imageCards.forEach((card, index) => {
+                const img = card.querySelector('img');
+                if (img) {
+                    images.push({
+                        element: img,
+                        src: img.src,
+                        alt: img.alt,
+                        card: card
+                    });
+                    
+                    // Click-Event für jedes Bild
+                    card.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        openLightbox(index);
+                    });
+                    
+                    // Cursor anpassen
+                    card.style.cursor = 'zoom-in';
                 }
             });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
+
+            // Lightbox öffnen
+            function openLightbox(startIndex) {
+                // Bestehende Lightbox entfernen
+                const existing = document.querySelector('.wondershare-lightbox');
+                if (existing) existing.remove();
+
+                // Lightbox Container
+                const lightbox = document.createElement('div');
+                lightbox.className = 'wondershare-lightbox';
+                
+                // Bild-Element
+                const img = document.createElement('img');
+                img.src = images[startIndex].src;
+                img.alt = images[startIndex].alt;
+                
+                // Close-Button
+                const closeBtn = document.createElement('div');
+                closeBtn.className = 'ws-lightbox-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close');
+                
+                // Counter für mehrere Bilder
+                if (images.length > 1) {
+                    const counter = document.createElement('div');
+                    counter.className = 'ws-lightbox-counter';
+                    counter.textContent = `${startIndex + 1} / ${images.length}`;
+                    lightbox.appendChild(counter);
+                    
+                    // Navigation (optional - für Wondershare-Feeling)
+                    let currentIndex = startIndex;
+                    
+                    // Pfeiltasten-Navigation
+                    const keyHandler = function(e) {
+                        if (e.key === 'Escape') {
+                            closeLightbox(lightbox);
+                            document.removeEventListener('keydown', keyHandler);
+                        } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                            currentIndex--;
+                            updateImage(currentIndex, img, counter);
+                        } else if (e.key === 'ArrowRight' && currentIndex < images.length - 1) {
+                            currentIndex++;
+                            updateImage(currentIndex, img, counter);
+                        }
+                    };
+                    
+                    document.addEventListener('keydown', keyHandler);
+                    
+                    // Klick auf linke/rechte Hälfte für Navigation
+                    lightbox.addEventListener('click', function(e) {
+                        if (e.target === lightbox) {
+                            const clickX = e.clientX;
+                            const windowWidth = window.innerWidth;
+                            
+                            if (clickX < windowWidth / 3 && currentIndex > 0) {
+                                // Linke Seite -> vorheriges
+                                currentIndex--;
+                                updateImage(currentIndex, img, counter);
+                            } else if (clickX > (windowWidth / 3) * 2 && currentIndex < images.length - 1) {
+                                // Rechte Seite -> nächstes
+                                currentIndex++;
+                                updateImage(currentIndex, img, counter);
+                            } else {
+                                // Mitte -> schließen
+                                closeLightbox(lightbox);
+                                document.removeEventListener('keydown', keyHandler);
+                            }
+                        }
+                    });
+                    
+                    function updateImage(index, imgElement, counterElement) {
+                        imgElement.style.opacity = '0.5';
+                        setTimeout(() => {
+                            imgElement.src = images[index].src;
+                            imgElement.alt = images[index].alt;
+                            counterElement.textContent = `${index + 1} / ${images.length}`;
+                            imgElement.style.opacity = '1';
+                        }, 100);
+                    }
+                    
+                } else {
+                    // Bei nur einem Bild: Klick auf Hintergrund schließt
+                    lightbox.addEventListener('click', function(e) {
+                        if (e.target === lightbox) {
+                            closeLightbox(lightbox);
+                        }
+                    });
+                }
+                
+                // Close-Button Funktionalität
+                closeBtn.addEventListener('click', function() {
+                    closeLightbox(lightbox);
+                });
+                
+                lightbox.appendChild(img);
+                lightbox.appendChild(closeBtn);
+                document.body.appendChild(lightbox);
+                
+                // Verhindern dass das Hintergrund-Dokument scrollt
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Lightbox schließen
+            function closeLightbox(lightbox) {
+                lightbox.classList.add('ws-lightbox-fade-out');
+                setTimeout(() => {
+                    lightbox.remove();
+                    document.body.style.overflow = '';
+                }, 200);
+            }
+
+            // Escape-Taste global
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const lightbox = document.querySelector('.wondershare-lightbox');
+                    if (lightbox) {
+                        closeLightbox(lightbox);
+                    }
                 }
             });
-        });
+
+        })();
     </script>
 </body>
 </html>
