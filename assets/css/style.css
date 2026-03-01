@@ -185,22 +185,6 @@ strong {
     font-size: 1.0rem;   /* wieder kleiner */
 }
 
-/* Gleiches Styling wie forge-callout für die philosophy-quote */
-.philosophy-quote {
-    background: rgba(0, 209, 255, 0.05);
-    border-left: 4px solid #00d1ff;
-    padding: 1.5rem 2rem;
-    margin: 2.5rem 0;
-    border-radius: 0 16px 16px 0;
-}
-
-.philosophy-quote p {
-    margin-bottom: 0;
-    color: #d9e6ff;
-    font-style: italic;
-    font-size: 1.0rem;  /* ← Deine gewünschte Größe */
-}
-
 /* ===== GRIDS – WENIGER RAHMENZWANG ===== */
 .target-grid {
     display: grid;
