@@ -194,14 +194,17 @@ strong {
 }
 
 .target-box, .contact-box {
-    background: #25344d; /* Heller */
+    background: #25344d;
     padding: 1.2rem 1.4rem;
     border-radius: 16px;
-    /* KEIN RAHMEN standardmäßig */
     color: #ffffff;
     font-size: 0.95rem;
     transition: all 0.2s ease;
-    border: 1px solid transparent; /* Unsichtbar, aber reserviert */
+    border: 1px solid transparent;
+    /* NEU: Damit Inhalt untereinander steht */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .target-box:hover, .contact-box:hover {
@@ -218,6 +221,13 @@ strong {
     text-transform: uppercase;
     margin-bottom: 4px;
     letter-spacing: 0.1em;
+    display: block;  /* Sicherheitshalber */
+}
+
+/* NEU: Für den Inhalt (strong) */
+.contact-box strong {
+    display: block;
+    line-height: 1.4;
 }
 
 /* ===== TABELLEN – AUFGERÄUMTER ===== */
