@@ -93,7 +93,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
-    background: #1f2c41; /* Deutlich heller als #0b0f19 */
+    background: #1a2538;  /* Noch weicher als #1f2c41 */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
@@ -138,7 +138,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 /* ===== CONTENT – MEHR WEISSRAUM ===== */
 .content {
     padding: 3.5rem 4.5rem;
-    background: rgba(255, 255, 255, 0.02); /* Ganz leichte Aufhellung */
+    background: transparent;  /* Statt rgba(255,255,255,0.02) */
 }
 
 /* ===== TYPOGRAPHIE – LUFTIGER ===== */
