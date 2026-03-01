@@ -13,10 +13,11 @@ body {
     line-height: 1.6;
     color: #e2e8f0;
     
-    /* Wärmer – setzt sich von #1c263c ab */
-    background: linear-gradient(145deg, #262438 0%, #1a1825 100%);
-    background-attachment: fixed;
+    /* Dein Wunsch-Farbverlauf – etwas dunkler */
+        background: linear-gradient(145deg, #2a1b2e 0%, #1e1323 100%);
+    /* Dunklere Version von #2a2335 → #1d1825 */
     
+    background-attachment: fixed;
     min-height: 100vh;
     padding: 40px 20px;
     display: flex;
@@ -96,7 +97,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(129, 129, 129, 0.09);  /* Dezentes Cyan */
     backdrop-filter: blur(5px);
 }
 
