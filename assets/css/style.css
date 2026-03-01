@@ -1,0 +1,547 @@
+/* ===== RESET & GRUNDLAGEN ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Deine Wunsch-Schriftart: Consolas als Basis */
+    font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    
+    /* Hellerer Verlauf – nicht mehr ganz so dunkel */
+    background: linear-gradient(145deg, #1a2538 0%, #0f172a 100%);
+    background-attachment: fixed;
+    
+    min-height: 100vh;
+    padding: 40px 20px;
+    
+    /* Mobile flexibel – ohne feste min-width */
+    display: flex;
+    justify-content: center;
+}
+
+/* Überschriften bleiben serifenlos für Kontrast */
+h1, h2, h3, h4, .floating-nav, .header .sub, button {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== HAUPTLAYOUT – RESPONSIV ===== */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1000px);
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    align-items: start;
+}
+
+/* ===== NAVIGATION – JETZT AUCH MOBILE GUT ===== */
+.nav-column {
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+}
+
+.floating-nav {
+    background: #1e2a3f; /* Heller als vorher */
+    padding: 2rem 1.2rem;
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 209, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.floating-nav h3 {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #00d1ff;
+    margin-bottom: 1.5rem;
+    padding-left: 0.8rem;
+    border-left: 4px solid #00d1ff;
+}
+
+.floating-nav ul {
+    list-style: none;
+}
+
+.floating-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.floating-nav a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    color: #b0c4de; /* Heller */
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.floating-nav a:hover,
+.floating-nav a.active {
+    background: rgba(0, 209, 255, 0.15);
+    color: #00d1ff;
+    padding-left: 1.2rem;
+}
+
+/* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
+.document {
+    background: #1f2c41; /* Deutlich heller als #0b0f19 */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+/* ===== HEADER – DEZENTER ===== */
+.header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #132237 100%);
+    color: white;
+    padding: 2.5rem 3.5rem;
+    border-bottom: 3px solid #00d1ff;
+}
+
+.header h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    border-left: 6px solid #00d1ff;
+    padding-left: 1.5rem;
+    color: #ffffff;
+}
+
+.header h1 span {
+    font-weight: 300;
+    color: #a5f3fc;
+}
+
+.header .sub {
+    font-size: 0.9rem;
+    color: #ffffff;
+    opacity: 0.9;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-top: 0.7rem;
+    padding-left: 1.9rem;
+    text-transform: uppercase;
+}
+
+/* ===== CONTENT – MEHR WEISSRAUM ===== */
+.content {
+    padding: 3.5rem 4.5rem;
+    background: rgba(255, 255, 255, 0.02); /* Ganz leichte Aufhellung */
+}
+
+/* ===== TYPOGRAPHIE – LUFTIGER ===== */
+h2, h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #00d1ff;
+    margin: 4rem 0 2rem; /* Mehr Abstand */
+    scroll-margin-top: 60px;
+    border-bottom: 1px solid rgba(0, 209, 255, 0.25);
+    padding-bottom: 0.8rem;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 2rem;
+    color: #cbd5e1; /* Heller */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ===== CALLOUT – WENIGER RAHMEN ===== */
+.forge-callout {
+    background: rgba(0, 209, 255, 0.05);
+    border-left: 4px solid #00d1ff;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    max-width: 85%;
+    border-radius: 0 16px 16px 0;
+}
+
+.forge-callout p {
+    margin-bottom: 0;
+    color: #d9e6ff;
+    font-style: italic;
+    font-size: 1.15rem;
+}
+
+/* ===== GRIDS – WENIGER RAHMENZWANG ===== */
+.target-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 2.5rem 0;
+}
+
+.target-box, .contact-box {
+    background: #25344d; /* Heller */
+    padding: 1.2rem 1.4rem;
+    border-radius: 16px;
+    /* KEIN RAHMEN standardmäßig */
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent; /* Unsichtbar, aber reserviert */
+}
+
+.target-box:hover, .contact-box:hover {
+    border-color: #00d1ff;
+    transform: translateY(-2px);
+    background: #2d3e5a;
+    box-shadow: 0 8px 16px rgba(0, 209, 255, 0.1);
+}
+
+.contact-box span {
+    color: #00d1ff;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    letter-spacing: 0.1em;
+}
+
+/* ===== TABELLEN – AUFGERÄUMTER ===== */
+table {
+    width: 100%;
+    border-collapse: collapse; /* separate → collapse für weniger Linien */
+    margin: 2.5rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #25344d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+}
+
+th {
+    background: #1e2f41;
+    color: #00d1ff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid #00d1ff;
+}
+
+td {
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(0, 209, 255, 0.1);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== BILDER – REDUZIERTE RAHMEN ===== */
+.image-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 3rem 0;
+}
+
+.image-card {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: zoom-in;
+    /* KEIN border standardmäßig */
+}
+
+.image-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 209, 255, 0.2);
+}
+
+.image-card img {
+    width: 100%;
+    display: block;
+}
+
+/* ===== BLOCKQUOTE – SCHLICHT ===== */
+blockquote {
+    background: rgba(0, 209, 255, 0.04);
+    padding: 2.5rem;
+    border-left: 5px solid #00d1ff;
+    margin: 4rem 0;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #d6e3ff;
+    border-radius: 0 20px 20px 0;
+}
+
+/* ===== BUTTONS – PROMINENTER ===== */
+.contact-button {
+    display: inline-block;
+    background: #00d1ff;
+    color: #0b1a2f;
+    padding: 1.2rem 3.5rem;
+    border-radius: 40px; /* Runder */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 20px rgba(0, 209, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-button:hover {
+    background: #33e0ff;
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 209, 255, 0.5);
+}
+
+/* ===== EARLY ACCESS BANNER ===== */
+.early-banner {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: #00d1ff;
+    color: #0b1a2f;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 25px #00d1ff;
+    border: 1px solid white;
+    backdrop-filter: blur(4px);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== EARLY ACCESS BOX ===== */
+.early-box {
+    background: linear-gradient(145deg, #1e3a5f20 0%, #00d1ff10 100%);
+    padding: 3rem;
+    border-radius: 32px;
+    margin: 4rem 0;
+    border: 1px solid rgba(0, 209, 255, 0.2);
+}
+
+.early-box h3 {
+    color: white;
+    text-align: center;
+    border-bottom: none;
+    margin-top: 0;
+}
+
+.early-flex {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 2rem auto 0;
+}
+
+.early-flex input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: #1a293f;
+    border: 1px solid #00d1ff40;
+    border-radius: 40px;
+    color: white;
+    font-family: 'Consolas', monospace;
+    font-size: 1rem;
+}
+
+.early-flex input:focus {
+    outline: none;
+    border-color: #00d1ff;
+    box-shadow: 0 0 15px #00d1ff40;
+}
+
+.early-flex button {
+    background: #00d1ff;
+    color: #0b1a2f;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.early-flex button:hover {
+    background: #33e0ff;
+    transform: scale(1.02);
+}
+
+.architect-box {
+    background: #1e2f41;
+    border-radius: 24px;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    border-left: 4px solid #00d1ff;
+}
+
+code {
+    background: #1a293f;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.95em;
+    color: #00d1ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 6rem;
+    color: #6b7f9f;
+    font-size: 0.9rem;
+}
+
+/* ===== MEDIA QUERIES – ENDLICH MOBILE! ===== */
+@media (max-width: 1100px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .nav-column {
+        position: static;
+        top: auto;
+    }
+
+    .floating-nav {
+        position: relative;
+        top: auto;
+        transform: none;
+        width: 100%;
+    }
+
+    .header h1 {
+        font-size: 2.2rem;
+    }
+
+    .content {
+        padding: 2.5rem;
+    }
+
+    .early-banner {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px 10px;
+        font-size: 1rem;
+    }
+
+    .header {
+        padding: 1.8rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+        padding-left: 1rem;
+        border-left-width: 4px;
+    }
+
+    .header .sub {
+        padding-left: 1.2rem;
+        font-size: 0.75rem;
+    }
+
+    .content {
+        padding: 1.8rem;
+    }
+
+    .target-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-matrix {
+        grid-template-columns: 1fr;
+    }
+
+    .forge-callout {
+        max-width: 100%;
+        padding: 1.2rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 1rem;
+    }
+
+    blockquote {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .early-flex {
+        flex-direction: column;
+    }
+
+    .early-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .early-banner {
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Für extrem kleine Geräte */
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header .sub {
+        font-size: 0.65rem;
+    }
+
+    .floating-nav {
+        padding: 1.5rem 1rem;
+    }
+
+    .floating-nav a {
+        font-size: 0.85rem;
+    }
+}

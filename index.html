@@ -4,368 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowShift - Sovereign Document Forge</title>
-    <!-- Ein Favicon einfügen – das kleine Detail im Browser-Tab -->
-	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230b0f19' stroke='%2300d1ff' stroke-width='8'/%3E%3Cpath d='M25 50 Q40 35, 50 50 Q60 65, 75 50' stroke='%2300d1ff' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-	
-	<style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-        /* BODY - Sanftere Mindestbreite */
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #e2e8f0;
-            background-color: #0b0f19;
-            background-image: radial-gradient(at top right, #161d2b 0%, #0b0f19 100%);
-            background-attachment: fixed;
-            padding: 60px 0;
-            min-height: 100vh;
-            /* Reduziert für bessere Kompatibilität */
-            min-width: 1200px;
-            overflow-x: auto;
-        }
-
-        .layout-grid {
-            display: grid;
-            /* Linke Spalte bekommt mehr Platz für den Abstand */
-            grid-template-columns: minmax(300px, 1fr) 1000px minmax(50px, 1fr);
-            gap: 40px;
-            width: 100%;
-            align-items: stretch;
-        }
-
-        .nav-column {
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-        }
-
-        /* NAVIGATION - STICKY mit Abstand */
-        .floating-nav {
-            position: sticky;
-            top: 50vh;
-            transform: translateY(-50%);
-
-            width: 260px;
-            height: max-content;
-            background: #161d2b;
-            padding: 2rem 1.2rem;
-            border-radius: 28px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(0, 209, 255, 0.2);
-            z-index: 1000;
-
-            /* WICHTIG: Abstand zum linken Rand */
-            margin-left: 20px;
-            /* Hält Abstand zum Fensterrand */
-            margin-right: 10px;
-            /* Zusätzliche Sicherheit */
-        }
-
-        .floating-nav h3 {
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #00d1ff;
-            margin-bottom: 1.5rem;
-            padding-left: 0.8rem;
-            border-left: 4px solid #00d1ff;
-        }
-
-        .floating-nav ul {
-            list-style: none;
-        }
-
-        .floating-nav li {
-            margin-bottom: 0.5rem;
-        }
-
-        .floating-nav a {
-            display: block;
-            padding: 0.6rem 0.8rem;
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.95rem;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-
-        .floating-nav a:hover,
-        .floating-nav a.active {
-            background: rgba(0, 209, 255, 0.1);
-            color: #00d1ff;
-            padding-left: 1.2rem;
-        }
-
-        .document {
-            background: #161d2b;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border-radius: 32px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* MASTER HEADER */
-        .header {
-            background: linear-gradient(90deg, #2563eb 0%, #1e40af 50%, #7e22ce 100%);
-            color: white;
-            padding: 2.2rem 3.5rem;
-            border-bottom: 4px solid #00d1ff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .header h1 {
-            font-size: 2.7rem;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            border-left: 6px solid #00d1ff;
-            padding-left: 1.5rem;
-            color: #ffffff;
-        }
-
-        .header h1 span {
-            font-weight: 300;
-            color: #a5f3fc;
-            opacity: 0.95;
-        }
-
-        .header .sub {
-            font-size: 0.9rem;
-            color: #ffffff;
-            opacity: 0.85;
-            letter-spacing: 0.12em;
-            font-weight: 600;
-            margin-top: 0.7rem;
-            padding-left: 1.9rem;
-            text-transform: uppercase;
-            font-style: normal;
-        }
-
-        .content {
-            padding: 3rem 4.5rem 4.5rem;
-        }
-
-        .forge-callout {
-            background: rgba(0, 209, 255, 0.03);
-            border: 1px solid rgba(0, 209, 255, 0.15);
-            border-left: 4px solid #00d1ff;
-            padding: 1.2rem 1.8rem;
-            border-radius: 0 16px 16px 0;
-            margin: 2rem 0;
-            max-width: 80%;
-        }
-
-        .forge-callout p {
-            margin-bottom: 0;
-            color: #00d1ff;
-            font-style: italic;
-            font-size: 1.05rem;
-        }
-
-        h2,
-        h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #00d1ff;
-            margin: 3rem 0 1.5rem;
-            scroll-margin-top: 60px;
-            border-bottom: 1px solid rgba(0, 209, 255, 0.3);
-            padding-bottom: 0.6rem;
-            letter-spacing: -0.01em;
-        }
-
-        h2:first-of-type {
-            margin-top: 0;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: #94a3b8;
-            font-size: 1.05rem;
-        }
-
-        strong {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .target-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 2.5rem 0;
-        }
-
-        .target-box,
-        .contact-box {
-            background: #1e293b;
-            padding: 1.1rem 1.4rem;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            font-size: 0.95rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .target-box:hover,
-        .contact-box:hover {
-            border-color: #00d1ff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-box span {
-            color: #00d1ff;
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-            letter-spacing: 0.1em;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 2rem 0;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 209, 255, 0.2);
-            background: #1e293b;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        th,
-        td {
-            padding: 1.2rem;
-            text-align: left;
-        }
-
-        th {
-            background: linear-gradient(to bottom, #1e3a8a, #161d2b);
-            color: #00d1ff;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            border-bottom: 2px solid #00d1ff;
-        }
-
-        td {
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        .image-matrix {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin: 3rem 0;
-        }
-
-        .image-card {
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
-            cursor: zoom-in;
-        }
-
-        .image-card:hover {
-            transform: scale(1.02);
-            border-color: #00d1ff;
-        }
-
-        .image-card img {
-            width: 100%;
-            display: block;
-        }
-
-        blockquote {
-            background: rgba(0, 209, 255, 0.03);
-            padding: 2.5rem;
-            border-left: 5px solid #00d1ff;
-            margin: 3.5rem 0;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            border-radius: 0 20px 20px 0;
-        }
-
-        .contact-button {
-            display: inline-block;
-            background: #00d1ff;
-            color: #0b0f19;
-            padding: 1.2rem 3.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 20px rgba(0, 209, 255, 0.4);
-        }
-
-        .contact-button:hover {
-            background: #33e0ff;
-            transform: scale(1.03);
-        }
-
-        .architect-box {
-            background: #0b0f19;
-            border-radius: 24px;
-            padding: 1.2rem 1.8rem;
-            margin-top: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .architect-box p {
-            margin-bottom: 0;
-            font-size: 1.0em;
-        }
-
-        code {
-            background: #0b0f19;
-            padding: 0.2rem 0.5rem;
-            border-radius: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9em;
-            color: #00d1ff;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .footer-note {
-            text-align: center;
-            margin-top: 6rem;
-            color: #475569;
-            font-size: 0.85rem;
-        }
-    </style>
+    <title>FlowShift · Early Access 2026</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230b0f19' stroke='%2300d1ff' stroke-width='8'/%3E%3Cpath d='M25 50 Q40 35, 50 50 Q60 65, 75 50' stroke='%2300d1ff' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+    
+    <!-- CSS AUS assets/css/style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <!-- EARLY ACCESS BANNER -->
+    <div class="early-banner">
+        ⚡ EARLY ACCESS · 2026 ⚡
+    </div>
 
     <div class="layout-grid">
-        <!-- Spalte 1: Navigation (STICKY) -->
+        <!-- NAVIGATION -->
         <aside class="nav-column">
             <nav class="floating-nav">
                 <h3>📋 CONTENTS</h3>
@@ -377,13 +30,14 @@
                     <li><a href="#features">✨ Features</a></li>
                     <li><a href="#architecture">🏗️ Architecture</a></li>
                     <li><a href="#background">📖 Background</a></li>
+                    <li><a href="#early">📬 Early Access</a></li>
                     <li><a href="#contact">💬 Contact</a></li>
                     <li><a href="#license">📄 License</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Spalte 2: Hauptdokument -->
+        <!-- HAUPTDOKUMENT -->
         <main class="document">
             <div class="header">
                 <h1>FlowShift <span>// Sovereign Document Forge</span></h1>
@@ -392,12 +46,9 @@
 
             <div class="content">
                 <h2 id="intro">🚀 Introduction: The Sovereign Forge</h2>
-                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid
-                        Document Builder</strong>. It transcends the limits of traditional editors by unifying Markdown,
-                    HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
+                <p>The <strong>FlowShift Sovereign Document Engine</strong> is a high-performance <strong>Hybrid Document Builder</strong>. It transcends the limits of traditional editors by unifying Markdown, HTML5/CSS3, and YAML into a single, cohesive workflow.</p>
                 <div class="forge-callout">
-                    <p>It is a precision instrument designed to bridge the gap between structured content and
-                        professional layout — delivering masterpieces with absolute data sovereignty.</p>
+                    <p>It is a precision instrument designed to bridge the gap between structured content and professional layout — delivering masterpieces with absolute data sovereignty.</p>
                 </div>
 
                 <h3 id="audience">🎯 Who is FlowShift for?</h3>
@@ -415,17 +66,17 @@
                 <h2 id="preview">🖼️ Visual Preview</h2>
                 <div class="image-matrix">
                     <div>
-                        <div class="image-card"><img src="screen.png" alt="Editor"></div>
+                        <!-- BILDER JETZT AUS assets/images/ -->
+                        <div class="image-card"><img src="assets/images/screen.png" alt="Editor"></div>
                     </div>
                     <div>
-                        <div class="image-card"><img src="screen2.png" alt="Configurator"></div>
+                        <div class="image-card"><img src="assets/images/screen2.png" alt="Configurator"></div>
                     </div>
                     <div>
-                        <div class="image-card"><img src="screen3.png" alt="Template"></div>
+                        <div class="image-card"><img src="assets/images/screen3.png" alt="Template"></div>
                     </div>
-                    <div
-                        style="display: flex; align-items: center; justify-content: center; background: #0b0f19; border-radius: 20px; border: 2px dashed rgba(0, 209, 255, 0.3); color: #94a3b8; text-align: center; font-size: 0.85rem; padding: 20px;">
-                        Hybrid Logic Forge &<br>Anchor Mapping System
+                    <div style="display: flex; align-items: center; justify-content: center; background: #1e2f41; border-radius: 20px; border: 2px dashed rgba(0, 209, 255, 0.3); color: #b0c4de; text-align: center; font-size: 0.9rem; padding: 30px;">
+                        ⚙️ Hybrid Logic Forge<br>& Anchor Mapping System
                     </div>
                 </div>
 
@@ -453,8 +104,7 @@
                     </tbody>
                 </table>
 
-                <blockquote>"FlowShift transforms complex ideas into perfectly formatted documents,<br>built for
-                    professionals who demand absolute mastery over their data."</blockquote>
+                <blockquote>"FlowShift transforms complex ideas into perfectly formatted documents,<br>built for professionals who demand absolute mastery over their data."</blockquote>
 
                 <h2 id="features">✨ Key Features</h2>
                 <table>
@@ -481,10 +131,9 @@
                 </table>
 
                 <h2 id="architecture">🏗️ Architecture: Technical Foundation</h2>
-                <p>Engineered with <strong>Java 23 & JavaFX</strong>, FlowShift combines the stability of a native
-                    desktop powerhouse with the infinite styling possibilities of modern web technologies.</p>
+                <p>Engineered with <strong>Java 23 & JavaFX</strong>, FlowShift combines the stability of a native desktop powerhouse with the infinite styling possibilities of modern web technologies.</p>
 
-                <h3>6.1 Technology Stack</h3>
+                <h3>Technology Stack</h3>
                 <table>
                     <thead>
                         <tr>
@@ -513,12 +162,21 @@
                 </table>
 
                 <h2 id="background">📖 Background: The Philosophy of Resilience</h2>
-                <p>FlowShift was born from necessity. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent
-                    over two decades refining digital workflows where physical endurance was limited, but intellectual
-                    output had to remain at a maximum.</p>
+                <p>FlowShift was born from necessity. The architect, <strong>Henryk Daniel Zschuppan</strong>, spent over two decades refining digital workflows where physical endurance was limited, but intellectual output had to remain at a maximum.</p>
                 <div class="architect-box">
-                    <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Providing
-                        order when life becomes chaotic.</p>
+                    <p><strong>Henryk Daniel Zschuppan:</strong> Visionary and architect behind FlowShift. Providing order when life becomes chaotic.</p>
+                </div>
+
+                <!-- EARLY ACCESS SECTION -->
+                <h2 id="early">📬 Early Access Programm</h2>
+                <div class="early-box">
+                    <h3 style="color: white; text-align: center; border-bottom: none; margin-top: 0;">🚀 Sei unter den Ersten</h3>
+                    <p style="text-align: center; color: #b0c4de;">Wir entwickeln FlowShift für Profis wie dich. Melde dich für den Early Access an und gestalte die Zukunft mit.</p>
+                    <div class="early-flex">
+                        <input type="email" placeholder="deine@email.de" value="h.zschuppan@aol.com">
+                        <button>📧 Anmelden</button>
+                    </div>
+                    <p style="text-align: center; font-size: 0.9rem; margin-top: 1.5rem; color: #7f9fbf;">⚡ Limited Preview · Q3 2026 ⚡</p>
                 </div>
 
                 <h2 id="contact">💬 Contact & Community</h2>
@@ -532,464 +190,29 @@
                 </div>
 
                 <h2 id="license">📄 License: Sovereign Commercial</h2>
-                <div
-                    style="background: #1e293b; padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                <div style="background: #1e2f41; padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.03);">
                     <p><strong>Sovereign Commercial License</strong></p>
-                    <p style="font-size: 0.95rem; margin-top: 1.2rem; color: #cbd5e1;">Copyright © {2025-PRESENT}
-                        FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
-                    <p style="font-size: 0.95rem; margin-top: 1rem; color: #cbd5e1;">This software is a commercial
-                        product. All rights are reserved. No part of this software may be reproduced without permission.
-                    </p>
+                    <p style="font-size: 0.95rem; margin-top: 1.2rem; color: #cbd5e1;">Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.</p>
+                    <p style="font-size: 0.95rem; margin-top: 1rem; color: #cbd5e1;">This software is a commercial product. All rights are reserved. No part of this software may be reproduced without permission.</p>
                     <p style="text-align: center; color: #00d1ff; font-weight: 700; margin-top: 2rem;">
                         — Our commitment: Perpetual and unconditional rights for licensees. —
                     </p>
                 </div>
 
                 <div style="text-align: center; margin: 4rem 0;">
-                    <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry" class="contact-button">📧 Contact
-                        Sales & Business</a>
+                    <a href="mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry" class="contact-button">📧 Contact Sales & Business</a>
                 </div>
 
                 <div class="footer-note">
                     <sub>⚡ Precision · Sovereignty · Zero Compromise ⚡</sub><br>
-                    © 2026 FlowShift
+                    © 2026 FlowShift · Early Access Build
                 </div>
             </div>
         </main>
-        <div class="spacer-column"></div>
     </div>
 
-    <script>
-        (function () {
-            // =============================================
-            // 1. SCROLL NAVIGATION HIGHLIGHTING
-            // =============================================
-            function updateActiveNavLink() {
-                const sections = document.querySelectorAll('h2[id], h3[id]');
-                const navLinks = document.querySelectorAll('.floating-nav a');
-                let current = "";
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.pageYOffset >= sectionTop - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateActiveNavLink);
-            window.addEventListener('load', updateActiveNavLink);
-
-            // Smooth scroll für Nav-Links
-            document.querySelectorAll('.floating-nav a').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // =============================================
-            // 2. WONDERSHARE-STYLE BILDZOOM MIT NAVIGATION
-            // =============================================
-
-            // CSS für Lightbox mit perfektem X und Next/Prev Buttons
-            const style = document.createElement('style');
-            style.textContent = `
-                .ws-lightbox {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.98);
-                    z-index: 99999;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    backdrop-filter: blur(15px);
-                    -webkit-backdrop-filter: blur(15px);
-                    animation: wsFadeIn 0.25s ease-out;
-                }
-                
-                .ws-lightbox-content {
-                    position: relative;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 100%;
-                }
-                
-                .ws-lightbox img {
-                    max-width: 80vw;
-                    max-height: 80vh;
-                    border: 4px solid #00d1ff;
-                    border-radius: 20px;
-                    box-shadow: 0 25px 60px rgba(0, 209, 255, 0.4);
-                    transform: scale(0.95);
-                    animation: wsZoomIn 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.1) forwards;
-                }
-                
-                /* X Button - PERFEKT ZENTRIERT */
-                .ws-close {
-                    position: absolute;
-                    top: 30px;
-                    right: 40px;
-                    width: 50px;
-                    height: 50px;
-                    background: rgba(0, 209, 255, 0.15);
-                    border: 2px solid #00d1ff;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: all 0.2s ease;
-                    z-index: 100000;
-                    box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
-                }
-                
-                .ws-close:hover {
-                    background: #00d1ff;
-                    transform: scale(1.1);
-                    box-shadow: 0 0 30px rgba(0, 209, 255, 0.6);
-                }
-                
-                .ws-close::before,
-                .ws-close::after {
-                    content: '';
-                    position: absolute;
-                    width: 25px;
-                    height: 3px;
-                    background-color: white;
-                    border-radius: 3px;
-                }
-                
-                .ws-close::before {
-                    transform: rotate(45deg);
-                }
-                
-                .ws-close::after {
-                    transform: rotate(-45deg);
-                }
-                
-                .ws-close:hover::before,
-                .ws-close:hover::after {
-                    background-color: #0b0f19;
-                }
-                
-                /* Navigation Buttons */
-                .ws-nav {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 60px;
-                    height: 60px;
-                    background: rgba(0, 209, 255, 0.15);
-                    border: 2px solid #00d1ff;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: all 0.2s ease;
-                    z-index: 100000;
-                    box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
-                }
-                
-                .ws-nav:hover {
-                    background: #00d1ff;
-                    transform: translateY(-50%) scale(1.1);
-                    box-shadow: 0 0 30px rgba(0, 209, 255, 0.6);
-                }
-                
-                .ws-nav.prev {
-                    left: 40px;
-                }
-                
-                .ws-nav.next {
-                    right: 40px;
-                }
-                
-                .ws-nav::before {
-                    content: '';
-                    width: 15px;
-                    height: 15px;
-                    border-left: 3px solid white;
-                    border-bottom: 3px solid white;
-                    transform: rotate(45deg);
-                    margin-left: 5px;
-                }
-                
-                .ws-nav.next::before {
-                    transform: rotate(-135deg);
-                    margin-left: -5px;
-                }
-                
-                .ws-nav.prev::before {
-                    transform: rotate(45deg);
-                }
-                
-                .ws-nav:hover::before {
-                    border-color: #0b0f19;
-                }
-                
-                /* Bildzähler */
-                .ws-counter {
-                    position: absolute;
-                    bottom: 30px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    color: white;
-                    background: rgba(0, 209, 255, 0.15);
-                    padding: 10px 25px;
-                    border-radius: 40px;
-                    font-size: 1rem;
-                    border: 1px solid #00d1ff;
-                    letter-spacing: 0.1em;
-                    backdrop-filter: blur(5px);
-                    box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
-                    z-index: 100000;
-                }
-                
-                @keyframes wsFadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                
-                @keyframes wsZoomIn {
-                    from { 
-                        transform: scale(0.8);
-                        opacity: 0;
-                    }
-                    to { 
-                        transform: scale(1);
-                        opacity: 1;
-                    }
-                }
-                
-                .ws-lightbox-fade-out {
-                    animation: wsFadeOut 0.2s ease-in forwards !important;
-                }
-                
-                @keyframes wsFadeOut {
-                    from { opacity: 1; }
-                    to { opacity: 0; }
-                }
-                
-                /* Deaktivierte Buttons */
-                .ws-nav.disabled {
-                    opacity: 0.3;
-                    cursor: not-allowed;
-                    pointer-events: none;
-                    border-color: #475569;
-                    background: rgba(71, 85, 105, 0.15);
-                }
-            `;
-            document.head.appendChild(style);
-
-            // Alle Bild-Cards finden
-            const imageCards = document.querySelectorAll('.image-card');
-            const images = [];
-
-            // Alle Bilder sammeln
-            imageCards.forEach((card, index) => {
-                const img = card.querySelector('img');
-                if (img) {
-                    images.push({
-                        element: img,
-                        src: img.src,
-                        alt: img.alt,
-                        card: card
-                    });
-
-                    // Click-Event für jedes Bild
-                    card.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        openLightbox(index);
-                    });
-
-                    card.style.cursor = 'zoom-in';
-                }
-            });
-
-            // Lightbox öffnen
-            function openLightbox(startIndex) {
-                // Bestehende Lightbox entfernen
-                const existing = document.querySelector('.ws-lightbox');
-                if (existing) existing.remove();
-
-                // Lightbox Container
-                const lightbox = document.createElement('div');
-                lightbox.className = 'ws-lightbox';
-
-                // Content Container
-                const content = document.createElement('div');
-                content.className = 'ws-lightbox-content';
-
-                // Bild-Element
-                const img = document.createElement('img');
-                img.src = images[startIndex].src;
-                img.alt = images[startIndex].alt;
-
-                // X Close Button
-                const closeBtn = document.createElement('div');
-                closeBtn.className = 'ws-close';
-                closeBtn.setAttribute('aria-label', 'Close');
-
-                // Navigation und Counter (nur wenn mehrere Bilder)
-                let prevBtn, nextBtn, counter;
-                let currentIndex = startIndex;
-
-                if (images.length > 1) {
-                    // Prev Button
-                    prevBtn = document.createElement('div');
-                    prevBtn.className = 'ws-nav prev';
-                    prevBtn.setAttribute('aria-label', 'Previous image');
-
-                    // Next Button
-                    nextBtn = document.createElement('div');
-                    nextBtn.className = 'ws-nav next';
-                    nextBtn.setAttribute('aria-label', 'Next image');
-
-                    // Counter
-                    counter = document.createElement('div');
-                    counter.className = 'ws-counter';
-                    counter.textContent = `${startIndex + 1} / ${images.length}`;
-
-                    // Event Listener für Navigation
-                    prevBtn.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        if (currentIndex > 0) {
-                            currentIndex--;
-                            updateImage();
-                        }
-                    });
-
-                    nextBtn.addEventListener('click', function (e) {
-                        e.stopPropagation();
-                        if (currentIndex < images.length - 1) {
-                            currentIndex++;
-                            updateImage();
-                        }
-                    });
-
-                    // Update Funktion
-                    function updateImage() {
-                        img.style.opacity = '0.5';
-                        setTimeout(() => {
-                            img.src = images[currentIndex].src;
-                            img.alt = images[currentIndex].alt;
-                            counter.textContent = `${currentIndex + 1} / ${images.length}`;
-
-                            // Prev/Next Buttons deaktivieren/aktivieren
-                            if (prevBtn) {
-                                if (currentIndex === 0) {
-                                    prevBtn.classList.add('disabled');
-                                } else {
-                                    prevBtn.classList.remove('disabled');
-                                }
-                            }
-
-                            if (nextBtn) {
-                                if (currentIndex === images.length - 1) {
-                                    nextBtn.classList.add('disabled');
-                                } else {
-                                    nextBtn.classList.remove('disabled');
-                                }
-                            }
-
-                            img.style.opacity = '1';
-                        }, 150);
-                    }
-
-                    // Initialen Status der Buttons setzen
-                    if (currentIndex === 0) {
-                        prevBtn.classList.add('disabled');
-                    }
-                    if (currentIndex === images.length - 1) {
-                        nextBtn.classList.add('disabled');
-                    }
-
-                    content.appendChild(prevBtn);
-                    content.appendChild(nextBtn);
-                    content.appendChild(counter);
-
-                    // Tastatur-Navigation
-                    const keyHandler = function (e) {
-                        if (e.key === 'Escape') {
-                            closeLightbox(lightbox);
-                            document.removeEventListener('keydown', keyHandler);
-                        } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-                            currentIndex--;
-                            updateImage();
-                        } else if (e.key === 'ArrowRight' && currentIndex < images.length - 1) {
-                            currentIndex++;
-                            updateImage();
-                        }
-                    };
-
-                    document.addEventListener('keydown', keyHandler);
-
-                    // Cleanup Funktion
-                    lightbox.addEventListener('remove', function () {
-                        document.removeEventListener('keydown', keyHandler);
-                    });
-                }
-
-                // Content zusammenbauen
-                content.appendChild(img);
-                content.appendChild(closeBtn);
-                lightbox.appendChild(content);
-
-                // Close Funktion
-                closeBtn.addEventListener('click', function () {
-                    closeLightbox(lightbox);
-                });
-
-                // Klick auf Hintergrund schließt
-                lightbox.addEventListener('click', function (e) {
-                    if (e.target === lightbox) {
-                        closeLightbox(lightbox);
-                    }
-                });
-
-                document.body.appendChild(lightbox);
-                document.body.style.overflow = 'hidden';
-            }
-
-            // Lightbox schließen
-            function closeLightbox(lightbox) {
-                lightbox.classList.add('ws-lightbox-fade-out');
-                setTimeout(() => {
-                    lightbox.remove();
-                    document.body.style.overflow = '';
-                }, 200);
-            }
-
-            // Escape-Taste global
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                    const lightbox = document.querySelector('.ws-lightbox');
-                    if (lightbox) {
-                        closeLightbox(lightbox);
-                    }
-                }
-            });
-
-        })();
-    </script>
+    <!-- JAVASCRIPT AUS assets/js/main.js -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
