@@ -94,12 +94,13 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
     background: #181d36;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(10, 55, 116, 0.38);
     border-radius: 32px;
     overflow: hidden;
-    border: 1px solid rgba(129, 129, 129, 0.10);  /* Dezentes Cyan */
+    /* Kein border, stattdessen im box-shadow */
     backdrop-filter: blur(5px);
 }
+
 
 /* ===== HEADER – DEZENTER ===== */
 .header {
