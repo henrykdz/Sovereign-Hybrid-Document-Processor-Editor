@@ -289,9 +289,13 @@ blockquote {
     border-left: 5px solid #00d1ff;
     margin: 4rem 0;
     font-style: italic;
-    font-size: 1.1rem !important;
+    font-size: 1.0rem;
     color: #d6e3ff;
     border-radius: 0 20px 20px 0;
+}
+/* Extrem spezifisch */
+.content blockquote {
+    font-size: 1.0rem !important;
 }
 
 /* ===== BUTTONS – PROMINENTER ===== */
