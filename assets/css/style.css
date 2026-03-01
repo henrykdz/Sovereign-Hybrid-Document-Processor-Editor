@@ -47,7 +47,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 }
 
 .floating-nav {
-    background: #1b2037;
+    background: #1a2036;
     padding: 2rem 1.2rem;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -93,11 +93,11 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
-    background: #1b2037;
+    background: #1a2036;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
-    border: 1px solid rgba(129, 129, 129, 0.10);  /* Decent Grey */
+    border: 1px solid rgba(129, 129, 129, 0.10);  /* Dezentes Cyan */
     backdrop-filter: blur(5px);
 }
 
@@ -174,8 +174,9 @@ strong {
     border-left: 4px solid #00d1ff;
     padding: 1.5rem 2rem;
     margin: 2.5rem 0;
-    max-width: 85%;
+    /* max-width: 85%;  ENTFERNT */
     border-radius: 0 16px 16px 0;
+    width: 100%;  /* Optional: sicherstellen, dass es volle Breite nutzt */
 }
 
 .forge-callout p {
