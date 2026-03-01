@@ -97,7 +97,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
-    border: 1px solid rgba(129, 129, 129, 0.09);  /* Dezentes Cyan */
+    border: 1px solid rgba(129, 129, 129, 0.10);  /* Decent Grey */
     backdrop-filter: blur(5px);
 }
 
