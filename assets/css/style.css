@@ -47,7 +47,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 }
 
 .floating-nav {
-    background: #181d33;
+    background: #181d34;
     padding: 2rem 1.2rem;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -93,7 +93,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
-    background: #181d33;
+    background: #181d34;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(3, 52, 114, 0.38);
     border-radius: 32px;
     overflow: hidden;
@@ -139,7 +139,8 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 /* ===== CONTENT – MEHR WEISSRAUM ===== */
 .content {
     padding: 3.5rem 4.5rem;
-    background: transparent;  /* Statt rgba(255,255,255,0.02) */
+    background: transparent;
+    hyphens: auto;  /* Silbentrennung einschalten */
 }
 
 /* ===== TYPOGRAPHIE – LUFTIGER ===== */
