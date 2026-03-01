@@ -5,21 +5,20 @@
     box-sizing: border-box;
 }
 
+/* ===== RESET & GRUNDLAGEN ===== */
 body {
     /* Deine Wunsch-Schriftart: Consolas als Basis */
     font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
-    font-size: 0.95rem;  /* oder 1.0rem - je nach Geschmack */
+    font-size: 0.95rem;
     line-height: 1.6;
     color: #e2e8f0;
     
-    /* Hellerer Verlauf – nicht mehr ganz so dunkel */
-    background: linear-gradient(145deg, #1a2538 0%, #0f172a 100%);
+    /* Wärmer – setzt sich von #1c263c ab */
+    background: linear-gradient(145deg, #262438 0%, #1a1825 100%);
     background-attachment: fixed;
     
     min-height: 100vh;
     padding: 40px 20px;
-    
-    /* Mobile flexibel – ohne feste min-width */
     display: flex;
     justify-content: center;
 }
@@ -47,7 +46,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 }
 
 .floating-nav {
-    background: #1e2a3f; /* Heller als vorher */
+    background: #1b2137;
     padding: 2rem 1.2rem;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -93,7 +92,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
-    background: #1f2c41;  /* Dieses Blau hat einen Grünstich */
+    background: #1b2137;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
