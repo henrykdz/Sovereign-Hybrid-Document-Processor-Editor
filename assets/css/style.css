@@ -93,7 +93,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
-    background: #1a2538;  /* Noch weicher als #1f2c41 */
+    background: #1f2c41;  /* Dieses Blau hat einen Grünstich */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
