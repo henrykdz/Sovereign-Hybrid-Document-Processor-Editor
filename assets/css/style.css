@@ -8,8 +8,8 @@
 body {
     /* Deine Wunsch-Schriftart: Consolas als Basis */
     font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 0.95rem;  /* oder 1.0rem - je nach Geschmack */
+    line-height: 1.6;
     color: #e2e8f0;
     
     /* Hellerer Verlauf – nicht mehr ganz so dunkel */
@@ -159,8 +159,8 @@ h2:first-of-type {
 p {
     margin-bottom: 2rem;
     color: #cbd5e1; /* Heller */
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 0.95rem;  /* oder 1.0rem */
+    line-height: 1.6;
 }
 
 strong {
@@ -182,7 +182,7 @@ strong {
     margin-bottom: 0;
     color: #d9e6ff;
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 1.0rem;   /* wieder kleiner */
 }
 
 /* ===== GRIDS – WENIGER RAHMENZWANG ===== */
