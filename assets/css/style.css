@@ -47,7 +47,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 }
 
 .floating-nav {
-    background: #181e36;
+    background: #181d36;
     padding: 2rem 1.2rem;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -93,7 +93,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 /* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
 .document {
-    background: #181e36;
+    background: #181d36;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 32px;
     overflow: hidden;
