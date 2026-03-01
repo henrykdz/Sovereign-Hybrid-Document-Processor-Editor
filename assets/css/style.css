@@ -201,10 +201,7 @@ strong {
     font-size: 0.95rem;
     transition: all 0.2s ease;
     border: 1px solid transparent;
-    /* NEU: Damit Inhalt untereinander steht */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    /* KEIN display: flex nötig */
 }
 
 .target-box:hover, .contact-box:hover {
@@ -221,13 +218,11 @@ strong {
     text-transform: uppercase;
     margin-bottom: 4px;
     letter-spacing: 0.1em;
-    display: block;  /* Sicherheitshalber */
+    display: block;  /* Das war der Trick! */
 }
 
-/* NEU: Für den Inhalt (strong) */
 .contact-box strong {
-    display: block;
-    line-height: 1.4;
+    display: block;  /* Auch als Block für sauberen Umbruch */
 }
 
 /* ===== TABELLEN – AUFGERÄUMTER ===== */
