@@ -25,7 +25,7 @@ public class MarkdownTemplateManager {
 	private final Path premiumPath;
 	private final Path customPath;
 	
-	private static final List<String> BUILT_IN_FILES = List.of("Betrieb");
+	private static final List<String> BUILT_IN_FILES = List.of("Daily-Safety-Machine-Inspection.md","Document-Forge_Help.md", "Markdown-Caveats_Solutions.md", "Profi-Guide_Anchors_and_IDs.md");
 
 	public MarkdownTemplateManager() {
 		this.rootPath = Paths.get(System.getProperty("user.dir"), "templates");
@@ -59,7 +59,7 @@ public class MarkdownTemplateManager {
 
 	private void loadBuiltIn() {
 		for (String name : BUILT_IN_FILES) {
-			String resPath = "/com/flowshift/editor/templates/" + name.toLowerCase() + ".md";
+			String resPath = "/com/flowshift/editor/templates/" + name.toLowerCase();
 			try (InputStream is = getClass().getResourceAsStream(resPath)) {
 				if (is != null) templates.put(name, new String(is.readAllBytes(), StandardCharsets.UTF_8));
 			} catch (IOException ignored) {}
