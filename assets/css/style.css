@@ -66,6 +66,55 @@
     transition: all 0.3s ease;
 }
 
+/* ===== FEATURES-TABELLE OHNE HEADER ===== */
+.features-table {
+    width: 100%;
+    border-collapse: separate;  /* Wie Original */
+    border-spacing: 0;
+    margin: 2rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 209, 255, 0.2);  /* Original Border */
+    background: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  /* Original Box-Shadow */
+}
+
+.features-table tr {
+    border-bottom: 1px solid rgba(0, 209, 255, 0.1);
+}
+
+.features-table tr:last-child {
+    border-bottom: none;
+}
+
+.features-table td {
+    padding: 1rem 1.2rem;
+    color: #e2e8f0;
+    vertical-align: top;
+}
+
+.features-table td:first-child {
+    width: 200px;
+    font-weight: 600;
+    color: #00d1ff;
+    white-space: nowrap;
+    border-right: 1px solid rgba(0, 209, 255, 0.1);
+}
+
+.features-table td:last-child {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 700px) {
+    .features-table td:first-child {
+        width: auto;
+        white-space: normal;
+        border-right: none;
+    }
+}
+
 /* ===== BODY - ORIGINAL FARBEN ===== */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;  /* Original */
