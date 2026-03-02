@@ -5,6 +5,67 @@
     box-sizing: border-box;
 }
 
+/* ===== LAUFBAND ANIMATION - OPTIMIERT ===== */
+.construction-ticker {
+    width: 100%;
+    background: linear-gradient(90deg, #1a1f2e, #1e2a3a, #1a1f2e);
+    border-bottom: 2px solid rgba(0, 209, 255, 0.3);
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.construction-ticker::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(0, 209, 255, 0.1) 0%, 
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 209, 255, 0.1) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ticker-content {
+    display: flex;
+    animation: ticker 45s linear infinite; /* Von 25s auf 45s erhöht */
+    white-space: nowrap;
+    will-change: transform; /* Performance-Optimierung */
+}
+
+.ticker-content span {
+    color: #00d1ff;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+    padding-right: 10px;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Hover-Effekt - sanftes Pausieren */
+.construction-ticker:hover .ticker-content {
+    animation-play-state: paused;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
 /* ===== BODY - ORIGINAL FARBEN ===== */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;  /* Original */
