@@ -9,6 +9,7 @@ underlined markdown wird nicht etsprechend gerendert: bsp: "H1
 
 H2
 ------"
+- snaphsot enthält keine ersetzen placeholder insbesonder {{titel}} was ist der fehler?
 - das erstellen eines screenshot funktionierte nicht auf die hilfe datei in templates/custom
 - A3 Format implementieren
 - muss das YAML vor Undo/Redo geschützt werden? zum beispiel für generelle einstellungen bzgl Pagination
