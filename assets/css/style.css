@@ -5,19 +5,18 @@
     box-sizing: border-box;
 }
 
-/* ===== RESET & GRUNDLAGEN ===== */
+/* ===== BODY - ORIGINAL FARBEN ===== */
 body {
-    /* Deine Wunsch-Schriftart: Consolas als Basis */
-    font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;  /* Original */
     font-size: 0.95rem;
     line-height: 1.6;
     color: #e2e8f0;
     
-    /* Dein Wunsch-Farbverlauf – etwas dunkler */
-        background: linear-gradient(145deg, #2a1b2e 0%, #1e1323 100%);
-    /* Dunklere Version von #2a2335 → #1d1825 */
-    
+    /* Original Farbverlauf - wie in der ursprünglichen index.html */
+    background: #0b0f19;
+    background-image: radial-gradient(at top right, #161d2b 0%, #0b0f19 100%);
     background-attachment: fixed;
+    
     min-height: 100vh;
     padding: 40px 20px;
     display: flex;
@@ -29,30 +28,33 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* ===== HAUPTLAYOUT – RESPONSIV ===== */
+/* ===== HAUPTLAYOUT – Content-Box mittig, Navigation schwebend ===== */
 .layout-grid {
     display: grid;
-    grid-template-columns: 260px minmax(0, 1000px);
+    grid-template-columns: 260px minmax(0, 1000px) 260px;  /* 3 Spalten für Symmetrie */
     gap: 30px;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
+    margin: 0 auto;
     align-items: start;
 }
 
-/* ===== NAVIGATION – JETZT AUCH MOBILE GUT ===== */
+/* ===== NAVIGATION – SCHWEBEND (STICKY) mit Originalfarben ===== */
 .nav-column {
     position: sticky;
     top: 40px;
     height: fit-content;
+    grid-column: 1;
 }
 
 .floating-nav {
-    background: #181d34;
+    background: #161d2b;  /* Original Navigation Hintergrund */
     padding: 2rem 1.2rem;
     border-radius: 28px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(0, 209, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 209, 255, 0.2);  /* Original Border */
     backdrop-filter: blur(10px);
+    width: 260px;
 }
 
 .floating-nav h3 {
@@ -77,7 +79,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 .floating-nav a {
     display: block;
     padding: 0.6rem 0.8rem;
-    color: #b0c4de; /* Heller */
+    color: #94a3b8;  /* Original Link-Farbe */
     text-decoration: none;
     font-size: 0.95rem;
     border-radius: 12px;
@@ -86,28 +88,36 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 
 .floating-nav a:hover,
 .floating-nav a.active {
-    background: rgba(0, 209, 255, 0.15);
+    background: rgba(0, 209, 255, 0.1);  /* Original Hover */
     color: #00d1ff;
     padding-left: 1.2rem;
 }
 
-/* ===== DOKUMENT – HELLER UND LUFTIGER ===== */
+/* ===== DOKUMENT – MITTIG mit Originalfarben ===== */
 .document {
-    background: #181d34;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(3, 52, 114, 0.38);
+    background: #161d2b;  /* Original Dokument Hintergrund */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     border-radius: 32px;
     overflow: hidden;
-    /* Kein border, stattdessen im box-shadow */
+    border: 1px solid rgba(255, 255, 255, 0.05);  /* Original Border */
     backdrop-filter: blur(5px);
+    grid-column: 2;
 }
 
+/* ===== RECHTE SPALTE (LEER, FÜR SYMMETRIE) ===== */
+.spacer-column {
+    grid-column: 3;
+}
 
-/* ===== HEADER – DEZENTER ===== */
+/* ===== HEADER – ORIGINAL ===== */
 .header {
-    background: linear-gradient(135deg, #1e3a5f 0%, #132237 100%);
+    background: linear-gradient(90deg, #2563eb 0%, #1e40af 50%, #7e22ce 100%);  /* Original Header Gradient */
     color: white;
-    padding: 2.5rem 3.5rem;
-    border-bottom: 3px solid #00d1ff;
+    padding: 2.2rem 3.5rem;
+    border-bottom: 4px solid #00d1ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header h1 {
@@ -123,12 +133,13 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
 .header h1 span {
     font-weight: 300;
     color: #a5f3fc;
+    opacity: 0.95;
 }
 
 .header .sub {
     font-size: 0.9rem;
     color: #ffffff;
-    opacity: 0.9;
+    opacity: 0.85;
     letter-spacing: 0.12em;
     font-weight: 600;
     margin-top: 0.7rem;
@@ -136,22 +147,23 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
     text-transform: uppercase;
 }
 
-/* ===== CONTENT – MEHR WEISSRAUM ===== */
+/* ===== CONTENT ===== */
 .content {
-    padding: 3.5rem 4.5rem;
+    padding: 3rem 4.5rem 4.5rem;
     background: transparent;
-    hyphens: auto;  /* Silbentrennung einschalten */
+    hyphens: auto;
 }
 
-/* ===== TYPOGRAPHIE – LUFTIGER ===== */
+/* ===== TYPOGRAPHIE – ORIGINAL ===== */
 h2, h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;  /* Original Größe */
     font-weight: 600;
     color: #00d1ff;
-    margin: 4rem 0 2rem; /* Mehr Abstand */
+    margin: 3rem 0 1.5rem;  /* Original Abstände */
     scroll-margin-top: 60px;
-    border-bottom: 1px solid rgba(0, 209, 255, 0.25);
-    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(0, 209, 255, 0.3);  /* Original Border */
+    padding-bottom: 0.6rem;
+    letter-spacing: -0.01em;
 }
 
 h2:first-of-type {
@@ -159,93 +171,99 @@ h2:first-of-type {
 }
 
 p {
-    margin-bottom: 2rem;
-    color: #cbd5e1; /* Heller */
-    font-size: 0.95rem;  /* oder 1.0rem */
+    margin-bottom: 1.5rem;  /* Original Abstand */
+    color: #94a3b8;  /* Original Textfarbe */
+    font-size: 1.0rem;  /* Original Größe */
     line-height: 1.6;
 }
 
 strong {
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
 }
 
-/* ===== CALLOUT – WENIGER RAHMEN ===== */
+/* ===== CALLOUT – ORIGINAL STYLE ===== */
 .forge-callout {
-    background: rgba(0, 209, 255, 0.05);
+    background: rgba(0, 209, 255, 0.03);  /* Original Background */
+    border: 1px solid rgba(0, 209, 255, 0.15);  /* Original Border */
     border-left: 4px solid #00d1ff;
-    padding: 1.5rem 2rem;
-    margin: 2.5rem 0;
-    /* max-width: 85%;  ENTFERNT */
+    padding: 1.2rem 1.8rem;  /* Original Padding */
     border-radius: 0 16px 16px 0;
-    width: 100%;  /* Optional: sicherstellen, dass es volle Breite nutzt */
+    margin: 2rem 0;
+    width: 100%;
 }
 
 .forge-callout p {
     margin-bottom: 0;
-    color: #d9e6ff;
+    color: #00d1ff;  /* Original Textfarbe */
     font-style: italic;
-    font-size: 1.0rem;   /* wieder kleiner */
+    font-size: 1.05rem;  /* Original Größe */
 }
 
-/* ===== GRIDS – WENIGER RAHMENZWANG ===== */
+/* ===== TARGET & CONTACT BOXEN – 4-SPALTIG NEBENEINANDER ===== */
 .target-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin: 2.5rem 0;
 }
 
 .target-box, .contact-box {
-    background: #25344d;
-    padding: 1.2rem 1.4rem;
+    background: #1e293b;
+    padding: 1.1rem 1.4rem;
     border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     color: #ffffff;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-    /* KEIN display: flex nötig */
+    font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* ← Oben ausrichten! */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .target-box:hover, .contact-box:hover {
     border-color: #00d1ff;
-    transform: translateY(-2px);
-    background: #2d3e5a;
-    box-shadow: 0 8px 16px rgba(0, 209, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contact-box span {
     color: #00d1ff;
     font-weight: 700;
-    font-size: 0.7rem;
+    font-size: 0.65rem;  /* Noch kleiner für die Labels */
     text-transform: uppercase;
     margin-bottom: 4px;
     letter-spacing: 0.1em;
-    display: block;  /* Das war der Trick! */
+    font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
 }
 
 .contact-box strong {
-    display: block;  /* Auch als Block für sauberen Umbruch */
+    font-family: 'Consolas', 'Monaco', 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
-/* ===== TABELLEN – AUFGERÄUMTER ===== */
+/* ===== TABELLEN – ORIGINAL ===== */
 table {
     width: 100%;
-    border-collapse: collapse; /* separate → collapse für weniger Linien */
-    margin: 2.5rem 0;
+    border-collapse: separate;  /* Original separate */
+    border-spacing: 0;
+    margin: 2rem 0;
     border-radius: 20px;
     overflow: hidden;
-    background: #25344d;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 209, 255, 0.2);  /* Original Border */
+    background: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 th, td {
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem;
     text-align: left;
 }
 
 th {
-    background: #1e2f41;
+    background: linear-gradient(to bottom, #1e3a8a, #161d2b);  /* Original Gradient */
     color: #00d1ff;
     font-weight: 700;
     text-transform: uppercase;
@@ -255,15 +273,15 @@ th {
 }
 
 td {
-    color: #e2e8f0;
-    border-bottom: 1px solid rgba(0, 209, 255, 0.1);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 tr:last-child td {
     border-bottom: none;
 }
 
-/* ===== BILDER – REDUZIERTE RAHMEN ===== */
+/* ===== BILDER – ORIGINAL ===== */
 .image-matrix {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -274,15 +292,15 @@ tr:last-child td {
 .image-card {
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
     cursor: zoom-in;
-    /* KEIN border standardmäßig */
 }
 
 .image-card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 20px 40px rgba(0, 209, 255, 0.2);
+    transform: scale(1.02);
+    border-color: #00d1ff;
 }
 
 .image-card img {
@@ -290,41 +308,58 @@ tr:last-child td {
     display: block;
 }
 
-/* ===== BLOCKQUOTE – SCHLICHT ===== */
+/* ===== BLOCKQUOTE – ORIGINAL ===== */
 blockquote {
-    background: rgba(0, 209, 255, 0.04);
-    padding: 2.5rem;
+    background: rgba(0, 209, 255, 0.03);
+    padding: 1.2rem 2rem;  /* Oben/unten 1.2rem, links/rechts 2rem */
     border-left: 5px solid #00d1ff;
-    margin: 4rem 0;
+    margin: 2rem 0;  /* Auch den Außenabstand reduzieren */
     font-style: italic;
-    font-size: 1.0rem;
-    color: #d6e3ff;
+    font-size: 1.2rem;
+    color: #cbd5e1;
     border-radius: 0 20px 20px 0;
 }
-/* Extrem spezifisch */
-.content blockquote {
-    font-size: 1.0rem !important;
-}
 
-/* ===== BUTTONS – PROMINENTER ===== */
+/* ===== BUTTONS – ORIGINAL ===== */
 .contact-button {
     display: inline-block;
     background: #00d1ff;
-    color: #0b1a2f;
+    color: #0b0f19;
     padding: 1.2rem 3.5rem;
-    border-radius: 40px; /* Runder */
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.2rem;
-    transition: all 0.2s ease;
-    box-shadow: 0 5px 20px rgba(0, 209, 255, 0.3);
-    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.4);
 }
 
 .contact-button:hover {
     background: #33e0ff;
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 209, 255, 0.5);
+    transform: scale(1.03);
+}
+
+/* ===== ARCHITEKT-BOX – ORIGINAL ===== */
+.architect-box {
+    background: #0b0f19;
+    border-radius: 24px;
+    padding: 1.2rem 1.8rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.architect-box p {
+    margin-bottom: 0;
+    font-size: 1.0em;
+}
+
+/* ===== CODE ===== */
+code {
+    background: #0b0f19;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    color: #00d1ff;
 }
 
 /* ===== EARLY ACCESS BANNER ===== */
@@ -334,13 +369,13 @@ blockquote {
     right: 20px;
     z-index: 10000;
     background: #00d1ff;
-    color: #0b1a2f;
+    color: #0b0f19;
     padding: 10px 20px;
     border-radius: 40px;
     font-weight: 700;
     font-size: 0.9rem;
     letter-spacing: 0.1em;
-    box-shadow: 0 0 12px rgba(0, 209, 255, 0.25);  /* Deutlich dezenter */
+    box-shadow: 0 0 12px rgba(0, 209, 255, 0.25);
     border: 1px solid white;
     backdrop-filter: blur(4px);
     font-family: 'Segoe UI', sans-serif;
@@ -348,16 +383,16 @@ blockquote {
 
 /* ===== EARLY ACCESS BOX ===== */
 .early-box {
-    background: linear-gradient(145deg, #1e3a5f20 0%, #00d1ff10 100%);
-    padding: 3rem;
-    border-radius: 32px;
-    margin: 4rem 0;
-    border: 1px solid rgba(0, 209, 255, 0.2);
+    background: rgba(0, 209, 255, 0.03);
+    border: 1px solid rgba(0, 209, 255, 0.15);
+    border-left: 4px solid #00d1ff;
+    padding: 2rem;
+    border-radius: 0 16px 16px 0;
+    margin: 2.5rem 0;
 }
 
 .early-box h3 {
-    color: white;
-    text-align: center;
+    color: #00d1ff;
     border-bottom: none;
     margin-top: 0;
 }
@@ -372,8 +407,8 @@ blockquote {
 .early-flex input {
     flex: 1;
     padding: 1rem 1.5rem;
-    background: #1a293f;
-    border: 1px solid #00d1ff40;
+    background: #1e293b;
+    border: 1px solid rgba(0, 209, 255, 0.2);
     border-radius: 40px;
     color: white;
     font-family: 'Consolas', monospace;
@@ -383,12 +418,11 @@ blockquote {
 .early-flex input:focus {
     outline: none;
     border-color: #00d1ff;
-    box-shadow: 0 0 15px #00d1ff40;
 }
 
 .early-flex button {
     background: #00d1ff;
-    color: #0b1a2f;
+    color: #0b0f19;
     padding: 1rem 2rem;
     border: none;
     border-radius: 40px;
@@ -396,29 +430,11 @@ blockquote {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    white-space: nowrap;
 }
 
 .early-flex button:hover {
     background: #33e0ff;
     transform: scale(1.02);
-}
-
-.architect-box {
-    background: #1e2f41;
-    border-radius: 24px;
-    padding: 1.5rem 2rem;
-    margin-top: 2rem;
-    border-left: 4px solid #00d1ff;
-}
-
-code {
-    background: #1a293f;
-    padding: 0.2rem 0.6rem;
-    border-radius: 8px;
-    font-family: 'Consolas', monospace;
-    font-size: 0.95em;
-    color: #00d1ff;
 }
 
 html {
@@ -428,11 +444,24 @@ html {
 .footer-note {
     text-align: center;
     margin-top: 6rem;
-    color: #6b7f9f;
-    font-size: 0.9rem;
+    color: #475569;
+    font-size: 0.85rem;
 }
 
-/* ===== MEDIA QUERIES – ENDLICH MOBILE! ===== */
+/* ===== MEDIA QUERIES ===== */
+
+/* Größere Tablets / kleine Desktops */
+@media (max-width: 1300px) {
+    .layout-grid {
+        grid-template-columns: 260px minmax(0, 1fr);
+    }
+    
+    .spacer-column {
+        display: none;
+    }
+}
+
+/* Tablets / Mobile Navigation umbruch */
 @media (max-width: 1100px) {
     .layout-grid {
         grid-template-columns: 1fr;
@@ -441,14 +470,17 @@ html {
 
     .nav-column {
         position: static;
-        top: auto;
+        grid-column: 1;
     }
 
     .floating-nav {
-        position: relative;
-        top: auto;
-        transform: none;
         width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .document {
+        grid-column: 1;
     }
 
     .header h1 {
@@ -458,20 +490,12 @@ html {
     .content {
         padding: 2.5rem;
     }
-
-    .early-banner {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
 }
 
+/* Mobile */
 @media (max-width: 700px) {
     body {
         padding: 20px 10px;
-        font-size: 1rem;
     }
 
     .header {
@@ -484,34 +508,17 @@ html {
         border-left-width: 4px;
     }
 
-    .header .sub {
-        padding-left: 1.2rem;
-        font-size: 0.75rem;
-    }
-
     .content {
         padding: 1.8rem;
     }
 
+    /* TARGET-GRID Mobile: 1 Spalte */
     .target-grid {
         grid-template-columns: 1fr;
     }
 
     .image-matrix {
         grid-template-columns: 1fr;
-    }
-
-    .forge-callout {
-        max-width: 100%;
-        padding: 1.2rem;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th, td {
-        padding: 1rem;
     }
 
     blockquote {
@@ -522,38 +529,11 @@ html {
     .early-flex {
         flex-direction: column;
     }
-
-    .early-box {
-        padding: 2rem 1.5rem;
-    }
-
-    .contact-button {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-    }
-
-    .early-banner {
-        top: 10px;
-        right: 10px;
-        font-size: 0.7rem;
-    }
 }
 
-/* Für extrem kleine Geräte */
-@media (max-width: 400px) {
-    .header h1 {
-        font-size: 1.5rem;
-    }
-
-    .header .sub {
-        font-size: 0.65rem;
-    }
-
-    .floating-nav {
-        padding: 1.5rem 1rem;
-    }
-
-    .floating-nav a {
-        font-size: 0.85rem;
+/* Zusätzliche Media Query für mittlere Bildschirme */
+@media (max-width: 900px) and (min-width: 701px) {
+    .target-grid {
+        grid-template-columns: repeat(2, 1fr);  /* Tablets: 2 Spalten */
     }
 }
