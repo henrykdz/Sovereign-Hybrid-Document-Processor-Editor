@@ -69,6 +69,7 @@ Die Template klasse wurde angepasst um nicht auf home.dir sonder auf user.dir de
 
 Erledigt: 
 ---------
+# In generateCleanHtml() durften nicht project settings für das dokument üebrgeben werden, da dies header setzte wenn keier da war im screehnshot
 # die flaoting preview soll nach der realen bildschirmhöhe angezeigt werden, plus sicherheitsabstand unten oben für freihalten von system taskleisten.
 # Speicherbutton ausgrauen wenn save, erst wenn status unsaved wieder aktivieren. keinen dialog anzeigen, höchstens kurz ein grünes häkchen symbol das nach eine kurzen zeit wieder ausfaded den text zurücksetzt.
 # in code blöcken im feld wirkt die erste zeile um ein leerzeichen eingerückt "```markdown test```"

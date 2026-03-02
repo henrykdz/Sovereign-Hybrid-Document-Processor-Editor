@@ -715,12 +715,12 @@ public class MarkdownEditorController implements Initializable, LibraryActions {
 		this.lineNumberFactory = new LinterLineNumberFactory(editor, idx -> LinterLineNumberFactory.findErrorAtLine(editor, markdownHighlighter.getLastErrors(), idx));
 		// VERBINDUNG HERSTELLEN
 		this.lineNumberFactory.setHoverHandler((node, line) -> {
-		    // Wir brauchen Zugriff auf den Manager. Am besten speichern wir ihn als Feld im Controller.
-		    if (this.errorTooltipManager != null) {
-		        this.errorTooltipManager.showGutterTooltip(node, line);
-		    }
+			// Wir brauchen Zugriff auf den Manager. Am besten speichern wir ihn als Feld im Controller.
+			if (this.errorTooltipManager != null) {
+				this.errorTooltipManager.showGutterTooltip(node, line);
+			}
 		});
-		
+
 		editor.setParagraphGraphicFactory(lineNumberFactory);
 
 		// Gutter-Synchronisation bei Cursor-Bewegung
@@ -3000,38 +3000,41 @@ public class MarkdownEditorController implements Initializable, LibraryActions {
 		return name.replaceAll("[^a-zA-Z0-9.-]", "_") + ".html";
 	}
 
+
 	private String generateCleanHtml(String mdContent) {
-		if (mdContent == null || mdContent.isEmpty())
-			return "";
+	    if (mdContent == null || mdContent.isEmpty())
+	        return "";
 
-		// 1. DATA CASCADE
-		Map<String, String> docMetadata = readYamlMetadata(mdContent);
-		DocumentSettings tempSettings = new DocumentSettings(projectSettings);
-		applyYamlOverrides(tempSettings, docMetadata);
+	    // 1. YAML AUS DEM DOKUMENT LESEN (nicht projectSettings)
+	    Map<String, String> docMetadata = readYamlMetadata(mdContent);
+	    DocumentSettings docSettings = new DocumentSettings();  // <- NEU: Leeres Settings-Objekt
+	    applyYamlOverrides(docSettings, docMetadata);           // <- NUR YAML-Werte
 
-		// 2. RENDERING
-		String[] ext = extractAndRemoveCss(mdContent);
-		String htmlBody = htmlRenderer.render(markdownParser.parse(preprocessTemplate(ext[0])));
-		// SOUVERÄNE TRANSFORMATION
-		htmlBody = wrapTopLevelOrphanText(htmlBody);
-		htmlBody = applyPlaceholders(escapeUnicodeForHtml(htmlBody), collectPlaceholders(tempSettings, docMetadata));
+//	    // 2. Header laden basierend auf YAML
+//	    ensureHeaderManager();
+//	    if (headerManager != null && !"NONE".equals(docSettings.getActiveHeaderStyle())) {
+//	        String headerHtml = headerManager.loadTemplate(docSettings.getActiveHeaderStyle());
+//	        docSettings.setHeaderHtml(headerHtml);
+//	    }
 
-		// 3. SLICER INJECTION
-		String slicerJs = "";
-		// HEILUNG: Wir nutzen tempSettings, da dort die YAML-Overrides bereits drin sind
-		if (tempSettings.isPaginated()) {
-			double pageHeight = tempSettings.getFormat().heightInMm();
-			double marginTop = tempSettings.getMarginTop();
-			double marginBottom = tempSettings.getMarginBottom();
+	    // 3. REST (wie gehabt, aber mit docSettings statt tempSettings)
+	    String[] ext = extractAndRemoveCss(mdContent);
+	    String htmlBody = htmlRenderer.render(markdownParser.parse(preprocessTemplate(ext[0])));
+	    htmlBody = wrapTopLevelOrphanText(htmlBody);
+	    htmlBody = applyPlaceholders(escapeUnicodeForHtml(htmlBody), collectPlaceholders(docSettings, docMetadata));
 
-			// HEILUNG: Aufruf mit allen 3 benötigten Parametern
-			slicerJs = "<script>" + themeManager.getSlicerScript(pageHeight, marginTop, marginBottom) + "</script>";
-		}
+	    String slicerJs = "";
+	    if (docSettings.isPaginated()) {
+	        double pageHeight = docSettings.getFormat().heightInMm();
+	        double marginTop = docSettings.getMarginTop();
+	        double marginBottom = docSettings.getMarginBottom();
+	        slicerJs = "<script>" + themeManager.getSlicerScript(pageHeight, marginTop, marginBottom) + "</script>";
+	    }
 
-		// 4. FINAL ASSEMBLY
-		// Wir übergeben slicerJs als dritten Parameter (scriptBlock)
-		return buildCompleteHtml(ext[1], htmlBody, slicerJs, tempSettings, docMetadata, true);
+	    return buildCompleteHtml(ext[1], htmlBody, slicerJs, docSettings, docMetadata, true);
 	}
+	
+	
 
 	/**
 	 * Analysiert den HTML-Stream und verpackt nur Text in
@@ -4358,6 +4361,7 @@ public class MarkdownEditorController implements Initializable, LibraryActions {
 
 		// 2. ERSTER AUFRUF: Fenster bauen und im Feld speichern (cachen)
 		libraryWindow = new TemplateLibraryWindow(getPrimaryStage(), templateManager, projectSettings, this::generateCleanHtml, this);
+
 
 		// Wichtig: Wir müssen sicherstellen, dass die Referenz gelöscht wird,
 		// wenn der User das Fenster manuell schließt (z.B. mit dem X-Button).
