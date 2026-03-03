@@ -321,6 +321,36 @@
 
     <!-- JAVASCRIPT AUS assets/js/main.js -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Eigenen Cursor erstellen (direkt vor </body> einfügen) -->
+    <div class="custom-cursor" id="customCursor">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="16" stroke="#00d1ff" stroke-width="2.5" fill="rgba(0,209,255,0.05)" />
+            <circle cx="20" cy="20" r="6" fill="#00d1ff" />
+            <line x1="32" y1="32" x2="38" y2="38" stroke="#00d1ff" stroke-width="3" stroke-linecap="round" />
+        </svg>
+    </div>
+
+    <script>
+        // Custom Cursor für die Image-Cards
+        const cursor = document.getElementById('customCursor');
+        const cards = document.querySelectorAll('.image-card');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                cursor.style.display = 'block';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                cursor.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>
