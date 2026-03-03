@@ -358,6 +358,21 @@ strong {
     font-weight: 600;
 }
 
+/* ===== CURSOR-KORREKTUR FÜR CONTACT-BOXEN ===== */
+.target-grid, .contact-box, .contact-box * {
+    cursor: default;  /* Verhindert den Text-Cursor für alle Contact-Boxen */
+}
+
+/* ABER: E-Mail-Adresse und Links sollen weiterhin selektierbar sein */
+.contact-box strong {
+    cursor: text;     /* Erlaubt Text-Selektion für den eigentlichen Inhalt */
+    user-select: text;
+}
+
+.contact-box a, .contact-box a * {
+    cursor: pointer;  /* Falls du später Links einbaust */
+}
+
 /* ===== FEATURES-TABELLE ===== */
 .features-table {
     width: 100%;
@@ -444,13 +459,23 @@ tr:last-child td {
     margin: 3rem 0;
 }
 
+/* 1. Zuerst den alten Cursor ausblenden */
+.image-card, .image-card * {
+    cursor: default !important;
+}
+
+.image-card:hover, .image-card:hover * {
+    cursor: none !important;  /* Windows-Cursor komplett weg */
+}
+
+/* 2. Dann deine normalen Styles */
 .image-card {
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease;
-    cursor: zoom-in;
+    position: relative;
 }
 
 .image-card:hover {
@@ -458,9 +483,49 @@ tr:last-child td {
     border-color: #00d1ff;
 }
 
+/* 3. Das schicke Lupen-Icon unten rechts (wieder aktivieren) */
+.image-card::after {
+    content: '🔍';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 209, 255, 0.9);
+    color: #0b0f19;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.image-card:hover::after {
+    opacity: 1;
+}
+
 .image-card img {
     width: 100%;
     display: block;
+    pointer-events: none;
+}
+
+/* 4. Eigener Custom Cursor (folgt der Maus) */
+.custom-cursor {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 2px 8px rgba(0, 209, 255, 0.5));
+}
+
+.custom-cursor svg {
+    width: 100%;
+    height: 100%;
 }
 
 .image-caption {
