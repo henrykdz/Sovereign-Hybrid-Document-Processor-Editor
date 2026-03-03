@@ -20,9 +20,83 @@ body {
     justify-content: center;
 }
 
+
 /* Überschriften bleiben serifenlos für Kontrast */
 h1, h2, h3, h4, .floating-nav, .header .sub, button {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== TYPOGRAPHIE ===== */
+/* Standard h2 mit Border */
+h2, h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #00d1ff;
+    margin: 3rem 0 1.5rem;
+    scroll-margin-top: 60px;
+    border-bottom: 1px solid rgba(0, 209, 255, 0.3);
+    padding-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+}
+
+h2:has(.flowshift-badge) {
+    display: flex;
+    flex-direction: column;
+    position: relative;  /* Für absolute Positionierung der Linie */
+    border-bottom: none;  /* Entferne die bisherige Border */
+    padding-bottom: 0;
+}
+
+h2:has(.flowshift-badge)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        transparent 8px,
+        rgba(0, 209, 255, 0.4) 8px,
+        rgba(0, 209, 255, 0.24) 35%,
+        rgba(0, 209, 255, 0.24) 89%,
+        transparent 100%);
+    pointer-events: none;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+.flowshift-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #1e293b;
+    border-radius: 8px 8px 0 8px;  /* Oben rund, unten links rund, unten rechts gerade */
+    font-family: 'Segoe UI', 'Consolas', monospace;
+    font-weight: 500;
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    padding: 0;  /* oder einen kleinen Wert */
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.badge-icon {
+    background: linear-gradient(135deg, #111c2b 0%, #0b1420 100%);
+    color: #00d0ffec;
+    padding: 4px 12px;
+    font-size: 1.1rem;
+    border-right: 1px solid rgba(0, 208, 255, 0.233);
+}
+
+.badge-text {
+    background: #101e2ab0;
+    color: #4be2fdd8;
+    padding: 4px 12px;
+    font-size: 1.1rem;  /* Größer */
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 /* ===== HAUPTLAYOUT – Content-Box mittig, Navigation schwebend ===== */
@@ -152,7 +226,7 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     border-radius: 32px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(0, 209, 255, 0.04);  /* Dünner und dezenter */
     backdrop-filter: blur(5px);
     grid-column: 2;
     width: 100%;
@@ -263,22 +337,6 @@ h1, h2, h3, h4, .floating-nav, .header .sub, button {
     padding: 3rem 4.5rem 4.5rem;  /* Original von ganz am Anfang */
     background: transparent;
     hyphens: auto;
-}
-
-/* ===== TYPOGRAPHIE ===== */
-h2, h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #00d1ff;
-    margin: 3rem 0 1.5rem;
-    scroll-margin-top: 60px;
-    border-bottom: 1px solid rgba(0, 209, 255, 0.3);
-    padding-bottom: 0.6rem;
-    letter-spacing: -0.01em;
-}
-
-h2:first-of-type {
-    margin-top: 0;
 }
 
 /* ===== TYPOGRAPHIE ===== */
