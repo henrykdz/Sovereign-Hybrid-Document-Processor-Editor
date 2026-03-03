@@ -120,7 +120,7 @@ h2:first-of-type {
 
 .floating-nav {
     background: #161d2b;
-    padding: 2rem 1.2rem;
+    padding: 0.2rem 1.2rem 1.2rem 1.2rem;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 209, 255, 0.2);
@@ -168,57 +168,25 @@ h2:first-of-type {
     padding-left: 1.2rem;
 }
 
-/* ===== EARLY ACCESS BUTTON IN DER NAVIGATION ===== */
-.nav-early {
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(0, 209, 255, 0.2);
-    text-align: center;
-    width: 100%;
+/* Dezenter Early Access Menü-Eintrag */
+.nav-early-item {
+    color: #00d1ff !important;
+    font-weight: 500;
+    position: relative;
 }
 
-.nav-early-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #0077ff;
-    color: #ffffff !important;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 10px 4px;  /* Mehr Padding oben/unten für mehr Höhe */
-    border-radius: 40px;
-    border: 1px solid white;
-    box-shadow: 0 0 12px rgba(0, 119, 255, 0.5);
-    font-family: 'Segoe UI', sans-serif;
-    transition: all 0.2s ease;
-    line-height: 1.2;
-    text-align: center;
-    white-space: nowrap;
-    animation: bannerPulse 3s infinite;
-    opacity: 1;
-    background-color: #0077ff !important;
-    width: 100%;
-    box-sizing: border-box;
+.nav-early-item::before {
+    content: '⚡';
+    margin-right: 4px;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-.nav-early-button:hover {
-    background: #3399ff !important;
-    color: #ffffff !important;
-    transform: scale(1.02);
-    box-shadow: 0 0 18px rgba(0, 119, 255, 0.7);
-    border-color: white;
-    animation: none;
+/* Hover-Effekt wie die anderen Links, aber mit cyan */
+.nav-early-item:hover {
+    background: rgba(0, 209, 255, 0.1);
+    color: #00d1ff;
 }
-
-@keyframes bannerPulse {
-    0% { box-shadow: 0 0 12px rgba(0, 119, 255, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(0, 119, 255, 0.8); }
-    100% { box-shadow: 0 0 12px rgba(0, 119, 255, 0.5); }
-}
-
 
 /* ===== DOKUMENT – MITTIG ===== */
 .document {
