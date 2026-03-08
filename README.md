@@ -5,9 +5,9 @@
     <br><br>
     <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
     <a href="#features">✨ Features</a> •
-    <a href="#installation">📦 Installation</a> •
     <a href="#architecture">🏗️ Architecture</a> •
-    <a href="#background">📖 Background</a>
+    <a href="#background">📖 Background</a> •
+    <a href="#contact">📧 Contact</a>
 </div>
 
 <br>
@@ -23,13 +23,11 @@
 
 ---
 
-## 🚀 Introduction: What is the Sovereign Document Engine?
+## 🚀 Introduction
 
-The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow. 
+The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow.
 
-It is a **precision instrument** for creating, managing, and publishing documents, combining the power of native desktop applications with the flexibility of web technologies and advanced, cutting-edge logic.
-
-Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑design to the complex, resource‑hungry, and often unreliable software of the current era. It is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.
+Developed by architect **Henryk Daniel Zschuppan**, this engine is built for professionals who demand absolute control over content, form, and the physical geometry of their documents.
 
 > *"FlowShift transforms complex ideas into perfectly formatted documents. Our hybrid engine combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards."*
 
@@ -62,59 +60,53 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑d
 
 ---
 
-## 🧠 Core Philosophy: Sovereignty & Efficiency
-
-Every feature of the FlowShift Engine is founded on three principles:
+## 🧠 Core Philosophy
 
 | Principle | Description |
 |-----------|-------------|
 | **Sovereignty** | Full user control over data, design, and workflow. The document is law, not the application. |
 | **Efficiency** | Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat. |
-| **Precision** | Pixel‑perfect WYSIWYG rendering, consistent across all output media (screen, HTML export, PDF print). |
-
-The engine listens to the architect's command and does exactly what is intended — without "magic" intermediate steps or unwanted autonomy.
+| **Precision** | Pixel‑perfect WYSIWYG rendering, consistent across all output media. |
 
 ---
 
-<h2 id="features">✨ Key Features: What the Engine Delivers</h2>
+<h2 id="features">✨ Key Features</h2>
 
 ### Unrivalled Editing Experience
 
 | Feature | Description |
 |---------|-------------|
-| **Flicker‑free live rendering** | Thanks to the `Sovereign Swap` mechanism, the preview updates in real time without any visual flicker. |
-| **Scroll invariance** | The focus remains stable at the desired position in the preview while you type. |
-| **Bidirectional navigation** | A click in the preview jumps the cursor precisely to the corresponding spot in the Markdown source. |
-| **Intelligent error diagnostics** | The `ErrorTooltipManager` visualises linter errors directly in the status bar. |
+| **Flicker‑free live rendering** | Real-time preview updates via `Sovereign Swap` mechanism |
+| **Scroll invariance** | Stable focus position in preview while typing |
+| **Bidirectional navigation** | Click in preview jumps to corresponding Markdown source |
+| **Intelligent error diagnostics** | Visual linter feedback in status bar |
 
 ### Layout & Design Sovereignty
 
 | Feature | Description |
 |---------|-------------|
-| **CSS Forge** | A dedicated code editor enables live styling directly in the document flow. |
-| **Precise pagination** | The engine converts documents exactly into physical pages (A4, Letter). |
-| **Neutral start** | Documents begin without any enforced formatting. Margins and pagination are defined explicitly in YAML. |
+| **CSS Forge** | Live styling directly in the document flow |
+| **Precise pagination** | Exact conversion to physical pages (A4, Letter) |
+| **Neutral start** | No enforced formatting – defined explicitly in YAML |
 
 ### Complete Feature List
 
-| Feature | Description |
-|---------|-------------|
-| ✅ **Formatter** | Automatic formatting of Markdown, HTML and CSS |
-| ✅ **Linter** | Real-time error detection with visual feedback |
-| ✅ **Syntax Highlighter** | Color-highlighted code for better readability |
-| ✅ **Custom Placeholders** | Custom placeholders for templates and mail merges |
-| ✅ **ISO-compliant Export** | A4, Letter, Web – everything possible |
+✅ **Formatter** – Automatic formatting of Markdown, HTML and CSS  
+✅ **Linter** – Real-time error detection with visual feedback  
+✅ **Syntax Highlighter** – Color-highlighted code for better readability  
+✅ **Custom Placeholders** – For templates and mail merges  
+✅ **ISO-compliant Export** – A4, Letter, Web – everything possible
 
 ---
 
-<h2 id="architecture">🏗️ Technical Architecture: Under the Hood</h2>
+<h2 id="architecture">🏗️ Technical Architecture</h2>
 
 ### High-Level Overview
 
 - **JavaFX Desktop Application** – Native performance with modern UI
 - **Hybrid Rendering Engine** – Markdown → HTML → WebView with zero flicker
 - **Real-time Source Mapping** – Character-accurate bidirectional navigation
-- **Modular Design** – Clean separation of concerns for maintainability
+- **Modular Design** – Clean separation of concerns
 
 <details>
 <summary><b>🔧 Complete Technology Stack</b> · <span style="color: #00d1ff; border-bottom: 1px dashed #00d1ff;">[ Developer Details ▼ ]</span></summary>
@@ -135,68 +127,15 @@ The engine listens to the architect's command and does exactly what is intended 
 
 </details>
 
-### Hybrid Rendering Approach
+### The Sovereign Bridge
 
-The engine uses **JavaFX & WebKit**, combined with the `Sovereign Swap`. Instead of reloading the WebView, content is injected via `innerHTML`, guaranteeing absolute smoothness and zero flicker.
-
-### The Sovereign Bridge (Source Mapping)
-
-The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element. An internal map links this ID to the exact character offset in the source text, enabling precise bidirectional navigation.
+The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element, linking each element to the exact character offset in the source text for precise bidirectional navigation.
 
 ### Navigation & Anchor Logic
 
-The FlowShift Engine ensures your documents remain fully navigable in export and print:
-
 - **Fully automatic:** Headings automatically receive unique IDs for tables of contents
-- **Sovereign override:** Use the syntax `{#custom-id}` directly after a heading to override the automation
-- **HTML integrity:** Pure HTML tags remain untouched, giving you full control
-
----
-
-<h2 id="installation">🔧 Installation</h2>
-
-### Prerequisites
-
-- **Java:** JavaSE-23 (Zulu 23 or compatible) – JavaFX is bundled
-- **Maven:** 3.6 or higher
-- **IDE:** Eclipse 2025+ 
-
-## 🔧 Availability
-
-**FlowShift is a commercial product.**  
-The source code is private and not publicly available.
-
-For licensing inquiries, demonstration requests, or partnership opportunities, please contact:
-
-📧 **Email:** [coming soon]  
-🌐 **Website:** [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
-
----
-
-*Enterprise licenses and evaluation versions are available upon request.*
-
----
-
-## 📬 Early Access 2026
-
-<div align="left">
-    <br>
-    <strong>🚀 FlowShift is in active development</strong>
-    <br><br>
-    
-| | |
-|---|---|
-| **📊 Status:** | 🔧 Private Development · Preview Q3 2026 |
-| **📧 Contact:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
-| **👥 Program:** | By request · Limited spots |
-    
-</div>
-
-<br>
-<div align="center">
-    <sub>💡 Interested in Early Access? Just send an email with subject "Early Access".</sub>
-    <br><br>
-</div>
+- **Sovereign override:** Use `{#custom-id}` after a heading to override automation
+- **HTML integrity:** Pure HTML tags remain untouched
 
 ---
 
@@ -208,21 +147,35 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 <h2 id="background">📖 The Story Behind FlowShift</h2>
 
-This software was born from personal necessity. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2) that was repeatedly dismissed by doctors. When his body couldn't, his mind did. Code became distraction, therapy, and finally passion
+This software was born from personal necessity. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2). When his body couldn't, his mind did. Code became distraction, therapy, and finally passion.
 
-**FlowShift** is the result – a tool that creates **order when life becomes chaotic**. It is a conscious counter-design to the bloated software industry: **lean, precise, and sovereign**.
+**FlowShift** is the result – a tool that creates order when life becomes chaotic. It is a conscious counter-design to the bloated software industry: **lean, precise, and sovereign**.
 
 > *I've nothing left to prove – only something left to build.*
 
 ### About the Architect
 
-The vision behind FlowShift comes from a place of deep personal experience. The architect's goal is software without "bloat", defined by **precision and efficiency**.
+The vision behind FlowShift comes from a place of deep personal experience. The architect's goal is software without "bloat", defined by **precision and efficiency**. The engine was designed using AI-assisted development methods, guaranteeing exceptional code purity and consistent architecture.
 
-**AI‑Assisted Engineering:** FlowShift was designed using cutting-edge AI-assisted development methods, guaranteeing exceptional code purity, consistent architecture, and strict adherence to security standards. The result is a tool as **lean and precise** as the code it produces.
+### The Future of Documentation
 
-## 🌍 The Future of Documentation
+FlowShift is the foundation for **interactive documents**, **AI orchestration**, and **data‑sovereign content** – a local alternative to cloud systems.
 
-The FlowShift Engine is the foundation for **interactive documents**, **AI orchestration**, and **data‑sovereign content**. It is a local alternative to cloud systems, returning full control over form and data to the architect.
+---
+
+## 🔧 Availability & Early Access
+
+**FlowShift is a commercial product in active development.**  
+The source code is private and not publicly available.
+
+| | |
+|---|---|
+| **📊 Status:** | 🔧 Private Development · Preview Q3 2026 |
+| **👥 Early Access:** | By request · Limited spots |
+| **📧 Contact:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
+| **🌐 Website:** | [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/) |
+
+*Enterprise licenses and evaluation versions available upon request.*
 
 ---
 
@@ -232,21 +185,17 @@ The FlowShift Engine is the foundation for **interactive documents**, **AI orche
 
 Copyright © {2025-PRESENT} FlowShift (Henryk Daniel Zschuppan). All rights reserved.
 
-This software is a commercial product. All rights are reserved. No part of this software may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the copyright holder.
-
-For licensing inquiries and usage terms, please refer to the End User License Agreement (EULA) distributed with the final application.
+This software is a commercial product. No part may be reproduced without written permission.
 
 *— Our commitment: Perpetual and unconditional rights for licensees. —*
 
 ---
 
-## 💬 Contact & Community
+<h2 id="contact">💬 Contact</h2>
 
 - **Architect:** Henryk Daniel Zschuppan
 - **Email:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com)
-- **Organization:** FlowShift
 - **GitHub:** [@henrykdz](https://github.com/henrykdz)
-- **Live Site:** [https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
 - **Timezone:** Europe/Berlin
 
 ---
