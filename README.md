@@ -168,12 +168,14 @@ FlowShift is the foundation for **interactive documents**, **AI orchestration**,
 **FlowShift is a commercial product in active development.**  
 The source code is private and not publicly available.
 
-| | |
-|---|---|
-| **📊 Status:** | 🔧 Private Development · Preview Q3 2026 |
-| **👥 Early Access:** | By request · Limited spots |
-| **📧 Contact:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
-| **🌐 Website:** | [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/) |
+<br>
+
+**📊 Status:** 🔧 Private Development · Preview Q3 2026  
+**👥 Early Access:** By request · Limited spots  
+**📧 Contact:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift)  
+**🌐 Website:** [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
+
+<br>
 
 *Enterprise licenses and evaluation versions available upon request.*
 
