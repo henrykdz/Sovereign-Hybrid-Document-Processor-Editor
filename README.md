@@ -1,9 +1,6 @@
 # FlowShift - Hybrid Document & Web Forge
 
 <div>
-    <div style="display: inline-block; width: 50%;">
-        <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
-    </div>
     <div style="display: inline-block; width: 49%; text-align: right;">
         <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
         <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
@@ -40,7 +37,9 @@
 </table>
 
 </div>
-
+    <div style="display: inline-block; width: 50%;">
+        <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
+    </div>
 ---
 
 <h2 id="introduction" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
