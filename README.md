@@ -33,7 +33,10 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🎯 Target Audience</h2>
+<h2>
+  <span style="color: #00d1ff;">🎯</span> 
+  <span style="color: #00d1ff;">Target Audience</span>
+</h2>
 
 <div align="left">
 
