@@ -37,7 +37,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑d
 
 ## 🎯 Target Audience
 
-<div align="center">
+<div align="left">
 
 | | |
 |---|---|
@@ -47,6 +47,8 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑d
 | 🏦 **Finance & Insurance** | 📝 **Technical Writers** |
 
 </div>
+
+*Keine Header-Zeile - die Tabelle zeigt nur die Zielgruppen an*
 
 ---
 
@@ -167,7 +169,7 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 ## 📬 Early Access 2026
 
-<div align="center">
+<div align="left">
     <br>
     <strong>🚀 FlowShift ist in aktiver Entwicklung</strong>
     <br><br>
@@ -178,7 +180,12 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 | **📧 Kontakt:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
 | **👥 Programm:** | Auf Anfrage · Begrenzte Plätze |
     
-    <br>
+</div>
+
+*Keine Header-Zeile - die Tabelle zeigt nur die Status-Informationen an*
+
+<br>
+<div align="center">
     <sub>💡 Interesse am Early Access? Einfach eine E-Mail mit Betreff "Early Access" senden.</sub>
     <br><br>
 </div>
@@ -187,7 +194,7 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 ## 🖼️ Preview
 
-![Screen](screen.png)
+![Screen](assets/images/screen.png)
 
 ---
 
