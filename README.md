@@ -1,24 +1,29 @@
 # FlowShift - Sovereign Hybrid Document Engine
 
-<div align="center">
+<div align="left">
     <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
-    <br><br>
-    <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
-    <a href="#features">✨ Features</a> •
-    <a href="#architecture">🏗️ Architecture</a> •
-    <a href="#background">📖 Background</a> •
-    <a href="#contact">📧 Contact</a>
+    <span style="float: right;">
+        <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
+        <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
+        <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
+        <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
+    </span>
 </div>
 
-<br>
+<br clear="both">
 
 <div align="center">
-    
-![Early Access](https://img.shields.io/badge/status-early%20access--private-blue)
-![Preview](https://img.shields.io/badge/preview-Q3%202026-orange)
-![Java](https://img.shields.io/badge/Java-23-blue?logo=java)
-![License](https://img.shields.io/badge/license-Commercial-red)
-
+    <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
+    <a href="#introduction">🚀 Introduction</a> •
+    <a href="#target-audience">🎯 Target Audience</a> •
+    <a href="#philosophy">🧠 Philosophy</a> •
+    <a href="#features">✨ Features</a> •
+    <a href="#architecture">🏗️ Architecture</a> •
+    <a href="#preview">🖼️ Preview</a> •
+    <a href="#background">📖 Background</a> •
+    <a href="#availability">🔧 Availability</a> •
+    <a href="#license">📄 License</a> •
+    <a href="#contact">💬 Contact</a>
 </div>
 
 ---
