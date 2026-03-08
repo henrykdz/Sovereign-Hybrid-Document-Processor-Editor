@@ -1,14 +1,18 @@
 # FlowShift - Sovereign Hybrid Document Engine
 
-<div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
-    <div style="white-space: nowrap;">
-        <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
-        <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
-        <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
-        <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
-    </div>
-</div>
+<table style="width: 100%; border: none; background: transparent;">
+  <tr>
+    <td style="text-align: left; border: none; padding: 0;">
+      <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
+    </td>
+    <td style="text-align: right; border: none; padding: 0;">
+      <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
+      <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
+      <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
+      <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
+    </td>
+  </tr>
+</table>
 
 <br>
 
@@ -27,7 +31,6 @@
     <a href="#contact">💬 Contact</a>
 </div>
 
----
 
 <h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
 
