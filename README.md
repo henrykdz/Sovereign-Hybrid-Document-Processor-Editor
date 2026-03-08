@@ -172,6 +172,8 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 </details>
 
+---
+
 <h2 id="architecture" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🏗️ Technical Architecture</h2>
 
 ### High-Level Overview
