@@ -39,12 +39,10 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑d
 
 <div align="left">
 
-| | |
-|---|---|
-| 📋 **Protocol Officers** | 🔬 **Scientists & Researchers** |
-| 🏭 **Industry & Manufacturing** | 🏢 **Enterprises & Corporations** |
-| ⚖️ **Legal Professionals** | 🏥 **Medical & Healthcare** |
-| 🏦 **Finance & Insurance** | 📝 **Technical Writers** |
+📋 **Protocol Officers** &nbsp;&nbsp;&nbsp; 🔬 **Scientists & Researchers**  
+🏭 **Industry & Manufacturing** &nbsp;&nbsp;&nbsp; 🏢 **Enterprises & Corporations**  
+⚖️ **Legal Professionals** &nbsp;&nbsp;&nbsp; 🏥 **Medical & Healthcare**  
+🏦 **Finance & Insurance** &nbsp;&nbsp;&nbsp; 📝 **Technical Writers**
 
 </div>
 
