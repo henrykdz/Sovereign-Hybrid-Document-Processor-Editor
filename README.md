@@ -4,6 +4,7 @@
     <div style="display: inline-block; width: 60%;">
         <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
     </div>
+    <br>
     <div style="display: inline-block; width: 39%; text-align: right;">
         <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
         <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
