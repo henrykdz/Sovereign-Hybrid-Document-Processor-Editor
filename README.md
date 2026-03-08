@@ -6,22 +6,12 @@
 
 <br>
 
-<table width="100%">
-  <tr>
-    <td align="left" width="25%">
-      <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
-    </td>
-    <td align="left" width="25%">
-      <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
-    </td>
-    <td align="left" width="25%">
-      <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
-    </td>
-    <td align="left" width="25%">
-      <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
-    </td>
-  </tr>
-</table>
+<div align="left">
+    <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
+    <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
+    <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
+    <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
+</div>
 
 <br>
 
