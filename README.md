@@ -1,7 +1,10 @@
 # FlowShift - Hybrid Document & Web Forge
 
 <div>
-    <div style="display: inline-block; width: 39%; text-align: right;">
+    <div style="display: inline-block; width: 50%;">
+        <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
+    </div>
+    <div style="display: inline-block; width: 49%; text-align: right;">
         <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
         <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
         <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
@@ -11,28 +14,28 @@
 
 <br>
 
-<div align="center">
+<div align="left">
 
-<table>
+<table style="border:none; background:transparent; border-collapse:collapse;">
   <tr>
-    <td width="250"><a href="#introduction" style="color:#00d1ff; text-decoration:none;">🚀 <strong>Introduction</strong></a></td>
-    <td width="250"><a href="#target-audience" style="color:#00d1ff; text-decoration:none;">🎯 <strong>Target Audience</strong></a></td>
-    <td width="250"><a href="#philosophy" style="color:#00d1ff; text-decoration:none;">🧠 <strong>Philosophy</strong></a></td>
+    <td width="250" style="border:none;"><a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/" style="color:#00d1ff; text-decoration:none;">🌐 <strong>Live Demo</strong></a></td>
+    <td width="250" style="border:none;"><a href="#introduction" style="color:#00d1ff; text-decoration:none;">🚀 <strong>Introduction</strong></a></td>
+    <td width="250" style="border:none;"><a href="#target-audience" style="color:#00d1ff; text-decoration:none;">🎯 <strong>Target Audience</strong></a></td>
   </tr>
   <tr>
-    <td width="250"><a href="#features" style="color:#00d1ff; text-decoration:none;">✨ <strong>Features</strong></a></td>
-    <td width="250"><a href="#architecture" style="color:#00d1ff; text-decoration:none;">🏗️ <strong>Architecture</strong></a></td>
-    <td width="250"><a href="#preview" style="color:#00d1ff; text-decoration:none;">🖼️ <strong>Preview</strong></a></td>
+    <td width="250" style="border:none;"><a href="#philosophy" style="color:#00d1ff; text-decoration:none;">🧠 <strong>Philosophy</strong></a></td>
+    <td width="250" style="border:none;"><a href="#features" style="color:#00d1ff; text-decoration:none;">✨ <strong>Features</strong></a></td>
+    <td width="250" style="border:none;"><a href="#architecture" style="color:#00d1ff; text-decoration:none;">🏗️ <strong>Architecture</strong></a></td>
   </tr>
   <tr>
-    <td width="250"><a href="#background" style="color:#00d1ff; text-decoration:none;">📖 <strong>Background</strong></a></td>
-    <td width="250"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
-    <td width="250"><a href="#license" style="color:#00d1ff; text-decoration:none;">📄 <strong>License</strong></a></td>
+    <td width="250" style="border:none;"><a href="#preview" style="color:#00d1ff; text-decoration:none;">🖼️ <strong>Preview</strong></a></td>
+    <td width="250" style="border:none;"><a href="#background" style="color:#00d1ff; text-decoration:none;">📖 <strong>Background</strong></a></td>
+    <td width="250" style="border:none;"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
   </tr>
   <tr>
-    <td width="250"><a href="#contact" style="color:#00d1ff; text-decoration:none;">💬 <strong>Contact</strong></a></td>
-    <td width="250"></td>
-    <td width="250"></td>
+    <td width="250" style="border:none;"><a href="#license" style="color:#00d1ff; text-decoration:none;">📄 <strong>License</strong></a></td>
+    <td width="250" style="border:none;"><a href="#contact" style="color:#00d1ff; text-decoration:none;">💬 <strong>Contact</strong></a></td>
+    <td width="250" style="border:none;"></td>
   </tr>
 </table>
 
