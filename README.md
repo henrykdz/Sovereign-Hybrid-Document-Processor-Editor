@@ -135,7 +135,10 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 | **A5 Landscape** | 210 × 148 mm | Folded brochures |
 | **A6** | 105 × 148 mm | Postcards, flyers |
 
-### US/ANSI Standards (North America)
+<details>
+<summary><b>📌 US/ANSI Standards (North America)</b> <span style="color:#00d1ff;">[click to expand]</span></summary>
+<br>
+
 | Format | Dimensions | Use Case |
 |--------|------------|----------|
 | **Letter** | 215.9 × 279.4 mm | Business correspondence |
@@ -143,19 +146,31 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 | **Tabloid** | 279.4 × 431.8 mm | Newspapers, ledgers |
 | **Executive** | 184.15 × 266.7 mm | Government documents |
 
-### Special Formats
+</details>
+
+<details>
+<summary><b>🎴 Special Formats</b> <span style="color:#00d1ff;">[click to expand]</span></summary>
+<br>
+
 | Format | Dimensions | Use Case |
 |--------|------------|----------|
 | **Business Card (EU)** | 85 × 55 mm | European standard cards |
 | **Business Card (US)** | 89 × 51 mm | US standard cards |
 | **Credit Card (ID-1)** | 85.6 × 53.98 mm | Payment cards, IDs |
 
-### Web & Screen Formats
+</details>
+
+<details>
+<summary><b>🌐 Web & Screen Formats</b> <span style="color:#00d1ff;">[click to expand]</span></summary>
+<br>
+
 | Format | Dimensions | Use Case |
 |--------|------------|----------|
 | **Web Wide** | 100% width | Responsive web content |
 | **Web Reading** | 800px width | Optimized reading view |
 | **Social Square** | 200 × 200 mm | Social media graphics |
+
+</details>
 
 <h2 id="architecture" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🏗️ Technical Architecture</h2>
 
