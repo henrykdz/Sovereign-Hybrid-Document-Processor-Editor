@@ -40,18 +40,18 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 <table>
   <tr>
     <td width="200">📋 <strong>Protocol Officers</strong></td>
-    <td width="200">🔬 <strong>Scientists & Researchers</strong></td>
+    <td width="200">🔬 <strong>Scientists &amp; Researchers</strong></td>
   </tr>
   <tr>
-    <td>🏭 <strong>Industry & Manufacturing</strong></td>
-    <td>🏢 <strong>Enterprises & Corporations</strong></td>
+    <td>🏭 <strong>Industry &amp; Manufacturing</strong></td>
+    <td>🏢 <strong>Enterprises &amp; Corporations</strong></td>
   </tr>
   <tr>
     <td>⚖️ <strong>Legal Professionals</strong></td>
-    <td>🏥 <strong>Medical & Healthcare</strong></td>
+    <td>🏥 <strong>Medical &amp; Healthcare</strong></td>
   </tr>
   <tr>
-    <td>🏦 <strong>Finance & Insurance</strong></td>
+    <td>🏦 <strong>Finance &amp; Insurance</strong></td>
     <td>📝 <strong>Technical Writers</strong></td>
   </tr>
 </table>
