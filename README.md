@@ -16,7 +16,6 @@
 
 <div align="center">
 
-|---|---|
 | <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/" style="color:#00d1ff;">🌐 Live Demo</a> | <a href="#introduction" style="color:#00d1ff;">🚀 Introduction</a> | <a href="#target-audience" style="color:#00d1ff;">🎯 Target Audience</a> |
 | <a href="#philosophy" style="color:#00d1ff;">🧠 Philosophy</a> | <a href="#features" style="color:#00d1ff;">✨ Features</a> | <a href="#architecture" style="color:#00d1ff;">🏗️ Architecture</a> |
 | <a href="#preview" style="color:#00d1ff;">🖼️ Preview</a> | <a href="#background" style="color:#00d1ff;">📖 Background</a> | <a href="#availability" style="color:#00d1ff;">🔧 Availability</a> |
