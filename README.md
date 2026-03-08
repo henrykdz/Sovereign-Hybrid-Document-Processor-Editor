@@ -25,14 +25,14 @@
     <td width="250" style="border:none;"><a href="#architecture" style="color:#00d1ff; text-decoration:none;">🏗️ <strong>Architecture</strong></a></td>
   </tr>
   <tr>
+    <td width="250" style="border:none;"><a href="#formats" style="color:#00d1ff; text-decoration:none;">📄 <strong>Formats</strong></a></td>
     <td width="250" style="border:none;"><a href="#preview" style="color:#00d1ff; text-decoration:none;">🖼️ <strong>Preview</strong></a></td>
     <td width="250" style="border:none;"><a href="#background" style="color:#00d1ff; text-decoration:none;">📖 <strong>Background</strong></a></td>
-    <td width="250" style="border:none;"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
   </tr>
   <tr>
+    <td width="250" style="border:none;"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
     <td width="250" style="border:none;"><a href="#license" style="color:#00d1ff; text-decoration:none;">📄 <strong>License</strong></a></td>
     <td width="250" style="border:none;"><a href="#contact" style="color:#00d1ff; text-decoration:none;">💬 <strong>Contact</strong></a></td>
-    <td width="250" style="border:none;"></td>
   </tr>
 </table>
 
@@ -119,6 +119,43 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 ✅ **ISO-compliant Export** – A4, Letter, Web – everything possible
 
 ---
+
+<h2 id="formats" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📄 Supported Document Formats</h2>
+
+### ISO/DIN A-Series (International)
+| Format | Dimensions | Use Case |
+|--------|------------|----------|
+| **A0** | 841 × 1189 mm | Posters, technical drawings |
+| **A1** | 594 × 841 mm | Posters, flip charts |
+| **A2** | 420 × 594 mm | Presentations, newspapers |
+| **A3** | 297 × 420 mm | Magazines, diagrams |
+| **A4 Portrait** | 210 × 297 mm | Letters, reports, forms |
+| **A4 Landscape** | 297 × 210 mm | Wide format presentations |
+| **A5 Portrait** | 148 × 210 mm | Brochures, notepads |
+| **A5 Landscape** | 210 × 148 mm | Folded brochures |
+| **A6** | 105 × 148 mm | Postcards, flyers |
+
+### US/ANSI Standards (North America)
+| Format | Dimensions | Use Case |
+|--------|------------|----------|
+| **Letter** | 215.9 × 279.4 mm | Business correspondence |
+| **Legal** | 215.9 × 355.6 mm | Legal documents, contracts |
+| **Tabloid** | 279.4 × 431.8 mm | Newspapers, ledgers |
+| **Executive** | 184.15 × 266.7 mm | Government documents |
+
+### Special Formats
+| Format | Dimensions | Use Case |
+|--------|------------|----------|
+| **Business Card (EU)** | 85 × 55 mm | European standard cards |
+| **Business Card (US)** | 89 × 51 mm | US standard cards |
+| **Credit Card (ID-1)** | 85.6 × 53.98 mm | Payment cards, IDs |
+
+### Web & Screen Formats
+| Format | Dimensions | Use Case |
+|--------|------------|----------|
+| **Web Wide** | 100% width | Responsive web content |
+| **Web Reading** | 800px width | Optimized reading view |
+| **Social Square** | 200 × 200 mm | Social media graphics |
 
 <h2 id="architecture" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🏗️ Technical Architecture</h2>
 
