@@ -6,10 +6,6 @@
 
 <br>
 
----
-
-<br>
-
 <div align="left">
     <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
     <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
@@ -20,8 +16,6 @@
 <br>
 
 ---
-
-<br>
 
 <div align="center">
     <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
