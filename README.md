@@ -23,7 +23,7 @@
 
 ---
 
-## 🚀 Introduction
+<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
 
 The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow.
 
@@ -33,7 +33,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-## 🎯 Target Audience
+<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🎯 Target Audience</h2>
 
 <div align="left">
 
@@ -60,7 +60,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-## 🧠 Core Philosophy
+<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🧠 Core Philosophy</h2>
 
 | Principle | Description |
 |-----------|-------------|
@@ -70,7 +70,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2 id="features">✨ Key Features</h2>
+<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;" id="features">✨ Key Features</h2>
 
 ### Unrivalled Editing Experience
 
@@ -99,7 +99,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2 id="architecture">🏗️ Technical Architecture</h2>
+<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;" id="architecture">🏗️ Technical Architecture</h2>
 
 ### High-Level Overview
 
@@ -145,7 +145,7 @@ The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element
 
 ---
 
-<h2 id="background">📖 The Story Behind FlowShift</h2>
+<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;" id="background">📖 The Story Behind FlowShift</h2>
 
 This software was born from personal necessity. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2). When his body couldn't, his mind did. Code became distraction, therapy, and finally passion.
 
