@@ -1,18 +1,16 @@
 # FlowShift - Sovereign Hybrid Document Engine
 
-<table style="width: 100%; border: none; background: transparent; border-collapse: collapse;">
-  <tr>
-    <td style="text-align: left; border: none; padding: 0; width: 50%;">
-      <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
-    </td>
-    <td style="text-align: right; border: none; padding: 0; width: 50%;">
-      <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
-      <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
-      <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
-      <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
-    </td>
-  </tr>
-</table>
+<div>
+    <div style="display: inline-block; width: 60%;">
+        <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
+    </div>
+    <div style="display: inline-block; width: 39%; text-align: right;">
+        <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
+        <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
+        <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
+        <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
+    </div>
+</div>
 
 <br>
 
@@ -30,6 +28,7 @@
     <a href="#license">📄 License</a> •
     <a href="#contact">💬 Contact</a>
 </div>
+
 <h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
 
 The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow.
