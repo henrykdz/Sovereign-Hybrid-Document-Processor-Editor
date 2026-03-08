@@ -15,16 +15,20 @@
 <br><br>
 
 <div align="center">
-
-| | |
-|---|---|
-| 🌐 <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">**Live Demo**</a> | 🚀 <a href="#introduction">**Introduction**</a> |
-| 🎯 <a href="#target-audience">**Target Audience**</a> | 🧠 <a href="#philosophy">**Philosophy**</a> |
-| ✨ <a href="#features">**Features**</a> | 🏗️ <a href="#architecture">**Architecture**</a> |
-| 🖼️ <a href="#preview">**Preview**</a> | 📖 <a href="#background">**Background**</a> |
-| 🔧 <a href="#availability">**Availability**</a> | 📄 <a href="#license">**License**</a> |
-| 💬 <a href="#contact">**Contact**</a> | |
-
+    <div style="margin-bottom: 15px; font-size: 1.2rem;">
+        <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 <strong>Live Demo</strong></a>
+    </div>
+    
+    <a href="#introduction">🚀 Introduction</a><br>
+    <a href="#target-audience">🎯 Target Audience</a><br>
+    <a href="#philosophy">🧠 Philosophy</a><br>
+    <a href="#features">✨ Features</a><br>
+    <a href="#architecture">🏗️ Architecture</a><br>
+    <a href="#preview">🖼️ Preview</a><br>
+    <a href="#background">📖 Background</a><br>
+    <a href="#availability">🔧 Availability</a><br>
+    <a href="#license">📄 License</a><br>
+    <a href="#contact">💬 Contact</a>
 </div>
 
 <br>
