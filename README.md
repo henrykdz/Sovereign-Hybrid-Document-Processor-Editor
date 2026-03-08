@@ -33,11 +33,9 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2>
-  <span style="background-color: #00d1ff; color: black; padding: 5px 15px; border-radius: 5px;">
-    🎯 Target Audience
-  </span>
-</h2>
+<img src="https://img.shields.io/badge/🎯-Target%20Audience-blue?style=for-the-badge">
+
+<!-- Inhalt hier -->
 
 <div align="left">
 
