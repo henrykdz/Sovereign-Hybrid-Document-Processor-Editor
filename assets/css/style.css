@@ -151,14 +151,25 @@ h2:first-of-type {
     margin-bottom: 0.5rem;
 }
 
-.floating-nav ul li a {  /* Nur Links in der ul */
-    display: block;
+/* Navigation Links mit einheitlicher Emoji-Breite */
+.floating-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     padding: 0.6rem 0.8rem;
     color: #94a3b8;
     text-decoration: none;
     font-size: 0.95rem;
     border-radius: 12px;
     transition: all 0.2s ease;
+}
+
+/* Emoji-Span für einheitliche Breite */
+.floating-nav ul li a .nav-emoji {
+    display: inline-block;
+    min-width: 22px;  /* Feste Breite für ALLE Emojis */
+    text-align: center;
+    font-size: 0.95rem;  /* Einheitliche Größe */
 }
 
 .floating-nav ul li a:hover,
@@ -187,6 +198,7 @@ h2:first-of-type {
     background: rgba(0, 209, 255, 0.1);
     color: #00d1ff;
 }
+
 
 /* ===== DOKUMENT – MITTIG ===== */
 .document {
