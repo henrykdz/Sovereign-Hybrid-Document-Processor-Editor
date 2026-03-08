@@ -33,7 +33,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<img src="https://img.shields.io/badge/🎯-TARGET%20AUDIENCE-00d1ff?style=for-the-badge&labelColor=1a2a3a">
+<img src="https://img.shields.io/badge/🚀-INTRODUCTION-ffffff?style=for-the-badge&labelColor=00d1ff&color=ffffff">
 
 <div align="left">
 
