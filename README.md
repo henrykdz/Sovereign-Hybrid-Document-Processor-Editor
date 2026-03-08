@@ -1,8 +1,8 @@
 # FlowShift - Sovereign Hybrid Document Engine
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
-    <div>
+    <div style="white-space: nowrap;">
         <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
         <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
         <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
@@ -26,6 +26,7 @@
     <a href="#license">📄 License</a> •
     <a href="#contact">💬 Contact</a>
 </div>
+
 ---
 
 <h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
