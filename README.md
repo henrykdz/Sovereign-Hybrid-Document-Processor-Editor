@@ -1,3 +1,11 @@
+---
+format: WEB_READING
+paginate: false
+mTop: 15
+mBot: 15
+mLeft: 15
+mRight: 15
+---
 # FlowShift - Sovereign Hybrid Document Engine
 
 <div align="center">
@@ -8,6 +16,17 @@
     <a href="#installation">📦 Installation</a> •
     <a href="#architecture">🏗️ Architecture</a> •
     <a href="#background">📖 Background</a>
+</div>
+
+<br>
+
+<div align="center">
+    
+![Early Access](https://img.shields.io/badge/status-early%20access--private-blue)
+![Preview](https://img.shields.io/badge/preview-Q3%202026-orange)
+![Java](https://img.shields.io/badge/Java-23-blue?logo=java)
+![License](https://img.shields.io/badge/license-Commercial-red)
+
 </div>
 
 ---
@@ -23,6 +42,22 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑d
 > *"FlowShift transforms complex ideas into perfectly formatted documents. Our hybrid engine combines the flexibility of Markdown, HTML/CSS, and YAML with the precision of ISO standards."*
 
 ---
+
+## 🎯 Target Audience
+
+<div align="center">
+
+| | |
+|---|---|
+| 📋 **Protocol Officers** | 🔬 **Scientists & Researchers** |
+| 🏭 **Industry & Manufacturing** | 🏢 **Enterprises & Corporations** |
+| ⚖️ **Legal Professionals** | 🏥 **Medical & Healthcare** |
+| 🏦 **Finance & Insurance** | 📝 **Technical Writers** |
+
+</div>
+
+---
+
 ## 🧠 Core Philosophy: Sovereignty & Efficiency
 
 Every feature of the FlowShift Engine is founded on three principles:
@@ -39,7 +74,7 @@ The engine listens to the architect's command and does exactly what is intended 
 
 <h2 id="features">✨ Key Features: What the Engine Delivers</h2>
 
-### 3.1 Unrivalled Editing Experience
+### Unrivalled Editing Experience
 
 | Feature | Description |
 |---------|-------------|
@@ -48,7 +83,7 @@ The engine listens to the architect's command and does exactly what is intended 
 | **Bidirectional navigation** | A click in the preview jumps the cursor precisely to the corresponding spot in the Markdown source. |
 | **Intelligent error diagnostics** | The `ErrorTooltipManager` visualises linter errors directly in the status bar. |
 
-### 3.2 Layout & Design Sovereignty
+### Layout & Design Sovereignty
 
 | Feature | Description |
 |---------|-------------|
@@ -56,7 +91,7 @@ The engine listens to the architect's command and does exactly what is intended 
 | **Precise pagination** | The engine converts documents exactly into physical pages (A4, Letter). |
 | **Neutral start** | Documents begin without any enforced formatting. Margins and pagination are defined explicitly in YAML. |
 
-### 3.3 Complete Feature List
+### Complete Feature List
 
 | | |
 |---|---|
@@ -70,7 +105,16 @@ The engine listens to the architect's command and does exactly what is intended 
 
 <h2 id="architecture">🏗️ Technical Architecture: Under the Hood</h2>
 
-### 4.1 Technology Stack
+### High-Level Overview
+
+- **JavaFX Desktop Application** – Native performance with modern UI
+- **Hybrid Rendering Engine** – Markdown → HTML → WebView with zero flicker
+- **Real-time Source Mapping** – Character-accurate bidirectional navigation
+- **Modular Design** – Clean separation of concerns for maintainability
+
+<details>
+<summary><b>🔧 Vollständiger Technology Stack (Entwickler-Details)</b></summary>
+<br>
 
 | Component | Technology |
 |-----------|------------|
@@ -85,15 +129,17 @@ The engine listens to the architect's command and does exactly what is intended 
 | **SVG Support** | fxsvgimage v1.1 |
 | **Testing** | JUnit 5, Mockito |
 
-### 4.2 Hybrid Rendering Approach
+</details>
+
+### Hybrid Rendering Approach
 
 The engine uses **JavaFX & WebKit**, combined with the `Sovereign Swap`. Instead of reloading the WebView, content is injected via `innerHTML`, guaranteeing absolute smoothness and zero flicker.
 
-### 4.3 The Sovereign Bridge (Source Mapping)
+### The Sovereign Bridge (Source Mapping)
 
 The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element. An internal map links this ID to the exact character offset in the source text, enabling precise bidirectional navigation.
 
-### 4.4 Navigation & Anchor Logic
+### Navigation & Anchor Logic
 
 The FlowShift Engine ensures your documents remain fully navigable in export and print:
 
@@ -124,6 +170,26 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 ---
 
 *Enterprise licenses and evaluation versions are available upon request.*
+
+---
+
+## 📬 Early Access 2026
+
+<div align="center">
+    <br>
+    <strong>🚀 FlowShift ist in aktiver Entwicklung</strong>
+    <br><br>
+    
+| | |
+|---|---|
+| **📊 Status:** | 🔧 Private Development · Preview Q3 2026 |
+| **📧 Kontakt:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
+| **👥 Programm:** | Auf Anfrage · Begrenzte Plätze |
+    
+    <br>
+    <sub>💡 Interesse am Early Access? Einfach eine E-Mail mit Betreff "Early Access" senden.</sub>
+    <br><br>
+</div>
 
 ---
 
