@@ -31,7 +31,7 @@ The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Docum
 
 </div>
 
-Built for architects of information — professionals who demand absolute control over content, form, and geometry.
+Built for architects of information, professionals who demand absolute control over content, form, and geometry.
 
 > *FlowShift transforms complex ideas into perfectly formatted documents. A hybrid engine that combines the flexibility of Markdown, the power of HTML/CSS, and the structure of YAML with the precision of ISO standards.*
 
