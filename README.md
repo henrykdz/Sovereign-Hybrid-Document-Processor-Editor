@@ -27,11 +27,11 @@
 
 <div style="background: linear-gradient(145deg, #0d1117 0%, #1a2a3a 100%); padding: 25px; border-radius: 12px; border-left: 4px solid #00d1ff; margin: 20px 0;">
 
-The **FlowShift Sovereign Document Engine** is a high-performance hybrid document builder that unifies **Markdown**, **HTML/CSS**, and **YAML** into a single, cohesive workflow.
+The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, and **YAML** into a single, cohesive workflow.
 
 <br>
 
-> *"Built for architects of information, professionals who demand absolute control over content, form, and geometry, FlowShift's Document Forge enables complex ideas to become perfectly formatted documents. A hybrid engine that combines the flexibility of Markdown, the power of HTML/CSS, and the structure of YAML with the precision of ISO standards."*
+> *"Built for architects of information, professionals who demand absolute control over content, form, and geometry, FlowShift's Document Forge enables complex ideas to become perfectly formatted documents with the precision of ISO standards."*
 
 </div>
 
