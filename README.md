@@ -191,7 +191,7 @@ The source code is private and not publicly available.
 
 <br>
 
-**📊 Status:** 🔧 Private Development · Preview Q3 2026  
+**📊 Status:** Private Development · Preview Q3 2026  
 **👥 Early Access:** By request · Limited spots  
 **📧 Contact:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift)  
 **🌐 Website:** [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
