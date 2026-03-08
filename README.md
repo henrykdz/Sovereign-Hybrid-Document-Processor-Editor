@@ -1,11 +1,3 @@
----
-format: WEB_READING
-paginate: false
-mTop: 15
-mBot: 15
-mLeft: 15
-mRight: 15
----
 # FlowShift - Sovereign Hybrid Document Engine
 
 <div align="center">
