@@ -1,4 +1,4 @@
-# FlowShift - Sovereign Hybrid Document Engine
+# FlowShift - Hybrid Document & Web Forge
 
 <div>
     <div style="display: inline-block; width: 39%; text-align: right;">
