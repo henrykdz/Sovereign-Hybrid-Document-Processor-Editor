@@ -193,11 +193,11 @@ The source code is private and not publicly available.
 
 **📊 Status:** Private Development · Preview Q3 2026  
 **👥 Early Access:** By request · Limited spots  
-**📧 Contact:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift)  
 **🌐 Website:** [https://flowshift.dev](https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/)
 
 <br>
 
+*For inquiries: [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=FlowShift%20Inquiry)*  
 *Enterprise licenses and evaluation versions available upon request.*
 
 ---
@@ -217,9 +217,10 @@ This software is a commercial product. No part may be reproduced without written
 <h2 id="contact" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">💬 Contact</h2>
 
 - **Architect:** Henryk Daniel Zschuppan
-- **Email:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com)
 - **GitHub:** [@henrykdz](https://github.com/henrykdz)
 - **Timezone:** Europe/Berlin
+
+*All inquiries via [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com)*
 
 ---
 
