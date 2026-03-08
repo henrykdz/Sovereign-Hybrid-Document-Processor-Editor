@@ -85,8 +85,8 @@ The engine listens to the architect's command and does exactly what is intended 
 
 ### Complete Feature List
 
-| | |
-|---|---|
+| Feature | Description |
+|---------|-------------|
 | ✅ **Formatter** | Automatic formatting of Markdown, HTML and CSS |
 | ✅ **Linter** | Real-time error detection with visual feedback |
 | ✅ **Syntax Highlighter** | Color-highlighted code for better readability |
