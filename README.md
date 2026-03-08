@@ -179,7 +179,7 @@ For licensing inquiries and usage terms, please refer to the End User License Ag
 ---
 
 <div align="center">
-    <sub>⚡ Built with pain, will, and code. ⚡</sub>
+    <sub>⚡ Precision · Sovereignty · Zero Compromise ⚡</sub>
     <br>
-    <sub>© 2026 FlowShift · Version 0.0.1-SNAPSHOT</sub>
+    <sub>© 2026 FlowShift · Early Access Build</sub>
 </div>
