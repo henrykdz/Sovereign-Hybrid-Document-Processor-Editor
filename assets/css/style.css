@@ -188,7 +188,7 @@ h2:first-of-type {
 
 .nav-early-item::before {
     content: '⚡';
-    margin-right: 4px;
+    margin-right: 0px;
     font-size: 0.9rem;
     opacity: 0.8;
 }
