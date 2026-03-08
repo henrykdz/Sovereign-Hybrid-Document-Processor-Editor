@@ -2,10 +2,10 @@
 
 <table style="width: 100%; border: none; background: transparent;">
   <tr>
-    <td style="text-align: left; border: none; padding: 0; white-space: nowrap;">
+    <td style="text-align: left; border: none; padding: 0; width: 60%; white-space: nowrap;">
       <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
     </td>
-    <td style="text-align: right; border: none; padding: 0; white-space: nowrap;">
+    <td style="text-align: right; border: none; padding: 0; width: 40%; white-space: nowrap;">
       <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
       <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
       <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
