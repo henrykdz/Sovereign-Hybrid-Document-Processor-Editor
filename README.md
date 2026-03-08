@@ -18,7 +18,8 @@
     <a href="#target-audience">🎯 Target Audience</a> •
     <a href="#philosophy">🧠 Philosophy</a> •
     <a href="#features">✨ Features</a> •
-    <a href="#architecture">🏗️ Architecture</a> •
+    <a href="#architecture">🏗️ Architecture</a>
+    <br>
     <a href="#preview">🖼️ Preview</a> •
     <a href="#background">📖 Background</a> •
     <a href="#availability">🔧 Availability</a> •
