@@ -34,8 +34,9 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 ---
 
 <h2>
-  <span style="color: #00d1ff;">🎯</span> 
-  <span style="color: #00d1ff;">Target Audience</span>
+  <span style="background-color: #00d1ff; color: black; padding: 5px 15px; border-radius: 5px;">
+    🎯 Target Audience
+  </span>
 </h2>
 
 <div align="left">
