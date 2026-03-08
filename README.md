@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<br>
+<br><br>
 
 <div align="center">
     <a href="https://henrykdz.github.io/Sovereign-Hybrid-Document-Processor-Editor/">🌐 Live Demo</a> •
@@ -28,7 +28,7 @@
     <a href="#license">📄 License</a> •
     <a href="#contact">💬 Contact</a>
 </div>
-
+<br>
 <h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
 
 The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow.
