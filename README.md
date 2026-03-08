@@ -39,20 +39,20 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 <table>
   <tr>
-    <td width="200">📋 <strong>Protocol Officers</strong></td>
-    <td width="200">🔬 <strong>Scientists &amp; Researchers</strong></td>
+    <td width="250">📋 <strong>Protocol Officers</strong></td>
+    <td width="250">🔬 <strong>Scientists &amp; Researchers</strong></td>
   </tr>
   <tr>
-    <td>🏭 <strong>Industry &amp; Manufacturing</strong></td>
-    <td>🏢 <strong>Enterprises &amp; Corporations</strong></td>
+    <td width="250">🏭 <strong>Industry &amp; Manufacturing</strong></td>
+    <td width="250">🏢 <strong>Enterprises &amp; Corporations</strong></td>
   </tr>
   <tr>
-    <td>⚖️ <strong>Legal Professionals</strong></td>
-    <td>🏥 <strong>Medical &amp; Healthcare</strong></td>
+    <td width="250">⚖️ <strong>Legal Professionals</strong></td>
+    <td width="250">🏥 <strong>Medical &amp; Healthcare</strong></td>
   </tr>
   <tr>
-    <td>🏦 <strong>Finance &amp; Insurance</strong></td>
-    <td>📝 <strong>Technical Writers</strong></td>
+    <td width="250">🏦 <strong>Finance &amp; Insurance</strong></td>
+    <td width="250">📝 <strong>Technical Writers</strong></td>
   </tr>
 </table>
 
