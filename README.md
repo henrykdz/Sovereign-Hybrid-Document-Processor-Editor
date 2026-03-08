@@ -48,8 +48,6 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is a counter‑d
 
 </div>
 
-*Keine Header-Zeile - die Tabelle zeigt nur die Zielgruppen an*
-
 ---
 
 ## 🧠 Core Philosophy: Sovereignty & Efficiency
@@ -107,7 +105,7 @@ The engine listens to the architect's command and does exactly what is intended 
 - **Modular Design** – Clean separation of concerns for maintainability
 
 <details>
-<summary><b>🔧 Vollständiger Technology Stack (Entwickler-Details)</b></summary>
+<summary><b>🔧 Complete Technology Stack</b> · <span style="color: #00d1ff; border-bottom: 1px dashed #00d1ff;">[ Developer Details ▼ ]</span></summary>
 <br>
 
 | Component | Technology |
@@ -171,22 +169,20 @@ For licensing inquiries, demonstration requests, or partnership opportunities, p
 
 <div align="left">
     <br>
-    <strong>🚀 FlowShift ist in aktiver Entwicklung</strong>
+    <strong>🚀 FlowShift is in active development</strong>
     <br><br>
     
 | | |
 |---|---|
 | **📊 Status:** | 🔧 Private Development · Preview Q3 2026 |
-| **📧 Kontakt:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
-| **👥 Programm:** | Auf Anfrage · Begrenzte Plätze |
+| **📧 Contact:** | [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com?subject=Early%20Access%20FlowShift) |
+| **👥 Program:** | By request · Limited spots |
     
 </div>
 
-*Keine Header-Zeile - die Tabelle zeigt nur die Status-Informationen an*
-
 <br>
 <div align="center">
-    <sub>💡 Interesse am Early Access? Einfach eine E-Mail mit Betreff "Early Access" senden.</sub>
+    <sub>💡 Interested in Early Access? Just send an email with subject "Early Access".</sub>
     <br><br>
 </div>
 
