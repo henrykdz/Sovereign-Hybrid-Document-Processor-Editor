@@ -1,14 +1,14 @@
 # FlowShift - Sovereign Hybrid Document Engine
 
 <div>
+    <div style="display: inline-block; width: 60%;">
+        <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
+    </div>
     <div style="display: inline-block; width: 39%; text-align: right;">
         <img src="https://img.shields.io/badge/status-early%20access--private-blue" alt="Early Access">
         <img src="https://img.shields.io/badge/preview-Q3%202026-orange" alt="Preview">
         <img src="https://img.shields.io/badge/Java-23-blue?logo=java" alt="Java">
         <img src="https://img.shields.io/badge/license-Commercial-red" alt="License">
-    </div>
-    <div style="display: inline-block; width: 60%;">
-        <strong>⚡ Precision · Sovereignty · Zero Compromise ⚡</strong>
     </div>
 </div>
 
@@ -28,8 +28,12 @@
     <a href="#license">📄 License</a> •
     <a href="#contact">💬 Contact</a>
 </div>
+
 <br>
-<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
+
+---
+
+<h2 id="introduction" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🚀 Introduction</h2>
 
 The **FlowShift Sovereign Document Engine** is a high-performance **Hybrid Document Builder**. It transcends the limits of traditional editors by seamlessly unifying **Markdown**, **HTML5/CSS3**, and **YAML** into a single, cohesive workflow.
 
@@ -39,7 +43,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-## <span style="color: #1a2a3a;">🎯 Target Audience</span>
+<h2 id="target-audience" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🎯 Target Audience</h2>
 
 <div align="left">
 
@@ -66,7 +70,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🧠 Core Philosophy</h2>
+<h2 id="philosophy" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🧠 Core Philosophy</h2>
 
 | Principle | Description |
 |-----------|-------------|
@@ -76,7 +80,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;" id="features">✨ Key Features</h2>
+<h2 id="features" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">✨ Key Features</h2>
 
 ### Unrivalled Editing Experience
 
@@ -105,7 +109,7 @@ Developed by architect **Henryk Daniel Zschuppan**, this engine is built for pro
 
 ---
 
-<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;" id="architecture">🏗️ Technical Architecture</h2>
+<h2 id="architecture" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🏗️ Technical Architecture</h2>
 
 ### High-Level Overview
 
@@ -145,13 +149,13 @@ The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element
 
 ---
 
-## 🖼️ Preview
+<h2 id="preview" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🖼️ Preview</h2>
 
 ![Screen](assets/images/screen.png)
 
 ---
 
-<h2 style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;" id="background">📖 The Story Behind FlowShift</h2>
+<h2 id="background" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📖 The Story Behind FlowShift</h2>
 
 This software was born from personal necessity. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2). When his body couldn't, his mind did. Code became distraction, therapy, and finally passion.
 
@@ -169,7 +173,7 @@ FlowShift is the foundation for **interactive documents**, **AI orchestration**,
 
 ---
 
-## 🔧 Availability & Early Access
+<h2 id="availability" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🔧 Availability & Early Access</h2>
 
 **FlowShift is a commercial product in active development.**  
 The source code is private and not publicly available.
@@ -187,7 +191,7 @@ The source code is private and not publicly available.
 
 ---
 
-## 📄 License
+<h2 id="license" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📄 License</h2>
 
 **Sovereign Commercial License**
 
@@ -199,7 +203,7 @@ This software is a commercial product. No part may be reproduced without written
 
 ---
 
-<h2 id="contact">💬 Contact</h2>
+<h2 id="contact" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">💬 Contact</h2>
 
 - **Architect:** Henryk Daniel Zschuppan
 - **Email:** [h.zschuppan@aol.com](mailto:h.zschuppan@aol.com)
