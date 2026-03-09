@@ -57,6 +57,7 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 <h2 id="target-audience" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🎯 Target Audience</h2>
 
 <div align="left">
+
 <table style="white-space: nowrap;">
   <tr>
     <td style="padding-right: 30px;">📋 <strong>Protocol Officers</strong></td>
@@ -75,8 +76,8 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
   </tr>
   <tr>
     <td style="padding-right: 30px;">🏛️ <strong>Government & Public Sector</strong></td>
-    <td></td>
-    <td></td>
+    <td style="padding-right: 30px;">🎓 <strong>Academics & Educators</strong></td>
+    <td>⚙️ <strong>Engineering & R&D</strong></td>
   </tr>
 </table>
 
