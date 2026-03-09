@@ -263,7 +263,7 @@ The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element
 
 <br>
 
-> *"FlowShift is the foundation for interactive documents, AI orchestration, and data‑sovereign content – a local alternative to cloud systems."*
+> *The FlowShift Editor is built for data‑sovereign content – a local alternative to cloud systems.*
 
 ---
 
