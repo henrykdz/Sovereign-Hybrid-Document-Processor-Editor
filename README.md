@@ -61,19 +61,23 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 <table>
   <tr>
     <td width="250">📋 <strong>Protocol Officers</strong></td>
-    <td width="250">🔬 <strong>Scientists &amp; Researchers</strong></td>
+    <td width="250">🔬 <strong>Scientists & Researchers</strong></td>
   </tr>
   <tr>
-    <td width="250">🏭 <strong>Industry &amp; Manufacturing</strong></td>
-    <td width="250">🏢 <strong>Enterprises &amp; Corporations</strong></td>
+    <td width="250">🏭 <strong>Industry & Manufacturing</strong></td>
+    <td width="250">🏢 <strong>Enterprises & Corporations</strong></td>
   </tr>
   <tr>
     <td width="250">⚖️ <strong>Legal Professionals</strong></td>
-    <td width="250">🏥 <strong>Medical &amp; Healthcare</strong></td>
+    <td width="250">🏥 <strong>Medical & Healthcare</strong></td>
   </tr>
   <tr>
-    <td width="250">🏦 <strong>Finance &amp; Insurance</strong></td>
+    <td width="250">🏦 <strong>Finance & Insurance</strong></td>
     <td width="250">📝 <strong>Technical Writers</strong></td>
+  </tr>
+  <tr>
+    <td width="250">📚 <strong>Publishers & Editors</strong></td>
+    <td width="250">🏛️ <strong>Government & Public Sector</strong></td>
   </tr>
 </table>
 
