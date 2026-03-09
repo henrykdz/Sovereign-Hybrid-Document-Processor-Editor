@@ -48,7 +48,7 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 <br>
 
-> *Built for architects of information, professionals who demand absolute control over content, form, and geometry, FlowShift's Document Forge enables complex ideas to become perfectly formatted documents with the precision of ISO standards.*
+> *Built for architects of information, professionals who demand absolute control over content, form, and geometry. FlowShift's Document Forge turns complex ideas into perfectly formatted documents with ISO precision.*
 
 </div>
 
