@@ -57,27 +57,26 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 <h2 id="target-audience" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🎯 Target Audience</h2>
 
 <div align="left">
-
 <table style="white-space: nowrap;">
   <tr>
     <td style="padding-right: 30px;">📋 <strong>Protocol Officers</strong></td>
-    <td>🔬 <strong>Scientists & Researchers</strong></td>
+    <td style="padding-right: 30px;">🔬 <strong>Scientists & Researchers</strong></td>
+    <td>🏭 <strong>Industry & Manufacturing</strong></td>
   </tr>
   <tr>
-    <td style="padding-right: 30px;">🏭 <strong>Industry & Manufacturing</strong></td>
-    <td>🏢 <strong>Enterprises & Corporations</strong></td>
-  </tr>
-  <tr>
+    <td style="padding-right: 30px;">🏢 <strong>Enterprises & Corporations</strong></td>
     <td style="padding-right: 30px;">⚖️ <strong>Legal Professionals</strong></td>
     <td>🏥 <strong>Medical & Healthcare</strong></td>
   </tr>
   <tr>
     <td style="padding-right: 30px;">🏦 <strong>Finance & Insurance</strong></td>
-    <td>📝 <strong>Technical Writers</strong></td>
+    <td style="padding-right: 30px;">📝 <strong>Technical Writers</strong></td>
+    <td>📚 <strong>Publishers & Editors</strong></td>
   </tr>
   <tr>
-    <td style="padding-right: 30px;">📚 <strong>Publishers & Editors</strong></td>
-    <td>🏛️ <strong>Government & Public Sector</strong></td>
+    <td style="padding-right: 30px;">🏛️ <strong>Government & Public Sector</strong></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 
