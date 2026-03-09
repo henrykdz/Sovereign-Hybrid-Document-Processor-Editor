@@ -87,7 +87,7 @@ From technical documentation to creative projects – FlowShift handles it all:
 
 <div align="left">
 
-<table style="width: 100%;">
+<table style="width: 100%; table-layout: fixed;">
   <tr>
     <td width="50%"><strong>📄 Technical manuals & protocols</strong></td>
     <td width="50%"><strong>🔧 Machine inspection reports</strong></td>
