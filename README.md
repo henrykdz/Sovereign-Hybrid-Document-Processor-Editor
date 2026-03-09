@@ -58,7 +58,7 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 <div align="left">
 
-<table style="width: auto; min-width: 100%; white-space: nowrap;">
+<table style="min-width: 100%; white-space: nowrap;">
   <tr>
     <td width="250">📋 <strong>Protocol Officers</strong></td>
     <td width="250">🔬 <strong>Scientists & Researchers</strong></td>
