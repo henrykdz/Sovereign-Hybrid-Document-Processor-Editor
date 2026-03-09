@@ -6,16 +6,30 @@ package com.flowshift.editor;
  */
 public enum DocumentFormat {
 
-    // --- PRINT-NATIVE FORMATS (Physical paper or PDF) ---
-    // LABEL WIDTH HEIGHT IS_PRINT SUGGEST_PAGINATION
+    // --- ISO/DIN A-Series (International) ---
+	A0("A0 Poster", "841mm", "1189mm", true, true),
+	A1("A1 Poster", "594mm", "841mm", true, true),
+	A2("A2 Poster", "420mm", "594mm", true, true),
+	A3("A3", "297mm", "420mm", true, true),
 	A4_PORTRAIT("A4 Portrait", "210mm", "297mm", true, true),
+	A4_LANDSCAPE("A4 Landscape", "297mm", "210mm", true, true),
 	A5_PORTRAIT("A5 Portrait", "148mm", "210mm", true, true),
+	A5_LANDSCAPE("A5 Landscape", "210mm", "148mm", true, true),
+	A6("A6", "105mm", "148mm", true, false),
+
+    // --- US/ANSI Standards (North America) ---
 	LETTER_US("US Letter", "215.9mm", "279.4mm", true, true),
-	BUSINESS_CARD_EU("Business Card (EU)", "85mm", "55mm", true, false), // Single page
-	CREDIT_CARD_ID1("Credit Card (ID-1)", "85.6mm", "53.98mm", true, false), // Single page
+	LEGAL_US("US Legal", "215.9mm", "355.6mm", true, true),
+	TABLOID_US("US Tabloid", "279.4mm", "431.8mm", true, true),
+	EXECUTIVE_US("US Executive", "184.15mm", "266.7mm", true, false),
+
+    // --- Special Formats ---
+	BUSINESS_CARD_EU("Business Card (EU)", "85mm", "55mm", true, false),
+	BUSINESS_CARD_US("Business Card (US)", "89mm", "51mm", true, false),
+	CREDIT_CARD_ID1("Credit Card (ID-1)", "85.6mm", "53.98mm", true, false),
 	SQUARE_SOCIAL("Social Media Square", "200mm", "200mm", false, false),
-    // --- WEB-NATIVE FORMATS (Digital flow) ---
-    // LABEL WIDTH HEIGHT IS_PRINT SUGGEST_PAGINATION EXPLICIT_PAGESIZE
+
+    // --- Web-Native Formats ---
 	WEB_WIDE("Web (Wide)", "100%", "auto", false, false, "auto"),
 	WEB_READING("Web (Reading)", "800px", "auto", false, false, "auto");
 
@@ -58,7 +72,11 @@ public enum DocumentFormat {
 
 		// Logic: Standard ISO/US formats use their name (a4, letter), custom ones use dimensions.
 		String baseName = this.name().split("_")[0];
-		this.pageSize = (baseName.equals("A4") || baseName.equals("A5") || baseName.equals("LETTER")) ? baseName.toLowerCase() : width + " " + height;
+		boolean isStandard = baseName.equals("A0") || baseName.equals("A1") || baseName.equals("A2") || 
+		                    baseName.equals("A3") || baseName.equals("A4") || baseName.equals("A5") || 
+		                    baseName.equals("A6") || baseName.equals("LETTER") || baseName.equals("LEGAL") || 
+		                    baseName.equals("TABLOID") || baseName.equals("EXECUTIVE");
+		this.pageSize = isStandard ? baseName.toLowerCase() : width + " " + height;
 	}
 
 	/**
@@ -115,9 +133,9 @@ public enum DocumentFormat {
 	 */
 	public javafx.print.Paper getJavaFxPaper() {
 		return switch (this) {
-		case A4_PORTRAIT -> javafx.print.Paper.A4;
-		case A5_PORTRAIT -> javafx.print.Paper.A5;
+		case A0, A1, A2, A3, A4_PORTRAIT, A4_LANDSCAPE, A5_PORTRAIT, A5_LANDSCAPE, A6 -> javafx.print.Paper.A4;
 		case LETTER_US   -> javafx.print.Paper.NA_LETTER;
+		case LEGAL_US    -> javafx.print.Paper.LEGAL;
 		default          -> javafx.print.Paper.A4;
 		};
 	}
@@ -126,7 +144,9 @@ public enum DocumentFormat {
 	 * Determines the correct JavaFX {@link javafx.print.PageOrientation} for this format.
 	 */
 	public javafx.print.PageOrientation getJavaFxOrientation() {
-		// Future logic can be added here for _LANDSCAPE formats.
+		if (this.name().contains("LANDSCAPE")) {
+			return javafx.print.PageOrientation.LANDSCAPE;
+		}
 		return javafx.print.PageOrientation.PORTRAIT;
 	}
 }

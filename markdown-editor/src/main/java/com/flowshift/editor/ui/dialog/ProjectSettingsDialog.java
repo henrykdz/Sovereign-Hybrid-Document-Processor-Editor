@@ -95,6 +95,12 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 	// Bei den Feldern oben
 	private final ToggleButton paginationToggle = new ToggleButton();
 
+	// --- NEUE FIELDS FÜR FORMAT-METADATEN ---
+	private final VBox  formatMetaContainer   = new VBox(5);
+	private final Label formatDimensionsLabel = new Label();
+	private final Label formatTypeLabel       = new Label();
+	private final Label formatPaginationLabel = new Label();
+
 	// UI - Margins
 	private final TextField marginTopField = new TextField(), marginBottomField = new TextField(), marginLeftField = new TextField(), marginRightField = new TextField();
 	// UI - Quick Margin Actions
@@ -147,8 +153,8 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 		setTitle("Document Configuration Nexus");
 		getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
-		getDialogPane().setMinHeight(838);
-		getDialogPane().setPrefHeight(838);
+		getDialogPane().setMinHeight(858);
+		getDialogPane().setPrefHeight(858);
 		getDialogPane().setPrefWidth(1220);
 		getDialogPane().getStyleClass().add("nexus-dialog");
 
@@ -323,7 +329,12 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 		formatChoiceBox.setMaxWidth(Double.MAX_VALUE);
 		docGrid.add(formatRow, 1, 4);
 
-		docGrid.add(new Separator(), 0, 5, 2, 1);
+		// --- Metadaten in Zeile 5, über beide Spalten ---
+		buildFormatMetadataPanel();
+		docGrid.add(formatMetaContainer, 0, 5, 2, 1);  // Column 0, Row 5, Colspan=2, Rowspan=1
+
+		// Separator nach den Format-Optionen
+		docGrid.add(new Separator(), 0, 6, 2, 1);
 
 		// 3. Group: Margins (Label Stack left, Centered Grid right)
 		VBox marginLabelStack = new VBox(8);
@@ -339,7 +350,7 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 		btnMarginClear.setMaxWidth(110);
 
 		marginLabelStack.getChildren().addAll(lbMargins, btnMarginStandard, btnMarginClear);
-		docGrid.add(marginLabelStack, 0, 6);
+		docGrid.add(marginLabelStack, 0, 7);
 
 		// Precise Margin Input Grid
 		GridPane marginGrid = new GridPane();
@@ -357,7 +368,7 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 		// HEALING: Vertical centering for the inputs via Wrapper
 		VBox marginGridWrapper = new VBox(marginGrid);
 		marginGridWrapper.setAlignment(Pos.CENTER);
-		docGrid.add(marginGridWrapper, 1, 6);
+		docGrid.add(marginGridWrapper, 1, 7);
 
 		// --- SECTION: PROJECT IDENTITY & DEFAULTS ---
 		GridPane projGrid = createConfigGrid();
@@ -381,6 +392,80 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 		col.getChildren().addAll(persistYamlToggle, new Separator(), btnApplyDefaults, identityContent, new Separator(), createPlaceholderLegend());
 
 		return col;
+	}
+
+	private void buildFormatMetadataPanel() {
+	    // Feste Höhe reservieren
+	    formatMetaContainer.setMinHeight(26);
+	    formatMetaContainer.setPrefHeight(26);
+	    formatMetaContainer.setMaxHeight(26);
+	    
+	    formatMetaContainer.setPadding(new Insets(2, 0, 0, 10));
+	    formatMetaContainer.setStyle("-fx-background-color: rgba(32, 191, 223, 0.03); -fx-background-radius: 3;");
+
+	    HBox metaRow = new HBox(20);
+	    metaRow.setAlignment(Pos.CENTER_LEFT);
+	    metaRow.setMinHeight(26);
+	    metaRow.setPrefHeight(26);
+
+	    // Icons mit CSS-Klasse
+	    Label dimIcon = new Label("📏");
+	    dimIcon.getStyleClass().add("metadata-icon");
+	    
+	    Label typeIcon = new Label("📄");
+	    typeIcon.getStyleClass().add("metadata-icon");
+	    
+	    Label pagIcon = new Label("📑");
+	    pagIcon.getStyleClass().add("metadata-icon");
+
+	    // Value-Labels mit CSS-Klasse
+	    formatDimensionsLabel.getStyleClass().add("metadata-value");
+	    formatTypeLabel.getStyleClass().add("metadata-value");
+	    formatPaginationLabel.getStyleClass().add("metadata-value");
+
+	    // Blocks mit CSS-Klasse
+	    HBox dimBlock = new HBox(5);
+	    dimBlock.getStyleClass().add("metadata-block");
+	    dimBlock.setMinHeight(26);
+	    dimBlock.setAlignment(Pos.CENTER);
+	    dimBlock.getChildren().addAll(dimIcon, formatDimensionsLabel);
+	    
+	    HBox typeBlock = new HBox(5);
+	    typeBlock.getStyleClass().add("metadata-block");
+	    typeBlock.setMinHeight(26);
+	    typeBlock.setAlignment(Pos.CENTER);
+	    typeBlock.getChildren().addAll(typeIcon, formatTypeLabel);
+	    
+	    HBox pagBlock = new HBox(5);
+	    pagBlock.getStyleClass().add("metadata-block");
+	    pagBlock.setMinHeight(26);
+	    pagBlock.setAlignment(Pos.CENTER);
+	    pagBlock.getChildren().addAll(pagIcon, formatPaginationLabel);
+
+	    metaRow.getChildren().addAll(dimBlock, typeBlock, pagBlock);
+	    formatMetaContainer.getChildren().add(metaRow);
+
+	    // IMMER sichtbar
+	    formatMetaContainer.setVisible(true);
+	    formatMetaContainer.setManaged(true);
+	}
+
+	
+	private void updateFormatMetadata(DocumentFormat format) {
+	    if (format == null) {
+	        formatDimensionsLabel.setText("No selection");
+	        formatTypeLabel.setText("No selection");
+	        formatPaginationLabel.setText("No selection");
+	    } else {
+	        formatDimensionsLabel.setText(format.width + " × " + format.height);
+	        formatTypeLabel.setText(format.isPaper ? "Print / PDF" : "Web / Screen");
+	        
+	        if (format.isPaper) {
+	            formatPaginationLabel.setText(format.suggestPagination ? "Multi-page" : "Single page");
+	        } else {
+	            formatPaginationLabel.setText("Continuous");
+	        }
+	    }
 	}
 
 	/**
@@ -707,13 +792,16 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 			Log.info("Nexus: Applied application blueprints to dialog fields.");
 		});
 
-		// 3. COMBO BOX & TOGGLE ACTIONS
+		
+		// Enhanced format selection listener (bereits in deinem Code vorhanden)
 		formatChoiceBox.setOnAction(e -> {
-			if (!isInitializing) {
-				syncPaginationToggleState();
-				markActive(formatChoiceBox);
-				previewUpdater.accept(buildSettingsFromUI());
-			}
+		    if (!isInitializing) {
+		        DocumentFormat selected = formatChoiceBox.getValue();
+		        updateFormatMetadata(selected);  // <-- HIER wird sie aufgerufen
+		        syncPaginationToggleState();
+		        markActive(formatChoiceBox);
+		        previewUpdater.accept(buildSettingsFromUI());
+		    }
 		});
 
 		paginationToggle.setOnAction(e -> {
@@ -939,6 +1027,9 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 			markNeutral(formatChoiceBox);
 		}
 
+	    // --- NEU: Metadaten sofort aktualisieren ---
+	    updateFormatMetadata(formatChoiceBox.getValue());
+	    
 		// 5. Custom Metadata laden (Nutzung des Placeholder Enum zur Filterung)
 		activeCustomFields.clear();
 		customMetaContainer.getChildren().clear();
@@ -983,33 +1074,39 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 		this.isInitializing = false; // Abschluss der Initialisierung
 	}
 
+
 	private void syncPaginationToggleState() {
-		DocumentFormat selected = formatChoiceBox.getValue();
+	    DocumentFormat selected = formatChoiceBox.getValue();
 
-		if (selected != null) {
-			if (!selected.isPaper) {
-				// HEILUNG 1: Visuell und Logisch auf FALSE setzen
-				paginationToggle.setSelected(false);
-				paginationToggle.setDisable(true);
-				markNeutral(paginationToggle); // Wichtig: Entfernt den 'aktiv' Stil
-			} else {
-				// Format ist A4/Paper: Normaler Zustand
-				paginationToggle.setDisable(false);
-
-				// Den gespeicherten Wert aus YAML oder Default laden
-				if (docMeta.containsKey(Placeholder.PAGINATION.getKey())) {
-					paginationToggle.setSelected(Boolean.parseBoolean(docMeta.get(Placeholder.PAGINATION.getKey())));
-				} else {
-					paginationToggle.setSelected(selected.suggestPagination);
-				}
-				markActive(paginationToggle);
-			}
-		} else {
-			// Kein Format gewählt (Inherit)
-			paginationToggle.setDisable(true);
-			paginationToggle.setSelected(false);
-			markNeutral(paginationToggle);
-		}
+	    if (selected != null) {
+	        if (!selected.isPaper) {
+	            // Web-Formate: Pagination deaktivieren und ausgeschaltet
+	            paginationToggle.setSelected(false);
+	            paginationToggle.setDisable(true);
+	            markNeutral(paginationToggle);
+	        } else {
+	            // Print-Formate: Pagination NUR aktivieren wenn suggestPagination = true
+	            if (selected.suggestPagination) {
+	                paginationToggle.setDisable(false);
+	                if (docMeta != null && docMeta.containsKey(Placeholder.PAGINATION.getKey())) {
+	                    paginationToggle.setSelected(Boolean.parseBoolean(docMeta.get(Placeholder.PAGINATION.getKey())));
+	                } else {
+	                    paginationToggle.setSelected(true); // Default auf true für Multi-page
+	                }
+	                markActive(paginationToggle);
+	            } else {
+	                // Bei Kreditkarte und anderen Single-page Formaten: Pagination deaktivieren
+	                paginationToggle.setSelected(false);
+	                paginationToggle.setDisable(true);
+	                markNeutral(paginationToggle);
+	            }
+	        }
+	    } else {
+	        // Kein Format gewählt (Inherit)
+	        paginationToggle.setDisable(true);
+	        paginationToggle.setSelected(false);
+	        markNeutral(paginationToggle);
+	    }
 	}
 
 	/**
@@ -1056,6 +1153,12 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 			node.setMinHeight(28);
 			node.setMaxHeight(28);
 		});
+		
+		styleSelector.setPrefWidth(200);
+		styleSelector.setMinWidth(150);
+		styleSelector.setMaxWidth(250);
+		
+		themeChoiceBox.setPrefWidth(220);
 	}
 
 	private void enableResizing() {

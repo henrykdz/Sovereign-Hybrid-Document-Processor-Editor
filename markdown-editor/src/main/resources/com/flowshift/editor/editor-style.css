@@ -184,6 +184,8 @@
     -fx-fill: white;
 }
 
+
+
 /* --- CHOICEBOX PFEIL --- */
 .format-choice-box .arrow {
     -fx-background-color: #A9B7C6;
@@ -192,6 +194,7 @@
 .format-choice-box:hover .arrow {
     -fx-background-color: white;
 }
+
 
 /* =========================================================================
    SEARCH BAR STYLES
@@ -757,8 +760,6 @@
     -fx-background-radius: 4.0px;
 }
 
-/* In editor-style.css */
-
 .nexus-dialog .footer-separator {
     -fx-padding: 0.0;
     -fx-border-color: #404040;
@@ -857,7 +858,7 @@
     -fx-border-color: #20BFDF;
 }
 
-/* --- SOUVERÄNES DIALOG-STYLING --- */
+/* --- Document Configurator DIALOG-STYLING --- */
 
 /* Der Standard-Zustand für inaktive/unberührte Felder */
 .field-neutral {
@@ -904,6 +905,26 @@
 /* Oder mit direkten Kind-Selektoren */
 .shadow-wrapper > .layout-pane > .error-tooltip-container > .error-tooltip-surgical-header {
     -fx-text-fill: #D79050 !important;
+}
+
+
+.metadata-icon {
+    -fx-font-size: 12px;
+    -fx-min-height: 18px;
+    -fx-alignment: center;
+}
+
+.metadata-value {
+    -fx-font-family: 'Consolas';
+    -fx-text-fill: #E6E6E6;
+    -fx-font-size: 11px;
+    -fx-min-height: 18px;
+    -fx-alignment: center-left;
+}
+
+.metadata-block {
+    -fx-alignment: center;
+    -fx-spacing: 5;
 }
 
 
