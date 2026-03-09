@@ -14,26 +14,26 @@
 <div align="left">
 
 <table style="border:none; background:transparent; border-collapse:collapse;">
-  <tr>
-    <td width="250" style="border:none;"><a href="https://henrykdz.github.io/FlowShift-Editor/">🌐 Website</a></td>
-    <td width="250" style="border:none;"><a href="#introduction" style="color:#00d1ff; text-decoration:none;">🚀 <strong>Introduction</strong></a></td>
-    <td width="250" style="border:none;"><a href="#target-audience" style="color:#00d1ff; text-decoration:none;">🎯 <strong>Target Audience</strong></a></td>
-  </tr>
-  <tr>
-    <td width="250" style="border:none;"><a href="#features" style="color:#00d1ff; text-decoration:none;">✨ <strong>Features</strong></a></td>
-    <td width="250" style="border:none;"><a href="#philosophy" style="color:#00d1ff; text-decoration:none;">🧠 <strong>Philosophy</strong></a></td>
-    <td width="250" style="border:none;"><a href="#architecture" style="color:#00d1ff; text-decoration:none;">🏗️ <strong>Architecture</strong></a></td>
-  </tr>
-  <tr>
-    <td width="250" style="border:none;"><a href="#formats" style="color:#00d1ff; text-decoration:none;">📄 <strong>Formats</strong></a></td>
-    <td width="250" style="border:none;"><a href="#use-cases" style="color:#00d1ff; text-decoration:none;">📋 <strong>Use Cases</strong></a></td>
-    <td width="250" style="border:none;"><a href="#preview" style="color:#00d1ff; text-decoration:none;">🖼️ <strong>Preview</strong></a></td>
-  </tr>
-  <tr>
-    <td width="250" style="border:none;"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
-    <td width="250" style="border:none;"><a href="#license" style="color:#00d1ff; text-decoration:none;">📄 <strong>License</strong></a></td>
-    <td width="250" style="border:none;"><a href="#contact" style="color:#00d1ff; text-decoration:none;">💬 <strong>Contact</strong></a></td>
-  </tr>
+<tr>
+  <td width="250" style="border:none;"><a href="https://henrykdz.github.io/FlowShift-Editor/">🌐 Website</a></td>
+  <td width="250" style="border:none;"><a href="#introduction" style="color:#00d1ff; text-decoration:none;">🚀 <strong>Introduction</strong></a></td>
+  <td width="250" style="border:none;"><a href="#target-audience" style="color:#00d1ff; text-decoration:none;">🎯 <strong>Target Audience</strong></a></td>
+</tr>
+<tr>
+  <td width="250" style="border:none;"><a href="#use-cases" style="color:#00d1ff; text-decoration:none;">📋 <strong>Use Cases</strong></a></td>
+  <td width="250" style="border:none;"><a href="#features" style="color:#00d1ff; text-decoration:none;">✨ <strong>Features</strong></a></td>
+  <td width="250" style="border:none;"><a href="#philosophy" style="color:#00d1ff; text-decoration:none;">🧠 <strong>Philosophy</strong></a></td>
+</tr>
+<tr>
+  <td width="250" style="border:none;"><a href="#architecture" style="color:#00d1ff; text-decoration:none;">🏗️ <strong>Architecture</strong></a></td>
+  <td width="250" style="border:none;"><a href="#formats" style="color:#00d1ff; text-decoration:none;">📄 <strong>Formats</strong></a></td>
+  <td width="250" style="border:none;"><a href="#preview" style="color:#00d1ff; text-decoration:none;">🖼️ <strong>Preview</strong></a></td>
+</tr>
+<tr>
+  <td width="250" style="border:none;"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
+  <td width="250" style="border:none;"><a href="#license" style="color:#00d1ff; text-decoration:none;">📄 <strong>License</strong></a></td>
+  <td width="250" style="border:none;"><a href="#contact" style="color:#00d1ff; text-decoration:none;">💬 <strong>Contact</strong></a></td>
+</tr>
 </table>
 
 </div>
