@@ -26,8 +26,8 @@
   </tr>
   <tr>
     <td width="250" style="border:none;"><a href="#formats" style="color:#00d1ff; text-decoration:none;">📄 <strong>Formats</strong></a></td>
+    <td width="250" style="border:none;"><a href="#use-cases" style="color:#00d1ff; text-decoration:none;">📋 <strong>Use Cases</strong></a></td>
     <td width="250" style="border:none;"><a href="#preview" style="color:#00d1ff; text-decoration:none;">🖼️ <strong>Preview</strong></a></td>
-    <td width="250" style="border:none;"><a href="#background" style="color:#00d1ff; text-decoration:none;">📖 <strong>Background</strong></a></td>
   </tr>
   <tr>
     <td width="250" style="border:none;"><a href="#availability" style="color:#00d1ff; text-decoration:none;">🔧 <strong>Availability</strong></a></td>
