@@ -416,6 +416,42 @@ strong {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Use Cases Tabelle - genau wie features-table */
+.use-cases-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1rem 0 2rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 209, 255, 0.2);  /* Exakt wie features-table */
+    background: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.use-cases-table td {
+    padding: 8px 12px;
+    color: #e2e8f0;
+    background: #1e293b;
+    border: none;
+}
+
+.use-cases-table td:first-child {
+    color: #00d1ff;
+    width: 140px;
+    font-weight: 500;
+}
+
+/* Linie unter jeder Kategorie (außer letzter) */
+.use-cases-table .category-end td {
+    border-bottom: 1px solid rgba(0, 209, 255, 0.15);
+}
+
+/* Keine Linie in der letzten Zeile */
+.use-cases-table tr:last-child td {
+    border-bottom: none;
+}
+
 .contact-box span {
     color: #00d1ff;
     font-weight: 700;
