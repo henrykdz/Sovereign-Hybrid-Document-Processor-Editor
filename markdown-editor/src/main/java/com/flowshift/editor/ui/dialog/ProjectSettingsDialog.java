@@ -95,7 +95,7 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 	// Bei den Feldern oben
 	private final ToggleButton paginationToggle = new ToggleButton();
 
-	// --- NEUE FIELDS FÜR FORMAT-METADATEN ---
+	// --- FIELDS FÜR FORMAT-METADATEN ---
 	private final VBox  formatMetaContainer   = new VBox(5);
 	private final Label formatDimensionsLabel = new Label();
 	private final Label formatTypeLabel       = new Label();
