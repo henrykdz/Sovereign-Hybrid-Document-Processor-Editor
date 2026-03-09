@@ -85,12 +85,36 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 From technical documentation to creative projects – FlowShift handles it all:
 
-| | |
-|---|---|
-| 📄 **Technical manuals & protocols** | 🎓 **Tutorials & learning materials** |
-| ⚙️ **Machine instructions & guides** | ✅ **Task lists & project documentation** |
-| 📊 **Reports & whitepapers** | 🌐 **Single-page websites & prototypes** |
-| 📝 **Meeting minutes & protocols** | 📚 **eBooks & documentation portals** |
+<div align="left">
+
+<table>
+  <tr>
+    <td width="250">📄 <strong>Technical manuals & protocols</strong></td>
+    <td width="250">🎓 <strong>Tutorials & learning materials</strong></td>
+  </tr>
+  <tr>
+    <td width="250">⚙️ <strong>Machine instructions & guides</strong></td>
+    <td width="250">✅ <strong>Task lists & project documentation</strong></td>
+  </tr>
+  <tr>
+    <td width="250">📊 <strong>Reports & whitepapers</strong></td>
+    <td width="250">🌐 <strong>Simple, well-formatted websites</strong></td>
+  </tr>
+  <tr>
+    <td width="250">📝 <strong>Meeting minutes & protocols</strong></td>
+    <td width="250">📚 <strong>eBooks & documentation portals</strong></td>
+  </tr>
+  <tr>
+    <td width="250">🏦 <strong>Loan confirmations & financial docs</strong></td>
+    <td width="250">🔧 <strong>Machine inspection reports</strong></td>
+  </tr>
+  <tr>
+    <td width="250">💳 <strong>Business cards</strong></td>
+    <td width="250">🩺 <strong>Medical referral forms</strong></td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
