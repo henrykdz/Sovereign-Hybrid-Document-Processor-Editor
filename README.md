@@ -87,29 +87,29 @@ From technical documentation to creative projects – FlowShift handles it all:
 
 <div align="left">
 
-<table style="width: 100%; table-layout: fixed;">
+<table style="width: auto; min-width: 100%; white-space: nowrap;">
   <tr>
-    <td width="50%"><strong>📄 Technical manuals & protocols</strong></td>
-    <td width="50%"><strong>🔧 Machine inspection reports</strong></td>
+    <td style="padding-right: 40px;"><strong>📄 Technical manuals & protocols</strong></td>
+    <td><strong>🔧 Machine inspection reports</strong></td>
   </tr>
   <tr>
-    <td><strong>⚙️ Machine instructions & guides</strong></td>
+    <td style="padding-right: 40px;"><strong>⚙️ Machine instructions & guides</strong></td>
     <td><strong>🏦 Loan confirmations & financial docs</strong></td>
   </tr>
   <tr>
-    <td><strong>📊 Reports & whitepapers</strong></td>
+    <td style="padding-right: 40px;"><strong>📊 Reports & whitepapers</strong></td>
     <td><strong>✅ Task lists & project documentation</strong></td>
   </tr>
   <tr>
-    <td><strong>📝 Meeting minutes & protocols</strong></td>
+    <td style="padding-right: 40px;"><strong>📝 Meeting minutes & protocols</strong></td>
     <td><strong>💳 Business cards</strong></td>
   </tr>
   <tr>
-    <td><strong>🩺 Medical referral forms</strong></td>
+    <td style="padding-right: 40px;"><strong>🩺 Medical referral forms</strong></td>
     <td><strong>📚 eBooks & documentation portals</strong></td>
   </tr>
   <tr>
-    <td><strong>🌐 Simple, well-formatted websites</strong></td>
+    <td style="padding-right: 40px;"><strong>🌐 Simple, well-formatted websites</strong></td>
     <td><strong>🎓 Tutorials & learning materials</strong></td>
   </tr>
 </table>
