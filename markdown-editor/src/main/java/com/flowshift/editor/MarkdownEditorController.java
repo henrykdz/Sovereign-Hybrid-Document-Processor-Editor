@@ -33,6 +33,7 @@ import org.fxmisc.richtext.model.StyleSpansBuilder;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import com.flowshift.editor.model.BundleManifest;
+import com.flowshift.editor.model.DocumentFormat;
 import com.flowshift.editor.model.DocumentSettings;
 import com.flowshift.editor.model.Placeholder;
 import com.flowshift.editor.ui.CodeAreaSearchPopup;

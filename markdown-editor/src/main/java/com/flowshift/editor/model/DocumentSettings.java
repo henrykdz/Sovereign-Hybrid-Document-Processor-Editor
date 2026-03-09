@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.flowshift.editor.DocumentFormat;
 
 /**
  * DocumentSettings v7.7.3 - The Unified Document DNA. Nutzt das Placeholder-Enum als Single Source of Truth für Keys und Reihenfolge.

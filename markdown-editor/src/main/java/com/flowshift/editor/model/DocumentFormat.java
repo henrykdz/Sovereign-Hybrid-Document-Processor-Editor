@@ -1,4 +1,4 @@
-package com.flowshift.editor;
+package com.flowshift.editor.model;
 
 /**
  * The Sovereign Registry for Document Formats. This enum defines the physical and behavioral properties of all supported document types. It serves as the single source of truth

@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import com.flowshift.editor.DocumentFormat;
+import com.flowshift.editor.model.DocumentFormat;
 import com.flowshift.editor.model.DocumentSettings;
 
 import utils.logging.Log;

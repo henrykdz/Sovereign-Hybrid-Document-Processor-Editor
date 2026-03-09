@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.flowshift.editor.DocumentFormat;
+import com.flowshift.editor.model.DocumentFormat;
 import com.flowshift.editor.model.DocumentSettings;
 import com.flowshift.editor.model.Placeholder;
 import com.vladsch.flexmark.ext.attributes.AttributesExtension;
