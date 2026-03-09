@@ -87,30 +87,30 @@ From technical documentation to creative projects – FlowShift handles it all:
 
 <div align="left">
 
-<table>
+<table style="width: 100%;">
   <tr>
-    <td width="250">📄 <strong>Technical manuals & protocols</strong></td>
-    <td width="250">🎓 <strong>Tutorials & learning materials</strong></td>
+    <td width="50%"><strong>📄 Technical manuals & protocols</strong></td>
+    <td width="50%"><strong>🎓 Tutorials & learning materials</strong></td>
   </tr>
   <tr>
-    <td width="250">⚙️ <strong>Machine instructions & guides</strong></td>
-    <td width="250">✅ <strong>Task lists & project documentation</strong></td>
+    <td><strong>⚙️ Machine instructions & guides</strong></td>
+    <td><strong>✅ Task lists & project documentation</strong></td>
   </tr>
   <tr>
-    <td width="250">📊 <strong>Reports & whitepapers</strong></td>
-    <td width="250">🌐 <strong>Simple, well-formatted websites</strong></td>
+    <td><strong>📊 Reports & whitepapers</strong></td>
+    <td><strong>🌐 Simple, well-formatted websites</strong></td>
   </tr>
   <tr>
-    <td width="250">📝 <strong>Meeting minutes & protocols</strong></td>
-    <td width="250">📚 <strong>eBooks & documentation portals</strong></td>
+    <td><strong>📝 Meeting minutes & protocols</strong></td>
+    <td><strong>📚 eBooks & documentation portals</strong></td>
   </tr>
   <tr>
-    <td width="250">🏦 <strong>Loan confirmations & financial docs</strong></td>
-    <td width="250">🔧 <strong>Machine inspection reports</strong></td>
+    <td><strong>🏦 Loan confirmations & financial docs</strong></td>
+    <td><strong>🔧 Machine inspection reports</strong></td>
   </tr>
   <tr>
-    <td width="250">💳 <strong>Business cards</strong></td>
-    <td width="250">🩺 <strong>Medical referral forms</strong></td>
+    <td><strong>💳 Business cards</strong></td>
+    <td><strong>🩺 Medical referral forms</strong></td>
   </tr>
 </table>
 
