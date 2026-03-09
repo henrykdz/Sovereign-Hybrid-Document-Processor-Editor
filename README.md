@@ -204,7 +204,7 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 ### The Sovereign Bridge
 
-The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element, linking each element to the exact character offset in the source text for precise bidirectional navigation.
+The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element, linking each element to the exact character offset in the source text – click any element to jump to its source line.
 
 ### Navigation & Anchor Logic
 
