@@ -20,8 +20,8 @@
     <td width="250" style="border:none;"><a href="#target-audience" style="color:#00d1ff; text-decoration:none;">🎯 <strong>Target Audience</strong></a></td>
   </tr>
   <tr>
-    <td width="250" style="border:none;"><a href="#philosophy" style="color:#00d1ff; text-decoration:none;">🧠 <strong>Philosophy</strong></a></td>
     <td width="250" style="border:none;"><a href="#features" style="color:#00d1ff; text-decoration:none;">✨ <strong>Features</strong></a></td>
+    <td width="250" style="border:none;"><a href="#philosophy" style="color:#00d1ff; text-decoration:none;">🧠 <strong>Philosophy</strong></a></td>
     <td width="250" style="border:none;"><a href="#architecture" style="color:#00d1ff; text-decoration:none;">🏗️ <strong>Architecture</strong></a></td>
   </tr>
   <tr>
@@ -119,16 +119,6 @@ From technical documentation to creative projects – FlowShift handles it all:
 </table>
 
 </div>
-
----
-
-<h2 id="philosophy" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🧠 Core Philosophy</h2>
-
-| Principle | Description |
-|-----------|-------------|
-| **Sovereignty** | Full user control over data, design, and workflow. The document is law, not the application. |
-| **Efficiency** | Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat. |
-| **Precision** | Pixel‑perfect WYSIWYG rendering, consistent across all output media. |
 
 ---
 
@@ -263,21 +253,17 @@ The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element
 
 ---
 
-<h2 id="background" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📖 The Story Behind FlowShift</h2>
+<h2 id="philosophy" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🧠 Core Philosophy</h2>
 
-This software was born from personal necessity. For over 26 years, the architect fought against an undiagnosed spinal condition (C1/C2). When his body couldn't, his mind did. Code became distraction, therapy, and finally passion.
+| Principle | Description |
+|-----------|-------------|
+| **Sovereignty** | Full user control over data, design, and workflow. The document is law, not the application. |
+| **Efficiency** | Maximum performance with minimal resource consumption. No unnecessary waiting, no bloat. |
+| **Precision** | Pixel‑perfect WYSIWYG rendering, consistent across all output media. |
 
-**FlowShift** is the result – a tool that creates order when life becomes chaotic. It is a conscious counter-design to the bloated software industry: **lean, precise, and sovereign**.
+<br>
 
-> *I've nothing left to prove – only something left to build.*
-
-### About the Architect
-
-The vision behind FlowShift comes from a place of deep personal experience. The architect's goal is software without "bloat", defined by **precision and efficiency**. The engine was designed using AI-assisted development methods, guaranteeing exceptional code purity and consistent architecture.
-
-### The Future of Documentation
-
-FlowShift is the foundation for **interactive documents**, **AI orchestration**, and **data‑sovereign content** – a local alternative to cloud systems.
+> *"FlowShift is the foundation for interactive documents, AI orchestration, and data‑sovereign content – a local alternative to cloud systems."*
 
 ---
 
