@@ -90,9 +90,6 @@ public class ProjectSettingsDialog extends Dialog<DocumentSettings> {
 	private final ChoiceBox<DocumentFormat> formatChoiceBox    = new ChoiceBox<>();
 	private final ChoiceBox<String>         styleSelector      = new ChoiceBox<>();
 
-	// Bei den anderen Controls
-//	private final CheckBox autoPaginationToggle = new CheckBox("Enable Professional Auto-Pagination");
-	// Bei den Feldern oben
 	private final ToggleButton paginationToggle = new ToggleButton();
 
 	// --- FIELDS FÜR FORMAT-METADATEN ---
