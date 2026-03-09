@@ -58,26 +58,26 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 <div align="left">
 
-<table style="min-width: 100%; white-space: nowrap;">
+<table style="white-space: nowrap;">
   <tr>
-    <td width="250">📋 <strong>Protocol Officers</strong></td>
-    <td width="250">🔬 <strong>Scientists & Researchers</strong></td>
+    <td style="padding-right: 30px;">📋 <strong>Protocol Officers</strong></td>
+    <td>🔬 <strong>Scientists & Researchers</strong></td>
   </tr>
   <tr>
-    <td width="250">🏭 <strong>Industry & Manufacturing</strong></td>
-    <td width="250">🏢 <strong>Enterprises & Corporations</strong></td>
+    <td style="padding-right: 30px;">🏭 <strong>Industry & Manufacturing</strong></td>
+    <td>🏢 <strong>Enterprises & Corporations</strong></td>
   </tr>
   <tr>
-    <td width="250">⚖️ <strong>Legal Professionals</strong></td>
-    <td width="250">🏥 <strong>Medical & Healthcare</strong></td>
+    <td style="padding-right: 30px;">⚖️ <strong>Legal Professionals</strong></td>
+    <td>🏥 <strong>Medical & Healthcare</strong></td>
   </tr>
   <tr>
-    <td width="250">🏦 <strong>Finance & Insurance</strong></td>
-    <td width="250">📝 <strong>Technical Writers</strong></td>
+    <td style="padding-right: 30px;">🏦 <strong>Finance & Insurance</strong></td>
+    <td>📝 <strong>Technical Writers</strong></td>
   </tr>
   <tr>
-    <td width="250">📚 <strong>Publishers & Editors</strong></td>
-    <td width="250">🏛️ <strong>Government & Public Sector</strong></td>
+    <td style="padding-right: 30px;">📚 <strong>Publishers & Editors</strong></td>
+    <td>🏛️ <strong>Government & Public Sector</strong></td>
   </tr>
 </table>
 
