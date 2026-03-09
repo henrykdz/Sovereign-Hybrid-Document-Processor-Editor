@@ -99,7 +99,7 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 |---------|-------------|
 | **Flicker‑free live rendering** | Real-time preview updates via `Sovereign Swap` mechanism |
 | **Scroll invariance** | Stable focus position in preview while typing |
-| **Bidirectional navigation** | Click in preview jumps to corresponding Markdown source |
+| **Precise source mapping** | Click any element in preview to jump to its exact source line |
 | **Intelligent error diagnostics** | Visual linter feedback in status bar |
 
 ### Layout & Design Sovereignty
