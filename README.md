@@ -180,7 +180,7 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 - **JavaFX Desktop Application** – Native performance with modern UI
 - **Hybrid Rendering Engine** – Markdown → HTML → WebView with zero flicker
-- **Real-time Source Mapping** – Character-accurate bidirectional navigation
+- **Real-time Source Mapping** – Click in preview, edit in source
 - **Modular Design** – Clean separation of concerns
 
 <details>
@@ -216,7 +216,10 @@ The `SovereignSourceMapper` injects a unique `data-fsid` into every HTML element
 
 <h2 id="preview" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🖼️ Preview</h2>
 
-![Screen](assets/images/screen.png)
+### 🎨 Document Design with open CSS Forge
+![Source Mapping Demo](assets/images/example_document_design.png)
+
+*In this example, hovering over "Technical Appendix" triggers a blue highlight. Clicking jumps directly to the corresponding line in the editor – automatically selected and ready to edit.*
 
 ---
 
