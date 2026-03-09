@@ -81,6 +81,19 @@ The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, 
 
 ---
 
+<h2 id="use-cases" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📋 What You Can Create</h2>
+
+From technical documentation to creative projects – FlowShift handles it all:
+
+| | |
+|---|---|
+| 📄 **Technical manuals & protocols** | 🎓 **Tutorials & learning materials** |
+| ⚙️ **Machine instructions & guides** | ✅ **Task lists & project documentation** |
+| 📊 **Reports & whitepapers** | 🌐 **Single-page websites & prototypes** |
+| 📝 **Meeting minutes & protocols** | 📚 **eBooks & documentation portals** |
+
+---
+
 <h2 id="philosophy" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🧠 Core Philosophy</h2>
 
 | Principle | Description |
