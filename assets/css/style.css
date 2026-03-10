@@ -432,6 +432,38 @@ strong {
     font-size: 1.05rem;
 }
 
+/* Source Mapper Highlight */
+.source-mapper-callout {
+    margin: 2rem 0 3rem 0;
+}
+
+.source-mapper-title {
+    color: #00d1ff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.source-mapper-text {
+    margin-bottom: 15px;
+}
+
+.source-mapper-benefits {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.benefit-badge {
+    background: rgba(0, 209, 255, 0.1);
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    border-radius: 30px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    color: #00d1ff;
+}
+
 /* ===== TARGET & CONTACT BOXEN – 4-SPALTIG ===== */
 .target-grid {
     display: grid;
