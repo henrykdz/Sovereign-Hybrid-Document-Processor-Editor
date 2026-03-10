@@ -36,7 +36,7 @@
             }
         });
     });
-    
+
     // =============================================
     // 2. CUSTOM CURSOR FÜR BILDER
     // =============================================
@@ -355,6 +355,39 @@
         const closeBtn = document.createElement('div');
         closeBtn.className = 'ws-close';
         closeBtn.setAttribute('aria-label', 'Close');
+
+        // Escape-Hinweis (oben links)
+        const escapeHint = document.createElement('div');
+        escapeHint.style.cssText = `
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 209, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    z-index: 100000;
+    backdrop-filter: blur(5px);
+    letter-spacing: 0.3px;
+`;
+
+        escapeHint.innerHTML = `
+    <span style="font-size: 1.4rem; opacity: 0.9;">⌨</span>
+    <span>:</span>
+    <span>Close with</span>
+    <kbd style="background: rgba(0, 209, 255, 0.15); color: #00d1ff; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-weight: 600; font-size: 0.85rem; border: 1px solid #00d1ff;">ESC</kbd>
+    <span style="margin: 0 5px;">|</span>
+    <span style="margin-left: 5px;">←</span>
+    <span>→</span>
+    <span style="margin-left: 5px;">navigate</span>
+`;
+
+        content.appendChild(escapeHint);
 
         // Navigation und Counter (nur wenn mehrere Bilder)
         let prevBtn, nextBtn, counter;
