@@ -36,9 +36,83 @@
             }
         });
     });
+    
+    // =============================================
+    // 2. CUSTOM CURSOR FÜR BILDER
+    // =============================================
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursor = document.getElementById('customCursor');
+            const cards = document.querySelectorAll('.image-card');
+
+            // Wenn es keinen Cursor oder keine Cards gibt, abbrechen
+            if (!cursor || cards.length === 0) return;
+
+            let lastMouseX = 0, lastMouseY = 0;
+            let isCursorActive = false;
+
+            // Mausposition speichern (Viewport-Koordinaten)
+            document.addEventListener('mousemove', (e) => {
+                lastMouseX = e.clientX;
+                lastMouseY = e.clientY;
+                if (isCursorActive) {
+                    cursor.style.left = lastMouseX + 'px';
+                    cursor.style.top = lastMouseY + 'px';
+                }
+            });
+
+            // Prüfen, ob Maus über einer Card ist
+            function isMouseOverCard() {
+                for (let card of cards) {
+                    const rect = card.getBoundingClientRect();
+                    if (lastMouseX >= rect.left && lastMouseX <= rect.right &&
+                        lastMouseY >= rect.top && lastMouseY <= rect.bottom) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function updateCursorVisibility() {
+                const overCard = isMouseOverCard();
+
+                if (overCard) {
+                    cursor.style.display = 'block';
+                    cursor.style.left = lastMouseX + 'px';
+                    cursor.style.top = lastMouseY + 'px';
+                    isCursorActive = true;
+                    document.body.style.cursor = 'none';
+                } else {
+                    cursor.style.display = 'none';
+                    isCursorActive = false;
+                    document.body.style.cursor = 'default';
+                }
+            }
+
+            // Events für Cards
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', updateCursorVisibility);
+                card.addEventListener('mouseleave', () => {
+                    cursor.style.display = 'none';
+                    isCursorActive = false;
+                    document.body.style.cursor = 'default';
+                });
+            });
+
+            // Bei Mausbewegung immer prüfen
+            document.addEventListener('mousemove', (e) => {
+                lastMouseX = e.clientX;
+                lastMouseY = e.clientY;
+                updateCursorVisibility();
+            });
+
+            // Beim Scrollen neu prüfen
+            window.addEventListener('scroll', updateCursorVisibility);
+        });
+    })();
 
     // =============================================
-    // 2. WONDERSHARE-STYLE BILDZOOM MIT NAVIGATION
+    // 3. WONDERSHARE-STYLE BILDZOOM MIT NAVIGATION
     // =============================================
 
     // CSS für Lightbox mit perfektem X und Next/Prev Buttons
