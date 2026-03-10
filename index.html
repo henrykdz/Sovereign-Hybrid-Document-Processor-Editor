@@ -73,13 +73,9 @@
                         professional layout – delivering masterpieces with absolute data sovereignty.</p>
                 </div>
 
-                <!-- AUDIENCE mit Badge -->
-                <h2 id="audience" style="margin: 3rem 0 1.5rem 0;">
-                    <div class="flowshift-badge" style="align-self: flex-start;">
-                        <span class="badge-icon">🎯</span>
-                        <span class="badge-text">Perfect for Creators & Enterprises</span>
-                    </div>
-                </h2>
+                <!-- AUDIENCE (nur als Titel, ohne Badge) -->
+                <h3 id="audience" style="color: #00d1ff; margin: 2rem 0 0.5rem 0; font-size: 1.2rem;">🎯 Perfect for
+                    Creators & Enterprises</h3>
                 <div class="target-grid">
                     <div class="target-box">📋 Protocol Officers</div>
                     <div class="target-box">🔬 Scientists & Researchers</div>
@@ -92,7 +88,8 @@
                 </div>
 
                 <!-- WHAT YOU CAN CREATE (Unterkategorie) -->
-                <h3 id="use-cases" style="color: #00d1ff; margin: 2rem 0 0.5rem 0; font-size: 1.2rem;">📋 What You Can Create</h3>
+                <h3 id="use-cases" style="color: #00d1ff; margin: 2rem 0 0.5rem 0; font-size: 1.2rem;">📋 What You Can
+                    Create</h3>
                 <p style="margin-bottom: 1rem; color: #94a3b8;">From technical documentation to creative projects –
                     FlowShift handles it all:</p>
 
@@ -575,27 +572,6 @@
             <line x1="32" y1="32" x2="38" y2="38" stroke="#00d1ff" stroke-width="3" stroke-linecap="round" />
         </svg>
     </div>
-
-    <script>
-        // Custom Cursor für die Image-Cards
-        const cursor = document.getElementById('customCursor');
-        const cards = document.querySelectorAll('.image-card');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                cursor.style.display = 'block';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                cursor.style.display = 'none';
-            });
-        });
-    </script>
 </body>
 
 </html>
