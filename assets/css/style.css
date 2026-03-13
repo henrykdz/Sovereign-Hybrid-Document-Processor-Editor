@@ -22,12 +22,19 @@ body {
 
 
 /* Überschriften bleiben serifenlos für Kontrast */
-h1, h2, h3, h4, .floating-nav, .header .sub, button {
+h1,
+h2,
+h3,
+h4,
+.floating-nav,
+.header .sub,
+button {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 /* ===== TYPOGRAPHIE ===== */
-h2, h3 {
+h2,
+h3 {
     font-size: 1.4rem;
     font-weight: 600;
     color: #4be2fdd8;
@@ -38,18 +45,19 @@ h2, h3 {
     position: relative;
 }
 
-h2::after, h3::after {
+h2::after,
+h3::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, 
-        rgba(0, 209, 255, 0.5) 8px,
-        rgba(0, 209, 255, 0.3) 35%,
-        rgba(0, 209, 255, 0.3) 89%,
-        transparent 100%);
+    background: linear-gradient(90deg,
+            rgba(0, 209, 255, 0.5) 8px,
+            rgba(0, 209, 255, 0.3) 35%,
+            rgba(0, 209, 255, 0.3) 89%,
+            transparent 100%);
     pointer-events: none;
 }
 
@@ -62,8 +70,10 @@ h3 {
 h2:has(.flowshift-badge) {
     display: flex;
     flex-direction: column;
-    position: relative;  /* Für absolute Positionierung der Linie */
-    border-bottom: none;  /* Entferne die bisherige Border */
+    position: relative;
+    /* Für absolute Positionierung der Linie */
+    border-bottom: none;
+    /* Entferne die bisherige Border */
     padding-bottom: 0;
 }
 
@@ -74,14 +84,16 @@ h2:has(.flowshift-badge)::after {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px; /* Bleibt 1px – ist schon richtig */
-    background: linear-gradient(90deg, 
-        transparent 0%,
-        transparent 8px,
-        rgba(0, 209, 255, 0.5) 8px, /* Etwas kräftiger für optische Gleichheit */
-        rgba(0, 209, 255, 0.3) 35%,
-        rgba(0, 209, 255, 0.3) 89%,
-        transparent 100%);
+    height: 1px;
+    /* Bleibt 1px – ist schon richtig */
+    background: linear-gradient(90deg,
+            transparent 0%,
+            transparent 8px,
+            rgba(0, 209, 255, 0.5) 8px,
+            /* Etwas kräftiger für optische Gleichheit */
+            rgba(0, 209, 255, 0.3) 35%,
+            rgba(0, 209, 255, 0.3) 89%,
+            transparent 100%);
     pointer-events: none;
 }
 
@@ -89,35 +101,98 @@ h2:first-of-type {
     margin-top: 0;
 }
 
+/* --- FIXED SLOGAN: Stabiler, blauer Text --- */
 .bridge-slogan {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: #00d1ff;
+    /* Dein Marken-Cyan als Basis */
     font-style: italic;
-    /* HEILUNG: margin-bottom auf 0 reduziert, damit der Content-Block direkt anschließt */
-    margin: 2rem auto 0; 
+    margin: 0 auto 10px auto;
     max-width: 800px;
     line-height: 1.5;
-    border-left: 4px solid #00d1ff;
-    border-right: 4px solid #00d1ff;
-    padding: 1rem 1rem;
-    background: rgba(0, 209, 255, 0.03);
-    border-radius: 12px;
+    padding: 0.5rem;
+    /* KEIN nowrap! */
+    white-space: normal;
+    display: block;
 }
 
+/* Die weißen Highlights in den Blockklammern */
+.bridge-slogan .highlight {
+    color: #ffffff;
+    /* Weiß für die Klammern-Inhalte */
+    font-weight: 700;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-style: normal;
+    /* Normal damit es stabil wirkt */
+    letter-spacing: 0.05em;
+}
+
+/* Die Trennpunkte in Cyan */
+.bridge-slogan .sep {
+    color: #00d1ff;
+    margin: 0 10px;
+}
+
+/* Responsive Fix für kleine Bildschirme */
 @media (max-width: 768px) {
-    .bridge-slogan { font-size: 1.1rem; padding: 1rem; }
+    .bridge-slogan {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+        margin: 1.5rem 10px 0;
+    }
+}
+
+/* ===== ARCHITECTURAL VISION BOX: Tight-Fit Edition ===== */
+.forge-vision {
+    background: #0b0f19;
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    /* HEILUNG: Margin oben auf 0.5rem gesetzt, damit sie direkt unter dem Slogan "einrastet" */
+    margin: 0.5rem 0 2rem 0; 
+    position: relative;
+    text-align: center;
+}
+
+/* Die dekorative technische Ecke */
+.forge-vision::before {
+    content: '⬡';
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    color: rgba(0, 209, 255, 0.3);
+    font-size: 2rem;
+}
+
+.forge-vision p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0 auto 1rem auto; /* Abstand zwischen den beiden Absätzen */
+    max-width: 700px;
+}
+
+.forge-vision p:last-child {
+    margin-bottom: 0;
+}
+
+.forge-vision strong {
+    color: #00d1ff; /* Marken-Cyan */
+    font-weight: 600;
 }
 
 .flowshift-badge {
     display: inline-flex;
     align-items: center;
     background: #1e293b;
-    border-radius: 8px 8px 0 8px;  /* Oben rund, unten links rund, unten rechts gerade */
+    border-radius: 8px 8px 0 8px;
+    /* Oben rund, unten links rund, unten rechts gerade */
     font-family: 'Segoe UI', 'Consolas', monospace;
     font-weight: 500;
     border: 1px solid rgba(0, 209, 255, 0.3);
-    padding: 0;  /* oder einen kleinen Wert */
+    padding: 0;
+    /* oder einen kleinen Wert */
     overflow: hidden;
     position: relative;
     z-index: 2;
@@ -135,7 +210,8 @@ h2:first-of-type {
     background: #101e2ab0;
     color: #4be2fdd9;
     padding: 4px 12px;
-    font-size: 1.1rem;  /* Größer */
+    font-size: 1.1rem;
+    /* Größer */
     font-weight: 600;
     letter-spacing: 0.3px;
 }
@@ -143,7 +219,8 @@ h2:first-of-type {
 /* ===== HAUPTLAYOUT – Content-Box mittig, Navigation schwebend ===== */
 .layout-grid {
     display: grid;
-    grid-template-columns: 260px minmax(0, 1000px) 260px;  /* Content-Box bleibt 1000px */
+    grid-template-columns: 260px minmax(0, 1000px) 260px;
+    /* Content-Box bleibt 1000px */
     gap: 30px;
     width: 100%;
     max-width: 1600px;
@@ -183,7 +260,8 @@ h2:first-of-type {
 
 /* ===== NAVIGATION – NUR FÜR MENÜ-LINKS ===== */
 .floating-nav ul {
-    list-style: none;  /* Entfernt die Aufzählungspunkte */
+    list-style: none;
+    /* Entfernt die Aufzählungspunkte */
     padding: 0;
     margin: 0;
 }
@@ -208,9 +286,11 @@ h2:first-of-type {
 /* Emoji-Span für einheitliche Breite */
 .floating-nav ul li a .nav-emoji {
     display: inline-block;
-    min-width: 22px;  /* Feste Breite für ALLE Emojis */
+    min-width: 22px;
+    /* Feste Breite für ALLE Emojis */
     text-align: center;
-    font-size: 0.95rem;  /* Einheitliche Größe */
+    font-size: 0.95rem;
+    /* Einheitliche Größe */
 }
 
 .floating-nav ul li a:hover,
@@ -247,18 +327,20 @@ h2:first-of-type {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     border-radius: 32px;
     overflow: hidden;
-    border: 1.5px solid rgba(0, 209, 255, 0.04);  /* Dünner und dezenter */
+    border: 1.5px solid rgba(0, 209, 255, 0.04);
+    /* Dünner und dezenter */
     backdrop-filter: blur(5px);
     grid-column: 2;
     width: 100%;
-    max-width: 900px;  /* Fixiert auf 1000px */
+    max-width: 900px;
+    /* Fixiert auf 1000px */
 }
 
 
 /* ===== CONTENT – INNERER ABSTAND ===== */
 .content {
     /* HEILUNG: padding-top von 3rem auf 1.5rem reduziert */
-    padding: 1.5rem 3.5rem 4.5rem; 
+    padding: 1.5rem 3.5rem 4.5rem;
     background: transparent;
     hyphens: auto;
 }
@@ -268,61 +350,54 @@ h2:first-of-type {
     grid-column: 3;
 }
 
-/* ===== LAUFBAND ANIMATION ===== */
-.construction-ticker {
+/* ===== THE BRIDGE TICKER (Finalized) ===== */
+.ticker {
     width: 100%;
-    background: linear-gradient(90deg, #1a1f2e, #1e2a3a, #1a1f2e);
-    border-bottom: 2px solid rgba(0, 209, 255, 0.3);
+    background: linear-gradient(90deg, #0b0f19, #161d2b, #0b0f19);
+    border-bottom: 1px solid rgba(0, 209, 255, 0.1);
     overflow: hidden;
+    /* Versteckt alles, was aus dem Kasten läuft */
     padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.construction-ticker::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, 
-        rgba(0, 209, 255, 0.1) 0%, 
-        transparent 20%,
-        transparent 80%,
-        rgba(0, 209, 255, 0.1) 100%);
-    pointer-events: none;
-    z-index: 2;
-}
-
+/* ===== THE BRIDGE TICKER: Perfectly Fluid ===== */
+/* Der Container, der die Animation enthält */
 .ticker-content {
-    display: flex;
-    animation: ticker 45s linear infinite;
-    white-space: nowrap;
+    display: flex;             /* Sorgt für die horizontale Anordnung */
+    align-items: center;       /* Zentriert vertikal */
+    animation: ticker 60s linear infinite;
+    white-space: nowrap;       /* WICHTIG: Verhindert Umbruch innerhalb des Tickers */
     will-change: transform;
 }
 
-.ticker-content span {
+/* Der Slogan als fließendes Element */
+.ticker-content .bridge-slogan {
+    display: inline-block !important; /* Wichtig, damit es im Flex-Container als "Wort" behandelt wird */
+    white-space: nowrap !important;
+    padding: 0 40px !important;       /* Abstand für den Lauf */
+    margin: 0 !important;
+    font-size: 1.0rem;
+    font-style: italic;
     color: #00d1ff;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 500;
-    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
-    padding-right: 50px;
+    flex-shrink: 0;                   /* WICHTIG: Verhindert, dass der Ticker das Badge staucht */
+}
+
+.ticker:hover .ticker-content {
+    animation-play-state: paused;
 }
 
 @keyframes ticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
-.construction-ticker:hover .ticker-content {
-    animation-play-state: paused;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-}
 
 
 .language-switcher-banner {
@@ -381,7 +456,8 @@ h2:first-of-type {
     border-left: 6px solid #00d1ff;
     padding-left: 1.5rem;
     color: #ffffff;
-    white-space: nowrap; /* Verhindert Zeilenumbruch */
+    white-space: nowrap;
+    /* Verhindert Zeilenumbruch */
 }
 
 .header h1 span {
@@ -405,7 +481,8 @@ h2:first-of-type {
 p {
     margin-bottom: 1.5rem;
     color: #94a3b8;
-    font-size: 1.0rem;  /* Wieder kleiner (war 1.05rem) */
+    font-size: 1.0rem;
+    /* Wieder kleiner (war 1.05rem) */
     line-height: 1.6;
 }
 
@@ -427,7 +504,8 @@ strong {
 
 .intro-callout p {
     margin-bottom: 0;
-    color: #a4b3c8;  /* Das ist ein helles Blaugrau */
+    color: #a4b3c8;
+    /* Das ist ein helles Blaugrau */
     font-style: italic;
     font-size: 1.05rem;
     line-height: 1.6;
@@ -492,7 +570,8 @@ strong {
     margin: 2.5rem 0;
 }
 
-.target-box, .contact-box {
+.target-box,
+.contact-box {
     background: #1e293b;
     padding: 1.1rem 1.4rem;
     border-radius: 16px;
@@ -506,7 +585,8 @@ strong {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.target-box:hover, .contact-box:hover {
+.target-box:hover,
+.contact-box:hover {
     border-color: #00d1ff;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -520,7 +600,8 @@ strong {
     margin: 1rem 0 2rem 0;
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(0, 209, 255, 0.2);  /* Exakt wie features-table */
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    /* Exakt wie features-table */
     background: #1e293b;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
@@ -567,18 +648,24 @@ strong {
 }
 
 /* ===== CURSOR-KORREKTUR FÜR CONTACT-BOXEN ===== */
-.target-grid, .contact-box, .contact-box * {
-    cursor: default;  /* Verhindert den Text-Cursor für alle Contact-Boxen */
+.target-grid,
+.contact-box,
+.contact-box * {
+    cursor: default;
+    /* Verhindert den Text-Cursor für alle Contact-Boxen */
 }
 
 /* ABER: E-Mail-Adresse und Links sollen weiterhin selektierbar sein */
 .contact-box strong {
-    cursor: text;     /* Erlaubt Text-Selektion für den eigentlichen Inhalt */
+    cursor: text;
+    /* Erlaubt Text-Selektion für den eigentlichen Inhalt */
     user-select: text;
 }
 
-.contact-box a, .contact-box a * {
-    cursor: pointer;  /* Falls du später Links einbaust */
+.contact-box a,
+.contact-box a * {
+    cursor: pointer;
+    /* Falls du später Links einbaust */
 }
 
 /* ===== FEATURES-TABELLE ===== */
@@ -635,7 +722,8 @@ table {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-th, td {
+th,
+td {
     padding: 1.2rem;
     text-align: left;
 }
@@ -668,12 +756,15 @@ tr:last-child td {
 }
 
 /* 1. Zuerst den alten Cursor ausblenden */
-.image-card, .image-card * {
+.image-card,
+.image-card * {
     cursor: default !important;
 }
 
-.image-card:hover, .image-card:hover * {
-    cursor: none !important;  /* Windows-Cursor komplett weg */
+.image-card:hover,
+.image-card:hover * {
+    cursor: none !important;
+    /* Windows-Cursor komplett weg */
 }
 
 /* 2. Dann deine normalen Styles */
@@ -843,13 +934,17 @@ blockquote {
 
 .architect-box p {
     margin-bottom: 0;
-    font-size: 0.92rem;  /* Von 1.0em auf 0.9rem verkleinert */
-    line-height: 1.5;    /* Zeilenabstand etwas enger */
-    color: #cbd5e1;      /* Etwas heller für bessere Lesbarkeit */
+    font-size: 0.92rem;
+    /* Von 1.0em auf 0.9rem verkleinert */
+    line-height: 1.5;
+    /* Zeilenabstand etwas enger */
+    color: #cbd5e1;
+    /* Etwas heller für bessere Lesbarkeit */
 }
 
 .architect-box strong {
-    color: #00d1ff;      /* Name in Cyan hervorheben */
+    color: #00d1ff;
+    /* Name in Cyan hervorheben */
     font-weight: 600;
 }
 
@@ -934,7 +1029,8 @@ html {
     font-weight: 500;
     color: #00d1ff;
     transition: all 0.2s ease;
-    list-style: none;  /* Entfernt den standard Pfeil */
+    list-style: none;
+    /* Entfernt den standard Pfeil */
     position: relative;
     user-select: none;
 }
@@ -956,11 +1052,13 @@ html {
 .format-details summary:hover {
     background: #2a3a4a;
     color: #33e0ff;
-    padding-left: 25px;  /* Leichte Bewegung nach rechts */
+    padding-left: 25px;
+    /* Leichte Bewegung nach rechts */
 }
 
 .format-details summary::-webkit-details-marker {
-    display: none;  /* Entfernt den standard Pfeil in WebKit */
+    display: none;
+    /* Entfernt den standard Pfeil in WebKit */
 }
 
 /* Zeigefinger-Cursor für den gesamten Summary-Bereich */
@@ -980,7 +1078,7 @@ html {
     .layout-grid {
         grid-template-columns: 260px minmax(0, 1fr);
     }
-    
+
     .spacer-column {
         display: none;
     }
@@ -1020,7 +1118,7 @@ html {
     .target-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .features-table td:first-child {
         white-space: normal;
     }
@@ -1108,7 +1206,7 @@ html {
     .floating-nav a {
         font-size: 0.85rem;
     }
-    
+
     .nav-early-button {
         font-size: 0.7rem;
         padding: 6px 4px;
