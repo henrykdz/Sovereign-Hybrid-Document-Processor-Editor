@@ -143,26 +143,43 @@ h2:first-of-type {
     }
 }
 
-/* ===== ARCHITECTURAL VISION BOX: Tight-Fit Edition ===== */
+/* ===== ARCHITECTURAL VISION BOX: Harmonized Glow ===== */
 .forge-vision {
     background: #0b0f19;
-    border: 1px solid rgba(0, 209, 255, 0.2);
+    border: 1px solid rgba(0, 209, 255, 0.3); 
     border-radius: 24px;
     padding: 2rem 2.5rem;
-    /* HEILUNG: Margin oben auf 0.5rem gesetzt, damit sie direkt unter dem Slogan "einrastet" */
     margin: 0.5rem 0 2rem 0; 
     position: relative;
     text-align: center;
+    transition: border-color 0.17s ease-in-out, box-shadow 0.17s ease-in-out;
 }
 
-/* Die dekorative technische Ecke */
+.forge-vision:hover {
+    /* HEILUNG: Jetzt exakt wie die Navigation (0.5 statt 1.0) */
+    border-color: rgba(0, 209, 255, 0.6);
+    box-shadow: 0 0 25px rgba(0, 209, 255, 0.17);
+}
+
 .forge-vision::before {
-    content: '⬡';
+    content: "";
     position: absolute;
-    top: 5px;
-    left: 20px;
-    color: rgba(0, 209, 255, 0.3);
-    font-size: 2rem;
+    top: 20px; left: 20px;
+    width: 32px; height: 32px;
+    background-color: rgba(0, 209, 255, 0.65); 
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='black' stroke-width='6'%3E%3Cpath d='M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 Z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='black' stroke-width='6'%3E%3Cpath d='M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 Z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='black'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: rotate(0deg) scale(1);
+    pointer-events: none;
+}
+
+.forge-vision:hover::before {
+    transform: rotate(180deg) scale(1.2);
+    background-color: rgba(0, 209, 255, 0.8);
+    filter: drop-shadow(0 0 10px rgba(0, 209, 255, 0.6));
 }
 
 .forge-vision p {
@@ -244,6 +261,32 @@ h2:first-of-type {
     border: 1px solid rgba(0, 209, 255, 0.2);
     backdrop-filter: blur(10px);
     width: 260px;
+}
+
+/* ===== FLOATING NAVIGATION: Reactive Border v15.14 ===== */
+.floating-nav {
+    background: #161d2b;
+    padding: 0.2rem 1.2rem 1.2rem 1.2rem;
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    
+    /* INITIAL STATE */
+    border: 1px solid rgba(0, 209, 255, 0.2);
+    backdrop-filter: blur(10px);
+    width: 260px;
+    
+    /* Sanfte Licht-Transition */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- NAV HOVER EFFECT --- */
+.floating-nav:hover {
+    /* HEILUNG: Der Rahmen wird deutlich präsenter (0.5 statt 0.2) */
+    border-color: rgba(0, 209, 255, 0.5);
+    
+    /* Dezenter Außenglow, der die Sidebar vom Hintergrund abhebt */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5), 
+                0 0 15px rgba(0, 209, 255, 0.1);
 }
 
 .floating-nav h3 {
@@ -350,38 +393,53 @@ h2:first-of-type {
     grid-column: 3;
 }
 
-/* ===== THE BRIDGE TICKER (Finalized) ===== */
+/* ===== THE MINIMALIST TICKER v15.6 ===== */
 .ticker {
     width: 100%;
-    background: linear-gradient(90deg, #0b0f19, #161d2b, #0b0f19);
-    border-bottom: 1px solid rgba(0, 209, 255, 0.1);
+    background: linear-gradient(90deg, #121a29 0%, #1c2a42 50%, #121a29 100%);
+    border-bottom: 1px solid rgba(0, 209, 255, 0.25);
     overflow: hidden;
-    /* Versteckt alles, was aus dem Kasten läuft */
     padding: 10px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== THE BRIDGE TICKER: Perfectly Fluid ===== */
-/* Der Container, der die Animation enthält */
 .ticker-content {
-    display: flex;             /* Sorgt für die horizontale Anordnung */
-    align-items: center;       /* Zentriert vertikal */
+    display: flex;
+    align-items: center;
     animation: ticker 60s linear infinite;
-    white-space: nowrap;       /* WICHTIG: Verhindert Umbruch innerhalb des Tickers */
+    white-space: nowrap;
     will-change: transform;
 }
 
-/* Der Slogan als fließendes Element */
 .ticker-content .bridge-slogan {
-    display: inline-block !important; /* Wichtig, damit es im Flex-Container als "Wort" behandelt wird */
-    white-space: nowrap !important;
-    padding: 0 40px !important;       /* Abstand für den Lauf */
-    margin: 0 !important;
+    display: inline-block;
+    white-space: nowrap;
+    flex-shrink: 0;
+    
+    /* PRÄZISION: Enge Taktung für den Informationsfluss */
+    padding: 0 0px; 
+    
+    /* MINIMALIST RESET: Verhindert, dass das "Badge-Design" den Ticker sprengt */
+    margin: 0;
+    max-width: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    
     font-size: 1.0rem;
     font-style: italic;
     color: #00d1ff;
-    flex-shrink: 0;                   /* WICHTIG: Verhindert, dass der Ticker das Badge staucht */
+}
+
+/* EINHEITLICHER ABSTAND: Jedes Bullet regelt den Raum um sich herum */
+.ticker-content .sep {
+    display: inline-block;
+    /* 15px links + 15px rechts = 30px Gesamtabstand um JEDEN Punkt */
+    margin: 0 15px ; 
+    color: #00d1ff;
+    font-weight: bold;
+    font-style: normal;
 }
 
 .ticker:hover .ticker-content {
@@ -397,8 +455,6 @@ h2:first-of-type {
         transform: translateX(-50%);
     }
 }
-
-
 
 .language-switcher-banner {
     position: absolute;
@@ -489,27 +545,6 @@ p {
 strong {
     color: #ffffff;
     font-weight: 600;
-}
-
-/* Introduction Box (angepasst) */
-.intro-callout {
-    background: rgba(0, 209, 255, 0.03);
-    border: 1px solid rgba(0, 209, 255, 0.15);
-    border-left: 4px solid #00d1ff;
-    padding: 1.2rem 1.8rem;
-    border-radius: 0 16px 16px 0;
-    margin: 2rem 0;
-    width: 100%;
-}
-
-.intro-callout p {
-    margin-bottom: 0;
-    color: #a4b3c8;
-    /* Das ist ein helles Blaugrau */
-    font-style: italic;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* ===== CALLOUT ===== */
