@@ -144,14 +144,14 @@
                     </tr>
                 </table>
 
-                
+
                 <!-- WARUM FLOWSHIFT? (Vergleichstabelle) -->
                 <h3 id="why-flowshift" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">🔍
                     Warum FlowShift?</h3>
 
                 <p>Der Unterschied auf den Punkt gebracht:</p>
 
-               <table class="features-table" style="margin: 1rem 0 2rem 0;">
+                <table class="features-table" style="margin: 1rem 0 2rem 0;">
                     <tr>
                         <th style="width: 25%;">Aspekt</th>
                         <th style="width: 35.0%;">Reines PDF</th>
@@ -178,7 +178,7 @@
                         <td>✅ Quelltext bleibt erhalten<br>Export jederzeit (PDF, HTML, Druck)</td>
                     </tr>
                 </table>
-                
+
                 <!-- PREVIEW mit Badge -->
                 <h2 id="preview" style="margin: 3rem 0 1.5rem 0;">
                     <div class="flowshift-badge" style="align-self: flex-start;">
@@ -245,42 +245,66 @@
                 </h2>
 
                 <table class="features-table">
+                    <!-- 1. HIGH-END OUTPUT -->
                     <tr>
                         <td><strong>✅ ISO‑konformer Export</strong></td>
-                        <td>A4, Letter, Web – HTML & PDF</td>
+                        <td>A4, Letter, Web – High-Fidelity HTML- & PDF-Ausgabe.</td>
                     </tr>
                     <tr>
                         <td><strong>✅ Intelligente PDFs</strong></td>
-                        <td>Selektierbar, durchsuchbar, sicher & sauber,<br>weiterverarbeitbar in Adobe Acrobat,
-                            InDesign & Co.</td>
+                        <td>Durchsuchbar, selektierbar und strukturell sauber – <br>
+                            voll editierbar in Adobe Acrobat, InDesign & Co.</td>
                     </tr>
+
+                    <!-- 2. CORE EDITOR ENGINE -->
                     <tr>
-                        <td><strong>✅ Custom Placeholders</strong></td>
-                        <td>Benutzerdefinierte Platzhalter für Vorlagen und Serienbriefe</td>
-                    </tr>
-                    <tr>
-                        <td><strong>✅ Source Swap</strong></td>
-                        <td>Flimmerfreie Echtzeit-Darstellung via WebKit-Injection</td>
+                        <td><strong>✅ Source Swap & Highlighting</strong></td>
+                        <td>Flimmerfreies Echtzeit-Rendering via WebKit-Injection <br>
+                            mit <strong>Syntax-Highlighting</strong> für maximale Code-Klarheit.</td>
                     </tr>
                     <tr>
                         <td><strong>✅ Source Bridge</strong></td>
-                        <td>Zeichengenaue Source Navigation</td>
+                        <td>Zeichengenaue, bidirektionale Navigation zwischen <br>
+                            Markdown-Quelle und Live-Vorschau.</td>
                     </tr>
                     <tr>
-                        <td><strong>✅ CSS Forge</strong></td>
-                        <td>Integrierte CSS-Engine für Live-Dokumentenstyling</td>
+                        <td><strong>✅ Smart Formatting</strong></td>
+                        <td>Ein-Klick <strong>Auto‑Fix</strong> für Markdown, HTML und CSS <br>
+                            zur Wahrung der strukturellen Integrität (Strg+Umschalt+F).</td>
+                    </tr>
+
+                    <!-- 3. CSS-ENGINEERING (DIE SCHMIEDE) -->
+                    <tr>
+                        <td><strong>✅ CSS Forge & Insights</strong></td>
+                        <td>Integrierte Styling-Engine mit <strong>Architecture Insights</strong> <br>
+                            zum Erkunden und Überschreiben von System-Styles.</td>
                     </tr>
                     <tr>
-                        <td><strong>✅ Formatter</strong></td>
-                        <td>Automatische Formatierung von Markdown, HTML und CSS</td>
+                        <td><strong>✅ Kollisionsfreies Styling</strong></td>
+                        <td>Nutzer-CSS ist durch <strong>Layered Namespaces</strong> isoliert. <br>
+                            Stylen Sie das Dokument, ohne die App-UI zu beeinflussen.</td>
+                    </tr>
+
+                    <!-- 4. INTELLIGENZ & GEOMETRIE -->
+                    <tr>
+                        <td><strong>✅ Linter & Design-Radar</strong></td>
+                        <td>Echtzeit-Fehlererkennung und proaktives Aufspüren <br>
+                            fehlender CSS-Definitionen während des Tippens.</td>
                     </tr>
                     <tr>
-                        <td><strong>✅ Linter</strong></td>
-                        <td>Echtzeit-Fehlererkennung mit visuellem Feedback</td>
+                        <td><strong>✅ Präzisions-Slicer-Engine</strong></td>
+                        <td>Physische 3,78 px/mm Geometrie für <strong>maßstabsgetreues 1:1 Rendering</strong>. <br>
+                            Orchestriert den Inhaltsfluss durch intelligentes Verschieben von Elementen, während die
+                            <strong>strukturelle Integrität gewahrt bleibt</strong>. Perfekte Synergie aus
+                            automatisierter
+                            Logik und <strong>manuellen Seitenumbrüchen</strong> über dedizierte Steuerelemente –
+                            für die absolute Souveränität über ein unfragmentiertes Dokument-Layout.
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>✅ Syntax Highlighter</strong></td>
-                        <td>Farbig hervorgehobener Code für bessere Lesbarkeit</td>
+                        <td><strong>✅ Custom Placeholders</strong></td>
+                        <td>Minimalistische, YAML-basierte Dateninjektion für dynamische <br>
+                            Vorlagen und automatisierte Dokumentenerzeugung.</td>
                     </tr>
                 </table>
 
@@ -507,6 +531,7 @@
                         </tbody>
                     </table>
                 </details>
+
                 <!-- ARCHITECTURE mit Badge -->
                 <h2 id="architecture" style="margin: 3rem 0 1.5rem 0;">
                     <div class="flowshift-badge" style="align-self: flex-start;">
@@ -515,7 +540,8 @@
                     </div>
                 </h2>
 
-                <p>Entwickelt mit <strong>Java 23 & JavaFX</strong>, vereint FlowShift die Stabilität einer nativen
+                <p>Entwickelt mit <strong>Java 23 & Apache Maven</strong>, vereint FlowShift die Stabilität einer
+                    nativen
                     Desktop-Powerhouse mit den unendlichen Styling-Möglichkeiten moderner Webtechnologien.</p>
 
                 <table>
@@ -527,20 +553,29 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Laufzeitumgebung</td>
-                            <td>JavaSE-23 (Zulu 23) mit integriertem JavaFX</td>
+                            <td>Build-System</td>
+                            <td>Apache Maven (Projekt-Lebenszyklus & Dependency-Management)</td>
                         </tr>
                         <tr>
-                            <td>UI-Framework</td>
-                            <td>JavaFX 23 (WebKit Core, FXML)</td>
+                            <td>Engine & Runtime</td>
+                            <td>JavaSE-23 (Zulu) mit integriertem JavaFX (WebKit Core, FXML)</td>
                         </tr>
                         <tr>
                             <td>Markdown-Kern</td>
-                            <td>Flexmark-Java v0.64.8 (Ext: YAML, Tables, Attributes)</td>
+                            <td>Flexmark-Java v0.64.8 (Erweiterungen: YAML, Tabellen, Attribute)</td>
                         </tr>
                         <tr>
                             <td>Rich Text</td>
                             <td>RichTextFX v0.11.7</td>
+                        </tr>
+                        <!-- ARCHITECTURAL ADVANCEMENTS v14.2 -->
+                        <tr>
+                            <td>CSS-Architektur</td>
+                            <td>Layered DOM Hierarchy (Isolierte .workspace / .page / .content Namensebenen)</td>
+                        </tr>
+                        <tr>
+                            <td>Koordinatensystem</td>
+                            <td>Physical-to-Digital Mapping (3,78 px/mm für maßstabsgetreues 1:1 Rendering)</td>
                         </tr>
                     </tbody>
                 </table>
