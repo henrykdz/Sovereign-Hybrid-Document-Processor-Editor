@@ -89,6 +89,26 @@ h2:first-of-type {
     margin-top: 0;
 }
 
+.bridge-slogan {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #00d1ff;
+    font-style: italic;
+    /* HEILUNG: margin-bottom auf 0 reduziert, damit der Content-Block direkt anschließt */
+    margin: 2rem auto 0; 
+    max-width: 800px;
+    line-height: 1.5;
+    border-left: 4px solid #00d1ff;
+    border-right: 4px solid #00d1ff;
+    padding: 1rem 1rem;
+    background: rgba(0, 209, 255, 0.03);
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .bridge-slogan { font-size: 1.1rem; padding: 1rem; }
+}
+
 .flowshift-badge {
     display: inline-flex;
     align-items: center;
@@ -237,11 +257,11 @@ h2:first-of-type {
 
 /* ===== CONTENT – INNERER ABSTAND ===== */
 .content {
-    padding: 3rem 3.5rem 4.5rem;  /* Original von ganz am Anfang */
+    /* HEILUNG: padding-top von 3rem auf 1.5rem reduziert */
+    padding: 1.5rem 3.5rem 4.5rem; 
     background: transparent;
     hyphens: auto;
 }
-
 
 /* ===== RECHTE SPALTE (LEER, FÜR SYMMETRIE) ===== */
 .spacer-column {
