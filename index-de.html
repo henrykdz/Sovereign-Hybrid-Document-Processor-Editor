@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body id="top">
     <div class="layout-grid">
         <!-- NAVIGATION -->
         <aside class="nav-column">
             <nav class="floating-nav">
                 <h3>📋 INHALT</h3>
                 <ul>
-                    <li><a href="#intro" class="nav-link"><span class="nav-emoji">🚀</span> Einführung</a></li>
+                    <li><a href="#top" class="nav-link"><span class="nav-emoji">🚀</span> Überblick</a></li>
                     <li><a href="#audience" class="nav-link"><span class="nav-emoji">🎯</span> Zielgruppe</a></li>
                     <li><a href="#use-cases" class="nav-link"><span class="nav-emoji">📋</span> Anwendungen</a></li>
                     <li><a href="#preview" class="nav-link"><span class="nav-emoji">🖼️</span> Vorschau</a></li>
@@ -37,17 +37,26 @@
         <!-- HAUPTDOKUMENT -->
         <main class="document">
             <!-- LAUFBAND ANIMATION - GANZ OBEN -->
-            <div class="construction-ticker" style="position: relative;">
+            <div class="ticker">
                 <div class="ticker-content">
-                    <span>🚧 IN ENTWICKLUNG · EARLY ACCESS 2026 🚧 AKTIVE ENTWICKLUNG · MACH MIT</span>
-                    <span>🚧 IN ENTWICKLUNG · EARLY ACCESS 2026 🚧 AKTIVE ENTWICKLUNG · MACH MIT</span>
+                    <!-- Ändere das div zu einem span oder div mit inline-block -->
+                    <span class="bridge-slogan">
+                        <span class="highlight">[Einfach]</span> wie Markdown <span class="sep">•</span>
+                        <span class="highlight">[Präzise]</span> wie InDesign <span class="sep">•</span>
+                        Souverän und <span class="highlight">[Lokal]</span> wie Notepad.
+                    </span>
+                    <span class="bridge-slogan">
+                        <span class="highlight">[Einfach]</span> wie Markdown <span class="sep">•</span>
+                        <span class="highlight">[Präzise]</span> wie InDesign <span class="sep">•</span>
+                        Souverän und <span class="highlight">[Lokal]</span> wie Notepad.
+                    </span>
                 </div>
 
-                <!-- Sprachumschalter im Banner -->
+                <!-- Sprachumschalter bleibt separat -->
                 <div class="language-switcher-banner">
                     <a href="index.html" class="lang-link-banner">EN</a>
                     <span class="lang-separator">|</span>
-                    <a href="index-de.html" class="lang-link-banner active">DE</a> <!-- DE aktiv -->
+                    <a href="index-de.html" class="lang-link-banner active">DE</a>
                 </div>
             </div>
 
@@ -56,28 +65,17 @@
                 <div class="sub">MEISTERWERKE IN PRÄZISION · SOUVERÄNITÄT · NULL KOMPROMISS</div>
             </div>
 
-            <!-- DAS BRÜCKEN-ZITAT -->
-            <div class="bridge-slogan">
-                „FlowShift ist <strong>die Brücke</strong>: So einfach wie Markdown. So präzise wie InDesign. <br>
-                So souverän und lokal wie Notepad.“
-            </div>
-
             <div class="content">
-                <!-- INTRODUCTION mit Badge -->
-                <h2 id="intro" style="margin: 0 0 1.5rem 0;">
-                    <div class="flowshift-badge" style="align-self: flex-start;">
-                        <span class="badge-icon">🚀</span>
-                        <span class="badge-text">Einführung: The Document Forge</span>
-                    </div>
-                </h2>
-                <p>Die <strong>FlowShift Document Forge</strong> ist ein leistungsstarker
-                    <strong>Hybrid-Dokumenten-Builder</strong>. Sie überwindet die Grenzen traditioneller Editoren,
-                    indem sie Markdown, HTML5/CSS3 und YAML in einem einzigen Workflow vereint.
-                </p>
-                <!-- INTRODUCTION Box -->
-                <div class="intro-callout">
-                    <p>Es ist ein Präzisionsinstrument, das die Lücke zwischen strukturiertem Inhalt und professionellem
-                        Layout schließt, um Meisterwerke mit absoluter Datensouveränität zu erstellen.</p>
+                <div class="forge-vision">
+                    <p>Die <strong>FlowShift Document Forge</strong> ist ein leistungsstarker
+                        <strong>Hybrid-Dokumenten-Builder</strong>.<br>Sie überwindet die Grenzen traditioneller Editoren,
+                        indem sie Markdown, HTML5/CSS3 und YAML in einem einzigen, souveränen Workflow vereint.
+                    </p>
+
+                    <p><strong>Als Präzisionsinstrument</strong> für Ihre Dokumente verbindet es
+                        <strong>strukturierten Inhalt<br>mit professionellem Design</strong>. Präzise, lokal
+                        und mit absoluter <strong>Datensouveränität</strong>.
+                    </p>
                 </div>
 
                 <!-- AUDIENCE (nur als Titel, ohne Badge) -->
@@ -266,11 +264,13 @@
                     <tr>
                         <td><strong>✅ Source Swap &<br>Highlighting</strong></td>
                         <td>Flimmerfreies Echtzeit-Rendering via WebKit-Injection mit
-                            <strong>Syntax-Highlighting</strong> für maximale Code-Klarheit.</td>
+                            <strong>Syntax-Highlighting</strong> für maximale Code-Klarheit.
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>✅ Quellnavigation</strong></td>
-                        <td>Klick in der Vorschau, Sprung zur Zeile:<br>Schnelle Navigation direkt zur richtigen Stelle in
+                        <td>Klick in der Vorschau, Sprung zur Zeile:<br>Schnelle Navigation direkt zur richtigen Stelle
+                            in
                             Ihrer Dokumentquelle.</td>
                     </tr>
                     <tr>
