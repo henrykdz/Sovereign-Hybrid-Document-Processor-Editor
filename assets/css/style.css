@@ -144,8 +144,8 @@ h2.badge-header .flowshift-badge {
 
 /* Der Beschreibungstext daneben */
 h2.badge-header .inline-description {
-    color: #94a3b8;
-    font-size: 0.95rem;
+    color: #95a4b9;
+    font-size: 0.96rem;
     font-style: italic;
     font-weight: 400;
     margin: 0 0 0 15px !important; /* Exakter Abstand zum Badge */
