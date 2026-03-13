@@ -146,10 +146,10 @@ h2:first-of-type {
 /* ===== ARCHITECTURAL VISION BOX: Harmonized Glow ===== */
 .forge-vision {
     background: #0b0f19;
-    border: 1px solid rgba(0, 209, 255, 0.3); 
+    border: 1px solid rgba(0, 209, 255, 0.3);
     border-radius: 24px;
     padding: 2rem 2.5rem;
-    margin: 0.5rem 0 2rem 0; 
+    margin: 0.5rem 0 2rem 0;
     position: relative;
     text-align: center;
     transition: border-color 0.17s ease-in-out, box-shadow 0.17s ease-in-out;
@@ -164,9 +164,11 @@ h2:first-of-type {
 .forge-vision::before {
     content: "";
     position: absolute;
-    top: 20px; left: 20px;
-    width: 32px; height: 32px;
-    background-color: rgba(0, 209, 255, 0.65); 
+    top: 20px;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 209, 255, 0.65);
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='black' stroke-width='6'%3E%3Cpath d='M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 Z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='black'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='black' stroke-width='6'%3E%3Cpath d='M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 Z'/%3E%3Ccircle cx='50' cy='50' r='10' fill='black'/%3E%3C/svg%3E");
     mask-size: contain;
@@ -186,7 +188,8 @@ h2:first-of-type {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #cbd5e1;
-    margin: 0 auto 1rem auto; /* Abstand zwischen den beiden Absätzen */
+    margin: 0 auto 1rem auto;
+    /* Abstand zwischen den beiden Absätzen */
     max-width: 700px;
 }
 
@@ -195,7 +198,8 @@ h2:first-of-type {
 }
 
 .forge-vision strong {
-    color: #00d1ff; /* Marken-Cyan */
+    color: #00d1ff;
+    /* Marken-Cyan */
     font-weight: 600;
 }
 
@@ -269,12 +273,12 @@ h2:first-of-type {
     padding: 0.2rem 1.2rem 1.2rem 1.2rem;
     border-radius: 28px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    
+
     /* INITIAL STATE */
     border: 1px solid rgba(0, 209, 255, 0.2);
     backdrop-filter: blur(10px);
     width: 260px;
-    
+
     /* Sanfte Licht-Transition */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -283,10 +287,10 @@ h2:first-of-type {
 .floating-nav:hover {
     /* HEILUNG: Der Rahmen wird deutlich präsenter (0.5 statt 0.2) */
     border-color: rgba(0, 209, 255, 0.5);
-    
+
     /* Dezenter Außenglow, der die Sidebar vom Hintergrund abhebt */
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5), 
-                0 0 15px rgba(0, 209, 255, 0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 209, 255, 0.1);
 }
 
 .floating-nav h3 {
@@ -388,11 +392,6 @@ h2:first-of-type {
     hyphens: auto;
 }
 
-/* ===== RECHTE SPALTE (LEER, FÜR SYMMETRIE) ===== */
-.spacer-column {
-    grid-column: 3;
-}
-
 /* ===== THE MINIMALIST TICKER v15.6 ===== */
 .ticker {
     width: 100%;
@@ -416,17 +415,17 @@ h2:first-of-type {
     display: inline-block;
     white-space: nowrap;
     flex-shrink: 0;
-    
+
     /* PRÄZISION: Enge Taktung für den Informationsfluss */
-    padding: 0 0px; 
-    
+    padding: 0 0px;
+
     /* MINIMALIST RESET: Verhindert, dass das "Badge-Design" den Ticker sprengt */
     margin: 0;
     max-width: none;
     background: transparent;
     border: none;
     box-shadow: none;
-    
+
     font-size: 1.0rem;
     font-style: italic;
     color: #00d1ff;
@@ -436,7 +435,7 @@ h2:first-of-type {
 .ticker-content .sep {
     display: inline-block;
     /* 15px links + 15px rechts = 30px Gesamtabstand um JEDEN Punkt */
-    margin: 0 15px ; 
+    margin: 0 15px;
     color: #00d1ff;
     font-weight: bold;
     font-style: normal;
@@ -456,6 +455,7 @@ h2:first-of-type {
     }
 }
 
+/* ===== LANGUAGE SWITCHER: Sovereign Glow v15.17 ===== */
 .language-switcher-banner {
     position: absolute;
     top: 50%;
@@ -466,9 +466,26 @@ h2:first-of-type {
     backdrop-filter: blur(5px);
     padding: 4px 12px;
     border-radius: 30px;
-    border: 1px solid rgba(0, 209, 255, 0.3);
+
+    /* INITIAL STATE: Dezentes Glimmen (0.3) */
+    border: 1px solid rgba(0, 209, 255, 0.5);
     font-size: 0.85rem;
+
+    /* Sanfte Licht-Transition */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
+
+/* --- HOVER EFFECT: Harmonized with Navigation --- */
+.language-switcher-banner:hover {
+    /* HEILUNG: Rahmen leuchtet auf (0.6) und ein sanfter Schein nach außen */
+    border-color: rgba(0, 209, 255, 0.6);
+    background: rgba(10, 20, 30, 0.9);
+    /* Wird etwas blickdichter */
+    box-shadow: 0 0 15px rgba(0, 209, 255, 0.2);
+    cursor: default;
+    /* Der Container selbst ist kein Link, nur die Buchstaben darin */
+}
+
 
 .lang-link-banner {
     color: #94a3b8;
@@ -480,7 +497,9 @@ h2:first-of-type {
 
 .lang-link-banner:hover {
     color: #00d1ff;
+    /* Leuchtet beim direkten Hover über den Buchstaben */
 }
+
 
 .lang-link-banner.active {
     color: #00d1ff;
@@ -512,7 +531,7 @@ h2:first-of-type {
     border-left: 6px solid #00d1ff;
     padding-left: 1.5rem;
     color: #ffffff;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     /* Verhindert Zeilenumbruch */
 }
 
@@ -958,31 +977,6 @@ blockquote {
     transform: scale(1.02);
 }
 
-/* ===== ARCHITEKT-BOX ===== */
-.architect-box {
-    background: #0b0f19;
-    border-radius: 24px;
-    padding: 1.2rem 1.8rem;
-    margin-top: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.architect-box p {
-    margin-bottom: 0;
-    font-size: 0.92rem;
-    /* Von 1.0em auf 0.9rem verkleinert */
-    line-height: 1.5;
-    /* Zeilenabstand etwas enger */
-    color: #cbd5e1;
-    /* Etwas heller für bessere Lesbarkeit */
-}
-
-.architect-box strong {
-    color: #00d1ff;
-    /* Name in Cyan hervorheben */
-    font-weight: 600;
-}
-
 /* ===== CODE ===== */
 code {
     background: #0b0f19;
@@ -1005,20 +999,40 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ===== FORMAT TABELLEN ===== */
+/* ===== SOVEREIGN FORMAT BLOCKS: Tables & Details v15.25 ===== */
+
+/* 1. SHARED FRAME LOGIC: Gemeinsame Hülle für alle Format-Container */
+.format-details, 
 .format-table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
-    background: rgba(255, 255, 255, 0.02);
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.01);
     border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 209, 255, 0.15);
+    border: 1px solid rgba(0, 209, 255, 0.15); /* Initialer dezenter Rahmen */
+    overflow: hidden; 
+    transition: all 0.3s ease;
+}
+
+/* 2. PERSISTENT & HOVER GLOW: Wirkt auf Standalone-Tabellen UND Detail-Boxen */
+.format-table:hover,
+.format-details:hover,
+.format-details[open] {
+    /* HEILUNG: Der Rahmen leuchtet hell auf (0.5), wenn aktiv oder berührt */
+    border-color: rgba(0, 209, 255, 0.5) !important;
+    background: rgba(0, 209, 255, 0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+                0 0 15px rgba(0, 209, 255, 0.1);
+}
+
+/* 3. TABLE INTERNALS */
+.format-table {
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .format-table th {
     background: #1a2a3a;
-    color: #00d1ff;
+    color: #00d1ff; /* Marken-Cyan für ALLE Header */
     font-weight: 600;
     padding: 12px 15px;
     text-align: left;
@@ -1032,45 +1046,53 @@ html {
     color: #cbd5e1;
 }
 
-.format-table tr:last-child td {
-    border-bottom: none;
+/* SPALTEN-GEOMETRIE & FARB-TRENNUNG */
+.format-table th:first-child {
+    width: 29%;
+    color: #00d1ff; /* HEILUNG: Erste Header-Zelle bleibt Cyan */
 }
 
 .format-table td:first-child {
+    width: 29%;
     font-weight: 600;
-    color: #e6e6e6;
-    font-family: 'Consolas', monospace;
+    color: #e6e6e6; /* Daten-Zellen in der ersten Spalte bleiben Off-White */
+    font-family: 'Consolas', 'Monaco', monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-/* ===== AUSKLAPPBARE FORMAT-BEREICHE ===== */
-.format-details {
-    margin: 20px 0;
-    background: rgba(255, 255, 255, 0.01);
-    border-radius: 12px;
-    border: 1px solid rgba(0, 209, 255, 0.1);
-    transition: all 0.2s ease;
-}
+.format-table th:nth-child(2), .format-table td:nth-child(2) { width: 30%; }
+.format-table th:last-child, .format-table td:last-child { width: 41%; }
 
-.format-details:hover {
-    border-color: #00d1ff;
-    background: rgba(0, 209, 255, 0.02);
-}
+.format-table tr:last-child td { border-bottom: none; }
 
+/* 4. DETAILS & SUMMARY LOGIC: Das Verhalten der ausklappbaren Boxen */
 .format-details summary {
     cursor: pointer;
     padding: 15px 20px;
     background: #1e293b;
-    border-radius: 12px;
+    color: #e2e8f0;
     font-weight: 500;
-    color: #00d1ff;
-    transition: all 0.2s ease;
     list-style: none;
-    /* Entfernt den standard Pfeil */
     position: relative;
     user-select: none;
+    transition: all 0.2s ease;
 }
 
-/* Eigener Pfeil */
+/* Spezial-Schliff für den Header im offenen Zustand */
+.format-details[open] summary {
+    background: #162235; 
+    border-bottom: 1px solid rgba(0, 209, 255, 0.2);
+}
+
+.format-details summary:hover {
+    background: #2a3a4a;
+    color: #33e0ff;
+    padding-left: 25px; /* Kleiner Animationseffekt */
+}
+
+/* Eigener Pfeil und Cyan-Hint */
 .format-details summary::after {
     content: '▼';
     position: absolute;
@@ -1079,43 +1101,48 @@ html {
     font-size: 12px;
     transition: transform 0.2s ease;
 }
+.format-details[open] summary::after { transform: rotate(180deg); }
 
-.format-details[open] summary::after {
-    transform: rotate(180deg);
+.format-details .expand-hint {
+    color: #00d1ff;
+    font-size: 0.85rem;
+    margin-left: 10px;
+    font-family: 'Consolas', monospace;
 }
 
-.format-details summary:hover {
-    background: #2a3a4a;
-    color: #33e0ff;
-    padding-left: 25px;
-    /* Leichte Bewegung nach rechts */
-}
-
-.format-details summary::-webkit-details-marker {
-    display: none;
-    /* Entfernt den standard Pfeil in WebKit */
-}
-
-/* Zeigefinger-Cursor für den gesamten Summary-Bereich */
-.format-details summary,
-.format-details summary * {
-    cursor: pointer;
-}
-
-/* Tabelle innerhalb der Details leicht einrücken */
+/* 5. NESTING CLEANUP: Wenn die Tabelle in .format-details steckt */
 .format-details .format-table {
-    margin: 10px 20px 20px 20px;
-    width: calc(100% - 40px);
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* 1. DIE GEMEINSAME BASIS: Gilt für JEDE Tabelle und JEDES Detail-Element */
+table, 
+.features-table, 
+.use-cases-table,
+.format-table, 
+.format-details {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #1e293b;
+    
+    /* DER LEUCHTRAHMEN: Jetzt einheitlich präsent (0.3) */
+    border: 1px solid rgba(0, 209, 255, 0.2); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1300px) {
     .layout-grid {
         grid-template-columns: 260px minmax(0, 1fr);
-    }
-
-    .spacer-column {
-        display: none;
     }
 }
 
