@@ -3,7 +3,7 @@
     // 1. SCROLL NAVIGATION HIGHLIGHTING
     // =============================================
     function updateActiveNavLink() {
-        const sections = document.querySelectorAll('h2[id], h3[id]');
+        const sections = document.querySelectorAll('#top, h2[id], h3[id]');
         const navLinks = document.querySelectorAll('.floating-nav a');
         let current = "";
 
