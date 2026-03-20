@@ -15,7 +15,7 @@
 
 <table style="border:none; background:transparent; border-collapse:collapse;">
 <tr>
-  <td width="250" style="border:none;"><a href="https://henrykdz.github.io/FlowShift-Editor/">🌐 Website</a></td>
+  <td width="250" style="border:none;"><a href="https://henrykdz.github.io/FlowShift-Editor/">🌐 Website (Early Access)</a></td>
   <td width="250" style="border:none;"><a href="#introduction" style="color:#00d1ff; text-decoration:none;">🚀 <strong>Introduction</strong></a></td>
   <td width="250" style="border:none;"><a href="#target-audience" style="color:#00d1ff; text-decoration:none;">🎯 <strong>Target Audience</strong></a></td>
 </tr>
