@@ -142,11 +142,11 @@ From technical documentation to creative projects – FlowShift handles it all:
 
 ### Complete Feature List
 
-✅ **Smart Formatter** – Automatic one-click Auto-Fix for Markdown, HTML and CSS.  
-✅ **Diagnostic Linter** – Real-time error detection with high-fidelity feedback.  
-✅ **Syntax Highlighter** – High-contrast code highlighting for maximum clarity.  
-✅ **Custom Placeholders** – Minimalist YAML-based data injection for templates.  
-✅ **ISO-compliant Export** – A4, Letter, Web – pixel-perfect output authority.
+✅ *Smart Formatter* – Automatic one-click Auto-Fix for Markdown, HTML and CSS.  
+✅ *Diagnostic Linter* – Real-time error detection with high-fidelity feedback.  
+✅ *Syntax Highlighter* – High-contrast code highlighting for maximum clarity.  
+✅ *Custom Placeholders** – Minimalist YAML-based data injection for templates.  
+✅ *ISO-compliant Export* – A4, Letter, Web – pixel-perfect output authority.
 ---
 
 <h2 id="formats" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📄 Supported Document Formats</h2>
