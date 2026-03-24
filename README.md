@@ -44,7 +44,7 @@
 
 <div style="background: linear-gradient(145deg, #0d1117 0%, #1a2a3a 100%); padding: 25px; border-radius: 12px; border-left: 4px solid #00d1ff; margin: 20px 0;">
 
-The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, and **YAML** into a single, cohesive workflow.
+The **FlowShift Sovereign Document Engine** unifies **Markdown**, **HTML/CSS**, and **YAML** into a single, cohesive 1:1 layout workflow.
 
 <br>
 
@@ -128,26 +128,25 @@ From technical documentation to creative projects – FlowShift handles it all:
 
 | Feature | Description |
 |---------|-------------|
-| **Flicker‑free live rendering** | Real-time preview updates via `Sovereign Swap` (zero flicker, stable scroll) |
-| **Source mapping navigation** | Click any element in preview – jumps to and selects the exact source line |
-| **Intelligent error diagnostics** | Visual linter feedback in status bar |
+| **Flicker‑free live rendering** | Real-time preview updates via `Sovereign Swap` (zero flicker, stable scroll). |
+| **Auto-Focus Navigation** | **Bidirectional Sync:** Click any element in preview – instantly jumps to and selects the exact source line. |
+| **Diagnostic Linter & Radar** | Real-time structural validation with visual feedback in the status bar. |
 
 ### Layout & Design Sovereignty
 
 | Feature | Description |
 |---------|-------------|
-| **CSS Forge** | Live styling directly in the document flow |
-| **Precise pagination** | Exact conversion to physical pages (A4, Letter) |
-| **Neutral start** | No enforced formatting – defined explicitly in YAML |
+| **CSS Forge** | Live styling directly in the document flow with zero design obstacles. |
+| **1:1 Precision Slicer** | Exact 3.78 px/mm geometry for true-to-scale rendering and fragment-free PDF exports. |
+| **Neutral Start** | No enforced formatting – full control defined explicitly via YAML. |
 
 ### Complete Feature List
 
-✅ **Formatter** – Automatic formatting of Markdown, HTML and CSS  
-✅ **Linter** – Real-time error detection with visual feedback  
-✅ **Syntax Highlighter** – Color-highlighted code for better readability  
-✅ **Custom Placeholders** – For templates and mail merges  
-✅ **ISO-compliant Export** – A4, Letter, Web – everything possible
-
+✅ **Smart Formatter** – Automatic one-click Auto-Fix for Markdown, HTML and CSS.  
+✅ **Diagnostic Linter** – Real-time error detection with high-fidelity feedback.  
+✅ **Syntax Highlighter** – High-contrast code highlighting for maximum clarity.  
+✅ **Custom Placeholders** – Minimalist YAML-based data injection for templates.  
+✅ **ISO-compliant Export** – A4, Letter, Web – pixel-perfect output authority.
 ---
 
 <h2 id="formats" style="color: #00d1ff; border-bottom: 1px solid #30363d; padding-bottom: 5px;">📄 Supported Document Formats</h2>
