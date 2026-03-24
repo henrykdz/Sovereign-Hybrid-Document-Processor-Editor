@@ -479,7 +479,7 @@ h2.badge-header .inline-description {
 .ticker-content {
     display: flex;
     align-items: center;
-    animation: ticker 60s linear infinite;
+    animation: ticker 50s linear infinite;
     white-space: nowrap;
     will-change: transform;
 }
@@ -524,7 +524,7 @@ h2.badge-header .inline-description {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-60%);
     }
 }
 
@@ -1070,7 +1070,7 @@ code {
 /* ===== FOOTER ===== */
 .footer-note {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     color: #475569;
     font-size: 0.85rem;
 }
